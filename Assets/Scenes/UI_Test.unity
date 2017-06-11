@@ -205,15 +205,30 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1623303119777242, guid: 1b90046495f88764a963b67c8270748b, type: 2}
-      propertyPath: m_Name
-      value: Main_UI
-      objectReference: {fileID: 0}
     - target: {fileID: 223755145590049192, guid: 1b90046495f88764a963b67c8270748b,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 785440869}
+    - target: {fileID: 1623303119777242, guid: 1b90046495f88764a963b67c8270748b, type: 2}
+      propertyPath: m_Name
+      value: Main_UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 114459310264195250, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223755145590049192, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114063906919477274, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b90046495f88764a963b67c8270748b, type: 2}
   m_IsPrefabParent: 0
@@ -244,7 +259,7 @@ Camera:
   m_GameObject: {fileID: 785440868}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2

@@ -16,6 +16,7 @@ public class ResponsePrinter : MonoBehaviour {
                         //means this script must be attached to the parent object
                         newResponse.transform.SetParent(this.gameObject.transform);
                         newResponse.transform.localScale = new Vector3(1, 1, 1);
+                        newResponse.transform.localPosition = new Vector3(newResponse.transform.position.x, newResponse.transform.position.y, 0);
                         newResponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
                         
                     }
