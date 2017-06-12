@@ -6,13 +6,8 @@ public class ResponseHandler : MonoBehaviour {
 	public UnityEvent OnResponseListChanged;
 	public UnityEvent OnDownKeyPressed;
 	public UnityEvent OnUpKeyPressed;
-	void OnEnable(){
+	public UnityEvent OnConfirm;
 
-	}
-
-	void OnDisable(){
-
-	}
 
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Space)) {
@@ -22,6 +17,9 @@ public class ResponseHandler : MonoBehaviour {
 			OnDownKeyPressed.Invoke();
 		} else if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			OnUpKeyPressed.Invoke ();
+		}
+		else if(Input.GetKeyDown(KeyCode.Return)){
+			OnConfirm.Invoke ();
 		}
 			
 	}

@@ -6,6 +6,8 @@ using Silk;
 public class ResponsePrinter : MonoBehaviour {
     //attach to container of responses
 	List<Response> curResponses = new List<Response>();
+	Response selectedResponse;
+	public int curResponse;
 
     public GameObject responsePrefab;
     
@@ -20,6 +22,7 @@ public class ResponsePrinter : MonoBehaviour {
         }
     }
 	void PopulateResponseUI(){
+		curResponse = 0;
 		//will need to get this from the current silknode in the traversal structure
 		foreach(KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
 			foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
@@ -37,6 +40,9 @@ public class ResponsePrinter : MonoBehaviour {
 				}
 			}
 		}
+		Debug.Log("Test!! " + curResponses.Count);
+		selectedResponse = curResponses [curResponse];
+
 	}
 	void ClearResponses(){
 		curResponses.Clear ();
@@ -45,6 +51,33 @@ public class ResponsePrinter : MonoBehaviour {
 	void AddResponse(Response newResponse){
 		curResponses.Add (newResponse);
 	}
+
+	public void SelectedResponseChange(int changeNum){
+
+		if (curResponse + changeNum <= (curResponses.Count - 1) || curResponse + changeNum >= 0) {
+			curResponse += changeNum;
+			selectedResponse = curResponses [curResponse];
+		} else if (curResponse + changeNum > (curResponses.Count - 1)) {
+			curResponse = 0;
+			selectedResponse = curResponses [curResponse];
+		} else if(curResponse + changeNum < 0){
+			curResponse = curResponses.Count - 1;
+			selectedResponse = curResponses [curResponse];
+		}
+		//if (curResponse > 0)
+		//	selectedResponse = curResponses [curResponse += changeNum];
+		/*else if(curResponse >= curResponses.Count - 1){
+			curResponse = 0;
+			selectedResponse = curResponses [curResponse];
+		}*/
+		//else if (curResponse == 0) {
+		//	curResponse = curResponses.Count - 1;
+		//	selectedResponse = curResponses [curResponse];
+		//}
+
+		Debug.Log("Cur response number is " + curResponse);
+	}
+
 
 
 

@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class PrinterEventHandler : MonoBehaviour {
 
     public UnityEvent invokePrint;
+
     // Use this for initialization
     private void OnEnable() {
 
@@ -18,7 +19,7 @@ public class PrinterEventHandler : MonoBehaviour {
     }
 
     public void InvokePrint() {
-
+		//this is where the command to actually print the thing will come from
     }
 
 
