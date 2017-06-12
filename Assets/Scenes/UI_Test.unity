@@ -214,6 +214,11 @@ Prefab:
       propertyPath: m_Name
       value: Main_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 114058280211999986, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6363a877cd9eb8a4ea35946fcbb4aac6, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b90046495f88764a963b67c8270748b, type: 2}
   m_IsPrefabParent: 0
@@ -523,6 +528,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnDownKeyPressed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnUpKeyPressed:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1 &2059704665

@@ -4,18 +4,22 @@ using UnityEngine;
 using UnityEngine.Events;
 public class PrinterEventHandler : MonoBehaviour {
 
-    public UnityEvent newEvent;
+    public UnityEvent invokePrint;
     // Use this for initialization
     private void OnEnable() {
-        if(newEvent == null) {
-            newEvent = new UnityEvent();
-        }
+
+    }
+    private void OnDisable() {
+        
+    }
+
+    public void SetPromptText(string text) {
 
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    public void InvokePrint() {
+
+    }
+
 
 }

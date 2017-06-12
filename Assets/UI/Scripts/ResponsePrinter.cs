@@ -11,9 +11,14 @@ public class ResponsePrinter : MonoBehaviour {
     
 	public void ChangeResponses(){
 		ClearResponses ();
+        ClearResponseUI();
 		PopulateResponseUI ();
 	}
-
+    void ClearResponseUI() {
+        foreach(Transform child in this.transform) {
+            Destroy(child.gameObject);
+        }
+    }
 	void PopulateResponseUI(){
 		//will need to get this from the current silknode in the traversal structure
 		foreach(KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {

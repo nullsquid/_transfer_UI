@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UIEventHandler : MonoBehaviour {
-    public delegate void OnButtonPressed();
-    public static event OnButtonPressed onButtonPressed;
+    public delegate void OnNewPrompt(string promptText);
+    public static event OnNewPrompt printPrompt;
     // Use this for initialization
     #region Singleton
     private static UIEventHandler _instance;
@@ -35,7 +35,13 @@ public class UIEventHandler : MonoBehaviour {
         
     }
 
-    //private void 
+    private void OnDisable() {
+        
+    }
+
+    public void InvokePrint() {
+        
+    }
 
 
 }
