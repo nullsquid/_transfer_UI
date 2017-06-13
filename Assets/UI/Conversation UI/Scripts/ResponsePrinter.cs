@@ -67,10 +67,19 @@ public class ResponsePrinter : MonoBehaviour {
                 selectedResponse = curResponses[curResponse];
             }
         }
-        
-		
 
 	}
+
+    public void InvokeConfirm() {
+
+        ConfirmResponse();
+
+    }
+
+    public Response ConfirmResponse() {
+        Debug.Log(curResponses[curResponse].responseText);
+        return curResponses[curResponse];
+    }
 
 
 
