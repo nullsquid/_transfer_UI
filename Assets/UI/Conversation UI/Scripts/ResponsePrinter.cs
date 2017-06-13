@@ -40,7 +40,6 @@ public class ResponsePrinter : MonoBehaviour {
 				}
 			}
 		}
-		Debug.Log("Test!! " + curResponses.Count);
 		selectedResponse = curResponses [curResponse];
 
 	}
@@ -54,28 +53,23 @@ public class ResponsePrinter : MonoBehaviour {
 
 	public void SelectedResponseChange(int changeNum){
 
-		if (curResponse + changeNum <= (curResponses.Count - 1) || curResponse + changeNum >= 0) {
-			curResponse += changeNum;
-			selectedResponse = curResponses [curResponse];
-		} else if (curResponse + changeNum > (curResponses.Count - 1)) {
-			curResponse = 0;
-			selectedResponse = curResponses [curResponse];
-		} else if(curResponse + changeNum < 0){
-			curResponse = curResponses.Count - 1;
-			selectedResponse = curResponses [curResponse];
-		}
-		//if (curResponse > 0)
-		//	selectedResponse = curResponses [curResponse += changeNum];
-		/*else if(curResponse >= curResponses.Count - 1){
-			curResponse = 0;
-			selectedResponse = curResponses [curResponse];
-		}*/
-		//else if (curResponse == 0) {
-		//	curResponse = curResponses.Count - 1;
-		//	selectedResponse = curResponses [curResponse];
-		//}
+        if (curResponses != null) {
+            if (curResponse + changeNum <= (curResponses.Count - 1) && curResponse + changeNum >= 0) {
+                curResponse += changeNum;
+                selectedResponse = curResponses[curResponse];
+            }
+            else if (curResponse + changeNum > (curResponses.Count - 1)) {
+                curResponse = 0;
+                selectedResponse = curResponses[curResponse];
+            }
+            else if (curResponse + changeNum < 0) {
+                curResponse = (curResponses.Count - 1);
+                selectedResponse = curResponses[curResponse];
+            }
+        }
+        
+		
 
-		Debug.Log("Cur response number is " + curResponse);
 	}
 
 
