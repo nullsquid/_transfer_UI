@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Response : MonoBehaviour {
     public string responseText;
+	public bool isSelected;
     Text text;
 	// Use this for initialization
 	void Start () {
