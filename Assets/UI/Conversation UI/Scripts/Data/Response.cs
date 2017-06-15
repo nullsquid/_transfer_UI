@@ -8,7 +8,7 @@ public class Response : MonoBehaviour {
     Text text;
 	// Use this for initialization
 	void Start () {
-        text = gameObject.GetComponent<Text>();
+        text = gameObject.GetComponentInChildren<Text>();
         text.text = responseText;
 	}
 }
