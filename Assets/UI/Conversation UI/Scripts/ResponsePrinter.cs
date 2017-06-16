@@ -10,6 +10,7 @@ public class ResponsePrinter : MonoBehaviour {
     List<GameObject> curDisplayResponses = new List<GameObject>();
 	Response selectedResponse;
 	public int curResponse;
+    Navigation normalNav = new Navigation();
     Navigation customNav = new Navigation();
     GameObject topItem;
     GameObject bottomItem;
@@ -29,7 +30,8 @@ public class ResponsePrinter : MonoBehaviour {
 	void PopulateResponseUI(){
 		curResponse = 0;
 
-        //customNav.mode = Navigation.Mode.Vertical;
+        normalNav.mode = Navigation.Mode.Vertical;
+        customNav.mode = Navigation.Mode.Explicit;
 		//will need to get this from the current silknode in the traversal structure
 		foreach(KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
 			foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
@@ -44,14 +46,14 @@ public class ResponsePrinter : MonoBehaviour {
                         curDisplayResponses.Add(newResponse);
 						newResponse.transform.localPosition = new Vector3(newResponse.transform.position.x, newResponse.transform.position.y, 0);
 						newResponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
-                        //newResponse.GetComponent<Button>().navigation = customNav;
+                        newResponse.GetComponent<Button>().navigation = normalNav;
 						if (i == 0) {
                             newResponse.GetComponent<Selectable>().Select();
 						}
                         
                         
 					}
-                    /*
+                    
                     for(int j = 0; j < curDisplayResponses.Count; j++) {
                         topItem = curDisplayResponses[0];
                         bottomItem = curDisplayResponses[curDisplayResponses.Count - 1];
@@ -64,7 +66,7 @@ public class ResponsePrinter : MonoBehaviour {
                             customNav.selectOnDown = bottomItem.GetComponent<Selectable>();
                         }
                     }
-                    */
+                    
 
 				}
 			}
