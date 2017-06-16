@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Silk;
 public class ResponsePrinter : MonoBehaviour {
@@ -8,6 +9,7 @@ public class ResponsePrinter : MonoBehaviour {
 	List<Response> curResponses = new List<Response>();
 	Response selectedResponse;
 	public int curResponse;
+    
 
     public GameObject responsePrefab;
     
@@ -38,11 +40,13 @@ public class ResponsePrinter : MonoBehaviour {
 						newResponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
 
 						if (i == 0) {
-							newResponse.GetComponent<Animator> ().SetTrigger ("Highlighted");
+                            newResponse.GetComponent<Selectable>().Select();
+                            //EventSystem.current.firstSelectedGameObject = newResponse;
 						}
-                        else {
-                            newResponse.GetComponent<Animator>().SetTrigger("Idle");
-                        }
+                        /*if(i == node.Value.silkLinks.Count - 1) {
+                            newResponse.GetComponent<Button>().navigation.selectOnDown 
+                        }*/
+                        
 					}
 
 				}
