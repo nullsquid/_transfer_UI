@@ -12,11 +12,15 @@ public class ResponsePrinter : MonoBehaviour {
 	public int curResponse;
     Navigation normalNav = new Navigation();
     Navigation customNav = new Navigation();
-    GameObject topItem;
-    GameObject bottomItem;
+    Selectable topItem;
+    Selectable bottomItem;
 
     public GameObject responsePrefab;
     
+    void SetCustomNavigation() {
+
+    }
+
 	public void ChangeResponses(){
 		ClearResponses ();
         ClearResponseUI();
@@ -32,8 +36,10 @@ public class ResponsePrinter : MonoBehaviour {
 
         normalNav.mode = Navigation.Mode.Vertical;
         customNav.mode = Navigation.Mode.Explicit;
-		//will need to get this from the current silknode in the traversal structure
-		foreach(KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
+        
+
+        //will need to get this from the current silknode in the traversal structure
+        foreach (KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
 			foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
 				if(node.Value.GetNodeName() == "Start") {
 					for(int i = 0; i < node.Value.silkLinks.Count; i++) {
@@ -46,14 +52,29 @@ public class ResponsePrinter : MonoBehaviour {
                         curDisplayResponses.Add(newResponse);
 						newResponse.transform.localPosition = new Vector3(newResponse.transform.position.x, newResponse.transform.position.y, 0);
 						newResponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
-                        newResponse.GetComponent<Button>().navigation = normalNav;
+                        if(i == 0) {
+                            topItem = newResponse.GetComponent<Selectable>();
+                            customNav.selectOnDown = topItem.GetComponent<Selectable>();
+
+                        }
+                        else if (i == node.Value.silkLinks.Count - 1) {
+                            bottomItem = newResponse.GetComponent<Selectable>();
+                            customNav.selectOnUp = bottomItem;
+                        }
+                        if (i == 0 || i == node.Value.silkLinks.Count - 1) {
+                            newResponse.GetComponent<Button>().navigation = customNav;
+
+                        }
+                        else {
+                            newResponse.GetComponent<Button>().navigation = normalNav;
+                        }
 						if (i == 0) {
                             newResponse.GetComponent<Selectable>().Select();
 						}
                         
                         
 					}
-                    
+                    /*
                     for(int j = 0; j < curDisplayResponses.Count; j++) {
                         topItem = curDisplayResponses[0];
                         bottomItem = curDisplayResponses[curDisplayResponses.Count - 1];
@@ -66,6 +87,7 @@ public class ResponsePrinter : MonoBehaviour {
                             customNav.selectOnDown = bottomItem.GetComponent<Selectable>();
                         }
                     }
+                    */
                     
 
 				}
