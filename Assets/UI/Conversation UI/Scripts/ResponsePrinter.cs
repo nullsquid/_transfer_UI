@@ -38,8 +38,11 @@ public class ResponsePrinter : MonoBehaviour {
 						newResponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
 
 						if (i == 0) {
-							newResponse.GetComponent<Animator> ().SetTrigger ("First");
+							newResponse.GetComponent<Animator> ().SetTrigger ("Highlighted");
 						}
+                        else {
+                            newResponse.GetComponent<Animator>().SetTrigger("Idle");
+                        }
 					}
 
 				}
