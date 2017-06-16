@@ -6,10 +6,13 @@ using UnityEngine.UI;
 using Silk;
 public class ResponsePrinter : MonoBehaviour {
     //attach to container of responses
-	List<Response> curResponses = new List<Response>();
+    //List<Response> curResponses = new List<Response>();
+    List<GameObject> curDisplayResponses = new List<GameObject>();
 	Response selectedResponse;
 	public int curResponse;
-    
+    Navigation customNav = new Navigation();
+    GameObject topItem;
+    GameObject bottomItem;
 
     public GameObject responsePrefab;
     
@@ -25,6 +28,8 @@ public class ResponsePrinter : MonoBehaviour {
     }
 	void PopulateResponseUI(){
 		curResponse = 0;
+
+        //customNav.mode = Navigation.Mode.Vertical;
 		//will need to get this from the current silknode in the traversal structure
 		foreach(KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
 			foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
@@ -36,35 +41,47 @@ public class ResponsePrinter : MonoBehaviour {
 						//means this script must be attached to the parent object
 						newResponse.transform.SetParent(this.gameObject.transform);
 						newResponse.transform.localScale = new Vector3(1, 1, 1);
+                        curDisplayResponses.Add(newResponse);
 						newResponse.transform.localPosition = new Vector3(newResponse.transform.position.x, newResponse.transform.position.y, 0);
 						newResponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
-
+                        //newResponse.GetComponent<Button>().navigation = customNav;
 						if (i == 0) {
                             newResponse.GetComponent<Selectable>().Select();
-                            //EventSystem.current.firstSelectedGameObject = newResponse;
 						}
-                        /*if(i == node.Value.silkLinks.Count - 1) {
-                            newResponse.GetComponent<Button>().navigation.selectOnDown 
-                        }*/
+                        
                         
 					}
+                    /*
+                    for(int j = 0; j < curDisplayResponses.Count; j++) {
+                        topItem = curDisplayResponses[0];
+                        bottomItem = curDisplayResponses[curDisplayResponses.Count - 1];
+                        if(j == 0) {
+                            customNav.mode = Navigation.Mode.Explicit;
+                            customNav.selectOnUp = topItem.GetComponent<Selectable>();
+                        }
+                        else if(j == curDisplayResponses.Count - 1) {
+                            customNav.mode = Navigation.Mode.Explicit;
+                            customNav.selectOnDown = bottomItem.GetComponent<Selectable>();
+                        }
+                    }
+                    */
 
 				}
 			}
 		}
-		selectedResponse = curResponses [curResponse];
+		//selectedResponse = curResponses [curResponse];
 
 	}
 	void ClearResponses(){
-		curResponses.Clear ();
+		//curResponses.Clear ();
 	}
 
 	void AddResponse(Response newResponse){
-		curResponses.Add (newResponse);
+		//curResponses.Add (newResponse);
 	}
 
 	public void SelectedResponseChange(int changeNum){
-
+        /*
         if (curResponses != null) {
             if (curResponse + changeNum <= (curResponses.Count - 1) && curResponse + changeNum >= 0) {
                 curResponse += changeNum;
@@ -79,19 +96,20 @@ public class ResponsePrinter : MonoBehaviour {
                 selectedResponse = curResponses[curResponse];
             }
         }
+        */
 
 	}
 
     public void InvokeConfirm() {
 
-        ConfirmResponse();
+        //ConfirmResponse();
 
     }
 
-    public Response ConfirmResponse() {
-        Debug.Log(curResponses[curResponse].responseText);
-        return curResponses[curResponse];
-    }
+    //public Response ConfirmResponse() {
+        //Debug.Log(curResponses[curResponse].responseText);
+        //return curResponses[curResponse];
+    //}
 
 
 
