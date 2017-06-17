@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e2602efa08c5a6b4cbbb84a1ca397d84
+timeCreated: 1496005570
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - audioSource: {fileID: 1715144249520268, guid: e08cd09a91249a74aa442579ee9678de,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

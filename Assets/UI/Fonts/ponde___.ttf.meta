@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e1a9b881d2f336d48ac65ad360717c87
+timeCreated: 1497206306
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 10
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Ponderosa
+  fontNames:
+  - Ponderosa
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
