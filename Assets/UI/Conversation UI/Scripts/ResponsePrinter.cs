@@ -14,6 +14,12 @@ public class ResponsePrinter : MonoBehaviour {
     Navigation customNav = new Navigation();
     Selectable topItem;
     Selectable bottomItem;
+	/*
+	enum NavPosition{
+		TOP,
+		MIDDLE,
+		BOTTOM
+	};*/
 
     public GameObject responsePrefab;
     
@@ -38,6 +44,7 @@ public class ResponsePrinter : MonoBehaviour {
         customNav.mode = Navigation.Mode.Explicit;
         
 
+
         //will need to get this from the current silknode in the traversal structure
         foreach (KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
 			foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
@@ -52,15 +59,19 @@ public class ResponsePrinter : MonoBehaviour {
                         curDisplayResponses.Add(newResponse);
 						newResponse.transform.localPosition = new Vector3(newResponse.transform.position.x, newResponse.transform.position.y, 0);
 						newResponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
-                        if(i == 0) {
-                            topItem = newResponse.GetComponent<Selectable>();
-                            customNav.selectOnDown = topItem.GetComponent<Selectable>();
+						if (i == 0) {
+							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.TOP;
+							//topItem = newResponse.GetComponent<Selectable>();
+							//customNav.selectOnDown = topItem.GetComponent<Selectable>();
 
-                        }
-                        else if (i == node.Value.silkLinks.Count - 1) {
-                            bottomItem = newResponse.GetComponent<Selectable>();
-                            customNav.selectOnUp = bottomItem;
-                        }
+						} else if (i == node.Value.silkLinks.Count - 1) {
+							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.BOTTOM;
+							//bottomItem = newResponse.GetComponent<Selectable>();
+							//customNav.selectOnUp = bottomItem;
+						} else {
+							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.MIDDLE;
+						}
+
                         if (i == 0 || i == node.Value.silkLinks.Count - 1) {
                             newResponse.GetComponent<Button>().navigation = customNav;
 
@@ -73,6 +84,13 @@ public class ResponsePrinter : MonoBehaviour {
 						}
                         
                         
+					}
+					for (int j = 0; j < node.Value.silkLinks.Count - 1; j++) {
+						if (j == 0) {
+
+						} else if (j == node.Value.silkLinks.Count - 1) {
+
+						}
 					}
                     /*
                     for(int j = 0; j < curDisplayResponses.Count; j++) {
