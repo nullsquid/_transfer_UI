@@ -10,12 +10,25 @@ public class ResponsePrinter : MonoBehaviour {
     List<GameObject> curDisplayResponses = new List<GameObject>();
 	Response selectedResponse;
 	public int curResponse;
+    Navigation normalNav = new Navigation();
     Navigation customNav = new Navigation();
-    GameObject topItem;
-    GameObject bottomItem;
+    Selectable topItem;
+    Selectable bottomItem;
+	Selectable secondItem;
+	Selectable penultimateItem;
+	/*
+	enum NavPosition{
+		TOP,
+		MIDDLE,
+		BOTTOM
+	};*/
 
     public GameObject responsePrefab;
     
+    void SetCustomNavigation() {
+
+    }
+
 	public void ChangeResponses(){
 		ClearResponses ();
         ClearResponseUI();
@@ -29,9 +42,13 @@ public class ResponsePrinter : MonoBehaviour {
 	void PopulateResponseUI(){
 		curResponse = 0;
 
-        //customNav.mode = Navigation.Mode.Vertical;
-		//will need to get this from the current silknode in the traversal structure
-		foreach(KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
+        normalNav.mode = Navigation.Mode.Vertical;
+        customNav.mode = Navigation.Mode.Explicit;
+        
+
+
+        //will need to get this from the current silknode in the traversal structure
+        foreach (KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
 			foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
 				if(node.Value.GetNodeName() == "Start") {
 					for(int i = 0; i < node.Value.silkLinks.Count; i++) {
@@ -44,12 +61,55 @@ public class ResponsePrinter : MonoBehaviour {
                         curDisplayResponses.Add(newResponse);
 						newResponse.transform.localPosition = new Vector3(newResponse.transform.position.x, newResponse.transform.position.y, 0);
 						newResponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
-                        //newResponse.GetComponent<Button>().navigation = customNav;
 						if (i == 0) {
-                            newResponse.GetComponent<Selectable>().Select();
+							newResponse.GetComponent<Selectable>().Select();
+							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.TOP;
+							//topItem = newResponse.GetComponent<Selectable>();
+							//customNav.selectOnDown = topItem.GetComponent<Selectable>();
+
+						} else if (i == node.Value.silkLinks.Count - 1) {
+							
+							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.BOTTOM;
+							//bottomItem = newResponse.GetComponent<Selectable>();
+							//customNav.selectOnUp = bottomItem;
+						} else {
+							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.MIDDLE;
 						}
                         
-                        
+					}
+					foreach (Transform child in transform) {
+						Debug.Log("CHILD " + child.GetComponent<Response>().navPos);
+						switch (child.GetComponent<Response> ().navPos) {
+
+						case Response.NavPosition.TOP:
+							
+							for (int i = 0; i < curDisplayResponses.Count; i++) {
+								Debug.Log ("Hey");
+								if (i == curDisplayResponses.Count - 1) {
+									customNav.selectOnUp = curDisplayResponses [i].GetComponent<Selectable> ();
+								} else if (i == 1) {
+									customNav.selectOnDown = curDisplayResponses [i].GetComponent<Selectable>();
+								}
+							}
+							child.GetComponent<Button>().navigation = customNav;
+
+
+							//customNav.selectOnDown
+							break;
+						case Response.NavPosition.BOTTOM:
+							for (int i = 0; i < curDisplayResponses.Count; i++) {
+								if (i == 0) {
+									customNav.selectOnDown = curDisplayResponses [i].GetComponent<Selectable> ();
+								} else if (i == curDisplayResponses.Count - 2) {
+									customNav.selectOnUp = curDisplayResponses [i].GetComponent<Selectable> ();
+								}
+							}
+							child.GetComponent<Button> ().navigation = customNav;
+							break;
+						case Response.NavPosition.MIDDLE:
+							child.GetComponent<Button> ().navigation = normalNav;
+							break;
+						}
 					}
                     /*
                     for(int j = 0; j < curDisplayResponses.Count; j++) {
@@ -65,6 +125,7 @@ public class ResponsePrinter : MonoBehaviour {
                         }
                     }
                     */
+                    
 
 				}
 			}
