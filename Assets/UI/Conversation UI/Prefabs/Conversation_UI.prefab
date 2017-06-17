@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 222330051389159118}
   - component: {fileID: 114085161714766104}
   - component: {fileID: 114028397991741504}
-  - component: {fileID: 114368354440121164}
   m_Layer: 5
   m_Name: Text_pannel
   m_TagString: Untagged
@@ -94,6 +93,7 @@ GameObject:
   - component: {fileID: 114944915093802966}
   - component: {fileID: 114665631620984692}
   - component: {fileID: 114932093438804152}
+  - component: {fileID: 114576812227590208}
   m_Layer: 5
   m_Name: Response_Pannel
   m_TagString: Untagged
@@ -212,29 +212,13 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114368354440121164
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252637550588600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6adf04c49dfcf046af37b03056efd2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invokePrint:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114459310264195250
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1623303119777242}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -244,6 +228,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114576812227590208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962033819545800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164a61eec35904ec793248dcfb2a5057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114622103038575546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,7 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ee04935f037904d890d1efb5006565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curResponse: 0
   responsePrefab: {fileID: 1361829754301706, guid: 3c28be3ea56ee6d4cb54e0ef26735b6c,
     type: 2}
 --- !u!114 &114932093438804152
@@ -302,59 +296,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81e57162edca49488653203f67d3c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnResponseListChanged:
+  OnResponseListUpdate:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114665631620984692}
-        m_MethodName: ChangeResponses
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnDownKeyPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114665631620984692}
-        m_MethodName: SelectedResponseChange
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnUpKeyPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114665631620984692}
-        m_MethodName: SelectedResponseChange
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnConfirm:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114665631620984692}
-        m_MethodName: InvokeConfirm
+        m_MethodName: UpdateResponses
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -463,7 +409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5295359, y: 1}
-  m_AnchoredPosition: {x: 4.274994, y: 15.000002}
+  m_AnchoredPosition: {x: 4.2750244, y: 15.000002}
   m_SizeDelta: {x: -21.450012, y: -59.999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224250448626620624
