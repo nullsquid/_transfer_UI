@@ -14,6 +14,8 @@ public class ResponsePrinter : MonoBehaviour {
     Navigation customNav = new Navigation();
     Selectable topItem;
     Selectable bottomItem;
+	Selectable secondItem;
+	Selectable penultimateItem;
 	/*
 	enum NavPosition{
 		TOP,
@@ -60,36 +62,53 @@ public class ResponsePrinter : MonoBehaviour {
 						newResponse.transform.localPosition = new Vector3(newResponse.transform.position.x, newResponse.transform.position.y, 0);
 						newResponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
 						if (i == 0) {
+							newResponse.GetComponent<Selectable>().Select();
 							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.TOP;
 							//topItem = newResponse.GetComponent<Selectable>();
 							//customNav.selectOnDown = topItem.GetComponent<Selectable>();
 
 						} else if (i == node.Value.silkLinks.Count - 1) {
+							
 							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.BOTTOM;
 							//bottomItem = newResponse.GetComponent<Selectable>();
 							//customNav.selectOnUp = bottomItem;
 						} else {
 							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.MIDDLE;
 						}
-
-                        if (i == 0 || i == node.Value.silkLinks.Count - 1) {
-                            newResponse.GetComponent<Button>().navigation = customNav;
-
-                        }
-                        else {
-                            newResponse.GetComponent<Button>().navigation = normalNav;
-                        }
-						if (i == 0) {
-                            newResponse.GetComponent<Selectable>().Select();
-						}
-                        
                         
 					}
-					for (int j = 0; j < node.Value.silkLinks.Count - 1; j++) {
-						if (j == 0) {
+					foreach (Transform child in transform) {
+						Debug.Log("CHILD " + child.GetComponent<Response>().navPos);
+						switch (child.GetComponent<Response> ().navPos) {
 
-						} else if (j == node.Value.silkLinks.Count - 1) {
+						case Response.NavPosition.TOP:
+							
+							for (int i = 0; i < curDisplayResponses.Count; i++) {
+								Debug.Log ("Hey");
+								if (i == curDisplayResponses.Count - 1) {
+									customNav.selectOnUp = curDisplayResponses [i].GetComponent<Selectable> ();
+								} else if (i == 1) {
+									customNav.selectOnDown = curDisplayResponses [i].GetComponent<Selectable>();
+								}
+							}
+							child.GetComponent<Button>().navigation = customNav;
 
+
+							//customNav.selectOnDown
+							break;
+						case Response.NavPosition.BOTTOM:
+							for (int i = 0; i < curDisplayResponses.Count; i++) {
+								if (i == 0) {
+									customNav.selectOnDown = curDisplayResponses [i].GetComponent<Selectable> ();
+								} else if (i == curDisplayResponses.Count - 2) {
+									customNav.selectOnUp = curDisplayResponses [i].GetComponent<Selectable> ();
+								}
+							}
+							child.GetComponent<Button> ().navigation = customNav;
+							break;
+						case Response.NavPosition.MIDDLE:
+							child.GetComponent<Button> ().navigation = normalNav;
+							break;
 						}
 					}
                     /*
