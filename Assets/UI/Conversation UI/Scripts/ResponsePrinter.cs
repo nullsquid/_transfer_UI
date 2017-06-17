@@ -5,8 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Silk;
 public class ResponsePrinter : MonoBehaviour {
-    //attach to container of responses
-    //List<Response> curResponses = new List<Response>();
+
     List<GameObject> curDisplayResponses = new List<GameObject>();
 	Response selectedResponse;
 	public int curResponse;
@@ -16,12 +15,7 @@ public class ResponsePrinter : MonoBehaviour {
     Selectable bottomItem;
 	Selectable secondItem;
 	Selectable penultimateItem;
-	/*
-	enum NavPosition{
-		TOP,
-		MIDDLE,
-		BOTTOM
-	};*/
+
 
     public GameObject responsePrefab;
     
@@ -30,7 +24,6 @@ public class ResponsePrinter : MonoBehaviour {
     }
 
 	public void ChangeResponses(){
-		ClearResponses ();
         ClearResponseUI();
 		PopulateResponseUI ();
 	}
@@ -54,8 +47,9 @@ public class ResponsePrinter : MonoBehaviour {
 					for(int i = 0; i < node.Value.silkLinks.Count; i++) {
 						
 						GameObject newResponse = Instantiate(responsePrefab);
-						AddResponse (newResponse.GetComponent<Response>());
-						//means this script must be attached to the parent object
+						//////////////////////////////////////////////////////
+						//THIS SCRIPT MUST BE ATTACHED TO THE PARENT OBJECT///
+						//////////////////////////////////////////////////////
 						newResponse.transform.SetParent(this.gameObject.transform);
 						newResponse.transform.localScale = new Vector3(1, 1, 1);
                         curDisplayResponses.Add(newResponse);
@@ -64,14 +58,11 @@ public class ResponsePrinter : MonoBehaviour {
 						if (i == 0) {
 							newResponse.GetComponent<Selectable>().Select();
 							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.TOP;
-							//topItem = newResponse.GetComponent<Selectable>();
-							//customNav.selectOnDown = topItem.GetComponent<Selectable>();
 
 						} else if (i == node.Value.silkLinks.Count - 1) {
 							
 							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.BOTTOM;
-							//bottomItem = newResponse.GetComponent<Selectable>();
-							//customNav.selectOnUp = bottomItem;
+
 						} else {
 							newResponse.GetComponent<Response> ().navPos = Response.NavPosition.MIDDLE;
 						}
@@ -110,66 +101,12 @@ public class ResponsePrinter : MonoBehaviour {
 							break;
 						}
 					}
-                    /*
-                    for(int j = 0; j < curDisplayResponses.Count; j++) {
-                        topItem = curDisplayResponses[0];
-                        bottomItem = curDisplayResponses[curDisplayResponses.Count - 1];
-                        if(j == 0) {
-                            customNav.mode = Navigation.Mode.Explicit;
-                            customNav.selectOnUp = topItem.GetComponent<Selectable>();
-                        }
-                        else if(j == curDisplayResponses.Count - 1) {
-                            customNav.mode = Navigation.Mode.Explicit;
-                            customNav.selectOnDown = bottomItem.GetComponent<Selectable>();
-                        }
-                    }
-                    */
-                    
-
 				}
 			}
 		}
-		//selectedResponse = curResponses [curResponse];
 
 	}
-	void ClearResponses(){
-		//curResponses.Clear ();
-	}
-
-	void AddResponse(Response newResponse){
-		//curResponses.Add (newResponse);
-	}
-
-	public void SelectedResponseChange(int changeNum){
-        /*
-        if (curResponses != null) {
-            if (curResponse + changeNum <= (curResponses.Count - 1) && curResponse + changeNum >= 0) {
-                curResponse += changeNum;
-                selectedResponse = curResponses[curResponse];
-            }
-            else if (curResponse + changeNum > (curResponses.Count - 1)) {
-                curResponse = 0;
-                selectedResponse = curResponses[curResponse];
-            }
-            else if (curResponse + changeNum < 0) {
-                curResponse = (curResponses.Count - 1);
-                selectedResponse = curResponses[curResponse];
-            }
-        }
-        */
-
-	}
-
-    public void InvokeConfirm() {
-
-        //ConfirmResponse();
-
-    }
-
-    //public Response ConfirmResponse() {
-        //Debug.Log(curResponses[curResponse].responseText);
-        //return curResponses[curResponse];
-    //}
+		
 
 
 
