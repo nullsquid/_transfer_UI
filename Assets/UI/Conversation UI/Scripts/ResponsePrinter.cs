@@ -78,7 +78,6 @@ public class ResponsePrinter : MonoBehaviour {
                         
 					}
 					foreach (Transform child in transform) {
-						Debug.Log("CHILD " + child.GetComponent<Response>().navPos);
 						switch (child.GetComponent<Response> ().navPos) {
 
 						case Response.NavPosition.TOP:

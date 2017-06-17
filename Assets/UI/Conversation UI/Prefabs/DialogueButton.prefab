@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114342432381843966}
   - component: {fileID: 95766729685808974}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DialogueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   responseText: 
   isSelected: 0
+  navPos: 0
 --- !u!114 &114827237020799210
 MonoBehaviour:
   m_ObjectHideFlags: 1
