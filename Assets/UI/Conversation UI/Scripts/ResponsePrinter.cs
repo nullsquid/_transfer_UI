@@ -8,8 +8,8 @@ public class ResponsePrinter : MonoBehaviour {
 
     List<GameObject> curDisplayResponses = new List<GameObject>();
 
-    Navigation normalNav = new Navigation();
-    Navigation customNav = new Navigation();
+//    Navigation normalNav = new Navigation();
+//    Navigation customNav = new Navigation();
 
 
 
@@ -24,6 +24,7 @@ public class ResponsePrinter : MonoBehaviour {
 		PopulateResponseUI ();
 	}
     void ClearResponseUI() {
+		curDisplayResponses.Clear ();
         foreach(Transform child in this.transform) {
             Destroy(child.gameObject);
         }
@@ -63,6 +64,8 @@ public class ResponsePrinter : MonoBehaviour {
 						}
                         
 					}
+					this.gameObject.GetComponent<ResponseNavHandler> ().SetCustomNavigation (curDisplayResponses);
+
 //					foreach (Transform child in transform) {
 //						switch (child.GetComponent<Response> ().navPos) {
 //
@@ -99,7 +102,6 @@ public class ResponsePrinter : MonoBehaviour {
 				}
 			}
 		}
-		this.gameObject.GetComponent<ResponseNavHandler> ().SetCustomNavigation (curDisplayResponses);
 
 	}
 		
