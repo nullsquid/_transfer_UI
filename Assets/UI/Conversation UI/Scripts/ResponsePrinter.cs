@@ -10,7 +10,7 @@ public class ResponsePrinter : MonoBehaviour {
     public GameObject responsePrefab;
 
 	//TODO make this into an event that can be populated from Silk
-	public void ChangeResponses(){
+	public void UpdateResponses(){
         ClearResponseUI();
 		PopulateResponseUI ();
 	}

@@ -6,6 +6,9 @@ public class ResponseNavHandler : MonoBehaviour {
 	Navigation normalNav = new Navigation();
 	Navigation customNav = new Navigation();
 
+	void Start(){
+		Cursor.visible = false;
+	}
 	public void SetCustomNavigation(List<GameObject> curDisplayResponses){
 		normalNav.mode = Navigation.Mode.Vertical;
 		customNav.mode = Navigation.Mode.Explicit;

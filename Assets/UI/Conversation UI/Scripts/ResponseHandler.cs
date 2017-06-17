@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 public class ResponseHandler : MonoBehaviour {
-	public UnityEvent OnResponseListChanged;
+	public UnityEvent OnResponseListUpdate;
 
 
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			OnResponseListChanged.Invoke ();
+			OnResponseListUpdate.Invoke ();
 		}
 	}
 
