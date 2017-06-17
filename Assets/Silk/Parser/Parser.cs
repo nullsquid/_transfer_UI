@@ -6,8 +6,7 @@ using System.Collections.Generic;
 using Silk;
 namespace Silk
 {
-    //TODO Make Parser a Singleton
-    //TODO Change Parser's name to Silk or something that's more friendly
+
     public class Parser : MonoBehaviour
     {
         #region Public Variables
