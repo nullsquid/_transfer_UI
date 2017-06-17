@@ -405,6 +405,11 @@ Prefab:
       propertyPath: m_Name
       value: Main_Conversation_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 114058280211999986, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e3346e5021a64ae8aed8ce3f3ccdec0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b90046495f88764a963b67c8270748b, type: 2}
   m_IsPrefabParent: 0
