@@ -64,7 +64,6 @@ public class ResponsePrinter : MonoBehaviour {
 						}
                         
 					}
-					this.gameObject.GetComponent<ResponseNavHandler> ().SetCustomNavigation (curDisplayResponses);
 
 //					foreach (Transform child in transform) {
 //						switch (child.GetComponent<Response> ().navPos) {
@@ -102,6 +101,8 @@ public class ResponsePrinter : MonoBehaviour {
 				}
 			}
 		}
+		this.gameObject.GetComponent<ResponseNavHandler> ().SetCustomNavigation (curDisplayResponses);
+
 
 	}
 		
