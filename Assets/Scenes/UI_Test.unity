@@ -410,6 +410,10 @@ Prefab:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 2e3346e5021a64ae8aed8ce3f3ccdec0, type: 3}
+    - target: {fileID: 1337367026675430, guid: 1b90046495f88764a963b67c8270748b, type: 2}
+      propertyPath: m_Name
+      value: Audio_Handler
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b90046495f88764a963b67c8270748b, type: 2}
   m_IsPrefabParent: 0
