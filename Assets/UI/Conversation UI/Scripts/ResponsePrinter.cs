@@ -7,14 +7,10 @@ using Silk;
 public class ResponsePrinter : MonoBehaviour {
 
     List<GameObject> curDisplayResponses = new List<GameObject>();
-	Response selectedResponse;
-	public int curResponse;
+
     Navigation normalNav = new Navigation();
     Navigation customNav = new Navigation();
-    Selectable topItem;
-    Selectable bottomItem;
-	Selectable secondItem;
-	Selectable penultimateItem;
+
 
 
     public GameObject responsePrefab;
@@ -33,7 +29,6 @@ public class ResponsePrinter : MonoBehaviour {
         }
     }
 	void PopulateResponseUI(){
-		curResponse = 0;
 
         normalNav.mode = Navigation.Mode.Vertical;
         customNav.mode = Navigation.Mode.Explicit;
@@ -41,15 +36,16 @@ public class ResponsePrinter : MonoBehaviour {
 
 
         //will need to get this from the current silknode in the traversal structure
+		//TODO roll this loop series into Silk proper
         foreach (KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
 			foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
 				if(node.Value.GetNodeName() == "Start") {
 					for(int i = 0; i < node.Value.silkLinks.Count; i++) {
 						
 						GameObject newResponse = Instantiate(responsePrefab);
-						//////////////////////////////////////////////////////
-						//THIS SCRIPT MUST BE ATTACHED TO THE PARENT OBJECT///
-						//////////////////////////////////////////////////////
+						////////////////////////////////////////////////////////////////
+						//THIS SCRIPT MUST BE ATTACHED TO THE PARENT OF ALL RESPONSES///
+						////////////////////////////////////////////////////////////////
 						newResponse.transform.SetParent(this.gameObject.transform);
 						newResponse.transform.localScale = new Vector3(1, 1, 1);
                         curDisplayResponses.Add(newResponse);
