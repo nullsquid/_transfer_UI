@@ -22,7 +22,7 @@ public class ResponsePrinter : MonoBehaviour {
     }
 	void PopulateResponseUI(){
 		
-        //will need to get this from the current silknode in the traversal structure
+        //TODO need to get this from the current silknode in the traversal structure
 		//TODO roll this loop series into Silk proper
         foreach (KeyValuePair<string, SilkGraph> story in Parser.Instance.mother.MotherGraph) {
 			foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
