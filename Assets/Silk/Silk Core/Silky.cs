@@ -141,7 +141,7 @@ namespace Silk {
 
                                 SilkLink newSilkLink = new SilkLink(node.Value, linkedNode.Value, link.Key);
                                 node.Value.silkLinks.Add(newSilkLink);
-                                Debug.Log("SilkLink " + newSilkLink.LinkText);
+                                
                             }
 
                         }
@@ -156,7 +156,7 @@ namespace Silk {
                 //for testing
                 foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
                     //for testing
-                    Debug.Log("NODE IS CALLED " + node.Value.nodeName);
+                    //Debug.Log("NODE IS CALLED " + node.Value.nodeName);
                     //Debug.Log(node.Value.silkTags[0]);
                     //Debug.Log(node.Value.silkTags.Count);
                     foreach (KeyValuePair<string, string[]> tagName in node.Value.tags) {
@@ -168,7 +168,7 @@ namespace Silk {
 
                     }
                     foreach (SilkLink _link in node.Value.silkLinks) {
-                        Debug.Log(node.Value.nodeName + " " + " " + _link.LinkText);
+                        //Debug.Log(node.Value.nodeName + " " + " " + _link.LinkText);
                     }
                 }
             }
@@ -176,8 +176,6 @@ namespace Silk {
 
         private void Start() {
             InitializeSilk();
-            //Debug.Log("NODE TEST " + LogNodes().GetNodeName());
-            LogNodes();
             
         }
 
