@@ -108,6 +108,35 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &62576391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 62576392}
+  m_Layer: 0
+  m_Name: UI_State_Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &62576392
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 62576391}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1061418328}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &81492993
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,8 +317,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1061418328 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224250448626620624, guid: 1b90046495f88764a963b67c8270748b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1835876646}
 --- !u!1 &1141775943
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +397,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 62576392}
     m_Modifications:
     - target: {fileID: 224250448626620624, guid: 1b90046495f88764a963b67c8270748b,
         type: 2}
@@ -403,7 +437,7 @@ Prefab:
     - target: {fileID: 224250448626620624, guid: 1b90046495f88764a963b67c8270748b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224250448626620624, guid: 1b90046495f88764a963b67c8270748b,
         type: 2}
