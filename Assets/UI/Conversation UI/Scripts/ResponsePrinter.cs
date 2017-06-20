@@ -22,40 +22,34 @@ public class ResponsePrinter : MonoBehaviour {
         }
     }
 	void PopulateResponseUI(){
-        //TODO need to get this from the current silknode in the traversal structure
-        //TODO roll this loop series into Silk proper
-        foreach (KeyValuePair<string, SilkStory> story in Silky.Instance.mother.MotherStory) {
-            foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
-                if (node.Value.GetNodeName() == "Start") {
-                    for (int i = 0; i < node.Value.silkLinks.Count; i++) {
+        
+        SilkNode node = Silky.Instance.mother.GetNodeByName("TRANSUBSTANCE", "Start");
+        for (int i = 0; i < node.silkLinks.Count; i++) {
 
-                        GameObject newresponse = Instantiate(responsePrefab);
-                        ////////////////////////////////////////////////////////////////
-                        //this script must be attached to the parent of all responses///
-                        ////////////////////////////////////////////////////////////////
-                        newresponse.transform.SetParent(this.gameObject.transform);
-                        newresponse.transform.localScale = new Vector3(1, 1, 1);
-                        curDisplayResponses.Add(newresponse);
-                        newresponse.transform.localPosition = new Vector3(newresponse.transform.position.x, newresponse.transform.position.y, 0);
-                        newresponse.GetComponent<Response>().responseText = node.Value.silkLinks[i].LinkText;
-						Debug.Log(node.Value.silkLinks[i].LinkText);
-                        if (i == 0) {
-                            newresponse.GetComponent<Selectable>().Select();
-                            newresponse.GetComponent<Response>().navPos = Response.NavPosition.TOP;
+            GameObject newresponse = Instantiate(responsePrefab);
+            ////////////////////////////////////////////////////////////////
+            //this script must be attached to the parent of all responses///
+            ////////////////////////////////////////////////////////////////
+            newresponse.transform.SetParent(this.gameObject.transform);
+            newresponse.transform.localScale = new Vector3(1, 1, 1);
+            curDisplayResponses.Add(newresponse);
+            newresponse.transform.localPosition = new Vector3(newresponse.transform.position.x, newresponse.transform.position.y, 0);
+            newresponse.GetComponent<Response>().responseText = node.silkLinks[i].LinkText;
+            Debug.Log(node.silkLinks[i].LinkText);
+            if (i == 0) {
+                newresponse.GetComponent<Selectable>().Select();
+                newresponse.GetComponent<Response>().navPos = Response.NavPosition.TOP;
 
-                        }
-                        else if (i == node.Value.silkLinks.Count - 1) {
-
-                            newresponse.GetComponent<Response>().navPos = Response.NavPosition.BOTTOM;
-
-                        }
-                        else {
-                            newresponse.GetComponent<Response>().navPos = Response.NavPosition.MIDDLE;
-                        }
-
-                    }
-                }
             }
+            else if (i == node.silkLinks.Count - 1) {
+
+                newresponse.GetComponent<Response>().navPos = Response.NavPosition.BOTTOM;
+
+            }
+            else {
+                newresponse.GetComponent<Response>().navPos = Response.NavPosition.MIDDLE;
+            }
+
         }
         this.gameObject.GetComponent<ResponseNavHandler>().SetCustomNavigation(curDisplayResponses);
 
