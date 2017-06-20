@@ -9,9 +9,15 @@ public class ResponsePrinter : MonoBehaviour {
 
     List<GameObject> curDisplayResponses = new List<GameObject>();
     public GameObject responsePrefab;
-
-	//TODO make this into an event that can be populated from Silk
-	public void UpdateResponses(){
+    public TextPrinter printer;
+    private void OnEnable() {
+        printer.onPrintComplete += UpdateResponses;
+    }
+    private void OnDisable() {
+        printer.onPrintComplete -= UpdateResponses;
+    }
+    //TODO make this into an event that can be populated from Silk
+    public void UpdateResponses(){
         ClearResponseUI();
 		PopulateResponseUI();
 	}

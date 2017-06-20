@@ -11,8 +11,12 @@ public class TextPrinter : MonoBehaviour {
     public Text typewriterText;
     public UnityEvent onLetterPrint;
 
-	//Event to trigger print?
-	//need an interface in Silk to easily get prompt text
+    public delegate void PrintAction();
+    public event PrintAction onPrintComplete;
+
+
+    //Event to trigger print?
+    //need an interface in Silk to easily get prompt text
 
     private void Start() {        
 		InvokeCharacterPrint ();
@@ -38,29 +42,12 @@ public class TextPrinter : MonoBehaviour {
                     time = normalTime;
                 }
 
-                if (i > 0 && text[i - 1] == ' ') {
-                    /*
-                    wordsInLine++;
-
-                    if (wordsInLine >= lineLength) {
-                        linesInChunk++;
-                        typewriterText += "\n";
-                        typewriterText.Remove(i - 1, 1);
-                        wordsInLine = 0;
-
-                        if (linesInChunk >= chunkLength) {
-                            //event to call the next chunk
-                            break;
-                        }
-                    }
-                    */
-                }
-
                 onLetterPrint.Invoke();
                 typewriterText.text += text[i];
                 yield return new WaitForSeconds(time);
 
             }
+            onPrintComplete();
         }
     }
     

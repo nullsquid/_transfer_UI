@@ -352,6 +352,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1740605421 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114028397991741504, guid: 1b90046495f88764a963b67c8270748b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1835876646}
+  m_Script: {fileID: 11500000, guid: e84f5388565073d488a2d6964752941f, type: 3}
 --- !u!1001 &1835876646
 Prefab:
   m_ObjectHideFlags: 0
@@ -467,6 +473,11 @@ Prefab:
       propertyPath: m_Name
       value: Audio_Handler
       objectReference: {fileID: 0}
+    - target: {fileID: 114665631620984692, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: printer
+      value: 
+      objectReference: {fileID: 1740605421}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b90046495f88764a963b67c8270748b, type: 2}
   m_IsPrefabParent: 0
