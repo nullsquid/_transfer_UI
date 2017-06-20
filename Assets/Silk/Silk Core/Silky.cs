@@ -156,12 +156,14 @@ namespace Silk
 
                                 SilkLink newSilkLink = new SilkLink(node.Value, linkedNode.Value, link.Key);
                                 node.Value.silkLinks.Add(newSilkLink);
+                                Debug.Log("SilkLink " + newSilkLink.LinkText);
                             }
 
                         }
 
 
                     }
+                    
                 }
             }
             //TODO break this into its own method (TESTING)
