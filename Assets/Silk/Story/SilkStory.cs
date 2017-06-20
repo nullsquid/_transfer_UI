@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 namespace Silk
 {
-    public class SilkGraph
+    public class SilkStory
     {
         #region Constructor
         //need to find where I get the graph's name
-        
+
         /*public SilkGraph(string name)
         {
             storyName = name;
         }*/
-        
+
         #endregion
 
         #region Data
@@ -29,7 +29,7 @@ namespace Silk
         #endregion
 
         #region Methods for Manipulating Data
-        public void AddToGraph(string nodeName, SilkNode node)
+        public void AddToStory(string nodeName, SilkNode node)
         {
             story.Add(nodeName, node);
         }
@@ -47,7 +47,14 @@ namespace Silk
         }
         public SilkNode GetNodeByName(string nodeName)
         {
-            return story[nodeName];
+            
+            foreach (KeyValuePair<string, SilkNode> node in Story) {
+                if(node.Value.GetNodeName() == nodeName) {
+                    return node.Value;
+                }
+                //return story[nodeName];
+            }
+            return null;
         }
         public SilkNode GetNodeByTitle(string nodeName)
         {
@@ -71,13 +78,13 @@ namespace Silk
 
         public SilkNode GetNodeByLinkText(SilkNode curNode, string linkText)
         {
-            for(int i = 0; i < curNode.silkLinks.Count; i++)
+            for (int i = 0; i < curNode.silkLinks.Count; i++)
             {
-                if(curNode.silkLinks[i].LinkText == linkText)
+                if (curNode.silkLinks[i].LinkText == linkText)
                 {
                     return curNode.silkLinks[i].LinkedNode;
                 }
-                
+
             }
             Debug.LogError("Could not find link text '" + linkText + "'. Did you make a typo?");
             return null;
@@ -134,6 +141,8 @@ namespace Silk
         {
             return story[nodeName].nodeName;
         }
+
+        
 
         #endregion
 
