@@ -7,11 +7,12 @@ public class MainInput : MonoBehaviour {
     public Text commandDisplay;
     public MainInputController input;
 
+    string _prompt;
     string _curText = "";
     string _newText;
 	// Use this for initialization
 	void Start () {
-		//TERMINAL@ + CharacterName
+        _prompt = "TERMINAL@MEMM$>>";
 	}
 
     private void OnGUI() {
@@ -22,7 +23,7 @@ public class MainInput : MonoBehaviour {
         _newText = input.InputText;
 
         if (commandDisplay.text.Length <= 30) {
-            commandDisplay.text = _curText + _newText;
+            commandDisplay.text = _prompt + _curText + _newText;
         }
         //_returnText = input.ReturnText;
         //newText = input.InputText;

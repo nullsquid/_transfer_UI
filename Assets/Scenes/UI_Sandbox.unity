@@ -600,6 +600,21 @@ Prefab:
       propertyPath: printer
       value: 
       objectReference: {fileID: 1740605421}
+    - target: {fileID: 224046653290056414, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 224046653290056414, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -21
+      objectReference: {fileID: 0}
+    - target: {fileID: 224046653290056414, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -237
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b90046495f88764a963b67c8270748b, type: 2}
   m_IsPrefabParent: 0
