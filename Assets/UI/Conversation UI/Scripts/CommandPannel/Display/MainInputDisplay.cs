@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Transfer.Input;
-public class MainInputDisplay : MonoBehaviour {
+public class MainInput : MonoBehaviour {
     public Text commandDisplay;
     public MainInputController input;
 
