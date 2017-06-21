@@ -41,7 +41,6 @@ public class ResponsePrinter : MonoBehaviour {
             curDisplayResponses.Add(newresponse);
             newresponse.transform.localPosition = new Vector3(newresponse.transform.position.x, newresponse.transform.position.y, 0);
             newresponse.GetComponent<Response>().responseText = node.silkLinks[i].LinkText;
-            Debug.Log(node.silkLinks[i].LinkText);
             if (i == 0) {
                 newresponse.GetComponent<Selectable>().Select();
                 newresponse.GetComponent<Response>().navPos = Response.NavPosition.TOP;
