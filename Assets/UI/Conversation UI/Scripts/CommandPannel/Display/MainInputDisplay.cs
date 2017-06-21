@@ -22,7 +22,7 @@ public class MainInputDisplay : MonoBehaviour {
         }
         _newText = input.InputText;
 
-        if (commandDisplay.text.Length <= 30) {
+        if (commandDisplay.text.Length <= 35) {
             commandDisplay.text = _prompt + _curText + _newText;
         }
         //_returnText = input.ReturnText;
