@@ -50,7 +50,7 @@ namespace Transfer.Input {
         #region Public Events
 
         public delegate void ReturnAction();
-        public static event ReturnAction OnReturnPressed;
+        public static event ReturnAction onReturnPressed;
         #endregion
 
         public string UpdateInput(Event e) {
@@ -101,7 +101,7 @@ namespace Transfer.Input {
         }
 
         private void EnterCommand() {
-
+            onReturnPressed();
             _returnText = ReturnInputText(_inputText);
             //Transfer.System.EventManager.TriggerEvent("ProcessCommand");
 

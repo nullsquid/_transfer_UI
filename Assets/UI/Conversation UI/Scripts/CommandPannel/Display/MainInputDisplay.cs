@@ -14,7 +14,7 @@ public class MainInputDisplay : MonoBehaviour {
 	void Start () {
         _prompt = "TERMINAL@MEMM$>>";
 	}
-
+    
     private void OnGUI() {
         Event e = Event.current;
         if(e.type == EventType.keyDown) {
