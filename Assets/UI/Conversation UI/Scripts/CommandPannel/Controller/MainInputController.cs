@@ -14,6 +14,10 @@ namespace Transfer.Input {
 
         #endregion
 
+        #region Inspector Variables
+        public int commandLength = 30;
+        #endregion
+        
         #region Public Accessors
         public string ReturnText
         {
@@ -58,6 +62,9 @@ namespace Transfer.Input {
                         //get only alphabetical characters
                         AddText(e);
                     }
+                    else if(e.keyCode >=  KeyCode.Alpha1 && e.keyCode <= KeyCode.Alpha0) {
+                        AddText(e);
+                    }
                     else if (e.keyCode == KeyCode.Backspace) {
                         RemoveText();
                     }
@@ -74,7 +81,10 @@ namespace Transfer.Input {
             return null;
         }
         private string AddText(Event e) {
-            return _inputText += e.keyCode;
+            if (_inputText.Length <= commandLength) {
+                return _inputText += e.keyCode;
+            }
+            return null;
         }
 
         private void AddSpace() {
@@ -83,8 +93,10 @@ namespace Transfer.Input {
         }
 
         private void RemoveText() {
+            
             if (_inputText.Length > 0) {
                 _inputText = _inputText.Remove(_inputText.Length - 1);
+
             }
         }
 
