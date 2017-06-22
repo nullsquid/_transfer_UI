@@ -9,7 +9,6 @@ public class PrinterAudioHandler : MonoBehaviour {
         speakingClips = new List<AudioClip>();
     }
 	public void InvokePrinterSound() {
-        //Debug.Log("sup?");
         AudioManager.Instance.PlaySoundAtPoint(clip, gameObject, 1 , .005f, 0, false, false);
     }
 }
