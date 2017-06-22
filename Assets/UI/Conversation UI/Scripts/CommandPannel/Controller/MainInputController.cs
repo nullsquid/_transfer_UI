@@ -103,8 +103,6 @@ namespace Transfer.Input {
         private void EnterCommand() {
             onReturnPressed();
             _returnText = ReturnInputText(_inputText);
-			//Debug.Log (ReturnText);
-            //Transfer.System.EventManager.TriggerEvent("ProcessCommand");
 
         }
         private string ReturnInputText(string inputText) {
