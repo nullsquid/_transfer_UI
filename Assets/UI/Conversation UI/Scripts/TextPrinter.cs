@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 public class TextPrinter : MonoBehaviour {
-    public float letterTime = .02f;
+    public float letterTime = .05f;
     public float softPauseTimeBase = 0.1f;
     public float hardPauseTimeBase = 0.3f;
 

@@ -10,6 +10,6 @@ public class PrinterAudioHandler : MonoBehaviour {
     }
 	public void InvokePrinterSound() {
         //Debug.Log("sup?");
-        AudioManager.Instance.PlaySoundAtPoint(clip, gameObject, 1 , Random.Range(.1f, .13f), 0, false, false);
+        AudioManager.Instance.PlaySoundAtPoint(clip, gameObject, 1 , .005f, 0, false, false);
     }
 }
