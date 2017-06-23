@@ -22,6 +22,10 @@ namespace Transfer.System {
 
         void InitializeCharacters() {
             charInit.PopulateCharacterDatabase(true);
+            LogCharacters();
+
+        }
+        void LogCharacters() {
 
             Debug.Log(CharacterDatabase.GetCharacterID("A") + " " + CharacterDatabase.GetCharacterName("A"));
             Debug.Log(CharacterDatabase.GetCharacterID("B") + " " + CharacterDatabase.GetCharacterName("B"));
@@ -33,7 +37,6 @@ namespace Transfer.System {
             Debug.Log(CharacterDatabase.GetCharacterID("H") + " " + CharacterDatabase.GetCharacterName("H"));
             Debug.Log(CharacterDatabase.GetCharacterID("I") + " " + CharacterDatabase.GetCharacterName("I"));
             Debug.Log(CharacterDatabase.GetCharacterID("0") + " " + CharacterDatabase.GetCharacterName("0"));
-
 
         }
     }
