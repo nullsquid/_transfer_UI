@@ -18,6 +18,13 @@ namespace Silk{
                 return newDummyTag;
 
             }
+			else if (tagName == "name") {
+				if (tagName.Contains ("_")) {
+					Debug.LogWarning ("Tag cannot contain underscores");
+				}
+				NameTag newNameTag = new NameTag (tagName, args);
+				return newNameTag;
+			}
 
             //else if(tagName == "..."){
             //
