@@ -37,6 +37,27 @@ public class DialogueManager : MonoBehaviour {
 	SilkNode rootNode;
 	SilkNode curNode;
 
+	void Start(){
+		StartCoroutine (Test ());
+	}
+
+	//TODO remove once actual method for getting text in
+	IEnumerator Test(){
+		yield return new WaitForEndOfFrame ();
+		GetRootStory ("_TRANSUBSTANCE");
+		GetRootNode ();
+	}
+	public SilkNode CurNode{
+		get{
+			return curNode;
+		}
+	}
+
+	public SilkStory CurStory{
+		get{
+			return curStory;
+		}
+	}
 	#region Callbacks
 
 	#endregion
@@ -54,6 +75,10 @@ public class DialogueManager : MonoBehaviour {
 	void GetRootNode(){
 		rootNode = curStory.GetNodeByName ("Start");
 		curNode = rootNode;
+	}
+
+	void GetNextNode(SilkLink link){
+
 	}
 
 	void GetNextNode(string nextNodeName){
