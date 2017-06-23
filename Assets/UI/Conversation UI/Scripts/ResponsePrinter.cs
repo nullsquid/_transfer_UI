@@ -30,7 +30,7 @@ public class ResponsePrinter : MonoBehaviour {
 	void PopulateResponseUI(){
         
         //SilkNode node = Silky.Instance.mother.GetNodeByName("TRANSUBSTANCE", "Start");
-		SilkNode node = GameObject.Find("DialogueManager").GetComponent<DialogueManager>().CurNode;//DialogueManager.Instance.CurNode;
+		SilkNode node = DialogueManager.Instance.CurNode;
 		for (int i = 0; i < node.silkLinks.Count; i++) {
 
             GameObject newresponse = Instantiate(responsePrefab);
