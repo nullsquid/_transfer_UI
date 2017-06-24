@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Silk;
+public class NameTag : SilkTagBase {
 
-public class NameTag : MonoBehaviour {
+    public NameTag(string tagName, string[] args) {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    }
+    public override void SilkTagDefinition() {
+
+
+    }
 }
