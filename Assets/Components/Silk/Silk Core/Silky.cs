@@ -42,6 +42,8 @@ namespace Silk {
         #endregion
 
         //TODO sort out all of this nonsense, break into other methods, etc
+        //TODO lex the tags first, parse second
+        //TODO add each element of the node to a queue that will be parsed when it's the current node
         #region Initialization
         void ImportText() {
             //All of the "Getting Text Files to parse" code
@@ -66,31 +68,11 @@ namespace Silk {
                 tweeNodesToInterpret = textToParse.Split(delim, StringSplitOptions.RemoveEmptyEntries);
                 for (int i = 0; i < tweeNodesToInterpret.Length; i++) {
                     string storyTitle = "";
-                    StringBuilder promptContainer = new StringBuilder(tweeNodesToInterpret[i]);
-
-                    if (tweeNodesToInterpret[i].Contains("|")) {
-                        promptContainer.Replace("|", string.Empty);
-                    }
-                    if (tweeNodesToInterpret[i].Contains(ReturnTitle(tweeNodesToInterpret[i]))) {
-                        string storyTitleCheck = ReturnTitle(tweeNodesToInterpret[i]).TrimStart().TrimEnd();
-                        if (storyTitleCheck == "StoryTitle") {
-
-                            newSilkStory.SetStoryName(ReturnStoryTitle(tweeNodesToInterpret[i]));
-                        }
-                        else {
-                            promptContainer.Replace(ReturnTitle(tweeNodesToInterpret[i]), string.Empty, 0, ReturnTitle(tweeNodesToInterpret[i]).Length);
-                        }
-                    }
-                    foreach (KeyValuePair<string, string> entry in ReturnLinks(tweeNodesToInterpret[i])) {
-                        if (tweeNodesToInterpret[i].Contains("[[" + entry.Key) || tweeNodesToInterpret[i].Contains("[[" + entry.Value)) {
-                            promptContainer.Replace("[[" + entry.Key, string.Empty).Replace(entry.Value + "]]", string.Empty);
-                            promptContainer.Replace("]]", string.Empty);
-                        }
-                    }
+					//this is where prompt parsing was supposed to go 
+                    //TODO move to it's own method--everything that deals in extracting the prompt
+                    
                     SilkNode newNode = new SilkNode();
-                    //TODO Switch type from SilkG--- to SilkStory in AssignDataToNodes
-                    AssignDataToNodes(newSilkStory, newNode, tweeNodesToInterpret[i], promptContainer.ToString(), fileName);
-                    //Debug.Log(newNode.nodeName);
+					AssignDataToNodes(newSilkStory, newNode, tweeNodesToInterpret[i], GetPrompt(i, newSilkStory), fileName);
                 }
                 mother.AddToMother(fileName, newSilkStory);
                 foreach (KeyValuePair<string, SilkStory> story in mother.MotherStory) {
@@ -111,8 +93,6 @@ namespace Silk {
             //
 
 
-            //have to search the mother to do it to ALL the gr---???
-            //TODO in mother or in story, make a method that allows for easier searching
             //TODO Make this its own method
             foreach (KeyValuePair<string, SilkStory> story in mother.MotherStory) {
                 foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
@@ -182,13 +162,65 @@ namespace Silk {
         }
 
         #endregion
+		string GetPrompt(int c, SilkStory story){
+			StringBuilder promptContainer = new StringBuilder(tweeNodesToInterpret[c]);
+			//TODO once in the container, loop through and replace all necessary tags with appropriate items, e.g. names, pronouns, etc
+			if (tweeNodesToInterpret[c].Contains("|")) {
+				promptContainer.Replace("|", string.Empty);
+			}
+			if (tweeNodesToInterpret[c].Contains(ReturnTitle(tweeNodesToInterpret[c]))) {
+				string storyTitleCheck = ReturnTitle(tweeNodesToInterpret[c]).TrimStart().TrimEnd();
+				if (storyTitleCheck == "StoryTitle") {
+
+					story.SetStoryName(ReturnStoryTitle(tweeNodesToInterpret[c]));
+				}
+				else {
+					promptContainer.Replace(ReturnTitle(tweeNodesToInterpret[c]), string.Empty, 0, ReturnTitle(tweeNodesToInterpret[c]).Length);
+				}
+			}
+			foreach (KeyValuePair<string, string> entry in ReturnLinks(tweeNodesToInterpret[c])) {
+				if (tweeNodesToInterpret[c].Contains("[[" + entry.Key) || tweeNodesToInterpret[c].Contains("[[" + entry.Value)) {
+					promptContainer.Replace("[[" + entry.Key, string.Empty).Replace(entry.Value + "]]", string.Empty);
+					promptContainer.Replace("]]", string.Empty);
+				}
+
+			}
+			Debug.Log ("PROMPT >>" + promptContainer.ToString ().TrimStart().TrimEnd());
+			return promptContainer.ToString ();
+		}
+
+        string TagReplace() {
+
+            return null;
+        }
+
+		string ReplacePromptTokens(string inputText){
+			string outputText = "";
+            for(int i = 0; i < inputText.Length; i++) {
+                if(inputText[i] == '<' && inputText[i + 1] == '<') {
+                    string curTag = "";
+                    for(int j = i; j < inputText.Length; j++) {
+                        if(inputText[j] == '>' && inputText[j + 1] == '>') {
+                            break;
+                        }
+                        else {
+                            curTag += inputText[j];
+                        }
+                    }
+                }
+            }
+			return outputText;
+		}
+
+        
 
         void AssignDataToNodes(SilkStory newSilkStory, SilkNode newNode, string newTweeData, string newPassage, string storyTitle) {
-            //TODO figure out where this g----Title is started
             newNode.nodeName = storyTitle + "_" + ReturnTitle(newTweeData).TrimEnd(' ');
             //only to remove it when required in GetNodeName
             newNode.StoryName = storyTitle;
             //add custom tag names
+            
+            /* TODO restructure how tags get processed
             newNode.tags = ReturnCustomTags(newTweeData);
 
             //add custom tags
@@ -199,6 +231,7 @@ namespace Silk {
                 if (tagName.Key.Contains("_")) {
                     newTagName = tagName.Key.Remove(tagName.Key.IndexOf('_')).TrimStart().TrimEnd();
                 }
+                //reconsider how to deal with tags
                 if (tagFactory.SetTag(newTagName, tagName.Value) != null) {
                     newNode.silkTags.Add(tagFactory.SetTag(newTagName, tagName.Value));
                 }
@@ -206,12 +239,10 @@ namespace Silk {
                     Debug.LogError(newTagName + " is not a recognized tag. Check your TagFactory");
                 }
             }
-            //Debug.Log(newNode.silkTags[0].TagName);
+            */
 
-            //add passage
             newNode.nodePassage = newPassage;
-            //TODO Add the correct amount of links to the list
-            //add link names
+
             newNode.links = ReturnLinks(newTweeData);
 
             newSilkStory.AddToStory(newNode.nodeName, newNode);

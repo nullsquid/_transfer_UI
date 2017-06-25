@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour {
 	//TODO remove once actual method for getting text in
 	IEnumerator Test(){
 		yield return new WaitForEndOfFrame ();
-		GetRootStory ("_TRANSUBSTANCE");
+		GetRootStory ("Sample");
 		GetRootNode ();
 	}
 	public SilkNode CurNode{
