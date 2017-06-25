@@ -771,6 +771,11 @@ Prefab:
       propertyPath: letterTime
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 114058280211999986, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: speakingClipVolume
+      value: 0.08
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b90046495f88764a963b67c8270748b, type: 2}
   m_IsPrefabParent: 0
