@@ -179,9 +179,11 @@ namespace Silk {
 				}
 			}
 			foreach (KeyValuePair<string, string> entry in ReturnLinks(tweeNodesToInterpret[c])) {
-				if (tweeNodesToInterpret[c].Contains("[[" + entry.Key) || tweeNodesToInterpret[c].Contains("[[" + entry.Value)) {
-					promptContainer.Replace("[[" + entry.Key, string.Empty).Replace(entry.Value + "]]", string.Empty);
-					promptContainer.Replace("]]", string.Empty);
+				if (tweeNodesToInterpret [c].Contains ("[[" + entry.Key) || tweeNodesToInterpret [c].Contains ("[[" + entry.Value)) {
+					promptContainer.Replace ("[[" + entry.Key, string.Empty).Replace (entry.Value + "]]", string.Empty);
+					promptContainer.Replace ("]]", string.Empty);
+				} else if (tweeNodesToInterpret [c].Contains ("<<" + "name")) {
+					
 				}
 
 			}
@@ -289,6 +291,10 @@ namespace Silk {
             string newTag = "";
             return newTag;
         }
+
+		string ReturnRawTag(string inputToExtractTagsFrom){
+			return null;
+		}
 
         Dictionary<string, string[]> ReturnCustomTags(string inputToExtractTagsFrom) {
             Dictionary<string, string[]> tags = new Dictionary<string, string[]>();

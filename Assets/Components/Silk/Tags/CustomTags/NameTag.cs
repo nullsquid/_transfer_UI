@@ -13,7 +13,7 @@ public class NameTag : SilkTagBase {
 
     public override void SilkTagDefinition() {
 
-        ReplaceTagWithName(_tagName, _silkTagArgs);
+        //ReplaceTagWithName(_tagName, _silkTagArgs);
 
     }
 
@@ -30,5 +30,9 @@ public class NameTag : SilkTagBase {
         }
         return null;
     }
+
+	public string ReplaceTag(string tagToReplace){
+		return null;
+	}
     
 }
