@@ -157,7 +157,7 @@ namespace Silk {
         private void Start() {
             InitializeSilk();
 
-			LogNodePrompt();
+			//LogNodePrompt();
             
         }
 
@@ -445,7 +445,6 @@ namespace Silk {
                     //I might want to reevaluate how I deal with link text that is repeated.
                     //for now this should work
                     for (int j = i + 2; j < inputCopy.Length; j++) {
-                        //bug might be in here
                         //make sure that it breaks if there is no |
                         if (inputCopy[j] == '|') {
                             string newLinkValue = "";
@@ -466,6 +465,7 @@ namespace Silk {
                                     if (inputCopy[j] == ']' && inputCopy[j + 1] == ']') {
                                         //TODO test if this works
                                         inputCopy.Replace(newLink, "");
+										//newLink.Replace(
                                         newLinks.Add(newLink, newLink);
                                         break;
                                     }
@@ -485,7 +485,9 @@ namespace Silk {
                             break;
 
                         }
+
                         else {
+							//TODO add code to replace tags in linktext here probably
                             newLink += inputCopy[j];
 
 

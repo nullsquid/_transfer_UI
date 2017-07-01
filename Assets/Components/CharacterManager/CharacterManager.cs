@@ -22,7 +22,6 @@ namespace Transfer.System {
 
         void InitializeCharacters() {
             charInit.PopulateCharacterDatabase(true);
-            LogCharacters();
 
         }
         void LogCharacters() {
