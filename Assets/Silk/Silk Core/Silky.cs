@@ -60,7 +60,6 @@ namespace Silk {
         #endregion
 
         //TODO sort out all of this nonsense, break into other methods, etc
-        //TODO lex the tags first, parse second
         //TODO add each element of the node to a queue that will be parsed when it's the current node
 
         #region Initialization
@@ -158,7 +157,7 @@ namespace Silk {
         private void Start() {
             InitializeSilk();
 
-			//LogNodePrompt();
+			LogNodePrompt();
             
         }
 

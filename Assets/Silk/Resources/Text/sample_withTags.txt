@@ -40,7 +40,7 @@ Yesterday upon the stair
 
 :: He wasn’t there again today
 <<speaker="C">>
-<<pronoun="m","subject">> wasn’t there again today
+<<pronoun="D","subject">> wasn’t there again today
 
 [[5G]]
 

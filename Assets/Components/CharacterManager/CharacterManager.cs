@@ -39,6 +39,22 @@ namespace Transfer.System {
             Debug.Log(CharacterDatabase.GetCharacterID("0") + " " + CharacterDatabase.GetCharacterName("0"));
 
         }
+
+		public string GetCharacterNameByID(string id){
+			return CharacterDatabase.GetCharacterName (id);
+		}
+
+		public string GetCharacterPronounByID(string id, string tense){
+			Transfer.Data.Case _case = new Case();
+			if (tense == "subject") {
+				_case = Case.subjective;
+			} else if (tense == "object") {
+				_case = Case.objective;
+			} else if (tense == "possess") {
+				_case = Case.possessive;
+			}
+			return CharacterDatabase.GetPronoun (id, _case);
+		}
     }
 
 }
