@@ -11,6 +11,10 @@ public class ResponsePrinter : MonoBehaviour {
     public GameObject responsePrefab;
     public GameObject dialogueEventHandler;
     public TextPrinter printer;
+
+
+	public delegate void CaptureDialogueChoice(string responseText);
+	public event CaptureDialogueChoice onButtonSubmit;
     private void OnEnable() {
         printer.onPrintComplete += UpdateResponses;
     }
@@ -41,7 +45,6 @@ public class ResponsePrinter : MonoBehaviour {
             ////////////////////////////////////////////////////////////////
             newresponse.transform.SetParent(this.gameObject.transform);
             newresponse.transform.localScale = new Vector3(1, 1, 1);
-            //newresponse.GetComponent<Button>().OnSubmit.
             b.onClick.AddListener(() => OnButtonClick(newresponse.GetComponent<Response>()));
             curDisplayResponses.Add(newresponse);
             newresponse.transform.localPosition = new Vector3(newresponse.transform.position.x, newresponse.transform.position.y, 0);
@@ -67,8 +70,8 @@ public class ResponsePrinter : MonoBehaviour {
     }
 
     void OnButtonClick(Response response) {
-        Debug.Log(response.responseText);
-
+        //Debug.Log(response.responseText);
+		onButtonSubmit (response.responseText);
     }
 
 

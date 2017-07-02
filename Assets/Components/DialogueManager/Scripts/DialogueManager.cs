@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Silk;
 public class DialogueManager : MonoBehaviour {
+	//need to decouple this
+	ResponsePrinter rp;
+	TextPrinter tp;
     #region Singleton
     private static DialogueManager _instance;
     public static DialogueManager Instance
@@ -23,6 +26,22 @@ public class DialogueManager : MonoBehaviour {
 
     }
     #endregion
+	void OnEnable(){
+		if (rp == null) {
+			rp = GameObject.Find ("Response_Pannel").GetComponent<ResponsePrinter> ();
+		}
+		if (tp == null) {
+			tp = GameObject.Find ("Text_pannel").GetComponent<TextPrinter> ();
+		}
+		rp.onButtonSubmit += FindNextNode;
+		tp.onNodeChange += GetNodePassage;
+	}
+
+	void OnDisable(){
+		rp.onButtonSubmit -= FindNextNode;
+		tp.onNodeChange -= GetNodePassage;
+	}
+
 	////////////////////////////////////////////
 	////////////////////////////////////////////
 	////////////////////////////////////////////
@@ -110,4 +129,9 @@ public class DialogueManager : MonoBehaviour {
 		}
 		yield return null;
 	}
+	public void FindNextNode(string response){
+		Debug.Log (response);
+	}
+
+
 }
