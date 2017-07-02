@@ -9,6 +9,7 @@ public class ResponsePrinter : MonoBehaviour {
 
     List<GameObject> curDisplayResponses = new List<GameObject>();
     public GameObject responsePrefab;
+    public GameObject dialogueEventHandler;
     public TextPrinter printer;
     private void OnEnable() {
         printer.onPrintComplete += UpdateResponses;
@@ -34,11 +35,14 @@ public class ResponsePrinter : MonoBehaviour {
 		for (int i = 0; i < node.silkLinks.Count; i++) {
 
             GameObject newresponse = Instantiate(responsePrefab);
+            Button b = newresponse.GetComponent<Button>();
             ////////////////////////////////////////////////////////////////
             //this script must be attached to the parent of all responses///
             ////////////////////////////////////////////////////////////////
             newresponse.transform.SetParent(this.gameObject.transform);
             newresponse.transform.localScale = new Vector3(1, 1, 1);
+            //newresponse.GetComponent<Button>().OnSubmit.
+            b.onClick.AddListener(() => OnButtonClick(newresponse.GetComponent<Response>()));
             curDisplayResponses.Add(newresponse);
             newresponse.transform.localPosition = new Vector3(newresponse.transform.position.x, newresponse.transform.position.y, 0);
             newresponse.GetComponent<Response>().responseText = node.silkLinks[i].LinkText;
@@ -59,6 +63,11 @@ public class ResponsePrinter : MonoBehaviour {
         }
         this.gameObject.GetComponent<ResponseNavHandler>().SetCustomNavigation(curDisplayResponses);
 
+
+    }
+
+    void OnButtonClick(Response response) {
+        Debug.Log(response.responseText);
 
     }
 
