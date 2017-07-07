@@ -97,7 +97,10 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	void GetNextNode(SilkLink link){
-
+		SilkNode nextNode;
+		foreach (SilkLink links in curNode.silkLinks) {
+			
+		}
 	}
 
 	void GetNextNode(string nextNodeName){
@@ -131,6 +134,13 @@ public class DialogueManager : MonoBehaviour {
 	}
 	public void FindNextNode(string response){
 		Debug.Log (response);
+		SilkNode nextNode;
+		foreach (SilkLink link in curNode.silkLinks) {
+			if (response == link.LinkText) {
+				nextNode = link.LinkedNode;
+			}
+		}
+
 	}
 
 
