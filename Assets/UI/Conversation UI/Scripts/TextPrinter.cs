@@ -37,10 +37,14 @@ public class TextPrinter : MonoBehaviour {
 	#region Unity Methods
 	private void OnEnable(){
 		onPrintBegin += InvokeCharacterPrint;
+        //DialogueManager.Instance.newNodeStart += ClearText;
 	}
 
 	private void OnDisable(){
 		onPrintBegin -= InvokeCharacterPrint;
+        if (this.enabled) {
+            //DialogueManager.Instance.newNodeStart -= ClearText;
+        }
 	}
     //Event to trigger print?
     //need an interface in Silk to easily get prompt text
@@ -80,6 +84,11 @@ public class TextPrinter : MonoBehaviour {
             }
             onPrintComplete();
         }
+    }
+
+    void ClearText() {
+        typewriterText.text = "";
+
     }
     
 }

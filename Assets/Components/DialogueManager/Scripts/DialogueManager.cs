@@ -6,7 +6,20 @@ public class DialogueManager : MonoBehaviour {
 	//need to decouple this
 	ResponsePrinter rp;
 	TextPrinter tp;
+    public delegate void NodeChangeSequence();
+    public event NodeChangeSequence newNodeStart;
     #region Singleton
+    /*public static DialogueManager instance;
+    void Awake() {
+
+        if (instance == null) {
+            instance = this;
+        }
+        else if (instance != this) {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }*/
     private static DialogueManager _instance;
     public static DialogueManager Instance
     {
@@ -132,12 +145,22 @@ public class DialogueManager : MonoBehaviour {
 		}
 		yield return null;
 	}
+
+    /*IEnumerator TraverseToNextNode(SilkNode nextNode) {
+        
+    }*/
+
 	public void FindNextNode(string response){
+        //check
 		Debug.Log (response);
 		SilkNode nextNode;
 		foreach (SilkLink link in curNode.silkLinks) {
 			if (response == link.LinkText) {
 				nextNode = link.LinkedNode;
+                newNodeStart();
+                break;
+                //clear console
+                //change node
 			}
 		}
 

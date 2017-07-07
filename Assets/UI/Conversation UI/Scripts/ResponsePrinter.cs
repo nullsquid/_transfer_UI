@@ -17,16 +17,21 @@ public class ResponsePrinter : MonoBehaviour {
 	public event CaptureDialogueChoice onButtonSubmit;
     private void OnEnable() {
         printer.onPrintComplete += UpdateResponses;
+        //DialogueManager.Instance.newNodeStart += ClearResponseUI;
     }
     private void OnDisable() {
         printer.onPrintComplete -= UpdateResponses;
+        if (this.enabled) {
+            //DialogueManager.Instance.newNodeStart -= ClearResponseUI;
+        }
+
     }
     //TODO make this into an event that can be populated from Silk
     public void UpdateResponses(){
         ClearResponseUI();
 		PopulateResponseUI();
 	}
-    void ClearResponseUI() {
+    public void ClearResponseUI() {
 		curDisplayResponses.Clear ();
         foreach(Transform child in this.transform) {
             Destroy(child.gameObject);
