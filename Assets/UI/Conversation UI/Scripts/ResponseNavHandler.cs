@@ -19,24 +19,39 @@ public class ResponseNavHandler : MonoBehaviour {
 			case Response.NavPosition.TOP:
 
 				for (int i = 0; i < curDisplayResponses.Count; i++) {
-					if (i == curDisplayResponses.Count - 1) {
-						customNav.selectOnUp = curDisplayResponses [i].GetComponent<Selectable> ();
-					} else if (i == 1) {
-						customNav.selectOnDown = curDisplayResponses [i].GetComponent<Selectable>();
-					}
+                        //Exception for if there is 2 responses is hardcoded
+                        if (curDisplayResponses.Count != 2) {
+                            if (i == curDisplayResponses.Count - 1) {
+                                customNav.selectOnUp = curDisplayResponses[i].GetComponent<Selectable>();
+                            }
+                            else if (i == 1) {
+                                customNav.selectOnDown = curDisplayResponses[i].GetComponent<Selectable>();
+                            }
+                        }
+                        else if(curDisplayResponses.Count == 2) {
+                            customNav.selectOnUp = curDisplayResponses[1].GetComponent<Selectable>();
+                            customNav.selectOnDown = curDisplayResponses[1].GetComponent<Selectable>();
+                        }
+                    
 				}
 				child.GetComponent<Button>().navigation = customNav;
 
 
-				//customNav.selectOnDown
 				break;
 			case Response.NavPosition.BOTTOM:
 				for (int i = 0; i < curDisplayResponses.Count; i++) {
-					if (i == 0) {
-						customNav.selectOnDown = curDisplayResponses [i].GetComponent<Selectable> ();
-					} else if (i == curDisplayResponses.Count - 2) {
-						customNav.selectOnUp = curDisplayResponses [i].GetComponent<Selectable> ();
-					}
+                        if (curDisplayResponses.Count != 2) {
+                            if (i == 0) {
+                                customNav.selectOnDown = curDisplayResponses[i].GetComponent<Selectable>();
+                            }
+                            else if (i == curDisplayResponses.Count - 2) {
+                                customNav.selectOnUp = curDisplayResponses[i].GetComponent<Selectable>();
+                            }
+                        }
+                        else if(curDisplayResponses.Count == 2) {
+                            customNav.selectOnUp = curDisplayResponses[0].GetComponent<Selectable>();
+                            customNav.selectOnDown = curDisplayResponses[0].GetComponent<Selectable>();
+                        }
 				}
 				child.GetComponent<Button> ().navigation = customNav;
 				break;
