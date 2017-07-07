@@ -6,10 +6,12 @@ public class DialogueManager : MonoBehaviour {
 	//need to decouple this
 	ResponsePrinter rp;
 	TextPrinter tp;
-    public delegate void NodeChangeSequence();
-    public event NodeChangeSequence newNodeStart;
+    public delegate void NodeCleanup();
+    public delegate void NodeStartSequence();
+    public event NodeCleanup nodeCleanup;
+    public event NodeStartSequence newNodeStart;
     #region Singleton
-    /*public static DialogueManager instance;
+    public static DialogueManager instance;
     void Awake() {
 
         if (instance == null) {
@@ -19,25 +21,8 @@ public class DialogueManager : MonoBehaviour {
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-    }*/
-    private static DialogueManager _instance;
-    public static DialogueManager Instance
-    {
-        get
-        {
-            if (_instance == null) {
-                GameObject dm = new GameObject("DialogueManager");
-                dm.AddComponent<DialogueManager>();
-
-            }
-            return _instance;
-        }
-
     }
-    void Awake() {
-        _instance = this;
-
-    }
+    
     #endregion
 	void OnEnable(){
 		if (rp == null) {
@@ -157,6 +142,8 @@ public class DialogueManager : MonoBehaviour {
 		foreach (SilkLink link in curNode.silkLinks) {
 			if (response == link.LinkText) {
 				nextNode = link.LinkedNode;
+                nodeCleanup();
+                curNode = nextNode;
                 newNodeStart();
                 break;
                 //clear console

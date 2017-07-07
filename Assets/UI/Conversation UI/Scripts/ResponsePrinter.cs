@@ -17,12 +17,12 @@ public class ResponsePrinter : MonoBehaviour {
 	public event CaptureDialogueChoice onButtonSubmit;
     private void OnEnable() {
         printer.onPrintComplete += UpdateResponses;
-        //DialogueManager.Instance.newNodeStart += ClearResponseUI;
+        StartCoroutine(WaitForAwake());
     }
     private void OnDisable() {
         printer.onPrintComplete -= UpdateResponses;
         if (this.enabled) {
-            //DialogueManager.Instance.newNodeStart -= ClearResponseUI;
+            DialogueManager.instance.nodeCleanup -= ClearResponseUI;
         }
 
     }
@@ -40,7 +40,7 @@ public class ResponsePrinter : MonoBehaviour {
 	void PopulateResponseUI(){
         
         //SilkNode node = Silky.Instance.mother.GetNodeByName("TRANSUBSTANCE", "Start");
-		SilkNode node = DialogueManager.Instance.CurNode;
+		SilkNode node = DialogueManager.instance.CurNode;
 		for (int i = 0; i < node.silkLinks.Count; i++) {
 
             GameObject newresponse = Instantiate(responsePrefab);
@@ -77,6 +77,12 @@ public class ResponsePrinter : MonoBehaviour {
     void OnButtonClick(Response response) {
         //Debug.Log(response.responseText);
 		onButtonSubmit (response.responseText);
+    }
+
+    //HAVE TO HAVE A LOADING SCREEN TO SEQUENCE OUT THIS WHOLE SETUP
+    IEnumerator WaitForAwake() {
+        yield return new WaitForEndOfFrame();
+        DialogueManager.instance.nodeCleanup += ClearResponseUI;
     }
 
 

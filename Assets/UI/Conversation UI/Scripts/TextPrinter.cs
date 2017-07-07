@@ -37,13 +37,14 @@ public class TextPrinter : MonoBehaviour {
 	#region Unity Methods
 	private void OnEnable(){
 		onPrintBegin += InvokeCharacterPrint;
-        //DialogueManager.Instance.newNodeStart += ClearText;
+        StartCoroutine(WaitForAwake());
 	}
 
 	private void OnDisable(){
 		onPrintBegin -= InvokeCharacterPrint;
         if (this.enabled) {
-            //DialogueManager.Instance.newNodeStart -= ClearText;
+            DialogueManager.instance.nodeCleanup -= ClearText;
+            DialogueManager.instance.newNodeStart -= TriggerPrinting;
         }
 	}
     //Event to trigger print?
@@ -52,6 +53,10 @@ public class TextPrinter : MonoBehaviour {
     private void Start() {        
 		
 	}
+    public void TriggerPrinting() {
+        onPrintBegin();
+
+    }
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.A)) {
 			onPrintBegin ();
@@ -90,5 +95,11 @@ public class TextPrinter : MonoBehaviour {
         typewriterText.text = "";
 
     }
-    
+
+    IEnumerator WaitForAwake() {
+        yield return new WaitForEndOfFrame();
+        DialogueManager.instance.nodeCleanup += ClearText;
+        DialogueManager.instance.newNodeStart += TriggerPrinting;
+    }
+
 }
