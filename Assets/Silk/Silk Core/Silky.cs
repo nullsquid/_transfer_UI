@@ -165,6 +165,13 @@ namespace Silk {
 
 		#region Get Prompts
 
+		void GetPreTags(int c, SilkStory story){
+			//get tags before linebreak
+		}
+
+		void GetPostTags(int c, SilkStory story){
+			//get tags after prompt
+		}
 
 		string GetPrompt(int c, SilkStory story){
 			StringBuilder promptContainer = new StringBuilder(tweeNodesToInterpret[c]);
