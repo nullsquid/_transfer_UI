@@ -136,8 +136,7 @@ public class DialogueManager : MonoBehaviour {
     }*/
 
 	public void FindNextNode(string response){
-        //check
-		Debug.Log (response);
+		//Debug.Log (response);
 		SilkNode nextNode;
 		foreach (SilkLink link in curNode.silkLinks) {
 			if (response == link.LinkText) {
@@ -146,8 +145,7 @@ public class DialogueManager : MonoBehaviour {
                 curNode = nextNode;
                 newNodeStart();
                 break;
-                //clear console
-                //change node
+
 			}
 		}
 

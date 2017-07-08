@@ -360,7 +360,6 @@ namespace Silk {
                 }
                 
             }
-            //TODO make TagFactory take a list rather than an array
 			return tFactory.SetTag(newRawTag.RawTagName, newRawTag.TagArgs);
             
             
