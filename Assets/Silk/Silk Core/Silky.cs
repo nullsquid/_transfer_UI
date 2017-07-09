@@ -91,7 +91,6 @@ namespace Silk {
                     //TODO move to it's own method--everything that deals in extracting the prompt
                     
                     SilkNode newNode = new SilkNode();
-                    
 					AssignDataToNodes(newSilkStory, newNode, tweeNodesToInterpret[i], GetPrompt(i, newSilkStory), fileName);
                 }
                 mother.AddToMother(fileName, newSilkStory);
@@ -165,7 +164,37 @@ namespace Silk {
 
 		#region Get Prompts
 
-		void GetPreTags(int c, SilkStory story){
+        void ParseSectionOfNode(int c) {
+            StringBuilder curText = new StringBuilder(tweeNodesToInterpret[c]);
+            if(curText[0] == '\n') {
+                curText.Remove(0, 1);
+            }
+            Debug.Log("PARSE! " + curText);
+            for(int i = 0; i < curText.Length; i++) {
+                if (i == 0) {
+                    if (curText[i] == '<' && curText[i + 1] == '<') {
+
+                    }
+                }
+            }
+            /*
+            while(curText[0] == '<') {
+                GetPreTags(curText);
+            }
+            */
+        }
+        //make this a coroutine?
+        /*void ParseSectionsOfNode(int c) {
+            StringBuilder curText = new StringBuilder(tweeNodesToInterpret[c]);
+            if(curText[0] == '\n') {
+                curText.Remove(0, 1);
+            }
+            if(curText)
+            //string curText = tweeNodesToInterpret[c];
+
+        }*/
+
+		void GetPreTags(StringBuilder sb){
 			//get tags before linebreak
 		}
 
@@ -189,9 +218,74 @@ namespace Silk {
 					promptContainer.Replace(ReturnTitle(tweeNodesToInterpret[c]), string.Empty, 0, ReturnTitle(tweeNodesToInterpret[c]).Length);
 				}
 			}
+            
             for(int k = 0; k < curNodeText.Length; k++) {
+                //problem??
+                StringBuilder newTag;
+                while (promptContainer[0] == '\n') {
+                    promptContainer.Remove(0, 1);
+                }
+
+                if(promptContainer[0] == '<' && promptContainer[1] == '<') {
+                    newTag = new StringBuilder();
+                    for (int i = 0; i < promptContainer.Length; i++) {
+                        if(promptContainer[i] == '>' && promptContainer[i+1] == '>') {
+                            //for testing
+                            promptContainer.Remove(0, newTag.Length);
+                            break;
+                        }
+                        else {
+                            newTag.Append(promptContainer[i]);
+                        }
+                    }
+                    Debug.Log(newTag);
+                }
                 
-                if(curNodeText[k] == '<' && curNodeText[k + 1] == '<') {
+                //HAPPENING WAY TOO MANY TIMES HOLY SHIT
+                /*
+                for(int i = 0; i < promptContainer.Length; i++) {
+                    if(promptContainer[0] == '<' && promptContainer[1] == '<') {
+                        StringBuilder newTag = new StringBuilder();
+                        for(int j = 0; j < promptContainer.Length; j++) {
+                            if(promptContainer[j] == '>' && promptContainer[j + 1] == '>') {
+                                //promptContainer.Remove(0, newTag.Length - 1);
+                                Debug.Log(newTag);
+                                break;
+                            }
+                            else {
+                                newTag.Append(promptContainer[j]);
+                            }
+                        }
+                    }
+                }*/
+                /*
+                while(promptContainer[0] == '<' && promptContainer[1] == '<') {
+                    //this has to resolve or else it will be an infinite loop~
+                    //line below is for testing~
+                    //promptContainer.Remove(0, 2);
+                    Debug.Log("ppft >>" + promptContainer.ToString());
+                    for(int j = 0; j < promptContainer.Length; j++) {
+                        StringBuilder newTag = new StringBuilder();
+                        if(promptContainer[j] == '>' && promptContainer[j + 1] == '>') {
+                            Debug.Log("TAG! " + newTag);
+                            promptContainer.Replace(newTag.ToString(), String.Empty);
+                            break;
+                        }
+                        else {
+                            newTag.Append(promptContainer[j]);
+                        }
+                    }
+
+                }*/
+                /*
+                if(k == 0) {
+                    if(curNodeText[k] == '<' && curNodeText[k + 1] == '<') {
+
+                    }
+                }
+                */
+
+                if (curNodeText[k] == '<' && curNodeText[k + 1] == '<') {
                     string rawTag = "";
                     for(int t = k; t < curNodeText.Length; t++) {
                         if(curNodeText[t - 1] == '>' && curNodeText[t - 2] == '>') {

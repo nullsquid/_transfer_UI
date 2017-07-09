@@ -12,7 +12,9 @@ namespace Silk
 
         public string nodeName;
         public string nodePassage;
+        public string nodeSpeaker = null;
 
+        public Queue<string> executionQueue;
         public Dictionary<string, string> links = new Dictionary<string, string>();
         public Dictionary<string, string[]> tags = new Dictionary<string, string[]>();
         public List<SilkLink> silkLinks = new List<SilkLink>();
