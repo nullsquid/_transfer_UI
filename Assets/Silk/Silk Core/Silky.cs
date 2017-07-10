@@ -25,7 +25,7 @@ namespace Silk {
             foreach (KeyValuePair<string, SilkStory> story in mother.MotherStory) {
                 foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
                     foreach(SilkTagBase tag in node.Value.executionQueue) {
-                        Debug.Log("TAG >>" + tag.TagName);
+                        Debug.Log("TAG >>" + node.Value.nodeName + " " +  tag.TagName);
                     }
                 }
             }
@@ -273,19 +273,21 @@ namespace Silk {
                     //Debug.Log(rawTag);
                     //Debug.Log(ParseRawTag(rawTag, tagFactory).TagName);
                     //MARK
+                    //Debug.Log("BLURGH >>" + ParseRawTag(rawTag, tagFactory).TagName +" "+ ParseRawTag(rawTag, tagFactory).type);
                     promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                     
                     
-                    /*
+                    
                     if (ParseRawTag(rawTag, tagFactory).type == TagType.INLINE) {
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
-                        Debug.Log("IN");
+                        //Debug.Log("IN");
                     }
                     else if(ParseRawTag(rawTag,tagFactory).type == TagType.SEQUENCED) {
                         curNode.executionQueue.Enqueue(ParseRawTag(rawTag, tagFactory));
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
-                        Debug.Log("SQ");
-                    }*/
+                        //Debug.Log("SQ");
+                    }
+                    
                     //return to here
                     //Debug.Log(ParseRawTag(rawTag, tagFactory).TagName + " " + ParseRawTag(rawTag, tagFactory).type);
 
@@ -439,7 +441,7 @@ namespace Silk {
             for(int i = 0; i < inputRawTag.Length; i++) {
                 if(i == 2) {
                     //inputRawTag.Replace(" ", "");
-                    Debug.Log("BEFORE PARSE >>" + inputRawTag + "<<");
+
                     for (int j = i; j < inputRawTag.Length; j++) {
                         //Debug.Log(inputRawTag[j]);
                         if (!inputRawTag.Contains("=")) {
@@ -469,7 +471,6 @@ namespace Silk {
                 }
                 
             }
-            Debug.Log("TAGGG >>" + newRawTag.RawTagName);
 			return tFactory.SetTag(newRawTag.RawTagName, newRawTag.TagArgs);
             
             

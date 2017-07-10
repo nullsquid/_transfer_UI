@@ -5,10 +5,11 @@ using Silk;
 using Transfer.System;
 public class PronounTag : SilkTagBase {
 
-    public PronounTag(List<string> args){
+    public PronounTag(string name, List<string> args){
         //arg 0 is name
         //arg 1 is tense
         type = TagType.INLINE;
+        TagName = name;
         string _appendedWord;
         if(args.Count == 3) {
             //mostly for dealing with edge cases

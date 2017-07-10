@@ -19,25 +19,25 @@ namespace Silk{
 
 			switch (tagName) {
 			case "name":
-				NameTag newName = new NameTag (args);
+				NameTag newName = new NameTag (tagName, args);
 				return newName;
             case "prompt":
-                PromptTag newPrompt = new PromptTag();
+                PromptTag newPrompt = new PromptTag(tagName);
                 return newPrompt;
 			case "speaker":
-				SpeakerTag newSpeaker = new SpeakerTag (args);
+				SpeakerTag newSpeaker = new SpeakerTag (tagName, args);
 				return newSpeaker;
 			case "pronoun":
-				PronounTag newPronoun = new PronounTag (args);
+				PronounTag newPronoun = new PronounTag (tagName, args);
 				return newPronoun;
 			case "nexttree":
-				NextTreeTag newTreeTag = new NextTreeTag (args);
+				NextTreeTag newTreeTag = new NextTreeTag (tagName, args);
 				return newTreeTag;
 			case "state":
-				StateTag newState = new StateTag (args);
+				StateTag newState = new StateTag (tagName, args);
 				return newState;
 			case "unload":
-				UnloadTag newUnload = new UnloadTag ();
+				UnloadTag newUnload = new UnloadTag (tagName);
 				return newUnload;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);

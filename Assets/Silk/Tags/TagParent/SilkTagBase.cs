@@ -25,6 +25,10 @@ namespace Silk
             {
                 return _tagName;
             }
+            protected set
+            {
+                _tagName = value;
+            }
         }
 
 		public string RawTag{
