@@ -270,10 +270,8 @@ namespace Silk {
                     }
 
 
-                    //Debug.Log(rawTag);
-                    //Debug.Log(ParseRawTag(rawTag, tagFactory).TagName);
-                    //MARK
-                    //Debug.Log("BLURGH >>" + ParseRawTag(rawTag, tagFactory).TagName +" "+ ParseRawTag(rawTag, tagFactory).type);
+                    //
+
                     promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                     
                     
@@ -449,6 +447,7 @@ namespace Silk {
                                 newRawTag.RawTagName += inputRawTag[j];
                             }
                             else {
+                                
                                 break;
                             }
                         }
@@ -458,6 +457,7 @@ namespace Silk {
                                 string rawArgument = rawArguments[r].Replace("\"", "").Replace(">>", String.Empty);
                                 newRawTag.AddArgument(rawArgument);
                             }
+                            
                             break;
                         }
                         else {
