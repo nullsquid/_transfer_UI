@@ -20,6 +20,16 @@ namespace Silk {
         #endregion
 
         #region Testing Methods
+
+        void LogNodeQueue() {
+            foreach (KeyValuePair<string, SilkStory> story in mother.MotherStory) {
+                foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
+                    foreach(SilkTagBase tag in node.Value.executionQueue) {
+                        Debug.Log("TAG >>" + tag.TagName);
+                    }
+                }
+            }
+        }
         void LogNodes() {
             foreach (KeyValuePair<string, SilkStory> story in mother.MotherStory) {
                 foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
@@ -91,7 +101,7 @@ namespace Silk {
                     //TODO move to it's own method--everything that deals in extracting the prompt
                     
                     SilkNode newNode = new SilkNode();
-					AssignDataToNodes(newSilkStory, newNode, tweeNodesToInterpret[i], GetPrompt(i, newSilkStory), fileName);
+					AssignDataToNodes(newSilkStory, newNode, tweeNodesToInterpret[i], GetPrompt(i, newSilkStory, newNode), fileName);
                 }
                 mother.AddToMother(fileName, newSilkStory);
                 foreach (KeyValuePair<string, SilkStory> story in mother.MotherStory) {
@@ -155,6 +165,8 @@ namespace Silk {
 
         private void Start() {
             InitializeSilk();
+            LogNodeQueue();
+            //LogNodeQueue();
 
 			//LogNodePrompt();
             
@@ -202,7 +214,7 @@ namespace Silk {
 			//get tags after prompt
 		}
 
-		string GetPrompt(int c, SilkStory story){
+		string GetPrompt(int c, SilkStory story, SilkNode curNode){
 			StringBuilder promptContainer = new StringBuilder(tweeNodesToInterpret[c]);
             string curNodeText = tweeNodesToInterpret[c];
             if (tweeNodesToInterpret[c].Contains("|")) {
@@ -225,12 +237,15 @@ namespace Silk {
                 while (promptContainer[0] == '\n') {
                     promptContainer.Remove(0, 1);
                 }
-
+                /*
                 if(promptContainer[0] == '<' && promptContainer[1] == '<') {
                     newTag = new StringBuilder();
                     for (int i = 0; i < promptContainer.Length; i++) {
                         if(promptContainer[i] == '>' && promptContainer[i+1] == '>') {
                             //for testing
+                            //if below says .Remove(); it should rather extract the tag
+                            //and put it on the execution queue
+
                             promptContainer.Remove(0, newTag.Length);
                             break;
                         }
@@ -239,51 +254,9 @@ namespace Silk {
                         }
                     }
                     Debug.Log(newTag);
-                }
+                }*/
                 
-                //HAPPENING WAY TOO MANY TIMES HOLY SHIT
-                /*
-                for(int i = 0; i < promptContainer.Length; i++) {
-                    if(promptContainer[0] == '<' && promptContainer[1] == '<') {
-                        StringBuilder newTag = new StringBuilder();
-                        for(int j = 0; j < promptContainer.Length; j++) {
-                            if(promptContainer[j] == '>' && promptContainer[j + 1] == '>') {
-                                //promptContainer.Remove(0, newTag.Length - 1);
-                                Debug.Log(newTag);
-                                break;
-                            }
-                            else {
-                                newTag.Append(promptContainer[j]);
-                            }
-                        }
-                    }
-                }*/
-                /*
-                while(promptContainer[0] == '<' && promptContainer[1] == '<') {
-                    //this has to resolve or else it will be an infinite loop~
-                    //line below is for testing~
-                    //promptContainer.Remove(0, 2);
-                    Debug.Log("ppft >>" + promptContainer.ToString());
-                    for(int j = 0; j < promptContainer.Length; j++) {
-                        StringBuilder newTag = new StringBuilder();
-                        if(promptContainer[j] == '>' && promptContainer[j + 1] == '>') {
-                            Debug.Log("TAG! " + newTag);
-                            promptContainer.Replace(newTag.ToString(), String.Empty);
-                            break;
-                        }
-                        else {
-                            newTag.Append(promptContainer[j]);
-                        }
-                    }
-
-                }*/
-                /*
-                if(k == 0) {
-                    if(curNodeText[k] == '<' && curNodeText[k + 1] == '<') {
-
-                    }
-                }
-                */
+                
 
                 if (curNodeText[k] == '<' && curNodeText[k + 1] == '<') {
                     string rawTag = "";
@@ -295,8 +268,27 @@ namespace Silk {
                             rawTag += curNodeText[t];
                         }
                     }
+
+
+                    //Debug.Log(rawTag);
+                    //Debug.Log(ParseRawTag(rawTag, tagFactory).TagName);
+                    //MARK
+                    promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                     
-					promptContainer.Replace (rawTag, ParseRawTag(rawTag, tagFactory).Value);
+                    
+                    /*
+                    if (ParseRawTag(rawTag, tagFactory).type == TagType.INLINE) {
+                        promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
+                        Debug.Log("IN");
+                    }
+                    else if(ParseRawTag(rawTag,tagFactory).type == TagType.SEQUENCED) {
+                        curNode.executionQueue.Enqueue(ParseRawTag(rawTag, tagFactory));
+                        promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
+                        Debug.Log("SQ");
+                    }*/
+                    //return to here
+                    //Debug.Log(ParseRawTag(rawTag, tagFactory).TagName + " " + ParseRawTag(rawTag, tagFactory).type);
+
                 }
 
 
@@ -318,6 +310,9 @@ namespace Silk {
 				}
 			}
 			promptContainer.Replace (System.Environment.NewLine, String.Empty);
+
+            //test prompt
+            //curNode.executionQueue.Enqueue(tagFactory.SetTag("prompt", null));
 			return promptContainer.ToString ();
 		}
 
@@ -440,20 +435,33 @@ namespace Silk {
 		SilkTagBase ParseRawTag(string inputRawTag, TagFactory tFactory) {
             RawTag newRawTag = new RawTag();
             string[] rawArguments;
+            //string inputRawTag = rawTag.Replace(" ", String.Empty);
             for(int i = 0; i < inputRawTag.Length; i++) {
                 if(i == 2) {
-                    for(int j = i; j < inputRawTag.Length; j++) {
+                    //inputRawTag.Replace(" ", "");
+                    Debug.Log("BEFORE PARSE >>" + inputRawTag + "<<");
+                    for (int j = i; j < inputRawTag.Length; j++) {
                         //Debug.Log(inputRawTag[j]);
-                        if (inputRawTag[j] == '=') {
+                        if (!inputRawTag.Contains("=")) {
+                            if (inputRawTag[j] != '>') {
+                                newRawTag.RawTagName += inputRawTag[j];
+                            }
+                            else {
+                                break;
+                            }
+                        }
+                        else if (inputRawTag[j] == '=') {
                             rawArguments = inputRawTag.Substring(j + 1).Split(',');
-                            for(int r = 0; r < rawArguments.Length; r++) {
-                                string rawArgument = rawArguments[r].Replace("\"", "").Replace(">>", "");
+                            for (int r = 0; r < rawArguments.Length; r++) {
+                                string rawArgument = rawArguments[r].Replace("\"", "").Replace(">>", String.Empty);
                                 newRawTag.AddArgument(rawArgument);
                             }
                             break;
                         }
                         else {
+
                             newRawTag.RawTagName += inputRawTag[j];
+
 
                         }
                     }
@@ -461,6 +469,7 @@ namespace Silk {
                 }
                 
             }
+            Debug.Log("TAGGG >>" + newRawTag.RawTagName);
 			return tFactory.SetTag(newRawTag.RawTagName, newRawTag.TagArgs);
             
             

@@ -4,7 +4,7 @@ using UnityEngine;
 using Silk;
 public class UnloadTag : SilkTagBase {
 	public UnloadTag(){
-
+        type = TagType.SEQUENCED;
 	}
 	
 }

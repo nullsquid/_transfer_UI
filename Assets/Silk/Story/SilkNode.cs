@@ -14,7 +14,7 @@ namespace Silk
         public string nodePassage;
         public string nodeSpeaker = null;
 
-        public Queue<string> executionQueue;
+        public Queue<SilkTagBase> executionQueue = new Queue<SilkTagBase>();
         public Dictionary<string, string> links = new Dictionary<string, string>();
         public Dictionary<string, string[]> tags = new Dictionary<string, string[]>();
         public List<SilkLink> silkLinks = new List<SilkLink>();
@@ -68,6 +68,15 @@ namespace Silk
             get
             {
                 return links;
+            }
+        }
+        public IEnumerator WaitAndLogQueue() {
+            yield return new WaitForEndOfFrame();
+            LogQueue();
+        }
+        public void LogQueue() {
+            foreach(SilkTagBase value in executionQueue) {
+                Debug.Log("ENQUEUED TAG >>" + value.TagName);
             }
         }
 

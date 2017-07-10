@@ -4,8 +4,13 @@ using UnityEngine;
 using System.Linq;
 namespace Silk
 {
+    public enum TagType{
+        INLINE,
+        SEQUENCED
+    }
     public abstract class SilkTagBase
     {
+        public TagType type;
 		protected string _rawTag;
         protected string _tagName;
 		//protected string _value;

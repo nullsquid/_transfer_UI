@@ -21,6 +21,9 @@ namespace Silk{
 			case "name":
 				NameTag newName = new NameTag (args);
 				return newName;
+            case "prompt":
+                PromptTag newPrompt = new PromptTag();
+                return newPrompt;
 			case "speaker":
 				SpeakerTag newSpeaker = new SpeakerTag (args);
 				return newSpeaker;

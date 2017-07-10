@@ -4,8 +4,9 @@ using UnityEngine;
 using Silk;
 using Transfer.System;
 public class NameTag : SilkTagBase {
-	
+    
 	public NameTag(List<string> args){
+        type = TagType.INLINE;
 		//dummy, this will actually
 		if (args.Count == 1) {
 			//Will really be something like Value = CharacterManager.GetCharacterName(args[0]);
