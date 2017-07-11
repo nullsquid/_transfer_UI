@@ -216,21 +216,23 @@ namespace Silk {
 
 		string GetPrompt(int c, SilkStory story, SilkNode curNode){
 			StringBuilder promptContainer = new StringBuilder(tweeNodesToInterpret[c]);
-            string curNodeText = tweeNodesToInterpret[c];
+			StringBuilder curNodeText = new StringBuilder(tweeNodesToInterpret[c]);
 			for (int p = 0; p < curNodeText.Length; p++) {
 				//check for prompt
-				if ((p + 2) < curNodeText.Length && p > 0) {
+				if ((p + 2) < curNodeText.Length && (p - 2) > 0) {
 					/*if (curNodeText [p - 1] == '>' && curNodeText[p] == '\n' && curNodeText[p + 1] != '<' && curNodeText[p +1] != '[') {
 						promptContainer.Append ("<<prompt>>");
 					}*/
 					if (curNodeText [p - 1] == '>' && curNodeText [p - 2] == '>') {
-						if(curNodeText[p] == '\n'){
-							if (curNodeText [p + 1] != '<' && curNodeText[p + 1] != '[') {
-								//promptContainer.Append ("<<prompt>>");
-								promptContainer.Insert(p + 1, "<<prompt>>");
+							if (curNodeText [p] == '\n') {
+								if (curNodeText [p + 1] != '<' && curNodeText [p + 1] != '[') {
+									//promptContainer.Append ("<<prompt>>");
+									//this should be curnode but it keeps throwing an array out of range exception
+									promptContainer.Insert (p + 1, "<<prompt>>");
+								}
 							}
-						}
 					}
+					
 					/*
 					if (curNodeText [p] == '\n' && curNodeText [p + 1] != '<' && curNodeText [p + 2] != '<') {
 						promptContainer.Append ("<<prompt>>");
