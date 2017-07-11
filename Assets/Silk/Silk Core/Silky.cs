@@ -217,6 +217,29 @@ namespace Silk {
 		string GetPrompt(int c, SilkStory story, SilkNode curNode){
 			StringBuilder promptContainer = new StringBuilder(tweeNodesToInterpret[c]);
             string curNodeText = tweeNodesToInterpret[c];
+			for (int p = 0; p < curNodeText.Length; p++) {
+				//check for prompt
+				if ((p + 2) < curNodeText.Length && p > 0) {
+					/*if (curNodeText [p - 1] == '>' && curNodeText[p] == '\n' && curNodeText[p + 1] != '<' && curNodeText[p +1] != '[') {
+						promptContainer.Append ("<<prompt>>");
+					}*/
+					if (curNodeText [p - 1] == '>' && curNodeText [p - 2] == '>') {
+						if(curNodeText[p] == '\n'){
+							if (curNodeText [p + 1] != '<' && curNodeText[p + 1] != '[') {
+								//promptContainer.Append ("<<prompt>>");
+								promptContainer.Insert(p + 1, "<<prompt>>");
+							}
+						}
+					}
+					/*
+					if (curNodeText [p] == '\n' && curNodeText [p + 1] != '<' && curNodeText [p + 2] != '<') {
+						promptContainer.Append ("<<prompt>>");
+					}
+					*/
+				}
+
+			}
+			//Debug.Log (promptContainer.ToString ());
             if (tweeNodesToInterpret[c].Contains("|")) {
 				promptContainer.Replace("|", string.Empty);
 			}
@@ -270,12 +293,13 @@ namespace Silk {
                     }
 
 
-                    //
 
-                    promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
+                    //
+					//TEST TAG REPLACEMENT
+                    //promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                     
                     
-                    
+					Debug.Log ("RAWTAG" + rawTag);
                     if (ParseRawTag(rawTag, tagFactory).type == TagType.INLINE) {
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                         //Debug.Log("IN");
@@ -285,11 +309,15 @@ namespace Silk {
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                         //Debug.Log("SQ");
                     }
+
+
                     
                     //return to here
                     //Debug.Log(ParseRawTag(rawTag, tagFactory).TagName + " " + ParseRawTag(rawTag, tagFactory).type);
 
                 }
+				//if k is 
+
 
 
 
