@@ -224,10 +224,9 @@ namespace Silk {
 					if (curNodeText [p - 1] == '>' && curNodeText [p - 2] == '>') {
 							if (curNodeText [p] == '\n') {
 								if (curNodeText [p + 1] != '<' && curNodeText [p + 1] != '[') {
-								
-									//promptcontainer.insert should be curnodetext.insert but it keeps throwing an array out of range exception
 									curNodeText.Insert (p + 1, "<<prompt>>");
 								}
+								
 							}
 					}
 					
