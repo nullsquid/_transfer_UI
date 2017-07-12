@@ -215,8 +215,8 @@ namespace Silk {
 		}
 
 		string GetPrompt(int c, SilkStory story, SilkNode curNode){
-			StringBuilder promptContainer = new StringBuilder(tweeNodesToInterpret[c]);
 			StringBuilder curNodeText = new StringBuilder(tweeNodesToInterpret[c]);
+			StringBuilder promptContainer = new StringBuilder(tweeNodesToInterpret[c]);
 			for (int p = 0; p < curNodeText.Length; p++) {
 				//check for prompt
 				if ((p + 2) < curNodeText.Length && (p - 2) > 0) {
@@ -224,8 +224,9 @@ namespace Silk {
 					if (curNodeText [p - 1] == '>' && curNodeText [p - 2] == '>') {
 							if (curNodeText [p] == '\n') {
 								if (curNodeText [p + 1] != '<' && curNodeText [p + 1] != '[') {
+								
 									//promptcontainer.insert should be curnodetext.insert but it keeps throwing an array out of range exception
-									promptContainer.Insert (p + 1, "<<prompt>>");
+									curNodeText.Insert (p + 1, "<<prompt>>");
 								}
 							}
 					}
@@ -233,7 +234,9 @@ namespace Silk {
 
 				}
 
+
 			}
+			Debug.Log ("CUR NODE TEXT >>" + curNodeText);
             if (tweeNodesToInterpret[c].Contains("|")) {
 				promptContainer.Replace("|", string.Empty);
 			}
@@ -251,9 +254,9 @@ namespace Silk {
             for(int k = 0; k < curNodeText.Length; k++) {
                 //problem??
                 StringBuilder newTag;
-                while (promptContainer[0] == '\n') {
-                    promptContainer.Remove(0, 1);
-                }
+                //while (promptContainer[0] == '\n') {
+                    //promptContainer.Remove(0, 1);
+                //}
                 /*
                 if(promptContainer[0] == '<' && promptContainer[1] == '<') {
                     newTag = new StringBuilder();
@@ -293,7 +296,7 @@ namespace Silk {
                     //promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                     
                     
-					Debug.Log ("RAWTAG" + rawTag);
+					//Debug.Log ("RAWTAG" + rawTag);
                     if (ParseRawTag(rawTag, tagFactory).type == TagType.INLINE) {
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                         //Debug.Log("IN");
