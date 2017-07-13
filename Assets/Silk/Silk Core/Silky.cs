@@ -293,7 +293,8 @@ namespace Silk {
                     //
 					//TEST TAG REPLACEMENT
                     //promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
-                    
+					//if promptcontainer is empty and contains <<prompt>>, delete prompt
+
                     
 					//Debug.Log ("RAWTAG" + rawTag);
                     if (ParseRawTag(rawTag, tagFactory).type == TagType.INLINE) {
@@ -305,6 +306,12 @@ namespace Silk {
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                         //Debug.Log("SQ");
                     }
+					if (String.IsNullOrEmpty(promptContainer.ToString().Trim())) {
+						if (curNodeText.ToString ().Contains ("<<prompt>>")) {
+							curNodeText.Replace ("<<prompt>>", String.Empty);
+						}
+						Debug.Log("NODE NODE::"+curNodeText);
+					}
 
 
                     

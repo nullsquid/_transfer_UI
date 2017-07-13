@@ -74,5 +74,9 @@ namespace Silk
             _silkTagArgs = args;
         }
 
+		protected void OnExecutionComplete(){
+
+		}
+
     }
 }
