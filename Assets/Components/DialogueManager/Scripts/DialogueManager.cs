@@ -8,8 +8,10 @@ public class DialogueManager : MonoBehaviour {
 	TextPrinter tp;
     public delegate void NodeCleanup();
     public delegate void NodeStartSequence();
+	public delegate void OnTagComplete ();
     public event NodeCleanup nodeCleanup;
     public event NodeStartSequence newNodeStart;
+	public event OnTagComplete tagComplete;
     #region Singleton
     public static DialogueManager instance;
     void Awake() {
@@ -120,13 +122,33 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public IEnumerator ExecuteNode(){
+		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+			
+		}
 		yield return null;
 	}
 
+	void MoveToNextTag(){
+
+	}
+
+	void SetNodeTags(){
+		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+			tag.tagComplete += MoveToNextTag;
+		}
+	}
+
+	void UnSetNodeTags(){
+		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+			tag.tagComplete -= MoveToNextTag;
+		}
+	}
+
 	IEnumerator ProcessNodeTags(){
-		foreach (Silk.SilkTagBase tag in curNode.silkTags) {
+		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 			//run each tag in sequence
 			//If it's an override tag, do that instead
+			//OnTagComplete += tag.OnExecutionComplete;
 		}
 		yield return null;
 	}

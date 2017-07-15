@@ -10,6 +10,8 @@ namespace Silk
     }
     public abstract class SilkTagBase
     {
+		public delegate void OnTagComplete();
+		public event OnTagComplete tagComplete;
         public TagType type;
 		protected string _rawTag;
         protected string _tagName;
@@ -74,8 +76,13 @@ namespace Silk
             _silkTagArgs = args;
         }
 
-		protected void OnExecutionComplete(){
+		public void OnExecutionComplete(){
 
+		}
+
+		public void ExecuteTagLogic(){
+			//logic
+			OnExecutionComplete ();
 		}
 
     }
