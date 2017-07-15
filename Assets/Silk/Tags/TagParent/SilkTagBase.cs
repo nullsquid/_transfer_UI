@@ -80,7 +80,7 @@ namespace Silk
 
 		}
 
-		public void ExecuteTagLogic(){
+		public virtual void ExecuteTagLogic(){
 			//logic
 			OnExecutionComplete ();
 		}

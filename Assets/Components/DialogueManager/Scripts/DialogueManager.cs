@@ -122,6 +122,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public IEnumerator ExecuteNode(){
+		//Execute command queue ==> command pattern
 		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 			
 		}
