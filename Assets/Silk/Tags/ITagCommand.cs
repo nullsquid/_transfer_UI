@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ITagCommand {
+namespace Silk{
+	public interface ITagCommand {
 
-    void TagExecute();
+	    void TagExecute();
 
-    void TagUndo();
+	    void TagUndo();
+	}
 }

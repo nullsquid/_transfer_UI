@@ -33,11 +33,15 @@ public class DialogueManager : MonoBehaviour {
 		if (tp == null) {
 			tp = GameObject.Find ("Text_pannel").GetComponent<TextPrinter> ();
 		}
+		newNodeStart += SetNodeTags;
+		nodeCleanup += UnSetNodeTags;
 		rp.onButtonSubmit += FindNextNode;
 		tp.onNodeChange += GetNodePassage;
 	}
 
 	void OnDisable(){
+		newNodeStart -= SetNodeTags;
+		nodeCleanup -= UnSetNodeTags;
 		rp.onButtonSubmit -= FindNextNode;
 		tp.onNodeChange -= GetNodePassage;
 	}
@@ -105,6 +109,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void GetNextNode(string nextNodeName){
 		curNode = curStory.GetNodeByName (nextNodeName);
+		SetNodeTags ();
 	}
 		
 

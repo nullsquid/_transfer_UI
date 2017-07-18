@@ -8,7 +8,7 @@ namespace Silk
         INLINE,
         SEQUENCED
     }
-    public abstract class SilkTagBase
+	public abstract class SilkTagBase : ITagCommand
     {
 		public delegate void OnTagComplete();
 		public event OnTagComplete tagComplete;
@@ -84,6 +84,16 @@ namespace Silk
 			//logic
 			OnExecutionComplete ();
 		}
+
+		public void TagExecute(){
+			ExecuteTagLogic ();
+		}
+
+		public void TagUndo(){
+
+		}
+
+
 
     }
 }
