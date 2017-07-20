@@ -34,6 +34,7 @@ public class DialogueManager : MonoBehaviour {
 			tp = GameObject.Find ("Text_pannel").GetComponent<TextPrinter> ();
 		}
 		newNodeStart += SetNodeTags;
+		newNodeStart += TriggerNodeTags;
 		nodeCleanup += UnSetNodeTags;
 		rp.onButtonSubmit += FindNextNode;
 		tp.onNodeChange += GetNodePassage;
@@ -41,6 +42,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void OnDisable(){
 		newNodeStart -= SetNodeTags;
+		newNodeStart -= TriggerNodeTags;
 		nodeCleanup -= UnSetNodeTags;
 		rp.onButtonSubmit -= FindNextNode;
 		tp.onNodeChange -= GetNodePassage;
@@ -80,6 +82,9 @@ public class DialogueManager : MonoBehaviour {
 		get{
 			return curStory;
 		}
+		set{
+			curStory = value;
+		}
 	}
 	#region Callbacks
 
@@ -95,7 +100,7 @@ public class DialogueManager : MonoBehaviour {
 
 	}
 
-	void GetRootNode(){
+	public void GetRootNode(){
 		rootNode = curStory.GetNodeByName ("Start");
 		curNode = rootNode;
 	}
@@ -150,11 +155,14 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
+
+
 	IEnumerator ProcessNodeTags(){
 		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 			//run each tag in sequence
 			//If it's an override tag, do that instead
 			//OnTagComplete += tag.OnExecutionComplete;
+
 		}
 		yield return null;
 	}
@@ -162,6 +170,29 @@ public class DialogueManager : MonoBehaviour {
     /*IEnumerator TraverseToNextNode(SilkNode nextNode) {
         
     }*/
+
+	public void TriggerNodeTags(){
+		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+
+			if (MoveNextTag ()) {
+				continue;
+			} 
+			Debug.Log ("EXECUTE" + " " + tag.TagName);
+			tag.TagExecute();
+		}
+	}
+
+	public bool MoveNextTag(){
+		Debug.Log ("FUCK");
+		//curNode.executionQueue.Dequeue ();
+		return true;
+
+	}
+
+	public void StartCurrentNode(){
+		nodeCleanup ();
+		newNodeStart ();
+	}
 
 	public void FindNextNode(string response){
 		//Debug.Log (response);

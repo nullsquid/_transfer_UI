@@ -14,4 +14,11 @@ public class NextTreeTag : SilkTagBase {
 		}
 	}
 
+	public override void ExecuteTagLogic(List<string> args){
+		Debug.Log ("EXECUTE TREE SWITCH");
+		DialogueManager.instance.CurStory = Silky.Instance.mother.GetStoryByName (args[0]);
+		DialogueManager.instance.GetRootNode ();
+		OnExecutionComplete ();
+	}
+
 }

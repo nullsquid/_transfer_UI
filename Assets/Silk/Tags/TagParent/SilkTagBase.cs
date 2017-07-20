@@ -15,11 +15,13 @@ namespace Silk
         public TagType type;
 		protected string _rawTag;
         protected string _tagName;
+
 		//protected string _value;
 		protected int priority;
 
-        List<string> _silkTagArgs = new List<string>();
+        protected List<string> _silkTagArgs = new List<string>();
 
+		//public bool isComplete = false;
 		public string Value{ get; set; }
         public string TagName
         {
@@ -77,16 +79,16 @@ namespace Silk
         }
 
 		public void OnExecutionComplete(){
-
+			DialogueManager.instance.MoveNextTag ();
 		}
 
-		public virtual void ExecuteTagLogic(){
+		public virtual void ExecuteTagLogic(List<string> args){
 			//logic
 			OnExecutionComplete ();
 		}
 
 		public void TagExecute(){
-			ExecuteTagLogic ();
+			ExecuteTagLogic (_silkTagArgs);
 		}
 
 		public void TagUndo(){

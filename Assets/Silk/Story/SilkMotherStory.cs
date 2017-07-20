@@ -48,6 +48,7 @@ namespace Silk
 
 		public SilkStory GetStoryByName(string storyName){
 			foreach (KeyValuePair<string, SilkStory> story in MotherStory) {
+				Debug.Log("MOTHER!! " + story.Value.StoryName);
 				if (story.Value.StoryName == storyName) {
 					Debug.Log ("Story " + storyName + " returned");
 					return story.Value;

@@ -165,7 +165,7 @@ namespace Silk {
 
         private void Start() {
             InitializeSilk();
-            LogNodeQueue();
+            //LogNodeQueue();
             //LogNodeQueue();
 
 			//LogNodePrompt();
