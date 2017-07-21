@@ -33,15 +33,17 @@ public class DialogueManager : MonoBehaviour {
 		if (tp == null) {
 			tp = GameObject.Find ("Text_pannel").GetComponent<TextPrinter> ();
 		}
-		newNodeStart += SetNodeTags;
-		nodeCleanup += UnSetNodeTags;
+        //newNodeStart += SetNodeTags;
+        //nodeCleanup += UnSetNodeTags;
+        newNodeStart += ExecuteNode;
 		rp.onButtonSubmit += FindNextNode;
 		tp.onNodeChange += GetNodePassage;
 	}
 
 	void OnDisable(){
-		newNodeStart -= SetNodeTags;
-		nodeCleanup -= UnSetNodeTags;
+        //newNodeStart -= SetNodeTags;
+        //nodeCleanup -= UnSetNodeTags;
+        newNodeStart -= ExecuteNode;
 		rp.onButtonSubmit -= FindNextNode;
 		tp.onNodeChange -= GetNodePassage;
 	}
@@ -77,6 +79,10 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public SilkStory CurStory{
+        set
+        {
+            curStory = value;
+        }
 		get{
 			return curStory;
 		}
@@ -109,7 +115,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void GetNextNode(string nextNodeName){
 		curNode = curStory.GetNodeByName (nextNodeName);
-		SetNodeTags ();
+		//SetNodeTags ();
 	}
 		
 
@@ -126,19 +132,44 @@ public class DialogueManager : MonoBehaviour {
 		StartCoroutine (ProcessNodeTags ());
 	}
 
-	public IEnumerator ExecuteNode(){
+	/*public IEnumerator ExecuteNode(){
 		//Execute command queue ==> command pattern
 		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 			
 		}
 		yield return null;
+	}*/
+    public void ExecuteNode() {
+        foreach(Silk.SilkTagBase tag in curNode.executionQueue) {
+            //Debug.Log(tag);
+            if (tag != null) {
+                if (curNode.executionQueue.Count >= 1) {
+                    //Debug.Log("EXECUTE " + tag.TagName);
+                    tag.TagExecute();
+                    //curNode.executionQueue.Remove(tag);
+                    //curNode.executionQueue.Dequeue();
+                }
+                else {
+                    break;
+                }
+            }
+            //else??
+            else if (MoveToNextTag()) {
+                Debug.Log("TRUE");
+                continue;
+            }
+            else {
+                Debug.Log("FALSE");
+                
+            }
+        }
+    }
+
+	public bool MoveToNextTag(){
+        return true;
 	}
 
-	void MoveToNextTag(){
-
-	}
-
-	void SetNodeTags(){
+	/*void SetNodeTags(){
 		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 			tag.tagComplete += MoveToNextTag;
 		}
@@ -148,7 +179,7 @@ public class DialogueManager : MonoBehaviour {
 		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 			tag.tagComplete -= MoveToNextTag;
 		}
-	}
+	}*/
 
 	IEnumerator ProcessNodeTags(){
 		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
@@ -171,6 +202,9 @@ public class DialogueManager : MonoBehaviour {
 				nextNode = link.LinkedNode;
                 nodeCleanup();
                 curNode = nextNode;
+                //Debug.Log(curNode.nodePassage);
+                //something is happening at the "go away" node where it can't find the next node
+                Debug.Log(curNode.nodeName + " " + curNode.silkLinks[0].LinkText);
                 newNodeStart();
                 break;
 

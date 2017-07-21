@@ -8,10 +8,17 @@ public class NextTreeTag : SilkTagBase {
         type = TagType.SEQUENCED;
 		if (args.Count == 1) {
 			Value = "";
+            _silkTagArgs = args;
 			//SetNextTree(args[0]
 		} else {
 			Value = "TOO MANY ARGS FOR TREE TAG";
 		}
+        
 	}
+    public override void ExecuteTagLogic(List<string> args) {
+        //DialogueManager.instance.CurStory =
+        Debug.Log("NEWTREE " + args[0]);
+        DialogueManager.instance.CurStory = Silky.Instance.mother.GetStoryByName(args[0]);
+    }
 
 }

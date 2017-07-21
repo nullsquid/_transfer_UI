@@ -235,7 +235,7 @@ namespace Silk {
 
 
 			}
-			Debug.Log ("CUR NODE TEXT >>" + curNodeText);
+			//Debug.Log ("CUR NODE TEXT >>" + curNodeText);
             if (tweeNodesToInterpret[c].Contains("|")) {
 				promptContainer.Replace("|", string.Empty);
 			}
@@ -302,7 +302,7 @@ namespace Silk {
                         //Debug.Log("IN");
                     }
                     else if(ParseRawTag(rawTag,tagFactory).type == TagType.SEQUENCED) {
-                        curNode.executionQueue.Enqueue(ParseRawTag(rawTag, tagFactory));
+                        curNode.executionQueue.Add(ParseRawTag(rawTag, tagFactory));
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                         //Debug.Log("SQ");
                     }
