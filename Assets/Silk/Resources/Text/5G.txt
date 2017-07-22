@@ -1,6 +1,0 @@
-:: Start
-Hello there I am 5G
-[[Hi]]
-
-:: StoryTitle
-5G

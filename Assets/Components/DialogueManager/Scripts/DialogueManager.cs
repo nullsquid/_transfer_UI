@@ -128,9 +128,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 	#endregion
 
-	void ParseNode(){
-		StartCoroutine (ProcessNodeTags ());
-	}
+
 
 	/*public IEnumerator ExecuteNode(){
 		//Execute command queue ==> command pattern
@@ -169,30 +167,7 @@ public class DialogueManager : MonoBehaviour {
         return true;
 	}
 
-	/*void SetNodeTags(){
-		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
-			tag.tagComplete += MoveToNextTag;
-		}
-	}
 
-	void UnSetNodeTags(){
-		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
-			tag.tagComplete -= MoveToNextTag;
-		}
-	}*/
-
-	IEnumerator ProcessNodeTags(){
-		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
-			//run each tag in sequence
-			//If it's an override tag, do that instead
-			//OnTagComplete += tag.OnExecutionComplete;
-		}
-		yield return null;
-	}
-
-    /*IEnumerator TraverseToNextNode(SilkNode nextNode) {
-        
-    }*/
 
 	public void FindNextNode(string response){
 		//Debug.Log (response);
