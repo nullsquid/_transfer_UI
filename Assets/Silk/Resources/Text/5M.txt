@@ -1,5 +1,0 @@
-:: Start
-Hello world~
-
-:: StoryTitle
-5M

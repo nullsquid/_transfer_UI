@@ -165,7 +165,7 @@ namespace Silk {
 
         private void Start() {
             InitializeSilk();
-            LogNodeQueue();
+            //LogNodeQueue();
             //LogNodeQueue();
 
 			//LogNodePrompt();
@@ -310,7 +310,7 @@ namespace Silk {
 						if (curNodeText.ToString ().Contains ("<<prompt>>")) {
 							curNodeText.Replace ("<<prompt>>", String.Empty);
 						}
-						Debug.Log("NODE NODE::"+curNodeText);
+						//Debug.Log("NODE NODE::"+curNodeText);
 					}
 
 

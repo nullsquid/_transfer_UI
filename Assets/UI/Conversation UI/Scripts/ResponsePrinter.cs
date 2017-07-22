@@ -43,6 +43,7 @@ public class ResponsePrinter : MonoBehaviour {
 		SilkNode node = DialogueManager.instance.CurNode;
 		for (int i = 0; i < node.silkLinks.Count; i++) {
 
+
             GameObject newresponse = Instantiate(responsePrefab);
             Button b = newresponse.GetComponent<Button>();
             ////////////////////////////////////////////////////////////////

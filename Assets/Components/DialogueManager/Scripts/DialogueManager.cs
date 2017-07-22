@@ -201,10 +201,13 @@ public class DialogueManager : MonoBehaviour {
 			if (response == link.LinkText) {
 				nextNode = link.LinkedNode;
                 nodeCleanup();
-                curNode = nextNode;
+				if (nextNode != null) {
+					curNode = nextNode;
+				}
+				Debug.Log (curNode.nodeName);
                 //Debug.Log(curNode.nodePassage);
                 //something is happening at the "go away" node where it can't find the next node
-                Debug.Log(curNode.nodeName + " " + curNode.silkLinks[0].LinkText);
+                //Debug.Log(curNode.nodeName + " " + curNode.silkLinks[0].LinkText);
                 newNodeStart();
                 break;
 
