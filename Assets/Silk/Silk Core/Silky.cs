@@ -90,6 +90,7 @@ namespace Silk {
                 SilkStory newSilkStory = new SilkStory();
                 TextAsset tweeFile = currentTweeFile;
                 string fileName = currentTweeFile.name;
+
                 //this works for single file
                 //textToParse = testText.text;
 
@@ -97,22 +98,15 @@ namespace Silk {
                 tweeNodesToInterpret = textToParse.Split(delim, StringSplitOptions.RemoveEmptyEntries);
                 for (int i = 0; i < tweeNodesToInterpret.Length; i++) {
                     string storyTitle = "";
+
 					//this is where prompt parsing was supposed to go 
                     //TODO move to it's own method--everything that deals in extracting the prompt
                     
                     SilkNode newNode = new SilkNode();
 					AssignDataToNodes(newSilkStory, newNode, tweeNodesToInterpret[i], GetPrompt(i, newSilkStory, newNode), fileName);
                 }
-                mother.AddToMother(fileName, newSilkStory);
-                foreach (KeyValuePair<string, SilkStory> story in mother.MotherStory) {
-                    foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
-                        //for testing
-                        //Debug.Log("ON NODE: " + node.)
-
-                    }
-                }
-
-
+				//newSilkStory.StoryName
+				mother.AddToMother(fileName, newSilkStory);
 
             }
             //TODO Break This Out into its own method
@@ -137,7 +131,7 @@ namespace Silk {
                             for (int a = 0; a < filenames.Count; a++) {
 
 
-                                if (linkedNode.Value.nodeName.Contains(filenames[a])) {
+                                if (linkedNode.Value.nodeName.Contains(filenames[a] + "_")) {
 
                                     nodeNameBuilder.Append(linkedNode.Value.nodeName.Remove(0, filenames[a].Length + 1));
                                     nodeName = nodeNameBuilder.ToString().TrimEnd();
@@ -150,7 +144,7 @@ namespace Silk {
 
                                 SilkLink newSilkLink = new SilkLink(node.Value, linkedNode.Value, link.Key);
                                 node.Value.silkLinks.Add(newSilkLink);
-                                //Debug.Log("SilkLink " + newSilkLink.LinkText);
+								Debug.Log("SilkLink " + newSilkLink.LinkText + " " + newSilkLink.LinkedNode.nodeName);
                             }
 
                         }
@@ -244,6 +238,8 @@ namespace Silk {
 				if (storyTitleCheck == "StoryTitle") {
 
 					story.SetStoryName(ReturnStoryTitle(tweeNodesToInterpret[c]));
+					//storyTitle = story.StoryName;
+					//story.SetStoryName(filename);
 				}
 				else {
 					promptContainer.Replace(ReturnTitle(tweeNodesToInterpret[c]), string.Empty, 0, ReturnTitle(tweeNodesToInterpret[c]).Length);

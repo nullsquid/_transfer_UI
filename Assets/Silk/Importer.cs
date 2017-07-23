@@ -7,7 +7,7 @@ namespace Silk {
     {
         public TextAsset[] rawTweeFiles;
         // Use this for initialization
-        void Awake()
+        void OnEnable()
         {
             rawTweeFiles = Resources.LoadAll<TextAsset>("Text");
             

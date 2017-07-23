@@ -97,25 +97,43 @@ public class DialogueManager : MonoBehaviour {
 		curStory = rootStory;
 	}
 
-	void GetNextStory(string nextStoryName){
-
+	public void GetNextStory(string nextStoryName){
+		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
+		GetRootNode ();
 	}
 
-	void GetRootNode(){
+	public void GetRootNode(){
 		rootNode = curStory.GetNodeByName ("Start");
 		curNode = rootNode;
+		newNodeStart ();
 	}
 
-	void GetNextNode(SilkLink link){
+	public void FindNextNode(string response){
+		//Debug.Log (response);
 		SilkNode nextNode;
-		foreach (SilkLink links in curNode.silkLinks) {
-			
-		}
-	}
+		//GetNextStory ("5M");
+		//GetRootNode ();
+		foreach (SilkLink link in curNode.silkLinks) {
+			if (response == link.LinkText) {
+				nextNode = link.LinkedNode;
+				nodeCleanup();
+				//if (nextNode != null) {
+				curNode = nextNode;
 
-	void GetNextNode(string nextNodeName){
-		curNode = curStory.GetNodeByName (nextNodeName);
-		//SetNodeTags ();
+				//}
+				//GetNextStory("5M");
+				//GetRootNode ();
+				Debug.Log (curNode.nodeName);
+				//Debug.Log(curNode.nodePassage);
+				//something is happening at the "go away" node where it can't find the next node
+				//Debug.Log(curNode.nodeName + " " + curNode.silkLinks[0].LinkText);
+				newNodeStart();
+				break;
+
+			}
+		}
+
+
 	}
 		
 
@@ -138,12 +156,15 @@ public class DialogueManager : MonoBehaviour {
 		yield return null;
 	}*/
     public void ExecuteNode() {
+		
         foreach(Silk.SilkTagBase tag in curNode.executionQueue) {
             //Debug.Log(tag);
             if (tag != null) {
                 if (curNode.executionQueue.Count >= 1) {
                     //Debug.Log("EXECUTE " + tag.TagName);
+					//this isn't waiting for completion
                     tag.TagExecute();
+
                     //curNode.executionQueue.Remove(tag);
                     //curNode.executionQueue.Dequeue();
                 }
@@ -169,27 +190,7 @@ public class DialogueManager : MonoBehaviour {
 
 
 
-	public void FindNextNode(string response){
-		//Debug.Log (response);
-		SilkNode nextNode;
-		foreach (SilkLink link in curNode.silkLinks) {
-			if (response == link.LinkText) {
-				nextNode = link.LinkedNode;
-                nodeCleanup();
-				if (nextNode != null) {
-					curNode = nextNode;
-				}
-				Debug.Log (curNode.nodeName);
-                //Debug.Log(curNode.nodePassage);
-                //something is happening at the "go away" node where it can't find the next node
-                //Debug.Log(curNode.nodeName + " " + curNode.silkLinks[0].LinkText);
-                newNodeStart();
-                break;
 
-			}
-		}
-
-	}
 
 
 }
