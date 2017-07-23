@@ -105,8 +105,9 @@ public class DialogueManager : MonoBehaviour {
 	public void GetRootNode(){
 		rootNode = curStory.GetNodeByName ("Start");
 		curNode = rootNode;
-		newNodeStart ();
+		//newNodeStart ();
 	}
+
 
 	public void FindNextNode(string response){
 		//Debug.Log (response);

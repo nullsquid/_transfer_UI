@@ -1,9 +1,9 @@
 :: Start
 Hello I'm 5M
-[[hi|hi]]
+[[hi|hello]]
 
 
-:: hi
+:: hello
 hi
 
 :: StoryTitle
