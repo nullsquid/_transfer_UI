@@ -128,17 +128,23 @@ public class DialogueManager : MonoBehaviour {
 				//Debug.Log(curNode.nodePassage);
 				//something is happening at the "go away" node where it can't find the next node
 				//Debug.Log(curNode.nodeName + " " + curNode.silkLinks[0].LinkText);
+
 				newNodeStart();
 				break;
 
 			}
 		}
-
+        
 
 	}
-		
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.S)) {
+            //newNodeStart();
+        }
+    }
 
-	public string GetNodePassage(){
+
+    public string GetNodePassage(){
 		return curNode.nodePassage;
 	}
 
@@ -159,6 +165,8 @@ public class DialogueManager : MonoBehaviour {
     public void ExecuteNode() {
 		
         foreach(Silk.SilkTagBase tag in curNode.executionQueue) {
+
+            //
             //Debug.Log(tag);
             if (tag != null) {
                 if (curNode.executionQueue.Count >= 1) {
@@ -186,6 +194,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
 	public bool MoveToNextTag(){
+        Debug.Log("sup?");
         return true;
 	}
 

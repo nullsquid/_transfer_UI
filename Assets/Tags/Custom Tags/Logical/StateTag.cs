@@ -9,4 +9,9 @@ public class StateTag : SilkTagBase {
 		string state = args [0];
 	}
 
+    public override void ExecuteTagLogic(List<string> args) {
+        Debug.Log("State change");
+        OnExecutionComplete();
+    }
+
 }

@@ -7,5 +7,11 @@ public class UnloadTag : SilkTagBase {
         TagName = name;
         type = TagType.SEQUENCED;
 	}
-	
+
+    public override void ExecuteTagLogic(List<string> args) {
+        Debug.Log("Unload");
+        DialogueManager.instance.CurStory = null;
+        OnExecutionComplete();
+    }
+
 }

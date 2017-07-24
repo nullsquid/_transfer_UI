@@ -19,6 +19,7 @@ public class NextTreeTag : SilkTagBase {
         //DialogueManager.instance.CurStory =
         Debug.Log("NEWTREE " + args[0]);
 		DialogueManager.instance.GetNextStory (args [0]);
+        OnExecutionComplete();
         //DialogueManager.instance.CurStory = Silky.Instance.mother.GetStoryByName(args[0]);
 		//DialogueManager.instance.GetRootNode ();
 		//DialogueManager.instance.newNodeStart ();
