@@ -118,17 +118,12 @@ public class DialogueManager : MonoBehaviour {
 			if (response == link.LinkText) {
 				nextNode = link.LinkedNode;
 				nodeCleanup();
-				//if (nextNode != null) {
 				curNode = nextNode;
 
-				//}
-				//GetNextStory("5M");
-				//GetRootNode ();
 				Debug.Log (curNode.nodeName);
-				//Debug.Log(curNode.nodePassage);
-				//something is happening at the "go away" node where it can't find the next node
-				//Debug.Log(curNode.nodeName + " " + curNode.silkLinks[0].LinkText);
 
+                //alright so this should probably wait for some kind of call to actually START 
+                //the node and not put this in traversal
 				newNodeStart();
 				break;
 
@@ -155,13 +150,7 @@ public class DialogueManager : MonoBehaviour {
 
 
 
-	/*public IEnumerator ExecuteNode(){
-		//Execute command queue ==> command pattern
-		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
-			
-		}
-		yield return null;
-	}*/
+
     public void ExecuteNode() {
 		
         foreach(Silk.SilkTagBase tag in curNode.executionQueue) {
