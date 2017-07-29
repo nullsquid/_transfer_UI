@@ -35,7 +35,7 @@ public class DialogueManager : MonoBehaviour {
 		}
         //newNodeStart += SetNodeTags;
         //nodeCleanup += UnSetNodeTags;
-        newNodeStart += ExecuteNode;
+        //newNodeStart += ExecuteNode;
 		rp.onButtonSubmit += FindNextNode;
 		tp.onNodeChange += GetNodePassage;
 	}
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour {
 	void OnDisable(){
         //newNodeStart -= SetNodeTags;
         //nodeCleanup -= UnSetNodeTags;
-        newNodeStart -= ExecuteNode;
+        //newNodeStart -= ExecuteNode;
 		rp.onButtonSubmit -= FindNextNode;
 		tp.onNodeChange -= GetNodePassage;
 	}
@@ -103,8 +103,12 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void GetRootNode(){
-		rootNode = curStory.GetNodeByName ("Start");
-		curNode = rootNode;
+		//if (curStory.GetNodeName ("Start") != null) {
+			rootNode = curStory.GetNodeByName ("Start");
+			curNode = rootNode;
+		//} else {
+			//Debug.LogError ("No root node found");
+		//}
 		//newNodeStart ();
 	}
 
@@ -120,21 +124,25 @@ public class DialogueManager : MonoBehaviour {
 				nodeCleanup();
 				curNode = nextNode;
 
-				Debug.Log (curNode.nodeName);
-
-                //alright so this should probably wait for some kind of call to actually START 
-                //the node and not put this in traversal
-				newNodeStart();
+				ExecuteNode();
 				break;
 
 			}
 		}
-        
-
 	}
+
+	public void RunNodeData(){
+		if (rootNode != curNode) {
+			newNodeStart ();
+		} else {
+			Debug.Log ("Waiting for input");
+		}
+	}
+
     private void Update() {
         if (Input.GetKeyDown(KeyCode.S)) {
             //newNodeStart();
+			//RunNode();
         }
     }
 
@@ -153,6 +161,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void ExecuteNode() {
 		
+
         foreach(Silk.SilkTagBase tag in curNode.executionQueue) {
 
             //
@@ -180,10 +189,12 @@ public class DialogueManager : MonoBehaviour {
                 
             }
         }
+		RunNodeData ();
+		Debug.Log ("CURNODE IS " + curNode.nodeName + " || " + "ROOTNODE IS " + rootNode.nodeName);
     }
 
 	public bool MoveToNextTag(){
-        Debug.Log("sup?");
+        //Debug.Log("sup?");
         return true;
 	}
 

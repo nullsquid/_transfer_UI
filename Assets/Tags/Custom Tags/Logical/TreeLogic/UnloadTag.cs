@@ -9,7 +9,7 @@ public class UnloadTag : SilkTagBase {
 	}
 
     public override void ExecuteTagLogic(List<string> args) {
-        Debug.Log("Unload");
+        //Debug.Log("Unload");
         DialogueManager.instance.CurStory = null;
         OnExecutionComplete();
     }
