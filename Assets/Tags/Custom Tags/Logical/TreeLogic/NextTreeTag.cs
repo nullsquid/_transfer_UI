@@ -17,7 +17,7 @@ public class NextTreeTag : SilkTagBase {
 	}
     public override void ExecuteTagLogic(List<string> args) {
         //DialogueManager.instance.CurStory =
-        Debug.Log("NEWTREE " + args[0]);
+        //Debug.Log("NEWTREE " + args[0]);
 		DialogueManager.instance.GetNextStory (args [0]);
         OnExecutionComplete();
         //DialogueManager.instance.CurStory = Silky.Instance.mother.GetStoryByName(args[0]);
