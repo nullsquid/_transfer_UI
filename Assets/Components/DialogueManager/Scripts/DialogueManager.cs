@@ -124,12 +124,6 @@ public class DialogueManager : MonoBehaviour {
 				nodeCleanup();
 				curNode = nextNode;
 
-				//Debug.Log (curNode.nodeName);
-
-                //alright so this should probably wait for some kind of call to actually START 
-                //the node and not put this in traversal
-				//RunNode();
-				//newNodeStart();
 				ExecuteNode();
 				break;
 
