@@ -169,30 +169,32 @@ public class DialogueManager : MonoBehaviour {
             if (tag != null) {
                 if (curNode.executionQueue.Count >= 1) {
                     //Debug.Log("EXECUTE " + tag.TagName);
-					//this isn't waiting for completion
+                    //this isn't waiting for completion
                     tag.TagExecute();
 
                     //curNode.executionQueue.Remove(tag);
                     //curNode.executionQueue.Dequeue();
                 }
+                if (MoveToNextTag()) {
+                    Debug.Log("TRUE");
+                    continue;
+                }
                 else {
-                    break;
+                    Debug.Log("FALSE");
+
+                    //break;
                 }
             }
             //else??
-            else if (MoveToNextTag()) {
-                Debug.Log("TRUE");
-                continue;
-            }
-            else {
-                Debug.Log("FALSE");
-                
-            }
+            
+
         }
 		RunNodeData ();
-		Debug.Log ("CURNODE IS " + curNode.nodeName + " || " + "ROOTNODE IS " + rootNode.nodeName);
+		//Debug.Log ("CURNODE IS " + curNode.nodeName + " || " + "ROOTNODE IS " + rootNode.nodeName);
     }
-
+    /*public bool IEnumerator WaitForTagComplete() {
+        yield return new WaitUntil(MoveToNextTag() == true)
+    }*/
 	public bool MoveToNextTag(){
         //Debug.Log("sup?");
         return true;
