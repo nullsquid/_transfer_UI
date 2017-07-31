@@ -84,7 +84,7 @@ namespace Silk
 
 		public void OnExecutionComplete(){
             _isComplete = true;
-            DialogueManager.instance.MoveToNextTag();
+            //DialogueManager.instance.MoveToNextTag();
 		}
 
 		public virtual void ExecuteTagLogic(List<string> args){

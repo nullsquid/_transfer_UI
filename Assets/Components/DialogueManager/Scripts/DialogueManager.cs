@@ -167,21 +167,17 @@ public class DialogueManager : MonoBehaviour {
             //
             //Debug.Log(tag);
             if (tag != null) {
-                if (curNode.executionQueue.Count >= 1) {
-                    //Debug.Log("EXECUTE " + tag.TagName);
-                    //this isn't waiting for completion
-                    tag.TagExecute();
-
-                    //curNode.executionQueue.Remove(tag);
-                    //curNode.executionQueue.Dequeue();
-                }
-                if (MoveToNextTag()) {
+				
+				if (tag.IsComplete == true) {
                     Debug.Log("TRUE");
                     continue;
                 }
-                else {
+				else if(tag.IsComplete == false) {
                     Debug.Log("FALSE");
+					if (curNode.executionQueue.Count >= 1) {
+						tag.TagExecute();
 
+					}
                     //break;
                 }
             }
