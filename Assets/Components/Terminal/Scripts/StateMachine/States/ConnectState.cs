@@ -5,9 +5,17 @@ using Silk;
 public class ConnectState : ITerminalState {
 	SilkNode curNode;
 	SilkNode savedNode;
+
+	public ConnectState(SilkNode newNode){
+		curNode = newNode;
+	}
+
 	public void TerminalEnterState(){
+
+		//DialogueManager.instance.
 		//Find Correct Tree
 		//find correct node
+		//run current node on dialogue manager
 	}
 
 	public void TerminalExecuteState(){

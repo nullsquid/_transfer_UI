@@ -50,16 +50,15 @@ public class TextPrinter : MonoBehaviour {
     //Event to trigger print?
     //need an interface in Silk to easily get prompt text
 
-    private void Start() {        
-		
-	}
+
     public void TriggerPrinting() {
         onPrintBegin();
 
     }
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.A)) {
-			onPrintBegin ();
+			//onPrintBegin ();
+			Debug.LogError ("Moved onprintbegin to other method");
 		}
 	}
 	#endregion

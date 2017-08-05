@@ -138,13 +138,7 @@ public class DialogueManager : MonoBehaviour {
 			Debug.Log ("Waiting for input");
 		}
 	}
-
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.S)) {
-            //newNodeStart();
-			//RunNode();
-        }
-    }
+		
 
 
     public string GetNodePassage(){
