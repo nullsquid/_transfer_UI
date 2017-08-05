@@ -39,6 +39,18 @@ namespace Silk{
 			case "unload":
 				UnloadTag newUnload = new UnloadTag (tagName);
 				return newUnload;
+			case "sfx":
+				SoundEffectTag newSFX = new SoundEffectTag (tagName, args);
+				return newSFX;
+			case "audioclip":
+				AudioClipTag newAudioClip = new AudioClipTag (tagName, args);
+				return newAudioClip;
+			case "noprompt":
+				NoPrompTag newNoPrompt = new NoPrompTag (tagName, args);
+				return newNoPrompt;
+			case "videoclip":
+				VideoClipTag newVideoClip = new VideoClipTag (tagName, args);
+				return newVideoClip;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;
