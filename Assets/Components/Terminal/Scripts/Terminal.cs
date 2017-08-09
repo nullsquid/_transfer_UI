@@ -7,6 +7,23 @@ public class Terminal : MonoBehaviour {
 	TerminalStateMachine newTerminalStateMachine = new TerminalStateMachine();
 
 	void Start(){
-		//newTerminalStateMachine.ChangeTerminalState(
+        this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
 	}
+
+    private void Update() {
+        this.newTerminalStateMachine.TerminalStateUpdate();
+    }
+
+    void ChangeState(ITerminalState toState) {
+        //newTerminalStateMachine
+        /*switch (toState) {
+            case "CONNECT":
+                break;
+            case "HELP":
+
+                break;
+        }*/
+
+    }
+
 }

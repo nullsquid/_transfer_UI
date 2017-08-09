@@ -24,6 +24,8 @@ public class TextPrinter : MonoBehaviour {
     public Text typewriterText;
     public UnityEvent onLetterPrint;
 
+    public string helpMenu;
+
 	public delegate string GetTextToPrint();
 	public event GetTextToPrint onNodeChange;
 	#region Public Events
@@ -32,6 +34,7 @@ public class TextPrinter : MonoBehaviour {
 
 	public delegate void PrintTriggerAction();
 	public static event PrintTriggerAction onPrintBegin;
+
 	#endregion
 
 	#region Unity Methods
@@ -63,11 +66,16 @@ public class TextPrinter : MonoBehaviour {
 	}
 	#endregion
 	public void InvokeCharacterPrint(){
-		StartCoroutine(IterateThroughCharactersToPrint(onNodeChange(), letterTime, softPauseTimeBase, hardPauseTimeBase));
+		StartCoroutine(IterateThroughCharactersToPrint(onNodeChange(), letterTime, softPauseTimeBase, hardPauseTimeBase, true));
 
 	}
 
-    public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause) {
+    public void InvokeHelpMenu() {
+        StartCoroutine(IterateThroughCharactersToPrint(helpMenu, letterTime, softPauseTimeBase, hardPauseTimeBase, false));
+
+    }
+
+    public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause, bool callback) {
         float normalTime = time;
         if (text != null) {
             for (int i = 0; i < text.Length; i++) {
@@ -86,7 +94,9 @@ public class TextPrinter : MonoBehaviour {
                 yield return new WaitForSeconds(time);
 
             }
-            onPrintComplete();
+            if (callback == true) {
+                onPrintComplete();
+            }
         }
     }
 
