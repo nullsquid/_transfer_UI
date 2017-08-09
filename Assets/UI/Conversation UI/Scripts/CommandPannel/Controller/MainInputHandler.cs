@@ -86,7 +86,14 @@ public class MainInputHandler : MonoBehaviour {
     #region Command Methods
     void ConnectCommand(string[] _args) {
         if (_args.Length == 1) {
-            Debug.Log("CONNECTED " + _args[0]);
+            
+            if(_args[0] == DialogueManager.instance.connectID) {
+                GameObject.FindObjectOfType<TextPrinter>().TriggerPrinting();
+                Debug.Log("CONNECTED " + _args[0]);
+            }
+            else {
+                Debug.LogError("NO ID FOUND");
+            }
         }
         else if(_args.Length <= 1) {
             Debug.LogError("TOO FEW ARGUMENTS");

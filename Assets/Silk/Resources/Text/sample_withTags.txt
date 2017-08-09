@@ -51,6 +51,8 @@ Go away, go away, don’t you come back any more!
 
 [[Oh, how I wish he’d go away|5M]]
 
+:: MetaData
+<<connect="A">>
 
 :: 5G
 <<unload>>

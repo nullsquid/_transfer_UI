@@ -297,7 +297,11 @@ namespace Silk {
                     
 					//Debug.Log ("RAWTAG" + rawTag);
                     if (ParseRawTag(rawTag, tagFactory).type == TagType.INLINE) {
+                        //if (ParseRawTag(rawTag, tagFactory).TagName == "connect") {
+                        //    ParseRawTag(rawTag, tagFactory).TagExecute();
+                        //}
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
+                        
                         //Debug.Log("IN");
                     }
                     else if(ParseRawTag(rawTag,tagFactory).type == TagType.SEQUENCED) {

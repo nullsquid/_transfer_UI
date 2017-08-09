@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour {
     #region Singleton
     public static DialogueManager instance;
     void Awake() {
-
+        
         if (instance == null) {
             instance = this;
         }
@@ -25,9 +25,11 @@ public class DialogueManager : MonoBehaviour {
         }
         DontDestroyOnLoad(gameObject);
     }
-    
+    private void Update() {
+        Debug.Log(connectID);
+    }
     #endregion
-	void OnEnable(){
+    void OnEnable(){
 		if (rp == null) {
 			rp = GameObject.Find ("Response_Pannel").GetComponent<ResponsePrinter> ();
 		}
@@ -62,6 +64,7 @@ public class DialogueManager : MonoBehaviour {
 	SilkStory curStory;
 	SilkNode rootNode;
 	SilkNode curNode;
+    SilkNode metaDataNode;
 
 	void Start(){
 		StartCoroutine (Test ());
@@ -96,13 +99,22 @@ public class DialogueManager : MonoBehaviour {
 	void GetRootStory(string rootStoryName){
 		rootStory = Silky.Instance.mother.GetStoryByName (rootStoryName);
 		curStory = rootStory;
+        GetConnectID();
 	}
 
 	public void GetNextStory(string nextStoryName){
 		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
 		GetRootNode ();
+        GetConnectID();
 	}
-
+    public void GetConnectID() {
+        metaDataNode = curStory.GetNodeByName("MetaData");
+        foreach(SilkTagBase tag in metaDataNode.executionQueue) {
+            if(tag.TagName == "connect") {
+                tag.TagExecute();
+            }
+        }
+    }
 	public void GetRootNode(){
 		//if (curStory.GetNodeName ("Start") != null) {
 			rootNode = curStory.GetNodeByName ("Start");
@@ -170,6 +182,10 @@ public class DialogueManager : MonoBehaviour {
 				else if(tag.IsComplete == false) {
                     Debug.Log("FALSE");
 					if (curNode.executionQueue.Count >= 1) {
+                        //if(tag.TagName == "connect") {
+                        //    Debug.Log("boop");
+                        //    connectID = tag.Value;
+                        //}
 						tag.TagExecute();
 
 					}

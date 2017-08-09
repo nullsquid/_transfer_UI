@@ -6,5 +6,8 @@ Hello I'm 5M
 :: hello
 hi
 
+:: MetaData
+<<connect="F">>
+
 :: StoryTitle
 5M
