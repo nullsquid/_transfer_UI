@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Silk;
 public class DialogueManager : MonoBehaviour {
+    public string connectID;
 	//need to decouple this
 	ResponsePrinter rp;
 	TextPrinter tp;

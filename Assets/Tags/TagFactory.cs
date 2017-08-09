@@ -51,6 +51,9 @@ namespace Silk{
 			case "videoclip":
 				VideoClipTag newVideoClip = new VideoClipTag (tagName, args);
 				return newVideoClip;
+            case "connect":
+                ConnectTag newConnectTag = new ConnectTag(tagName, args);
+                return newConnectTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

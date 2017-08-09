@@ -241,6 +241,9 @@ namespace Silk {
 					//storyTitle = story.StoryName;
 					//story.SetStoryName(filename);
 				}
+                else if(storyTitleCheck == "MetaData") {
+
+                }
 				else {
 					promptContainer.Replace(ReturnTitle(tweeNodesToInterpret[c]), string.Empty, 0, ReturnTitle(tweeNodesToInterpret[c]).Length);
 				}
