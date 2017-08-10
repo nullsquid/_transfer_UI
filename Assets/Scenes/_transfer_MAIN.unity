@@ -177,6 +177,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &169933652
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/postVHSPro_Second
+  m_Shader: {fileID: 4800000, guid: e2075d3cd3deb45c78fdc81aab250ef7, type: 3}
+  m_ShaderKeywords: VHS_BLEED_ON VHS_FISHEYE_ON VHS_OLD_THREE_PHASE VHS_SIGNAL_TWEAK_ON
+    VHS_VIGNETTE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _CurvesTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1 &297057285
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +392,44 @@ Prefab:
       propertyPath: m_Name
       value: Main_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 114622103038575546, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114063906919477274, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114665631620984692, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: topImage
+      value: 
+      objectReference: {fileID: 21300000, guid: db4ff4c49bbd8ec4ebc0ec0d56e97590,
+        type: 3}
+    - target: {fileID: 114665631620984692, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: botImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 4d51c65af7fcf5343889bc1b996f850e,
+        type: 3}
+    - target: {fileID: 114665631620984692, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: midImage
+      value: 
+      objectReference: {fileID: 21300000, guid: de1a10333e492b54c948c610abafa58b,
+        type: 3}
+    - target: {fileID: 224046653290056414, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 224046653290056414, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -255
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b90046495f88764a963b67c8270748b, type: 2}
   m_IsPrefabParent: 0
@@ -451,6 +517,37 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
   m_IsPrefabParent: 0
+--- !u!21 &583217364
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/postVHSPro_Third
+  m_Shader: {fileID: 4800000, guid: de4e63e4455b14b8e8c57542f8089707, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _FeedbackTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LastTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1 &742197549
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +618,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 196c00bc15e4ba04b8582e767ac1e2a2, type: 3}
-    m_FontSize: 40
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -551,6 +648,7 @@ GameObject:
   - component: {fileID: 785440872}
   - component: {fileID: 785440871}
   - component: {fileID: 785440870}
+  - component: {fileID: 785440874}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -628,6 +726,225 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &785440874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 785440868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba5113e7208c4316acb1028a08587a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader1: {fileID: 4800000, guid: e5b137a48bf2c4c668927fd89b6ccbcd, type: 3}
+  shader2: {fileID: 4800000, guid: e2075d3cd3deb45c78fdc81aab250ef7, type: 3}
+  shader3: {fileID: 4800000, guid: de4e63e4455b14b8e8c57542f8089707, type: 3}
+  shader4: {fileID: 4800000, guid: 65c19848f188f4192a05ff1eece78fee, type: 3}
+  shader_clear: {fileID: 4800000, guid: 3c6a64923374747f7b15711533b5971a, type: 3}
+  shader_tape: {fileID: 4800000, guid: caea6b3daf52a4416949b7b9c0146d77, type: 3}
+  mat1: {fileID: 1988498758}
+  mat2: {fileID: 169933652}
+  mat3: {fileID: 583217364}
+  mat4: {fileID: 1443098817}
+  mat_clear: {fileID: 1362472419}
+  mat_tape: {fileID: 1206772956}
+  g_showCRT: 1
+  g_showNoise: 1
+  g_showJitter: 1
+  g_showSignal: 1
+  g_showFeedback: 1
+  g_showExtra: 0
+  g_showBypass: 0
+  bleedOn: 1
+  crtMode: 0
+  crtLinesMode: 0
+  screenLinesNum: 336
+  bleedAmount: 1
+  bleedDebugOn: 0
+  bleedCurveY:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: -1
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: -1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  bleedCurveI:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: -0.5
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: -0.5
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  bleedCurveQ:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: -0.5
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: -0.5
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  bleedLength: 24
+  bleedCurveEditModeOn: 0
+  bleedCurveIQSyncOn: 1
+  fisheyeOn: 1
+  fisheyeBend: 1
+  fisheyeType: 0
+  fisheyeSize: 1.2
+  cutoffX: 0
+  cutoffY: 0
+  cutoffFadeX: 1.6
+  cutoffFadeY: 0.8
+  vignetteOn: 1
+  vignetteAmount: 0.75
+  vignetteSpeed: 1.08
+  noiseLinesMode: 1
+  noiseLinesNum: 240
+  noiseQuantizeX: 0
+  filmgrainOn: 0
+  filmGrainAmount: 0.016
+  signalNoiseOn: 1
+  signalNoiseAmount: 0.12
+  signalNoisePower: 0.83
+  tapeNoiseOn: 0
+  tapeNoiseTH: 0.63
+  tapeNoiseAmount: 1
+  tapeNoiseSpeed: 1
+  lineNoiseOn: 1
+  lineNoiseAmount: 3.2
+  lineNoiseSpeed: 4.2
+  scanLinesOn: 0
+  scanLineWidth: 6
+  linesFloatOn: 0
+  linesFloatSpeed: -2.51
+  stretchOn: 1
+  twitchHOn: 0
+  twitchHFreq: 1
+  twitchVOn: 0
+  twitchVFreq: 1
+  jitterHOn: 1
+  jitterHAmount: 0.5
+  jitterVOn: 0
+  jitterVAmount: 1
+  jitterVSpeed: 1
+  signalTweakOn: 1
+  signalAdjustY: -0.04
+  signalAdjustI: -0.048
+  signalAdjustQ: 0
+  signalShiftY: 1
+  signalShiftI: 1
+  signalShiftQ: 1
+  gammaCorection: 1
+  feedbackOn: 1
+  feedbackMode: 0
+  feedbackThresh: 0.1
+  feedbackAmount: 2
+  feedbackFade: 0.82
+  feedbackColor: {r: 1, g: 0.5, b: 0, a: 1}
+  feedbackDebugOn: 0
+  independentTimeOn: 0
+  bypassTex: {fileID: 0}
+  spriteTex: {fileID: 0}
+--- !u!1 &1033645224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1033645225}
+  - component: {fileID: 1033645227}
+  - component: {fileID: 1033645226}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1033645225
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033645224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061418328}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.00011587, y: -0.12507999}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1033645226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033645224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: d1e7aa40fb9eca14d8a307b3832a0515, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1033645227
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033645224}
 --- !u!224 &1061418328 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224250448626620624, guid: 1b90046495f88764a963b67c8270748b,
@@ -919,6 +1236,79 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!21 &1206772956
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/postVHSPro_Tape
+  m_Shader: {fileID: 4800000, guid: caea6b3daf52a4416949b7b9c0146d77, type: 3}
+  m_ShaderKeywords: VHS_LINENOISE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
+--- !u!21 &1362472419
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/postVHSPro_Clear
+  m_Shader: {fileID: 4800000, guid: 3c6a64923374747f7b15711533b5971a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
+--- !u!21 &1443098817
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/postVHSPro_Forth
+  m_Shader: {fileID: 4800000, guid: 65c19848f188f4192a05ff1eece78fee, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _FeedbackTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1 &1566020867
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51d05e22db9b448b8904e658ba390c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canRunCommands: 1
 --- !u!1 &1761125390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,3 +1392,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1988498758
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/postVHSPro_First
+  m_Shader: {fileID: 4800000, guid: e5b137a48bf2c4c668927fd89b6ccbcd, type: 3}
+  m_ShaderKeywords: VHS_FISHEYE_ON VHS_JITTER_H_ON VHS_LINENOISE_ON VHS_STRETCH_ON
+    VHS_YIQNOISE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []

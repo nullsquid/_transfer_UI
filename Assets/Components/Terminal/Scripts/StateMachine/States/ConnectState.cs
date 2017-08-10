@@ -12,6 +12,7 @@ public class ConnectState : ITerminalState {
 
 	public void TerminalEnterState(){
         terminal.canRunCommands = false;
+        GameObject.FindObjectOfType<Transfer.Input.MainInputController>().CanRecordInput = false;
 		//DialogueManager.instance.
 		//Find Correct Tree
 		//find correct node

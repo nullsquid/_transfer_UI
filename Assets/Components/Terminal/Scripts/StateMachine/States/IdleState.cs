@@ -7,6 +7,7 @@ public class IdleState : ITerminalState {
 	public void TerminalEnterState(){
         //exit previous state
         GameObject.FindObjectOfType<Terminal>().canRunCommands = true;
+        GameObject.FindObjectOfType<Transfer.Input.MainInputController>().CanRecordInput = true;
         Debug.Log("entered IDLE STATE");
 	}
 

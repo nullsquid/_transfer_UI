@@ -12,6 +12,10 @@ public class ResponsePrinter : MonoBehaviour {
     public GameObject dialogueEventHandler;
     public TextPrinter printer;
 
+    public Sprite topImage;
+    public Sprite midImage;
+    public Sprite botImage;
+
 
 	public delegate void CaptureDialogueChoice(string responseText);
 	public event CaptureDialogueChoice onButtonSubmit;
@@ -46,6 +50,15 @@ public class ResponsePrinter : MonoBehaviour {
 
             GameObject newresponse = Instantiate(responsePrefab);
             Button b = newresponse.GetComponent<Button>();
+            if(i == 0) {
+                newresponse.GetComponent<Image>().sprite = topImage;
+            }
+            else if(i == node.silkLinks.Count - 1) {
+                newresponse.GetComponent<Image>().sprite = botImage;
+            }
+            else {
+                newresponse.GetComponent<Image>().sprite = midImage;
+            }
             ////////////////////////////////////////////////////////////////
             //this script must be attached to the parent of all responses///
             ////////////////////////////////////////////////////////////////
