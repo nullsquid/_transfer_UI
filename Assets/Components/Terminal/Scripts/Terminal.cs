@@ -5,25 +5,24 @@ using UnityEngine;
 public class Terminal : MonoBehaviour {
 
 	TerminalStateMachine newTerminalStateMachine = new TerminalStateMachine();
+    public bool canRunCommands = true;
 
 	void Start(){
         this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
+        //Debug.Log(GetState());
 	}
 
     private void Update() {
+        Debug.Log(canRunCommands);
         this.newTerminalStateMachine.TerminalStateUpdate();
     }
 
-    void ChangeState(ITerminalState toState) {
-        //newTerminalStateMachine
-        /*switch (toState) {
-            case "CONNECT":
-                break;
-            case "HELP":
-
-                break;
-        }*/
+    public void ChangeState(ITerminalState toState) {
+        this.newTerminalStateMachine.ChangeTerminalState(toState);
 
     }
 
+    public ITerminalState GetState() {
+        return newTerminalStateMachine.CurState;
+    }
 }

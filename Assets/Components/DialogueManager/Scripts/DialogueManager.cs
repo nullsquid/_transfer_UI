@@ -186,6 +186,7 @@ public class DialogueManager : MonoBehaviour {
                         //    Debug.Log("boop");
                         //    connectID = tag.Value;
                         //}
+                        Debug.Log(tag.TagName);
 						tag.TagExecute();
 
 					}

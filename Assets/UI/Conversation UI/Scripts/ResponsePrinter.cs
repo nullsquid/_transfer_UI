@@ -77,7 +77,11 @@ public class ResponsePrinter : MonoBehaviour {
 
     void OnButtonClick(Response response) {
         //Debug.Log(response.responseText);
-		onButtonSubmit (response.responseText);
+        Debug.Log("TEST!! " + GameObject.FindObjectOfType<MainInputDisplay>().CurText);
+        //if (GameObject.FindObjectOfType<MainInputHandler>().RawText.Trim() == "") {
+            
+            onButtonSubmit(response.responseText);
+        //}
     }
 
     //HAVE TO HAVE A LOADING SCREEN TO SEQUENCE OUT THIS WHOLE SETUP

@@ -12,6 +12,13 @@ public class MainInputHandler : MonoBehaviour {
     private string _rootCommand;
     #endregion
 
+    public string RawText
+    {
+        get
+        {
+            return _rawText;
+        }
+    }
     #region Events
 
     #endregion
@@ -64,22 +71,28 @@ public class MainInputHandler : MonoBehaviour {
                     argumentList.Add(_args[i]);
             }
         }
-        HandleInput(_rootCommand, argumentList.ToArray());
+        if (terminal.canRunCommands == true) {
+            HandleInput(_rootCommand, argumentList.ToArray());
+        }
     }
     #endregion
 
     #region Main Methods
     void HandleInput(string _root, string[] _args) {
-        if (_root == "CONNECT") {
-            ConnectCommand(_args);
-        }
-        else if (_root == "SLEEP") {
-            SleepCommand(_args);
-        }
+        //if (terminal.GetState() is IdleState) {
+        //if(terminal.canRunCommands == true) { 
+            Debug.Log("boops boops");
+            if (_root == "CONNECT") {
+                ConnectCommand(_args);
+            }
+            else if (_root == "SLEEP") {
+                SleepCommand(_args);
+            }
 
-        else if(_root == "HELP") {
-            HelpCommand(_args);
-        }
+            else if (_root == "HELP") {
+                HelpCommand(_args);
+            }
+        //}
     }
     #endregion
 
@@ -88,6 +101,7 @@ public class MainInputHandler : MonoBehaviour {
         if (_args.Length == 1) {
             
             if(_args[0] == DialogueManager.instance.connectID) {
+                terminal.ChangeState(new ConnectState());
                 GameObject.FindObjectOfType<TextPrinter>().TriggerPrinting();
                 Debug.Log("CONNECTED " + _args[0]);
             }

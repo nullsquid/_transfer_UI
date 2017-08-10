@@ -5,13 +5,13 @@ using Silk;
 public class ConnectState : ITerminalState {
 	SilkNode curNode;
 	SilkNode savedNode;
-
-	public ConnectState(SilkNode newNode){
-		curNode = newNode;
-	}
+    Terminal terminal;
+    public ConnectState() {
+        terminal = GameObject.FindObjectOfType<Terminal>();
+    }
 
 	public void TerminalEnterState(){
-
+        terminal.canRunCommands = false;
 		//DialogueManager.instance.
 		//Find Correct Tree
 		//find correct node

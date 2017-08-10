@@ -36,9 +36,10 @@ namespace Silk{
 			case "state":
 				StateTag newState = new StateTag (tagName, args);
 				return newState;
-			case "unload":
-				UnloadTag newUnload = new UnloadTag (tagName);
-				return newUnload;
+			//case "unload":
+                //break;
+				//UnloadTag newUnload = new UnloadTag (tagName);
+				//return newUnload;
 			case "sfx":
 				SoundEffectTag newSFX = new SoundEffectTag (tagName, args);
 				return newSFX;

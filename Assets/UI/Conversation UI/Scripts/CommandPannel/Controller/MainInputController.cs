@@ -110,6 +110,11 @@ namespace Transfer.Input {
             return inputText;
         }
 
+        IEnumerator WaitAndEnter() {
+            yield return new WaitForEndOfFrame();
+
+        }
+
 
 
     }

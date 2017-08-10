@@ -7,6 +7,22 @@ public class TerminalStateMachine {
 	private ITerminalState curState;
 	private ITerminalState prevState;
 
+    public ITerminalState CurState
+    {
+        get
+        {
+            return curState;
+        }
+    }
+
+    public ITerminalState PrevState
+    {
+        get
+        {
+            return prevState;
+        }
+    }
+
 	public void ChangeTerminalState(ITerminalState newState){
 		if (curState != null) {
 			curState.TerminalExitState ();
@@ -30,6 +46,8 @@ public class TerminalStateMachine {
 		}
 		curState.TerminalEnterState ();
 	}
+
+
 
 
 

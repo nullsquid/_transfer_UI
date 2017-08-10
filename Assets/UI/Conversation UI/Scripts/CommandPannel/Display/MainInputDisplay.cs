@@ -10,6 +10,13 @@ public class MainInputDisplay : MonoBehaviour {
     string _prompt;
     string _curText = "";
     string _newText;
+
+    public string CurText{
+        get
+        {
+            return _curText;
+        }
+    }
 	// Use this for initialization
 	void Start () {
         _prompt = "TERMINAL@MEMM$>>";
