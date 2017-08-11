@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 785440871}
   - component: {fileID: 785440870}
   - component: {fileID: 785440874}
+  - component: {fileID: 785440875}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -759,7 +760,7 @@ MonoBehaviour:
   bleedOn: 1
   crtMode: 0
   crtLinesMode: 0
-  screenLinesNum: 336
+  screenLinesNum: 0
   bleedAmount: 1
   bleedDebugOn: 0
   bleedCurveY:
@@ -828,7 +829,7 @@ MonoBehaviour:
   cutoffFadeX: 1.6
   cutoffFadeY: 0.8
   vignetteOn: 1
-  vignetteAmount: 0.75
+  vignetteAmount: 0.59
   vignetteSpeed: 1.08
   noiseLinesMode: 1
   noiseLinesNum: 240
@@ -851,12 +852,12 @@ MonoBehaviour:
   linesFloatSpeed: -2.51
   stretchOn: 1
   twitchHOn: 0
-  twitchHFreq: 1
+  twitchHFreq: 5
   twitchVOn: 0
   twitchVFreq: 1
   jitterHOn: 1
   jitterHAmount: 0.5
-  jitterVOn: 0
+  jitterVOn: 1
   jitterVAmount: 1
   jitterVSpeed: 1
   signalTweakOn: 1
@@ -877,6 +878,18 @@ MonoBehaviour:
   independentTimeOn: 0
   bypassTex: {fileID: 0}
   spriteTex: {fileID: 0}
+--- !u!114 &785440875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 785440868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 780e0ec72fc76954abe625e48af06f28, type: 2}
 --- !u!1 &1033645224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,8 +1413,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Hidden/postVHSPro_First
   m_Shader: {fileID: 4800000, guid: e5b137a48bf2c4c668927fd89b6ccbcd, type: 3}
-  m_ShaderKeywords: VHS_FISHEYE_ON VHS_JITTER_H_ON VHS_LINENOISE_ON VHS_STRETCH_ON
-    VHS_YIQNOISE_ON
+  m_ShaderKeywords: VHS_FISHEYE_ON VHS_JITTER_H_ON VHS_JITTER_V_ON VHS_LINENOISE_ON
+    VHS_STRETCH_ON VHS_YIQNOISE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
