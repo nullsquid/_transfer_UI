@@ -185,8 +185,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Hidden/postVHSPro_Second
   m_Shader: {fileID: 4800000, guid: e2075d3cd3deb45c78fdc81aab250ef7, type: 3}
-  m_ShaderKeywords: VHS_BLEED_ON VHS_FISHEYE_ON VHS_OLD_THREE_PHASE VHS_SIGNAL_TWEAK_ON
-    VHS_VIGNETTE_ON
+  m_ShaderKeywords: VHS_BLEED_ON VHS_OLD_THREE_PHASE VHS_SIGNAL_TWEAK_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
@@ -760,8 +759,8 @@ MonoBehaviour:
   bleedOn: 1
   crtMode: 0
   crtLinesMode: 0
-  screenLinesNum: 0
-  bleedAmount: 1
+  screenLinesNum: 997
+  bleedAmount: 0
   bleedDebugOn: 0
   bleedCurveY:
     serializedVersion: 2
@@ -820,7 +819,7 @@ MonoBehaviour:
   bleedLength: 24
   bleedCurveEditModeOn: 0
   bleedCurveIQSyncOn: 1
-  fisheyeOn: 1
+  fisheyeOn: 0
   fisheyeBend: 1
   fisheyeType: 0
   fisheyeSize: 1.2
@@ -828,7 +827,7 @@ MonoBehaviour:
   cutoffY: 0
   cutoffFadeX: 1.6
   cutoffFadeY: 0.8
-  vignetteOn: 1
+  vignetteOn: 0
   vignetteAmount: 0.59
   vignetteSpeed: 1.08
   noiseLinesMode: 1
@@ -889,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 780e0ec72fc76954abe625e48af06f28, type: 2}
+  profile: {fileID: 11400000, guid: 76095eef2dcb34648b58cc1b7d08f405, type: 2}
 --- !u!1 &1033645224
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +900,7 @@ GameObject:
   - component: {fileID: 1033645227}
   - component: {fileID: 1033645226}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Bkg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1272,6 +1271,74 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors: []
+--- !u!1 &1347919827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1347919828}
+  - component: {fileID: 1347919830}
+  - component: {fileID: 1347919829}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1347919828
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1347919827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061418328}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1347919829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1347919827}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1347919830
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1347919827}
 --- !u!21 &1362472419
 Material:
   serializedVersion: 6
@@ -1413,8 +1480,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Hidden/postVHSPro_First
   m_Shader: {fileID: 4800000, guid: e5b137a48bf2c4c668927fd89b6ccbcd, type: 3}
-  m_ShaderKeywords: VHS_FISHEYE_ON VHS_JITTER_H_ON VHS_JITTER_V_ON VHS_LINENOISE_ON
-    VHS_STRETCH_ON VHS_YIQNOISE_ON
+  m_ShaderKeywords: VHS_JITTER_H_ON VHS_JITTER_V_ON VHS_LINENOISE_ON VHS_STRETCH_ON
+    VHS_YIQNOISE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1

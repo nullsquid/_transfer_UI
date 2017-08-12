@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: TextBloomAndDarkBluGrade
+  m_Name: OldGrade
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -100,41 +100,41 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 16.2
-        threshold: 1.44
-        softKnee: 0.66
-        radius: 4.87
+        intensity: 0.92
+        threshold: 1.16
+        softKnee: 0.87
+        radius: 4.68
         antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
-        intensity: 3.27
+        intensity: 3
   colorGrading:
     m_Enabled: 1
     m_Settings:
       tonemapping:
         tonemapper: 2
         neutralBlackIn: 0.02
-        neutralWhiteIn: 10
+        neutralWhiteIn: 8.8
         neutralBlackOut: 0
         neutralWhiteOut: 10
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
         postExposure: 0
-        temperature: -35
-        tint: 19
+        temperature: 0
+        tint: 0
         hueShift: 0
-        saturation: 2
+        saturation: 1
         contrast: 2
       channelMixer:
-        red: {x: 1, y: 0, z: 0}
+        red: {x: 1.13, y: -0.06, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 1, b: 1, a: 0}
+          slope: {r: 0.81000245, g: 0.8538002, b: 1, a: 0}
           power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
@@ -149,14 +149,14 @@ MonoBehaviour:
             - serializedVersion: 2
               time: 0
               value: 0
-              inSlope: 1
+              inSlope: 0
               outSlope: 1
               tangentMode: 0
             - serializedVersion: 2
               time: 1
               value: 1
               inSlope: 1
-              outSlope: 1
+              outSlope: 0
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
@@ -283,8 +283,8 @@ MonoBehaviour:
   chromaticAberration:
     m_Enabled: 0
     m_Settings:
-      spectralTexture: {fileID: 0}
-      intensity: 0.1
+      spectralTexture: {fileID: 2800000, guid: a03c400b0e3959f428ee99dfc6cfc263, type: 3}
+      intensity: 0.36
   grain:
     m_Enabled: 0
     m_Settings:
