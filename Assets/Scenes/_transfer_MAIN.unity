@@ -394,27 +394,43 @@ Prefab:
     - target: {fileID: 224994408857597750, guid: 1b90046495f88764a963b67c8270748b,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 774.75
+      value: 727
       objectReference: {fileID: 0}
     - target: {fileID: 224994408857597750, guid: 1b90046495f88764a963b67c8270748b,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -1579.5
+      value: -1580
       objectReference: {fileID: 0}
     - target: {fileID: 224994408857597750, guid: 1b90046495f88764a963b67c8270748b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 103
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 224994408857597750, guid: 1b90046495f88764a963b67c8270748b,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -271
+      value: -288
       objectReference: {fileID: 0}
     - target: {fileID: 1190940555722354, guid: 1b90046495f88764a963b67c8270748b, type: 2}
       propertyPath: m_Name
       value: BuddyList
       objectReference: {fileID: 0}
+    - target: {fileID: 114759840033707242, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114759840033707242, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114759840033707242, guid: 1b90046495f88764a963b67c8270748b,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1e7aa40fb9eca14d8a307b3832a0515,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b90046495f88764a963b67c8270748b, type: 2}
   m_IsPrefabParent: 0
