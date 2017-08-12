@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Transfer.Input;
+using Transfer.Data;
 public class MainInputDisplay : MonoBehaviour {
     public Text commandDisplay;
     public MainInputController input;
@@ -19,7 +20,8 @@ public class MainInputDisplay : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        _prompt = "TERMINAL@MEMM$>>";
+		
+		_prompt = "TERMINAL@" + CharacterDatabase.GetPlayerName() + "$>>";
 	}
     
     private void OnGUI() {
