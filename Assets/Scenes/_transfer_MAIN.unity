@@ -1203,6 +1203,7 @@ GameObject:
   - component: {fileID: 1043230020}
   - component: {fileID: 1043230019}
   - component: {fileID: 1043230018}
+  - component: {fileID: 1043230021}
   m_Layer: 2
   m_Name: ListContainer
   m_TagString: Untagged
@@ -1293,6 +1294,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1043230016}
+--- !u!114 &1043230021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1043230016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4b94d63f9f04fbab3b6e88e63354af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1061418328 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224250448626620624, guid: 1b90046495f88764a963b67c8270748b,
