@@ -72,9 +72,9 @@ public class DialogueManager : MonoBehaviour {
 
 	//TODO remove once actual method for getting text in
 	IEnumerator InitializeTransferText(){
-		yield return new WaitForSeconds(1f);
+        yield return new WaitForEndOfFrame();
         //
-		GetRootStory ("9" + Transfer.System.CharacterManager.instance.GetPlayerID());
+		GetRootStory ("2" + Transfer.System.CharacterManager.instance.GetPlayerID());
 		GetRootNode ();
 	}
 
