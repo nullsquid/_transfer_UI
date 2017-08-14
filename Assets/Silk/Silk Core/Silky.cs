@@ -159,6 +159,7 @@ namespace Silk {
 
         private void Start() {
             InitializeSilk();
+            GameObject.FindObjectOfType<DialogueManager>().InitializationCallback();
             //LogNodeQueue();
             //LogNodeQueue();
 
@@ -391,6 +392,7 @@ namespace Silk {
             newNode.nodePassage = newPassage;
             //TODO Add the correct amount of links to the list
             //add link names
+            //Debug.Log(ReturnLinks(newTweeData).Count);
             newNode.links = ReturnLinks(newTweeData);
 
             newSilkStory.AddToStory(newNode.nodeName, newNode);
@@ -579,6 +581,7 @@ namespace Silk {
         //TODO replace all of the inputToExtractLinksFrom variables with inputCopy
         //TODO remove the link substring from inputCopy once it's been added to the list
         Dictionary<string, string> ReturnLinks(string inputToExtractLinksFrom) {
+            
             StringBuilder inputCopy = new StringBuilder();
             inputCopy.Append(inputToExtractLinksFrom);
             List<SilkLink> newSilkLinks = new List<SilkLink>();

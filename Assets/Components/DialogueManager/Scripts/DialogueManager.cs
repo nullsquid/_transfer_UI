@@ -66,7 +66,7 @@ public class DialogueManager : MonoBehaviour {
 	SilkNode curNode;
     SilkNode metaDataNode;
 
-	void Start(){
+	public void InitializationCallback(){
 		StartCoroutine (InitializeTransferText ());
 	}
 
@@ -74,7 +74,12 @@ public class DialogueManager : MonoBehaviour {
 	IEnumerator InitializeTransferText(){
         yield return new WaitForEndOfFrame();
         //
-		GetRootStory ("2" + Transfer.System.CharacterManager.instance.GetPlayerID());
+        if (GameObject.FindObjectOfType<Importer>().useFullText == true) {
+            GetRootStory("9" + Transfer.System.CharacterManager.instance.GetPlayerID());
+        }
+        else {
+            GetRootStory("sample_withTags");
+        }
 		GetRootNode ();
 	}
 
