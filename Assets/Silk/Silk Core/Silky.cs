@@ -347,6 +347,7 @@ namespace Silk {
 
             //test prompt
             //curNode.executionQueue.Enqueue(tagFactory.SetTag("prompt", null));
+            
 			return promptContainer.ToString ();
 		}
 
