@@ -1,0 +1,58 @@
+﻿:: Start
+<<speaker="0">>
+<<action="RUN">>
+
+[[<<action="RUN">>|2D]]
+
+[[<<action="RUN">>|2E]]
+
+[[<<action="RUN">>|2F]]
+
+[[<<action="RUN">>|2H]]
+
+[[<<action="RUN">>|2A]]
+
+
+:: 2D
+<<unload>>
+<<nexttree="2D">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="0">>
+<<level="3">>
+
+
+:: StoryTitle
+3C
+
+
+:: 2E
+<<unload>>
+<<nexttree="2E">>
+<<state="idle">>
+
+
+:: 2H
+<<unload>>
+<<nexttree="2H">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 2F
+<<unload>>
+<<nexttree="2F">>
+<<state="idle">>
+
+
+:: 2A
+<<unload>>
+<<nexttree="2A">>
+<<state="idle">>
+
+

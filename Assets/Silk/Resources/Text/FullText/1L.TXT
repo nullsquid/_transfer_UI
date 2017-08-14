@@ -1,0 +1,27 @@
+﻿:: Start
+<<speaker="D">>
+You know what I really miss from the old days?
+
+[[What?|Reality television.]]
+
+
+:: Reality television.
+<<speaker="D">>
+Reality television.
+
+<<end="Ending Name">>
+
+
+:: MetaData
+<<connect="D">>
+<<level="1">>
+
+
+:: StoryTitle
+1L
+
+
+:: StoryAuthor
+Anonymous
+
+

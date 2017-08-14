@@ -1,0 +1,57 @@
+﻿:: Start
+<<noprompt>>
+
+[[Where exactly are we going to build this museum?|Shhh!  I think there's something here!]]
+
+[[What exactly are we going to use to build this museum?|Hush!  I think there's something here!]]
+
+[[Who exactly is going to go see this museum?|Quiet!  I think there's something here!]]
+
+[[How exactly will we transport these artifacts?|I think there's something here!]]
+
+
+:: I think there's something here!
+<<speaker="G">>
+I think there's something here!
+
+[[<<wait="6">>|3D]]
+
+
+:: Quiet!  I think there's something here!
+<<speaker="G">>
+Quiet!  I think there's something here!
+
+[[<<wait="6">>|3D]]
+
+
+:: 3D
+
+
+
+:: StoryTitle
+4B
+
+
+:: Shhh!  I think there's something here!
+<<speaker="G">>
+Shhh!  I think there's something here!
+
+[[<<wait="6">>|3D]]
+
+
+:: MetaData
+<<connect="G">>
+<<level="4">>
+
+
+:: Hush!  I think there's something here!
+<<speaker="G">>
+Hush!  I think there's something here!
+
+[[<<wait="6">>|3D]]
+
+
+:: StoryAuthor
+Anonymous
+
+

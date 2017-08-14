@@ -67,15 +67,17 @@ public class DialogueManager : MonoBehaviour {
     SilkNode metaDataNode;
 
 	void Start(){
-		StartCoroutine (Test ());
+		StartCoroutine (InitializeTransferText ());
 	}
 
 	//TODO remove once actual method for getting text in
-	IEnumerator Test(){
-		yield return new WaitForEndOfFrame ();
-		GetRootStory ("Sample");
+	IEnumerator InitializeTransferText(){
+		yield return new WaitForSeconds(1f);
+        //
+		GetRootStory ("9" + Transfer.System.CharacterManager.instance.GetPlayerID());
 		GetRootNode ();
 	}
+
 	public SilkNode CurNode{
 		get{
 			return curNode;

@@ -1,0 +1,141 @@
+﻿:: Start
+<<noprompt>>
+
+[[What happened?|Not sure.  Some kind of shift while everything realigns.]]
+
+
+:: Not sure.  Some kind of shift while everything realigns.
+<<speaker="H">>
+Not sure.  Some kind of shift while everything realigns.
+
+[[Who are you?|I am H.]]
+
+
+:: Of course, of course.  I remember.
+<<speaker="H">>
+Of course, of course.  I remember.
+
+[[Remember anything else?|Yes, I did.  Seeing a bunch of bombs go off.  But I think it was a long time ago.]]
+
+[[How's the rat hunting?|Rat hunting?]]
+
+
+:: I was young.
+<<speaker="H">>
+I was young.
+
+[[At least that's something to go on.|7F]]
+
+
+:: StoryTitle
+8E
+
+
+:: Rat hunting?
+<<speaker="H">>
+Rat hunting?
+
+[[Finding the one who wasn't like the others?|Of course.  Right.  Well, it seems I've sort of lost it.  Do you suppose you could tell me how to find it?]]
+
+
+:: I am H.
+<<speaker="H">>
+I am <<name="H">>.
+
+[[Nice to meet you.|And you?]]
+
+[[We've met before.|Of course, of course.  I remember.]]
+
+
+:: Yes, I did.  Seeing a bunch of bombs go off.  But I think it was a long time ago.
+<<speaker="H">>
+Yes, I did.  Seeing a bunch of bombs go off.  But I think it was a long time ago.
+
+[[How long ago?|I was young.]]
+
+[[Where?|Far away.]]
+
+
+:: 7F
+<<unload>>
+<<nexttree="7F">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: Of course.  Right.  Well, it seems I've sort of lost it.  Do you suppose you could tell me how to find it?
+<<speaker="H">>
+Of course.  Right.  Well, it seems I've sort of lost it.  Do you suppose you could tell me how to find it?
+
+[[I thought you could find it by sense of smell.|That's right.  Yeah.  But I lost it.  Is there another way?  Could it be hiding it's scent?]]
+
+
+:: And you?
+<<speaker="H">>
+And you?
+
+[[I don't remember.|Understandable.  Do you remember anything?]]
+
+
+:: Far away.
+<<speaker="H">>
+Far away.
+
+[[That's unnerving.|7F]]
+
+[[That's good.|7C]]
+
+
+:: Understandable.  Do you remember anything?
+<<speaker="H">>
+Understandable.  Do you remember anything?
+
+[[Nothing.|7A]]
+
+[[Mouths.|7E]]
+
+[[Division and combination.|7F]]
+
+[[Two strands.|7C]]
+
+
+:: MetaData
+<<connect="H">>
+<<level="9">>
+
+
+:: That's right.  Yeah.  But I lost it.  Is there another way?  Could it be hiding it's scent?
+<<speaker="H">>
+That's right.  Yeah.  But I lost it.  Is there another way?  Could it be hiding it's scent?
+
+[[Not that I know of.|Good, then.  Makes it easier.]]
+
+
+:: 7C
+<<unload>>
+<<nexttree="7C">>
+<<state="idle">>
+
+
+:: 7A
+<<unload>>
+<<nexttree="7A">>
+<<state="idle">>
+
+
+:: 7E
+<<unload>>
+<<nexttree="7E">>
+<<state="idle">>
+
+
+:: Good, then.  Makes it easier.
+<<speaker="H">>
+Good, then.  Makes it easier.
+
+[[I guess.|7C]]
+
+

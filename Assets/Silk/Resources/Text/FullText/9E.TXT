@@ -1,0 +1,67 @@
+﻿:: Start
+<<speaker="D">>
+Anyone out there?
+
+[[Yes|What's going on?]]
+
+[[Reject connection.|What's going on?2]]
+
+
+:: What's going on?
+<<speaker="D">>
+What's going on?
+
+[[I don't know|8B]]
+
+
+:: MetaData
+<<connect="D">>
+<<level="9">>
+
+
+:: StoryTitle
+9E
+
+
+:: What's going on?2
+<<speaker="D">>
+What's going on?
+
+[[Reject connection|I can hear you breathing.]]
+
+
+:: I can hear you breathing.
+<<speaker="D">>
+I can hear you breathing.
+
+
+[[I don't know what's going on.|8B]]
+
+[[Reject connection.|8A]]
+
+[[Who are you?|Don't know.  Who are you?]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: Don't know.  Who are you?
+<<speaker="D">>
+Don't know.  Who are you?
+
+[[I don't know.|8A]]
+
+
+:: 8A
+<<unload>>
+<<nexttree="8A">>
+<<state="idle">>
+
+
+:: 8B
+<<unload>>
+<<nexttree="8B">>
+<<state="idle">>
+
+
