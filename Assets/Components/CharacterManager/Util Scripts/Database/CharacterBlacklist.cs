@@ -23,7 +23,31 @@ namespace Transfer.System {
                 "FUCC",
                 "FAGZ",
                 "TITY",
-                "GAYS"};
+                "GAYS",
+                "JIZZ",
+                "NIPS",
+                "TARD",
+                "NUTS",
+                "DAMN",
+                "HUMP",
+                "MUFF",
+                "WANK",
+                "RAYP",
+                "HELL",
+                "PISS",
+                "WANG",
+                "DONG",
+                "TURD",
+                "JERK",
+                "JUGS",
+                "KINK",
+                "GIMP",
+                "PIMP",
+                "BOMB",
+                "DUMP",
+                "GYPS",
+                "BURP",
+                "MILF"};
         }
     }
 

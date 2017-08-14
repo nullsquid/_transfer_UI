@@ -58,12 +58,7 @@ public class TextPrinter : MonoBehaviour {
         onPrintBegin();
 
     }
-	void Update(){
-		if (Input.GetKeyDown (KeyCode.A)) {
-			//onPrintBegin ();
-			Debug.LogError ("Moved onprintbegin to other method");
-		}
-	}
+
 	#endregion
 	public void InvokeCharacterPrint(){
 		StartCoroutine(IterateThroughCharactersToPrint(onNodeChange(), letterTime, softPauseTimeBase, hardPauseTimeBase, true));
