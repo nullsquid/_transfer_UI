@@ -454,6 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c976064964a5a488a5891ced78c3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useFullText: 1
   rawTweeFiles: []
 --- !u!114 &297057287
 MonoBehaviour:

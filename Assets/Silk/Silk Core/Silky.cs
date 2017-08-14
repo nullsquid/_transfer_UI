@@ -85,12 +85,12 @@ namespace Silk {
             importer = GetComponent<Silk.Importer>();
             List<string> filenames = new List<string>();
             mother = new SilkMotherStory();
-
+            
             foreach (TextAsset currentTweeFile in importer.rawTweeFiles) {
                 SilkStory newSilkStory = new SilkStory();
                 TextAsset tweeFile = currentTweeFile;
                 string fileName = currentTweeFile.name;
-
+                Debug.LogWarning(currentTweeFile.name);
                 //this works for single file
                 //textToParse = testText.text;
 
@@ -159,6 +159,7 @@ namespace Silk {
 
         private void Start() {
             InitializeSilk();
+            GameObject.FindObjectOfType<DialogueManager>().InitializationCallback();
             //LogNodeQueue();
             //LogNodeQueue();
 
@@ -347,6 +348,7 @@ namespace Silk {
 
             //test prompt
             //curNode.executionQueue.Enqueue(tagFactory.SetTag("prompt", null));
+            
 			return promptContainer.ToString ();
 		}
 
@@ -390,6 +392,7 @@ namespace Silk {
             newNode.nodePassage = newPassage;
             //TODO Add the correct amount of links to the list
             //add link names
+            //Debug.Log(ReturnLinks(newTweeData).Count);
             newNode.links = ReturnLinks(newTweeData);
 
             newSilkStory.AddToStory(newNode.nodeName, newNode);
@@ -578,6 +581,7 @@ namespace Silk {
         //TODO replace all of the inputToExtractLinksFrom variables with inputCopy
         //TODO remove the link substring from inputCopy once it's been added to the list
         Dictionary<string, string> ReturnLinks(string inputToExtractLinksFrom) {
+            
             StringBuilder inputCopy = new StringBuilder();
             inputCopy.Append(inputToExtractLinksFrom);
             List<SilkLink> newSilkLinks = new List<SilkLink>();

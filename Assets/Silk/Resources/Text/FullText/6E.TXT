@@ -63,7 +63,7 @@ You can't run from this.
 
 [[I've got to find a light.|There isn't one anymore.]]
 
-[[I've got to find the rat.|You won't be able to kill #.]]
+[[I've got to find the rat.|You won't be able to kill.]]
 
 [[I've got to find the center.|There is no center.]]
 
@@ -91,7 +91,7 @@ All the switches are broken.
 Anonymous
 
 
-:: You won't be able to kill #.
+:: You won't be able to kill.
 <<speaker="B">>
 You won't be able to kill <<pronoun="0",tense>>.
 

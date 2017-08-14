@@ -112,9 +112,9 @@ To kill a rat, you need to think like a rat--what's it's greatest weakness?--its
 
 [[That's nonsense.|5C]]
 
-[[# will be afraid.|5G]]
+[[<<pronoun=0, tense>> will be afraid.|5G]]
 
-[[How do I use that?|Corner #. Make # think # already dead. # will give #self up to you on a plate.]]
+[[How do I use that?|Corner. Make think already dead. will give self up to you on a plate.]]
 
 
 :: 5E
@@ -151,7 +151,7 @@ Aim and fire--Throw your knife--Set it ablaze.
 [[And that will do it?|Certainly.]]
 
 
-:: Corner #. Make # think # already dead. # will give #self up to you on a plate.
+:: Corner. Make think already dead. will give self up to you on a plate.
 <<speaker="F">>
 Corner <<pronoun="0",tense>>--make <<pronoun="0",tense>> think <<pronoun="0",tense>> is already dead--<<pronoun="0",tense>> will give <<pronoun="0",tense>>self up to you on a plate--
 

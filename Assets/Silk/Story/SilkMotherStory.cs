@@ -51,7 +51,7 @@ namespace Silk
 			//if(motherStory.ContainsKey(storyName)){
 				foreach (KeyValuePair<string, SilkStory> story in motherStory) {
 					//Debug.Log (story.Key);
-					if (story.Value.StoryName == storyName) {
+					if (story.Key == storyName) {
 						Debug.Log ("Story " + storyName + " returned");
 						return story.Value;
 					} 

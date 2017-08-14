@@ -66,15 +66,20 @@ public class DialogueManager : MonoBehaviour {
 	SilkNode curNode;
     SilkNode metaDataNode;
 
-	void Start(){
+	public void InitializationCallback(){
 		StartCoroutine (InitializeTransferText ());
 	}
 
 	//TODO remove once actual method for getting text in
 	IEnumerator InitializeTransferText(){
-		yield return new WaitForSeconds(1f);
+        yield return new WaitForEndOfFrame();
         //
-		GetRootStory ("9" + Transfer.System.CharacterManager.instance.GetPlayerID());
+        if (GameObject.FindObjectOfType<Importer>().useFullText == true) {
+            GetRootStory("9" + Transfer.System.CharacterManager.instance.GetPlayerID());
+        }
+        else {
+            GetRootStory("sample_withTags");
+        }
 		GetRootNode ();
 	}
 
