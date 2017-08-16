@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Silk;
 public class NextTreeTag : SilkTagBase {
+    Terminal terminal;
 	public NextTreeTag(string name,List<string> args){
         TagName = name;
         type = TagType.SEQUENCED;
-		if (args.Count == 1) {
+        terminal = GameObject.FindObjectOfType<Terminal>();
+
+        if (args.Count == 1) {
 			Value = "";
             _silkTagArgs = args;
 			//SetNextTree(args[0]
@@ -19,6 +22,8 @@ public class NextTreeTag : SilkTagBase {
         //DialogueManager.instance.CurStory =
         //Debug.Log("NEWTREE " + args[0]);
 		DialogueManager.instance.GetNextStory (args [0]);
+        terminal.ChangeState(new IdleState());
+        
         OnExecutionComplete();
         //DialogueManager.instance.CurStory = Silky.Instance.mother.GetStoryByName(args[0]);
 		//DialogueManager.instance.GetRootNode ();
