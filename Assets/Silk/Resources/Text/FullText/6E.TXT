@@ -134,5 +134,3 @@ There isn't one anymore.
 :: MetaData
 <<connect="B">>
 <<level="6">>
-
-
