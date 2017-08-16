@@ -10,7 +10,7 @@ Allow me to introduce myself--I am <<name="F">>--
 
 [[We've met.|That's a lie.]]
 
-[[That's nice. Did you see the rat go past here?|I believe # went that way. But why trouble yourself with one rat when you could stomp out a while nest?]]
+[[That's nice. Did you see the rat go past here?|I believe went that way. But why trouble yourself with one rat when you could stomp out a while nest?]]
 
 [[Nice to meet you|In a rush?]]
 
@@ -35,7 +35,7 @@ I doubt you would confuse me--
 6B
 
 
-:: I believe # went that way. But why trouble yourself with one rat when you could stomp out a while nest?
+:: I believe went that way. But why trouble yourself with one rat when you could stomp out a while nest?
 <<speaker="F">>
 I believe <<pronoun="0",tense>> went that way--but why trouble yourself with one rat--when you could stomp out a while nest?
 
@@ -112,7 +112,7 @@ To kill a rat, you need to think like a rat--what's it's greatest weakness?--its
 
 [[That's nonsense.|5C]]
 
-[[<<pronoun=0, tense>> will be afraid.|5G]]
+[[<<pronoun="0", tense>> will be afraid.|5G]]
 
 [[How do I use that?|Corner. Make think already dead. will give self up to you on a plate.]]
 
@@ -171,9 +171,7 @@ Certainly
 [[Then let's go.|5E ]]
 
 
-:: 5E 
+:: 5E
 <<unload>>
 <<nexttree="5E">>
 <<state="idle">>
-
-

@@ -190,7 +190,7 @@ public class DialogueManager : MonoBehaviour {
 
 
     public string GetNodePassage(){
-        Debug.Log(curNode.silkLinks.Count);
+        //Debug.Log(curNode.silkLinks.Count);
 		return curNode.nodePassage;
 	}
 
