@@ -4,7 +4,7 @@ Anyone out there?
 
 [[Yes|What's going on?]]
 
-[[Reject connection.|What's going on]]
+[[Reject connection.|What's going on?2]]
 
 
 :: What's going on?
@@ -23,7 +23,7 @@ What's going on?
 9E
 
 
-:: What's going on
+:: What's going on?2
 <<speaker="D">>
 What's going on?
 

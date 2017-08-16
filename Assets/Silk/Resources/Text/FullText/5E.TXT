@@ -22,7 +22,7 @@ Alright. Remember anything further?
 <<speaker="H">>
 Do you mean as if you were keeping close to it? Keeping near by?
 
-[[No, I mean I was just holding it|You're #. It's been you all this time. You're the rat.]]
+[[No, I mean I was just holding it|You're. It's been you all this time. You're the rat.]]
 
 [[Yes, like that.|4C]]
 
@@ -54,7 +54,7 @@ Holding how?
 <<state="idle">>
 
 
-:: You're #. It's been you all this time. You're the rat.
+:: You're. It's been you all this time. You're the rat.
 <<speaker="H">>
 You're <<pronoun="0",tense>>. It's been you all this time. You're the rat.
 
@@ -90,7 +90,7 @@ Nothing more. Just 'destroy.' But I'm not concerned. It will all come back. Ther
 <<speaker="H">>
 What's that?
 
-[[What?|Out there.  Come on. Go! Run Gave Run Run Cage I got #]]
+[[What?|Out there.  Come on. Go! Run Gave Run Run Cage I got]]
 
 
 :: 4D
@@ -99,7 +99,7 @@ What's that?
 <<state="idle">>
 
 
-:: Out there.  Come on. Go! Run Gave Run Run Cage I got #
+:: Out there.  Come on. Go! Run Gave Run Run Cage I got
 <<speaker="H">>
 Out there.  Come on. Go! Run Gave Run Run Cage I got <<pronoun="0",tense>>
 

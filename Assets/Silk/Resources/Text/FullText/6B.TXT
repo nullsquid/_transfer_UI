@@ -157,7 +157,6 @@ Corner <<pronoun="0",tense>>--make <<pronoun="0",tense>> think <<pronoun="0",ten
 
 [[I've still got to catch it then.|5E]]
 
-
 :: 5G
 <<unload>>
 <<nexttree="5G">>
@@ -168,10 +167,6 @@ Corner <<pronoun="0",tense>>--make <<pronoun="0",tense>> think <<pronoun="0",ten
 <<speaker="F">>
 Certainly
 
-[[Then let's go.|5E ]]
+[[Then let's go.|5E]]
 
 
-:: 5E
-<<unload>>
-<<nexttree="5E">>
-<<state="idle">>
