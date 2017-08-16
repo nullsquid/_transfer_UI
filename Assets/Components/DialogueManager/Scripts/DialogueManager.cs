@@ -126,11 +126,39 @@ public class DialogueManager : MonoBehaviour {
 		//if (curStory.GetNodeName ("Start") != null) {
 			rootNode = curStory.GetNodeByName ("Start");
 			curNode = rootNode;
-		//} else {
-			//Debug.LogError ("No root node found");
-		//}
-		//newNodeStart ();
-	}
+        foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+
+            //
+            //Debug.Log(tag);
+            if (tag != null) {
+
+                if (tag.IsComplete == true) {
+                    //Debug.Log("TRUE");
+                    continue;
+                }
+                else if (tag.IsComplete == false) {
+                    //Debug.Log("FALSE");
+                    if (curNode.executionQueue.Count >= 1) {
+                        //if(tag.TagName == "connect") {
+                        //    Debug.Log("boop");
+                        //    connectID = tag.Value;
+                        //}
+                        //Debug.Log(tag.TagName);
+                        tag.TagExecute();
+
+                    }
+                    //break;
+                }
+            }
+            //else??
+
+
+        }
+        //} else {
+        //Debug.LogError ("No root node found");
+        //}
+        //newNodeStart ();
+    }
 
 
 	public void FindNextNode(string response){
@@ -162,6 +190,7 @@ public class DialogueManager : MonoBehaviour {
 
 
     public string GetNodePassage(){
+        Debug.Log(curNode.silkLinks.Count);
 		return curNode.nodePassage;
 	}
 

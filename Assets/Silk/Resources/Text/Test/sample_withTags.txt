@@ -31,6 +31,7 @@ When I came home last night at three
 :: Start
 <<speaker="C">>
 Yesterday upon the stair
+<<action="run","5M">>
 
 [[I met a man who wasn’t there|When I came home last night at three]]
 

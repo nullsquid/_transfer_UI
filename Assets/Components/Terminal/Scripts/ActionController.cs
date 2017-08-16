@@ -15,4 +15,8 @@ public class ActionController : MonoBehaviour {
     public void ClearActive() {
         activeActions.Clear();
     }
+
+    private void Update() {
+        Debug.Log(activeActions["run"].ActionName + activeActions["run"].Args[0]);
+    }
 }

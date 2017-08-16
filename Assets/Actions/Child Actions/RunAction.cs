@@ -41,6 +41,7 @@ public class RunAction : ActionBase {
         else {
             destination = Silky.Instance.mother.GetNodeByName(dm.CurStory.StoryName, args[0]);
         }
+        
     }
 
     public override void ExecuteActionLogic() {

@@ -45,7 +45,7 @@ public class ResponsePrinter : MonoBehaviour {
         //Debug.Log("gogogogo");
         //SilkNode node = Silky.Instance.mother.GetNodeByName("TRANSUBSTANCE", "Start");
 		SilkNode node = DialogueManager.instance.CurNode;
-        Debug.Log(node.silkLinks.Count);
+        //Debug.Log(node.silkLinks.Count);
 		for (int i = 0; i < node.silkLinks.Count; i++) {
             
 

@@ -55,6 +55,9 @@ namespace Silk{
             case "connect":
                 ConnectTag newConnectTag = new ConnectTag(tagName, args);
                 return newConnectTag;
+            case "action":
+                ActionTag newActionTag = new ActionTag(tagName, args);
+                return newActionTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

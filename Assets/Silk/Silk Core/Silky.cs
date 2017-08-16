@@ -301,6 +301,7 @@ namespace Silk {
                         //if (ParseRawTag(rawTag, tagFactory).TagName == "connect") {
                         //    ParseRawTag(rawTag, tagFactory).TagExecute();
                         //}
+
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                         
                         //Debug.Log("IN");
