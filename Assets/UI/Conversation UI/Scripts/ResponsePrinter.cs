@@ -41,6 +41,20 @@ public class ResponsePrinter : MonoBehaviour {
             Destroy(child.gameObject);
         }
     }
+
+	void Update(){
+		
+		if (GameObject.FindObjectOfType<Transfer.Input.MainInputController> ().InputText.Length > 0) {
+			foreach (Transform child in gameObject.transform) {
+				child.GetComponent<Button> ().interactable = false;
+			}
+		} else {
+			foreach (Transform child in gameObject.transform) {
+				child.GetComponent<Button> ().interactable = true;
+			}
+		}
+	}
+
 	void PopulateResponseUI(){
         //Debug.Log("gogogogo");
         //SilkNode node = Silky.Instance.mother.GetNodeByName("TRANSUBSTANCE", "Start");
@@ -51,7 +65,10 @@ public class ResponsePrinter : MonoBehaviour {
 
             GameObject newresponse = Instantiate(responsePrefab);
             Button b = newresponse.GetComponent<Button>();
-            if(i == 0) {
+			if (i == 0 && node.silkLinks.Count == 1) {
+				newresponse.GetComponent<Image> ().sprite = midImage;
+			}
+			else if(i == 0 && node.silkLinks.Count > 1) {
                 newresponse.GetComponent<Image>().sprite = topImage;
             }
             else if(i == node.silkLinks.Count - 1) {
@@ -92,10 +109,10 @@ public class ResponsePrinter : MonoBehaviour {
     void OnButtonClick(Response response) {
         //Debug.Log(response.responseText);
         Debug.Log("TEST!! " + GameObject.FindObjectOfType<MainInputDisplay>().CurText);
-        //if (GameObject.FindObjectOfType<MainInputHandler>().RawText.Trim() == "") {
+		//if (GameObject.FindObjectOfType<Transfer.Input.MainInputController>().InputText.Length == 0) {
             
             onButtonSubmit(response.responseText);
-        //}
+        
     }
 
     //HAVE TO HAVE A LOADING SCREEN TO SEQUENCE OUT THIS WHOLE SETUP
