@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour {
 	//need to decouple this
 	ResponsePrinter rp;
 	TextPrinter tp;
+	Terminal terminal;
     public delegate void NodeCleanup();
     public delegate void NodeStartSequence();
 	public delegate void OnTagComplete ();
@@ -38,6 +39,9 @@ public class DialogueManager : MonoBehaviour {
 		}
 		if (tp == null) {
 			tp = GameObject.Find ("Text_pannel").GetComponent<TextPrinter> ();
+		}
+		if (terminal == null) {
+			terminal = GameObject.FindObjectOfType<Terminal> ();
 		}
         //newNodeStart += SetNodeTags;
         //nodeCleanup += UnSetNodeTags;
@@ -130,6 +134,11 @@ public class DialogueManager : MonoBehaviour {
 		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
 		GetRootNode ();
         GetConnectID();
+		if (connectID == null) {
+			terminal.ChangeState (new ConnectState ());
+			GameObject.FindObjectOfType<TextPrinter> ().TriggerPrinting ();
+		}
+
 	}
     public void GetConnectID() {
         metaDataNode = curStory.GetNodeByName("MetaData");
@@ -137,7 +146,9 @@ public class DialogueManager : MonoBehaviour {
             if(tag.TagName == "connect") {
                 tag.TagExecute();
             }
+
         }
+
     }
 	public void GetRootNode(){
 		//if (curStory.GetNodeName ("Start") != null) {
@@ -171,6 +182,7 @@ public class DialogueManager : MonoBehaviour {
 
 
         }
+
         //} else {
         //Debug.LogError ("No root node found");
         //}
