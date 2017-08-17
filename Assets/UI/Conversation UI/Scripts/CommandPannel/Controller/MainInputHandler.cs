@@ -102,15 +102,16 @@ public class MainInputHandler : MonoBehaviour {
     #region Command Methods
     void ConnectCommand(string[] _args) {
         if (_args.Length == 1) {
-            
-            if(_args[0] == DialogueManager.instance.connectID) {
-                terminal.ChangeState(new ConnectState());
-                GameObject.FindObjectOfType<TextPrinter>().TriggerPrinting();
-                Debug.Log("CONNECTED " + _args[0]);
-            }
-            else {
-                Debug.LogError("NO ID FOUND");
-            }
+			if (terminal.GetState() is IdleState) {
+				if (_args [0] == DialogueManager.instance.connectID) {
+				
+					terminal.ChangeState (new ConnectState ());
+					GameObject.FindObjectOfType<TextPrinter> ().TriggerPrinting ();
+					Debug.Log ("CONNECTED " + _args [0]);
+				} else {
+					Debug.LogError ("NO ID FOUND");
+				}
+			}
         }
         else if(_args.Length <= 1) {
             Debug.LogError("TOO FEW ARGUMENTS");

@@ -22,7 +22,8 @@ public class Terminal : MonoBehaviour {
 
     }
 
-    public ITerminalState GetState() {
+	public ITerminalState GetState() {
+		//return newTerminalStateMachine.CurState.ToString ();
         return newTerminalStateMachine.CurState;
     }
 }

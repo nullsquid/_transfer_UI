@@ -6,8 +6,10 @@ public class ConnectState : ITerminalState {
 	SilkNode curNode;
 	SilkNode savedNode;
     Terminal terminal;
+
     public ConnectState() {
         terminal = GameObject.FindObjectOfType<Terminal>();
+
     }
 
 	public void TerminalEnterState(){
