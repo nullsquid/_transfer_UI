@@ -13,6 +13,9 @@ public class DialogueManager : MonoBehaviour {
     public event NodeCleanup nodeCleanup;
     public event NodeStartSequence newNodeStart;
 	public event OnTagComplete tagComplete;
+
+    public string startingNodeName;
+    public bool isInTestingMode = false;
     #region Singleton
     public static DialogueManager instance;
     void Awake() {
@@ -67,10 +70,23 @@ public class DialogueManager : MonoBehaviour {
     SilkNode metaDataNode;
 
 	public void InitializationCallback(){
-		StartCoroutine (InitializeTransferText ());
+        if (isInTestingMode == false) {
+            StartCoroutine(InitializeTransferText());
+        }
+        else if(isInTestingMode == true) {
+            StartCoroutine(InitializeTestTransferText(startingNodeName));
+        }
 	}
 
 	//TODO remove once actual method for getting text in
+    IEnumerator InitializeTestTransferText(string nodeName) {
+        yield return new WaitForEndOfFrame();
+
+        if(GameObject.FindObjectOfType<Importer>().useFullText == true) {
+            GetRootStory(nodeName);
+            GetRootNode();
+        }
+    }
 	IEnumerator InitializeTransferText(){
         yield return new WaitForEndOfFrame();
         //
@@ -110,6 +126,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void GetNextStory(string nextStoryName){
+        Debug.Log("NEXT STORY FIRED");
 		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
 		GetRootNode ();
         GetConnectID();
