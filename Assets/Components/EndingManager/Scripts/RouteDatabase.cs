@@ -28,11 +28,20 @@ public class RouteDatabase : MonoBehaviour {
 
 	}
 
+    public void AddEnding(string endingName) {
+
+
+    }
+
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Tab)) {
-			Debug.LogWarning ("CLEARING PLAYER DATA");
-			PlayerPrefs.DeleteAll ();
-		}
+        ClearAllData();
 	}
+
+    void ClearAllData() {
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+            Debug.LogWarning("CLEARING PLAYER DATA");
+            PlayerPrefs.DeleteAll();
+        }
+    }
 }
