@@ -22,9 +22,10 @@ public class ActionTag : SilkTagBase {
     public override void ExecuteTagLogic(List<string> args) {
         string actName = args[0];
         switch (actName) {
-            case "run":
+            case "RUN":
+                Debug.Log("sup?");
                 RunAction newRunAction = new RunAction("run", actArgs);
-                controller.activeActions.Add(actName, newRunAction);
+                controller.activeActions.Add(newRunAction);
                 controller.discoveredActions.Add(actName, newRunAction);
                 break;
                 

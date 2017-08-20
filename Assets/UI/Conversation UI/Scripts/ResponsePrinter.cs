@@ -9,8 +9,10 @@ public class ResponsePrinter : MonoBehaviour {
 
     List<GameObject> curDisplayResponses = new List<GameObject>();
     public GameObject responsePrefab;
+    public GameObject actionPrefab;
     public GameObject dialogueEventHandler;
     public TextPrinter printer;
+    public ActionController actionController;
 
     public Sprite topImage;
     public Sprite midImage;
@@ -100,6 +102,16 @@ public class ResponsePrinter : MonoBehaviour {
                 newresponse.GetComponent<Response>().navPos = Response.NavPosition.MIDDLE;
             }
 
+        }
+        Debug.Log("ACTION COUNT " + actionController.activeActions.Count);
+        for(int j = 0; j < actionController.activeActions.Count; j++) {
+            GameObject newAction = Instantiate(actionPrefab);
+
+            newAction.transform.SetParent(this.gameObject.transform);
+            newAction.transform.localScale = new Vector3(1, 1, 1);
+
+            newAction.transform.localPosition = new Vector3(newAction.transform.position.x, newAction.transform.position.y, 0);
+            newAction.GetComponent<ActionLabel>().actionText = actionController.activeActions[j].ActionName;
         }
         this.gameObject.GetComponent<ResponseNavHandler>().SetCustomNavigation(curDisplayResponses);
 

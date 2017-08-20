@@ -1,7 +1,7 @@
 ﻿:: Start
 <<noprompt>>
 
-[[<<action="RUN">>|1]]
+<<action="RUN">>
 
 
 :: 1
@@ -19,7 +19,7 @@
 
 
 :: MetaData
-<<connect="">>
+<<connect="F">>
 <<level="4">>
 
 
