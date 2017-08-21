@@ -14,10 +14,16 @@ public class RunAction : ActionBase {
     }
 
     public RunAction(string name, List<string> args) {
-        ActionName = name;
+		//Debug.Log ("HMMMMMMMMMMMMM???");
+		ActionName = name;
         Args = args;
         dm = GameObject.FindObjectOfType<DialogueManager>();
         Direction dir;
+
+		//Args[0] is throwing an error?
+		//Debug.Log ("ACT ARG >>" + args [0]);
+		Debug.Log (args);
+		/*
         switch (args[0]) {
             case "north":
                 dir = Direction.NORTH;
@@ -34,13 +40,17 @@ public class RunAction : ActionBase {
             default:
                 dir = Direction.NONE;
                 break;
+
         }
+
         if(dir != Direction.NONE) {
             destination = Silky.Instance.mother.GetNodeByName(dm.CurStory.StoryName,args[1]);
         }
         else {
             destination = Silky.Instance.mother.GetNodeByName(dm.CurStory.StoryName, args[0]);
         }
+		*/
+
         
     }
 

@@ -24,7 +24,7 @@ public class MainInputHandler : MonoBehaviour {
     #endregion
     //public string RootCommand { get; set; }
 	void Update(){
-		Debug.LogWarning (_rawText.Length);
+		//Debug.LogWarning (_rawText.Length);
 	}
 
     public List<string> argumentList = new List<string>();

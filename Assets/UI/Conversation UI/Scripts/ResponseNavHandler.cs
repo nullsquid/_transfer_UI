@@ -14,44 +14,41 @@ public class ResponseNavHandler : MonoBehaviour {
 		customNav.mode = Navigation.Mode.Explicit;
 
 		foreach (Transform child in transform) {
+			if(child.GetComponent<Response>()){
 			switch (child.GetComponent<Response> ().navPos) {
 
 			case Response.NavPosition.TOP:
 
 				for (int i = 0; i < curDisplayResponses.Count; i++) {
-                        //Exception for if there is 2 responses is hardcoded
-                        if (curDisplayResponses.Count != 2) {
-                            if (i == curDisplayResponses.Count - 1) {
-                                customNav.selectOnUp = curDisplayResponses[i].GetComponent<Selectable>();
-                            }
-                            else if (i == 1) {
-                                customNav.selectOnDown = curDisplayResponses[i].GetComponent<Selectable>();
-                            }
-                        }
-                        else if(curDisplayResponses.Count == 2) {
-                            customNav.selectOnUp = curDisplayResponses[1].GetComponent<Selectable>();
-                            customNav.selectOnDown = curDisplayResponses[1].GetComponent<Selectable>();
-                        }
+					//Exception for if there is 2 responses is hardcoded
+					if (curDisplayResponses.Count != 2) {
+						if (i == curDisplayResponses.Count - 1) {
+							customNav.selectOnUp = curDisplayResponses [i].GetComponent<Selectable> ();
+						} else if (i == 1) {
+							customNav.selectOnDown = curDisplayResponses [i].GetComponent<Selectable> ();
+						}
+					} else if (curDisplayResponses.Count == 2) {
+						customNav.selectOnUp = curDisplayResponses [1].GetComponent<Selectable> ();
+						customNav.selectOnDown = curDisplayResponses [1].GetComponent<Selectable> ();
+					}
                     
 				}
-				child.GetComponent<Button>().navigation = customNav;
+				child.GetComponent<Button> ().navigation = customNav;
 
 
 				break;
 			case Response.NavPosition.BOTTOM:
 				for (int i = 0; i < curDisplayResponses.Count; i++) {
-                        if (curDisplayResponses.Count != 2) {
-                            if (i == 0) {
-                                customNav.selectOnDown = curDisplayResponses[i].GetComponent<Selectable>();
-                            }
-                            else if (i == curDisplayResponses.Count - 2) {
-                                customNav.selectOnUp = curDisplayResponses[i].GetComponent<Selectable>();
-                            }
-                        }
-                        else if(curDisplayResponses.Count == 2) {
-                            customNav.selectOnUp = curDisplayResponses[0].GetComponent<Selectable>();
-                            customNav.selectOnDown = curDisplayResponses[0].GetComponent<Selectable>();
-                        }
+					if (curDisplayResponses.Count != 2) {
+						if (i == 0) {
+							customNav.selectOnDown = curDisplayResponses [i].GetComponent<Selectable> ();
+						} else if (i == curDisplayResponses.Count - 2) {
+							customNav.selectOnUp = curDisplayResponses [i].GetComponent<Selectable> ();
+						}
+					} else if (curDisplayResponses.Count == 2) {
+						customNav.selectOnUp = curDisplayResponses [0].GetComponent<Selectable> ();
+						customNav.selectOnDown = curDisplayResponses [0].GetComponent<Selectable> ();
+					}
 				}
 				child.GetComponent<Button> ().navigation = customNav;
 				break;
@@ -59,6 +56,7 @@ public class ResponseNavHandler : MonoBehaviour {
 				child.GetComponent<Button> ().navigation = normalNav;
 				break;
 			}
+		}
 		}
 	}
 }

@@ -6,9 +6,13 @@ using UnityEngine;
 
 public class ActionController : MonoBehaviour {
     
-    public List<ActionBase> activeActions = new List<ActionBase>();
+	public List<ActionBase> activeActions;
     //public Dictionary<string, ActionBase> activeActions = new Dictionary<string, ActionBase>();
     public Dictionary<string, ActionBase> discoveredActions = new Dictionary<string, ActionBase>();
+	void Start(){
+		activeActions = new List<ActionBase>();
+	}
+
     //As soon as this is run, it should clear out the actions dictionary
 	public void ExecuteAction(string actionName) {
 
@@ -23,7 +27,7 @@ public class ActionController : MonoBehaviour {
         //ClearActive();
     }
     public void ClearActive() {
-        activeActions.Clear();
+//        activeActions.Clear();
     }
 
     private void Update() {
