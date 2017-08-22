@@ -27,13 +27,15 @@ public class ActionTag : SilkTagBase {
         string actName = args[0];
 
         switch (actName) {
-            case "RUN":
-                Debug.Log("sup?");
+		case "RUN":
+			Debug.Log ("sup?");
 				
-				RunAction newRunAction = new RunAction(actName, actArgs);
-                controller.activeActions.Add(newRunAction);
-                controller.discoveredActions.Add(actName, newRunAction);
-                break;
+			RunAction newRunAction = new RunAction (actName, actArgs);
+			controller.activeActions.Add (newRunAction);
+			if (!controller.discoveredActions.ContainsKey (actName)) {
+				controller.discoveredActions.Add (actName, newRunAction);
+			}
+            break;
         }
         
 

@@ -1,8 +1,8 @@
 ﻿:: Start
 <<noprompt>>
 
-<<action="RUN">>
-
+<<action="RUN","1">>
+<<action="RUN","2">>
 
 :: 1
 <<noprompt>>

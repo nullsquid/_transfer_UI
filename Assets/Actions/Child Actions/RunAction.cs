@@ -20,9 +20,11 @@ public class RunAction : ActionBase {
         dm = GameObject.FindObjectOfType<DialogueManager>();
         Direction dir;
 
-		//Args[0] is throwing an error?
 		//Debug.Log ("ACT ARG >>" + args [0]);
-		Debug.Log (args);
+		//Debug.Log ("ARGH " + args[0]);
+
+		destination = Silky.Instance.mother.GetNodeByName(dm.CurStory.StoryName, args[0]);
+
 		/*
         switch (args[0]) {
             case "north":
