@@ -2,14 +2,13 @@
 <<noprompt>>
 
 <<action="RUN","1">>
-<<action="RUN","2">>
 
 :: 1
-<<noprompt>>
+hello
 
-[[<<action="RUN">>|2]]
+<<action="RUN","2">>
 
-[[<<action="RUN">>|3]]
+<<action="RUN","3">>
 
 
 :: 5
@@ -19,7 +18,7 @@
 
 
 :: MetaData
-<<connect="F">>
+<<connect="A">>
 <<level="4">>
 
 

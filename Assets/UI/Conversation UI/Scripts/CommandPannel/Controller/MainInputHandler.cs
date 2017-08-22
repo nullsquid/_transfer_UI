@@ -6,6 +6,7 @@ using Transfer.Input;
 public class MainInputHandler : MonoBehaviour {
 
     Terminal terminal;
+
     //initialize Commands
     #region Private Variables
     private string _rawText;
@@ -95,6 +96,16 @@ public class MainInputHandler : MonoBehaviour {
             else if (_root == "HELP") {
                 HelpCommand(_args);
             }
+			else{
+			//else if(terminal.GetComponent<ActionController>().activeActions.Contains()){
+				for (int i = 0; i < terminal.GetComponent<ActionController> ().activeActions.Count; i++) {
+					if (terminal.GetComponent<ActionController> ().activeActions [i].ActionName == _root) {
+						terminal.GetComponent<ActionController> ().activeActions [i].ExecuteActionLogic ();
+					}
+				}
+			
+			//}
+			}
         //}
     }
     #endregion

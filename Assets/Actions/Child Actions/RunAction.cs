@@ -57,6 +57,7 @@ public class RunAction : ActionBase {
     }
 
     public override void ExecuteActionLogic() {
-        dm.FindNextNode(destination.nodeName);
+		Debug.Log (destination.nodeName);
+		dm.FindNextNodeByName(destination.nodeName);
     }
 }

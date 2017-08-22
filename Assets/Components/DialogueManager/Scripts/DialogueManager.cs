@@ -31,6 +31,8 @@ public class DialogueManager : MonoBehaviour {
     }
     private void Update() {
         Debug.Log(connectID);
+		Debug.Log ("NODE IS " + curNode.GetNodeName());
+		curNode.LogQueue ();
     }
     #endregion
     void OnEnable(){
@@ -189,7 +191,42 @@ public class DialogueManager : MonoBehaviour {
         //newNodeStart ();
     }
 
+	public void FindNextNodeByName(string nodeName){
+		SilkNode nextNode;
 
+		nextNode = curStory.GetNodeByKey(nodeName);
+		Debug.Log ("HI NAT " + nextNode);
+		curNode = nextNode;
+		nodeCleanup ();
+
+		//RunNodeData ();
+		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+
+			//
+			//Debug.Log(tag);
+			if (tag != null) {
+
+				if (tag.IsComplete == true) {
+					//Debug.Log("TRUE");
+					continue;
+				} else if (tag.IsComplete == false) {
+					//Debug.Log("FALSE");
+					if (curNode.executionQueue.Count >= 1) {
+						//if(tag.TagName == "connect") {
+						//    Debug.Log("boop");
+						//    connectID = tag.Value;
+						//}
+						//Debug.Log(tag.TagName);
+						tag.TagExecute ();
+
+					}
+					//break;
+				}
+			}
+		}
+		RunNodeData ();
+
+	}
 	public void FindNextNode(string response){
 		//Debug.Log (response);
 		SilkNode nextNode;
@@ -220,7 +257,11 @@ public class DialogueManager : MonoBehaviour {
 
     public string GetNodePassage(){
         //Debug.Log(curNode.silkLinks.Count);
-		return curNode.nodePassage;
+		Debug.Log("WAAAAAAAAH " + curNode.nodePassage);
+//		if (curNode.nodePassage != null || curNode.nodePassage != "") {
+			return curNode.nodePassage;
+//		}
+//		return null;
 	}
 
 	public List<SilkLink> GetSilkLinks(){
@@ -232,36 +273,37 @@ public class DialogueManager : MonoBehaviour {
 
 
     public void ExecuteNode() {
-		
+		Debug.Log ("NYOOM");
+		Debug.Log ("BORGH ! " + curNode.executionQueue);
+		if (curNode.executionQueue != null) {
+			foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 
-        foreach(Silk.SilkTagBase tag in curNode.executionQueue) {
-
-            //
-            //Debug.Log(tag);
-            if (tag != null) {
+				//
+				//Debug.Log(tag);
+				if (tag != null) {
 				
-				if (tag.IsComplete == true) {
-                    Debug.Log("TRUE");
-                    continue;
-                }
-				else if(tag.IsComplete == false) {
-                    Debug.Log("FALSE");
-					if (curNode.executionQueue.Count >= 1) {
-                        //if(tag.TagName == "connect") {
-                        //    Debug.Log("boop");
-                        //    connectID = tag.Value;
-                        //}
-                        Debug.Log(tag.TagName);
-						tag.TagExecute();
+					if (tag.IsComplete == true) {
+						Debug.Log ("TRUE");
+						continue;
+					} else if (tag.IsComplete == false) {
+						Debug.Log ("FALSE");
+						if (curNode.executionQueue.Count >= 1) {
+							//if(tag.TagName == "connect") {
+							//    Debug.Log("boop");
+							//    connectID = tag.Value;
+							//}
+							Debug.Log (tag.TagName);
+							tag.TagExecute ();
 
+						}
+						//break;
 					}
-                    //break;
-                }
-            }
-            //else??
+				}
+				//else??
             
 
-        }
+			}
+		}
 		RunNodeData ();
 		//Debug.Log ("CURNODE IS " + curNode.nodeName + " || " + "ROOTNODE IS " + rootNode.nodeName);
     }

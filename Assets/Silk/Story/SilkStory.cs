@@ -49,13 +49,23 @@ namespace Silk
         {
             
             foreach (KeyValuePair<string, SilkNode> node in Story) {
-                if(node.Value.GetNodeName() == nodeName) {
+				if(node.Value.GetNodeName() == nodeName) {
                     return node.Value;
                 }
                 //return story[nodeName];
             }
             return null;
         }
+
+		public SilkNode GetNodeByKey(string nodeKey){
+			foreach (KeyValuePair<string, SilkNode> node in Story) {
+				if (node.Key == nodeKey) {
+					return node.Value;
+				}
+			}
+			return null;
+		}
+
         public SilkNode GetNodeByTitle(string nodeName)
         {
 
