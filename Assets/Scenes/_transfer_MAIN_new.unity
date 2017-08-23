@@ -784,12 +784,12 @@ Prefab:
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: isInTestingMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: startingNodeName
-      value: 4F
+      value: 5E
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
@@ -2258,6 +2258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canRunCommands: 1
+  buddyList: {fileID: 0}
 --- !u!114 &1566020870
 MonoBehaviour:
   m_ObjectHideFlags: 0
