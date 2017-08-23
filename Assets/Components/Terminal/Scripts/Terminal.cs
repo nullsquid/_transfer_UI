@@ -6,7 +6,8 @@ public class Terminal : MonoBehaviour {
 
 	TerminalStateMachine newTerminalStateMachine = new TerminalStateMachine();
     public bool canRunCommands = true;
-	GameObject buddyList;
+    [HideInInspector]
+	public GameObject buddyList;
 
 	void Start(){
 		buddyList = GameObject.Find ("BuddyList");

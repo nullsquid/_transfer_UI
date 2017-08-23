@@ -97,7 +97,7 @@ public class MainInputHandler : MonoBehaviour {
                 HelpCommand(_args);
             }
 			else{
-			//else if(terminal.GetComponent<ActionController>().activeActions.Contains()){
+			//else if(terminal.GetComponent<ActionController>().activeActions.){
 				for (int i = 0; i < terminal.GetComponent<ActionController> ().activeActions.Count; i++) {
 					if (terminal.GetComponent<ActionController> ().activeActions [i].ActionName == _root) {
 						terminal.GetComponent<ActionController> ().activeActions [i].ExecuteActionLogic ();

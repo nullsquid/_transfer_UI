@@ -136,8 +136,10 @@ public class DialogueManager : MonoBehaviour {
 		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
 		GetRootNode ();
         GetConnectID();
-		if (connectID == null) {
-			terminal.ChangeState (new ConnectState ());
+		if (connectID == null || connectID == "") {
+            //terminal.buddyList.SetActive(false);
+            terminal.ChangeState (new ConnectState());
+            
 			GameObject.FindObjectOfType<TextPrinter> ().TriggerPrinting ();
 		}
 
@@ -257,7 +259,6 @@ public class DialogueManager : MonoBehaviour {
 
     public string GetNodePassage(){
         //Debug.Log(curNode.silkLinks.Count);
-		Debug.Log("WAAAAAAAAH " + curNode.nodePassage);
 //		if (curNode.nodePassage != null || curNode.nodePassage != "") {
 			return curNode.nodePassage;
 //		}
@@ -273,8 +274,8 @@ public class DialogueManager : MonoBehaviour {
 
 
     public void ExecuteNode() {
-		Debug.Log ("NYOOM");
-		Debug.Log ("BORGH ! " + curNode.executionQueue);
+		//Debug.Log ("NYOOM");
+		//Debug.Log ("BORGH ! " + curNode.executionQueue);
 		if (curNode.executionQueue != null) {
 			foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 
