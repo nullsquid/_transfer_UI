@@ -197,12 +197,13 @@ public class DialogueManager : MonoBehaviour {
 		SilkNode nextNode;
 
 		nextNode = curStory.GetNodeByKey(nodeName);
-		Debug.Log ("HI NAT " + nextNode);
+		//Debug.Log ("HI NAT " + nextNode);
 		curNode = nextNode;
 		nodeCleanup ();
 
+		ExecuteNode ();
 		//RunNodeData ();
-		foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+		/*foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 
 			//
 			//Debug.Log(tag);
@@ -227,6 +228,7 @@ public class DialogueManager : MonoBehaviour {
 			}
 		}
 		RunNodeData ();
+		*/
 
 	}
 	public void FindNextNode(string response){

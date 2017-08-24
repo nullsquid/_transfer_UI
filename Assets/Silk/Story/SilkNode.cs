@@ -76,7 +76,7 @@ namespace Silk
         }
         public void LogQueue() {
             foreach(SilkTagBase value in executionQueue) {
-                Debug.Log("ENQUEUED TAG >>" + value.TagName);
+				Debug.Log("ENQUEUED TAG >>" + value.TagName);
             }
         }
 

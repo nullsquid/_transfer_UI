@@ -28,7 +28,7 @@ public class ActionTag : SilkTagBase {
 
         switch (actName) {
 		case "RUN":
-			Debug.Log ("sup?");
+			//Debug.Log ("sup?");
 				
 			RunAction newRunAction = new RunAction (actName, actArgs);
 			controller.activeActions.Add (newRunAction);

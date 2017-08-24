@@ -13,6 +13,13 @@ public class ActionController : MonoBehaviour {
 		activeActions = new List<ActionBase>();
 	}
 
+	void OnEnable(){
+		DialogueManager.instance.nodeCleanup += ClearActive;
+	}
+
+	void OnDisable(){
+		DialogueManager.instance.nodeCleanup -= ClearActive;
+	}
     //As soon as this is run, it should clear out the actions dictionary
 	public void ExecuteAction(string actionName) {
 
@@ -20,9 +27,14 @@ public class ActionController : MonoBehaviour {
         for (int i = 0; i < activeActions.Count; i++) {
             if (activeActions[i].ActionName == actionName) {
                 activeActions[i].ExecuteActionLogic();
+				//activeActions.RemoveAt (i);
+				//ClearActive();
                 break;
             }
+
         }
+
+
         //i'm not sure if this is true for all instances but whatever for now
         //ClearActive();
     }
@@ -32,7 +44,11 @@ public class ActionController : MonoBehaviour {
 		
 
     private void Update() {
-        Debug.Log(activeActions.Count);
+		foreach (ActionBase action in activeActions) {
+			Debug.Log ("ACTIONS " +action.ActionName + action.Args[0]);
+
+		}
+        //Debug.Log(activeActions.Count);
        // Debug.Log(activeActions["run"].ActionName + activeActions["run"].Args[0]);
     }
 }

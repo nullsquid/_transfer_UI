@@ -45,6 +45,8 @@ namespace Silk
         {
             storyName = name;
         }
+
+		//For some reason, the getconnectid method relies on this being node.value.getnodename rather than getkey
         public SilkNode GetNodeByName(string nodeName)
         {
             
