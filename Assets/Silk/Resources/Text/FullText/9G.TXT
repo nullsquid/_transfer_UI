@@ -1,0 +1,66 @@
+﻿:: Start
+<<speaker="E">>
+Hello?
+
+[[Where are we?|Back on the main server, it seems like.]]
+
+
+:: Back on the main server, it seems like.
+<<speaker="E">>
+Back on the main server, it seems like.
+
+[[Alright.|8J]]
+
+[[Where is that?|In a lab, in North America.]]
+
+[[Where in the server?|Well, this is the lobby.  Come on, I'll show you around.  Give you the grand tour.]]
+
+
+:: In a lab, in North America.
+<<speaker="E">>
+In a lab, in North America.
+
+[[Can you be more specific?|Sorry, that's classified information.]]
+
+
+:: StoryTitle
+9G
+
+
+:: Well, this is the lobby.  Come on, I'll show you around.  Give you the grand tour.
+<<speaker="E">>
+Well, this is the lobby.  Come on, I'll show you around.  Give you the grand tour.
+
+[[Alright.|8H]]
+
+[[No, thanks.|8J]]
+
+
+:: 8J
+<<unload>>
+<<nexttree="8J">>
+<<state="idle">>
+
+
+:: Sorry, that's classified information.
+<<speaker="E">>
+Sorry, that's classified information.
+
+[[<<wait="6">>|8H]]
+
+
+:: MetaData
+<<connect="E">>
+<<level="9">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 8H
+<<unload>>
+<<nexttree="8H">>
+<<state="idle">>
+
+

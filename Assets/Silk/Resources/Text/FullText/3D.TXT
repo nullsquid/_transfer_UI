@@ -1,0 +1,72 @@
+﻿:: Start
+<<speaker="G">>
+Look at this.  Is this something?
+
+[[What are you talking about?|Some kind of lens.  And--]]
+
+[[No.|Oh, but it must be something.]]
+
+[[I don't see anything.|Right here?  This screen?  It'll be good for the museum, if nothing else.  An artifact.]]
+
+
+:: Some kind of lens.  And--
+<<speaker="G">>
+Some kind of lens.  And--
+
+[[And?|It's gone.  It's dead.]]
+
+
+:: It's gone.  It's dead.
+<<speaker="G">>
+It's gone.  It's dead.
+
+[[What's gone?|2A]]
+
+
+:: MetaData
+<<connect="G">>
+<<level="3">>
+
+
+:: StoryTitle
+3D
+
+
+:: Oh, but it must be something.
+<<speaker="G">>
+Oh, but it must be something.
+
+[[I can't find anything.|2A]]
+
+[[There's nothing|2C]]
+
+
+:: 2A
+<<unload>>
+<<nexttree="2A">>
+<<state="idle">>
+
+
+:: Right here?  This screen?  It'll be good for the museum, if nothing else.  An artifact.
+<<speaker="G">>
+Right here?  This screen?  It'll be good for the museum, if nothing else.  An artifact.
+
+[[<<wait="6">>|2D]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 2C
+<<unload>>
+<<nexttree="2C">>
+<<state="idle">>
+
+
+:: 2D
+<<unload>>
+<<nexttree="2D">>
+<<state="idle">>
+
+
