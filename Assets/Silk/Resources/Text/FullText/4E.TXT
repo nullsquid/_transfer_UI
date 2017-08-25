@@ -1,0 +1,71 @@
+﻿:: Start
+<<noprompt>>
+
+[[The capacity for monologue.|NO PROMPT]]
+
+
+:: NO PROMPT
+<<noprompt>>
+
+[[The capacity for monologue.|NO PROMPT A]]
+
+[[What the hell does that mean?|NO PROMPT B]]
+
+
+:: MetaData
+<<connect="E">>
+<<level="4">>
+
+
+:: NO PROMPT 2
+<<noprompt>>
+
+[[I knew I had potential.|3B]]
+
+
+:: StoryTitle
+4E
+
+
+:: 3B
+<<unload>>
+<<nexttree="3B">>
+<<state="idle">>
+
+
+:: NO PROMPT B
+<<noprompt>>
+
+[[<<action="PUNCH">>|NO PROMPT 2]]
+
+[[<<action="KICK">>|NO PROMPT 2]]
+
+[[<<action="THROW">>|NO PROMPT 2]]
+
+[[<<action="RUN">>|NO PROMPT 2]]
+
+
+:: NO PROMPT A
+<<noprompt>>
+
+[[<<action="KNIFE">>|NO PROMPT 3]]
+
+[[<<action="SWORD">>|NO PROMPT 3]]
+
+[[<<action="AX">>|NO PROMPT 3]]
+
+[[<<action="PISTOL">>|NO PROMPT 3]]
+
+
+:: NO PROMPT 3
+<<noprompt>>
+
+[[Now, bring me that rat|3C]]
+
+
+:: 3C
+<<unload>>
+<<nexttree="3C">>
+<<state="idle">>
+
+

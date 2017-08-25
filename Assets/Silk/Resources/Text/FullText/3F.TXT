@@ -1,0 +1,81 @@
+﻿:: Start
+<<speaker="H">>
+All we've got to do is find the old weapons. 
+
+[[What kind of weapons?|You've got to remember the bombs?]]
+
+[[Where?|That will take some digging.  So, dig.]]
+
+[[How?|They're around.  We weren't supposed to touch them. And we never did, come to think of it.]]
+
+
+:: They're around.  We weren't supposed to touch them. And we never did, come to think of it.
+<<speaker="H">>
+They're around.  We weren't supposed to touch them. And we never did, come to think of it.
+
+[[What sort of bombs are these?|2B]]
+
+[[Obediance is a virtue.|2B]]
+
+[[A missed opportunity.|2B]]
+
+
+:: 2B
+<<unload>>
+<<nexttree="2B">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="H">>
+<<level="3">>
+
+
+:: StoryTitle
+3F
+
+
+:: That will take some digging.  So, dig.
+<<speaker="H">>
+That will take some digging.  So, dig.
+
+[[<<action="DIG">>|2B]]
+
+[[No.|2K]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: You've got to remember the bombs?
+<<speaker="H">>
+You've got to remember the bombs?
+
+[[I remember the flash.|That was one sort.  There were dozens of kinds.]]
+
+[[Split the smallest thing and it smashes the world.|Yes, exactly.]]
+
+[[I don't remember that.|2K]]
+
+
+:: 2K
+<<unload>>
+<<nexttree="2K">>
+<<state="idle">>
+
+
+:: Yes, exactly.
+<<speaker="H">>
+Yes, exactly.
+
+[[<<wait="6">>|2B]]
+
+
+:: That was one sort.  There were dozens of kinds.
+<<speaker="H">>
+That was one sort.  There were dozens of kinds.
+
+[[<<wait="6">>|2B]]
+
+

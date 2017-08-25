@@ -1,0 +1,26 @@
+﻿:: Start
+<<speaker="I">>
+<<videoclip="Video Name">>
+
+[[I see|7J]]
+
+
+:: 7J
+<<unload>>
+<<nexttree="7J">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="I">>
+<<level="8">>
+
+
+:: StoryTitle
+8I
+
+
+:: StoryAuthor
+Anonymous
+
+
