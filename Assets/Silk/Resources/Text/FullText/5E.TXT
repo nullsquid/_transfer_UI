@@ -11,12 +11,19 @@ Alright. Remember anything further?
 
 [[That I was the first.|4F]]
 
-[[Being alone with G.|4F]]
+[[Being alone with G]]
 
-[[Approaching E with an idea.|4F]]
+[[Approaching E with an idea]]
 
-[[Holding a radio.|Holding how?]]
+[[Holding a radio.]]
 
+:: Approaching E with an idea
+<<nexttree="4F">>
+<<state="idle">>
+
+:: Being alone with G
+<<nexttree="4F">>
+<<state="idle">>
 
 :: Do you mean as if you were keeping close to it? Keeping near by?
 <<speaker="H">>
@@ -37,7 +44,7 @@ Do you mean as if you were keeping close to it? Keeping near by?
 5E
 
 
-:: Holding how?
+:: Holding a radio.
 <<speaker="H">>
 Holding how?
 

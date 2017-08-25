@@ -45,17 +45,29 @@ namespace Silk
         {
             storyName = name;
         }
+
+		//For some reason, the getconnectid method relies on this being node.value.getnodename rather than getkey
         public SilkNode GetNodeByName(string nodeName)
         {
             
             foreach (KeyValuePair<string, SilkNode> node in Story) {
-                if(node.Value.GetNodeName() == nodeName) {
+				if(node.Value.GetNodeName() == nodeName) {
                     return node.Value;
                 }
                 //return story[nodeName];
             }
             return null;
         }
+
+		public SilkNode GetNodeByKey(string nodeKey){
+			foreach (KeyValuePair<string, SilkNode> node in Story) {
+				if (node.Key == nodeKey) {
+					return node.Value;
+				}
+			}
+			return null;
+		}
+
         public SilkNode GetNodeByTitle(string nodeName)
         {
 
