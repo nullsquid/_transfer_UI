@@ -31,8 +31,7 @@ public class DialogueManager : MonoBehaviour {
     }
     private void Update() {
         Debug.Log(connectID);
-		Debug.Log ("NODE IS " + curNode.GetNodeName());
-		curNode.LogQueue ();
+		//curNode.LogQueue ();
     }
     #endregion
     void OnEnable(){

@@ -14,13 +14,11 @@ public class IdleState : ITerminalState {
         GameObject.FindObjectOfType<Transfer.Input.MainInputController>().CanRecordInput = true;
 		//GameObject.Find ("BuddyList").GetComponent<Image>().
 		//buddyList.SetActive(true);
-        Debug.Log("entered IDLE STATE");
 	}
 
 	public void TerminalExecuteState(){
         //just hang out
 
-        Debug.Log("IDLE STATE");
 	}
 
 	public void TerminalExitState(){
@@ -28,7 +26,6 @@ public class IdleState : ITerminalState {
 		//GameObject.FindObjectOfType<BuddyListController>().gameObject.SetActive(false);
 		//buddyList.SetActive(false);
 		//GameObject.Find("BuddyList").GetComponent<Image>().canvasRenderer.SetAlpha(1.0f);
-        Debug.Log("exited IDLE STATE");
 	}
 
 

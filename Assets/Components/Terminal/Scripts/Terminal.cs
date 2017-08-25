@@ -16,7 +16,6 @@ public class Terminal : MonoBehaviour {
 	}
 
     private void Update() {
-        Debug.Log(canRunCommands);
         this.newTerminalStateMachine.TerminalStateUpdate();
 
     }
