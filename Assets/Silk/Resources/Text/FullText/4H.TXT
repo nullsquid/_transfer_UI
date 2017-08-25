@@ -1,0 +1,71 @@
+﻿:: Start
+<<speaker="F">>
+You want a way out?--Well--so do I--
+
+[[What do you want?|To kill whoever's left.]]
+
+
+:: To kill whoever's left.
+<<speaker="F">>
+To kill whoever's left--
+
+[[Me, too.|What should we do, then?]]
+
+[[Then I'll have to stop you.|Don't you remember what happened?]]
+
+
+:: And yet you still feel that way?
+<<speaker="F">>
+And yet--you still feel that way?
+
+[[It's the only moral position.|3B]]
+
+
+:: 3B
+<<unload>>
+<<nexttree="3B">>
+<<state="idle">>
+
+
+:: StoryTitle
+4H
+
+
+:: What should we do, then?
+<<speaker="F">>
+What should we do--then?
+
+[[You tell me.|3F]]
+
+
+:: Don't you remember what happened?
+<<speaker="F">>
+Don't you remember--what happened?
+
+[[Sure I do.|And yet you still feel that way?]]
+
+[[I don't.|We took a vote and decided to kill them all.  It was a 4/5 decision.  Majority rule.  But we didn't finish the job.  We've got to do what we set out to do.]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: We took a vote and decided to kill them all.  It was a 4/5 decision.  Majority rule.  But we didn't finish the job.  We've got to do what we set out to do.
+<<speaker="F">>
+We took a vote and decided to kill them all--it was a five against four decision--Majority rule--but we didn't finish the job--we've got to do what we set out to do--
+
+[[<<wait="6">>|3B]]
+
+
+:: MetaData
+<<connect="F">>
+<<level="4">>
+
+
+:: 3F
+<<unload>>
+<<nexttree="3F">>
+<<state="idle">>
+
+

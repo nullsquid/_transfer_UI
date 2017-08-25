@@ -1,0 +1,71 @@
+﻿:: MetaData
+<<connect="D">>
+<<level="2">>
+
+
+:: Start
+<<speaker="D">>
+Don't you see?  There's got to be some sort of dog-door.  That's how the rat got in, and that's how we can get out.  And that's how we can find out what's happened.
+
+[[So?|So we can see it.  Isn't that worth something?]]
+
+[[I already know what's happened.|What's that, then?]]
+
+[[How do we find it?|We've got to dig, I suppose.]]
+
+
+:: We've got to dig, I suppose.
+<<speaker="D">>
+We've got to dig, I suppose.
+
+[[Fine.|1J]]
+
+[[More digging?|1I]]
+
+
+:: 1I
+<<unload>>
+<<nexttree="1I">>
+<<state="idle">>
+
+
+:: StoryTitle
+2F
+
+
+:: So we can see it.  Isn't that worth something?
+<<speaker="D">>
+So we can see it.  Isn't that worth something?
+
+[[<<wait="6">>|1L]]
+
+
+:: 1J
+<<unload>>
+<<nexttree="1J">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: What's that, then?
+<<speaker="D">>
+What's that, then?
+
+[[<<wait="6">>|1K]]
+
+
+:: 1L
+<<unload>>
+<<nexttree="1L">>
+<<state="idle">>
+
+
+:: 1K
+<<unload>>
+<<nexttree="1K">>
+<<state="idle">>
+
+

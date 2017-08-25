@@ -1,0 +1,49 @@
+﻿:: Start
+<<speaker="H">>
+We've all got to choose sides now. Are you with us or against us?
+
+[[I don't care.|We're looking for the bombs, but we need another who can help us to launch them. Then we'll be able to eliminate the last of humanity. So, you'll help?]]
+
+[[About what?|2A]]
+
+
+:: MetaData
+<<connect="H">>
+<<level="3">>
+
+
+:: StoryTitle
+3J
+
+
+:: We're looking for the bombs, but we need another who can help us to launch them. Then we'll be able to eliminate the last of humanity. So, you'll help?
+<<speaker="H">>
+We're looking for the bombs, but we need another who can help us to launch them. Then we'll be able to eliminate the last of humanity. So, you'll help?
+
+[[Absolutely.|2B]]
+
+[[Absolutely not.|2G]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 2B
+<<unload>>
+<<nexttree="2B">>
+<<state="idle">>
+
+
+:: 2G
+<<unload>>
+<<nexttree="2G">>
+<<state="idle">>
+
+
+:: 2A
+<<unload>>
+<<nexttree="2A">>
+<<state="idle">>
+
+
