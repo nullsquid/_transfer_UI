@@ -17,7 +17,7 @@ public class RouteDatabase : MonoBehaviour {
 	void Start () {
 		timesStarted = PlayerPrefs.GetInt(startedKey);
 		PlayerPrefs.SetInt (startedKey, timesStarted += 1);
-		Debug.LogWarning(PlayerPrefs.GetInt(startedKey));
+		//Debug.LogWarning(PlayerPrefs.GetInt(startedKey));
 	}
 
 	public void AddBeginning(string key, string value){

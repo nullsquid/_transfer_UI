@@ -11,13 +11,7 @@ public class ActionLabel : MonoBehaviour {
         text.text = actionText;
         //gameObject.GetComponent<Image>().color = Color.white;
 	}
-    private void Update() {
-        if(gameObject.GetComponent<Image>().color != Color.white) {
-            Debug.Log("topo");
-            gameObject.GetComponent<Image>().color = Color.white;
 
-        }
-    }
 
 
 }

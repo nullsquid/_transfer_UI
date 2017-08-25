@@ -45,8 +45,6 @@ public class ResponsePrinter : MonoBehaviour {
     }
 
 	void Update(){
-		Debug.Log ("ACTIONS???? " + actionController.activeActions.Count);
-
 		if (GameObject.FindObjectOfType<Transfer.Input.MainInputController> ().InputText.Length > 0) {
 			foreach (Transform child in gameObject.transform) {
 				child.GetComponent<Button> ().interactable = false;
