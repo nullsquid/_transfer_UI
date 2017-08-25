@@ -1,0 +1,24 @@
+﻿:: Start
+<<auto>>
+<<endauto>>
+
+[[<<wait="6">>|5E]]
+
+
+:: 5E
+<<unload>>
+<<nexttree="5E">>
+<<state="idle">>
+
+
+:: StoryTitle
+6C
+
+
+:: MetaData
+<<connect="F">>
+<<level="6">>
+
+
+:: StoryAuthor
+Anonymous

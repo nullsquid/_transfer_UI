@@ -1,0 +1,36 @@
+﻿:: Start
+<<speaker="A">>
+What is your greatest strength?
+
+[[Self reliant|1M]]
+
+[[Yielding|1M]]
+
+[[Helpful|1M]]
+
+[[Cheerful|1M]]
+
+[[Independent|1M]]
+
+[[Defends own beliefs|1M]]
+
+
+:: 1M
+<<unload>>
+<<nexttree="1M">>
+<<state="idle">>
+
+
+:: StoryTitle
+2L
+
+
+:: MetaData
+<<connect="A">>
+<<level="2">>
+
+
+:: StoryAuthor
+Anonymous
+
+

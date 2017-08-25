@@ -33,12 +33,31 @@ namespace Silk{
 			case "nexttree":
 				NextTreeTag newTreeTag = new NextTreeTag (tagName, args);
 				return newTreeTag;
-			case "state":
-				StateTag newState = new StateTag (tagName, args);
-				return newState;
-			case "unload":
-				UnloadTag newUnload = new UnloadTag (tagName);
-				return newUnload;
+			//case "state":
+			//	StateTag newState = new StateTag (tagName, args);
+			//	return newState;
+			//case "unload":
+                //break;
+				//UnloadTag newUnload = new UnloadTag (tagName);
+				//return newUnload;
+			case "sfx":
+				SoundEffectTag newSFX = new SoundEffectTag (tagName, args);
+				return newSFX;
+			case "audioclip":
+				AudioClipTag newAudioClip = new AudioClipTag (tagName, args);
+				return newAudioClip;
+			case "noprompt":
+				NoPrompTag newNoPrompt = new NoPrompTag (tagName, args);
+				return newNoPrompt;
+			case "videoclip":
+				VideoClipTag newVideoClip = new VideoClipTag (tagName, args);
+				return newVideoClip;
+            case "connect":
+                ConnectTag newConnectTag = new ConnectTag(tagName, args);
+                return newConnectTag;
+            case "action":
+                ActionTag newActionTag = new ActionTag(tagName, args);
+                return newActionTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

@@ -1,0 +1,36 @@
+﻿:: Start
+<<speaker="A">>
+Open or closed?
+
+[[Open|4J]]
+
+[[Closed|4J]]
+
+[[One|4J]]
+
+[[Zero|4J]]
+
+[[Black|4J]]
+
+[[White|4J]]
+
+
+:: 4J
+<<unload>>
+<<nexttree="4J">>
+<<state="idle">>
+
+
+:: StoryTitle
+5I
+
+
+:: MetaData
+<<connect="A">>
+<<level="5">>
+
+
+:: StoryAuthor
+Anonymous
+
+

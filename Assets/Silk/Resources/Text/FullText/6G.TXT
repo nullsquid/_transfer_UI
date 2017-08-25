@@ -1,0 +1,71 @@
+﻿:: Start
+<<noprompt>>
+
+[[Two twisting strands.|And then music?]]
+
+[[It all starts with division and combination. From one there are two.|Not always. Sometimes two can merge.]]
+
+[[Every single human has a mouth and every one of those mouths is always either droning or feeding or hanging open.|Be that as it may, it's hardly a reason for your misanthropy.]]
+
+[[I was only a child when I watched the video of a nation turned to a shadow. A flash, a crumble, a wind.|Weren't we all? Children?]]
+
+
+:: Not always. Sometimes two can merge.
+<<speaker="B">>
+Not always. Sometimes two can merge.
+
+[[Like cells.|5D]]
+
+
+:: Be that as it may, it's hardly a reason for your misanthropy.
+<<speaker="B">>
+Be that as it may, it's hardly a reason for your misanthropy.
+
+[[Misanthropy?|5B]]
+
+
+:: 5B
+<<unload>>
+<<nexttree="5B">>
+<<state="idle">>
+
+
+:: StoryTitle
+6G
+
+
+:: Weren't we all? Children?
+<<speaker="B">>
+Weren't we all? Children?
+
+[[Once.|5B]]
+
+
+:: 5D
+<<unload>>
+<<nexttree="5D">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: And then music?
+<<speaker="B">>
+And then music?
+
+[[The cello.|5C]]
+
+
+:: 5C
+<<unload>>
+<<nexttree="5C">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="B">>
+<<level="6">>
+
+

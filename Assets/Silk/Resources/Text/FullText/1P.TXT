@@ -1,0 +1,20 @@
+﻿:: Start
+<<speaker="I">>
+<<audioclip="Audio Name">>
+
+<<end="Ending Name">>
+
+
+:: MetaData
+<<connect="I">>
+<<level="1">>
+
+
+:: StoryTitle
+1P
+
+
+:: StoryAuthor
+Anonymous
+
+

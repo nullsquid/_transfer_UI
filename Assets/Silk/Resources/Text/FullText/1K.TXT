@@ -1,0 +1,19 @@
+﻿:: Start
+<<error="YOU ARE NOT SUPPOSED TO BE HERE">>
+
+<<end="Ending Name">>
+
+
+:: MetaData
+<<connect="0">>
+<<level="1">>
+
+
+:: StoryTitle
+1K
+
+
+:: StoryAuthor
+Anonymous
+
+

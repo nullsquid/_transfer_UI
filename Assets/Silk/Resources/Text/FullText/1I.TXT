@@ -1,0 +1,24 @@
+﻿:: Start
+<<speaker="B">>
+Now what?
+
+[[We wait.]]
+
+[[We rebuild.]]
+
+<<end="Ending Name">>
+
+
+:: MetaData
+<<connect="B">>
+<<level="1">>
+
+
+:: StoryTitle
+1I
+
+
+:: StoryAuthor
+Anonymous
+
+

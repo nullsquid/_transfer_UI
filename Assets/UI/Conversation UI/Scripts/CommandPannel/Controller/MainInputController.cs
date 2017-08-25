@@ -7,7 +7,7 @@ namespace Transfer.Input {
         #region Private Variables
         //private List<string> args = new List<string>();
 
-        private bool _canRecordInput = true;
+		public bool _canRecordInput = true;
         private string _inputText = "";
         private string _returnText;
 
@@ -108,6 +108,11 @@ namespace Transfer.Input {
         private string ReturnInputText(string inputText) {
             inputText += " ";
             return inputText;
+        }
+
+        IEnumerator WaitAndEnter() {
+            yield return new WaitForEndOfFrame();
+
         }
 
 

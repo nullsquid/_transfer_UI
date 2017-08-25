@@ -10,6 +10,12 @@ namespace Silk
     }
 	public abstract class SilkTagBase : ITagCommand
     {
+        protected bool _isComplete = false;
+        public bool IsComplete
+        {
+            get { return _isComplete; }
+            
+        }
 		public delegate void OnTagComplete();
 		public event OnTagComplete tagComplete;
         public TagType type;
@@ -77,7 +83,7 @@ namespace Silk
         }
 
 		public void OnExecutionComplete(){
-            DialogueManager.instance.MoveToNextTag();
+            _isComplete = true;
 		}
 
 		public virtual void ExecuteTagLogic(List<string> args){
