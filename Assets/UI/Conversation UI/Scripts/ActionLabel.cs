@@ -9,7 +9,15 @@ public class ActionLabel : MonoBehaviour {
 	void Start () {
         text = gameObject.GetComponentInChildren<Text>();
         text.text = actionText;
+        //gameObject.GetComponent<Image>().color = Color.white;
 	}
-	
-	
+    private void Update() {
+        if(gameObject.GetComponent<Image>().color != Color.white) {
+            Debug.Log("topo");
+            gameObject.GetComponent<Image>().color = Color.white;
+
+        }
+    }
+
+
 }

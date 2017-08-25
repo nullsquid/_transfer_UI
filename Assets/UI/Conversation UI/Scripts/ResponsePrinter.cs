@@ -116,6 +116,8 @@ public class ResponsePrinter : MonoBehaviour {
 
 				newAction.transform.localPosition = new Vector3 (newAction.transform.position.x, newAction.transform.position.y, 0);
 				newAction.GetComponent<ActionLabel> ().actionText = actionController.activeActions [j].ActionName;
+
+                //newAction.GetComponent<Image>().color = Color.white;
 			}
 		}
         this.gameObject.GetComponent<ResponseNavHandler>().SetCustomNavigation(curDisplayResponses);
