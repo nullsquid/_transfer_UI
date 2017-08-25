@@ -58,12 +58,7 @@ public class TextPrinter : MonoBehaviour {
         onPrintBegin();
 
     }
-	void Update(){
-		if (Input.GetKeyDown (KeyCode.A)) {
-			//onPrintBegin ();
-			Debug.LogError ("Moved onprintbegin to other method");
-		}
-	}
+
 	#endregion
 	public void InvokeCharacterPrint(){
 		StartCoroutine(IterateThroughCharactersToPrint(onNodeChange(), letterTime, softPauseTimeBase, hardPauseTimeBase, true));
@@ -77,8 +72,19 @@ public class TextPrinter : MonoBehaviour {
 
     public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause, bool callback) {
         float normalTime = time;
+
         if (text != null) {
+			string speaker = "";
+			/*for(int j = 0; j < text.Length; j++){
+				if (text [j - 1] == ':') {
+					break;
+				} else {
+					speaker += j;
+				}
+			}*/
+			//typewriterText.text += speaker;
             for (int i = 0; i < text.Length; i++) {
+				
                 if (text[i] == '.' || text[i] == '?' || text[i] == '!') {
                     time += hardPause / Random.Range(1, 1.5f);
                 }

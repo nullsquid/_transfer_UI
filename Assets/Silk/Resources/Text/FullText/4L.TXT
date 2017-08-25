@@ -1,0 +1,26 @@
+﻿:: Start
+<<speaker="E">>
+And here are the ears.  Go ahead.  Have a listen.
+
+[[<<wait="60">>|3M]]
+
+
+:: 3M
+<<unload>>
+<<nexttree="3M">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="E">>
+<<level="4">>
+
+
+:: StoryTitle
+4L
+
+
+:: StoryAuthor
+Anonymous
+
+

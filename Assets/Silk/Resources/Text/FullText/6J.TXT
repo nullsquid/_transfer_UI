@@ -1,0 +1,42 @@
+﻿:: Start
+<<speaker="E">>
+Here we have the control room.  <<name="G">> used to spend # time here.
+
+[[I remember <<pronoun="G",tense>>|A complex character.]]
+
+[[I don't remember <<pronoun="G",tense>>|A compleicated character.]]
+
+
+:: A complex character.
+<<speaker="E">>
+A complex character.
+
+[[<<wait="6">>|5K]]
+
+
+:: 5K
+<<unload>>
+<<nexttree="5K">>
+<<state="idle">>
+
+
+:: StoryTitle
+6J
+
+
+:: A compleicated character.
+<<speaker="E">>
+A complicated character.
+
+[[<<wait="6">>|5K]]
+
+
+:: MetaData
+<<connect="E">>
+<<level="6">>
+
+
+:: StoryAuthor
+Anonymous
+
+

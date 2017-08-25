@@ -1,0 +1,172 @@
+﻿:: Start
+<<noprompt>>
+
+[[You seen the rat?|Allow me to introduce myself. I am F.]]
+
+
+:: Allow me to introduce myself. I am F.
+<<speaker="F">>
+Allow me to introduce myself--I am <<name="F">>--
+
+[[We've met.|That's a lie.]]
+
+[[That's nice. Did you see the rat go past here?|I believe went that way. But why trouble yourself with one rat when you could stomp out a while nest?]]
+
+[[Nice to meet you|In a rush?]]
+
+
+:: That's a lie.
+<<speaker="F">>
+That's a lie
+
+[[Or I'm mistaken.|I doubt you would confuse me.]]
+
+[[Remember anything?|A swarm of murderous flies. It had to be us or them, you know.]]
+
+
+:: I doubt you would confuse me.
+<<speaker="F">>
+I doubt you would confuse me--
+
+[[Things here are confusing.|5C]]
+
+
+:: StoryTitle
+6B
+
+
+:: I believe went that way. But why trouble yourself with one rat when you could stomp out a while nest?
+<<speaker="F">>
+I believe <<pronoun="0",tense>> went that way--but why trouble yourself with one rat--when you could stomp out a while nest?
+
+[[Just show me where to go.|You won't catch it like that.]]
+
+[[Nest?|It's empty at the moment, of course. But the thing about rats is, they maybe be dumb and vicious, but they've got good memories. They can leave a nest and come back to it years later. the only way to make sure you get rid of them is to destroy every nest you find.]]
+
+
+:: In a rush?
+<<speaker="F">>
+In a rush?
+
+[[Not really.|5C]]
+
+[[Yes.|Where to?]]
+
+
+:: A swarm of murderous flies. It had to be us or them, you know.
+<<speaker="F">>
+A swarm of murderous flies--it had to be us or them--you know--
+
+[[I don't know.|5E]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: You won't catch it like that.
+<<speaker="F">>
+You won't catch it like that--
+
+[[Why not?|To kill a rat, you need to think like a rat. What's it's greatest weakness? Its fear.]]
+
+[[I don't have time for this.|5C]]
+
+
+:: It's empty at the moment, of course. But the thing about rats is, they maybe be dumb and vicious, but they've got good memories. They can leave a nest and come back to it years later. the only way to make sure you get rid of them is to destroy every nest you find.
+<<speaker="F">>
+It's empty at the moment--of course--but the thing about rats is, they maybe be dumb and vicious--but they've got good memories--they can leave a nest and come back to it years later--the only way to make sure you get rid of them is to destroy every nest you find--
+
+[[I'd rather focus on the one.|5E]]
+
+[[Where can I find it?|You have to find a window out. But don't leave.]]
+
+[[How can I destroy it?|Light it on fire. It might be difficult now. With things in their state of disrepair.]]
+
+
+:: Where to?
+<<speaker="F">>
+Where to?
+
+[[Looking for the rat.|5E]]
+
+
+:: 5C
+<<unload>>
+<<nexttree="5C">>
+<<state="idle">>
+
+
+:: You have to find a window out. But don't leave.
+<<speaker="F">>
+You have to find a window out--but don't leave--
+
+[[What does that mean?|It means what I said.]]
+
+[[And then?|Aim and fire. Throw your knife. Set it ablaze.]]
+
+
+:: To kill a rat, you need to think like a rat. What's it's greatest weakness? Its fear.
+<<speaker="F">>
+To kill a rat, you need to think like a rat--what's it's greatest weakness?--its fear
+
+[[That's nonsense.|5C]]
+
+[[<<pronoun="0", tense>> will be afraid.|5G]]
+
+[[How do I use that?|Corner. Make think already dead. will give self up to you on a plate.]]
+
+
+:: 5E
+<<unload>>
+<<nexttree="5E">>
+<<state="idle">>
+
+
+:: Light it on fire. It might be difficult now. With things in their state of disrepair.
+<<speaker="F">>
+Light it on fire--It might be difficult now--With things in their state of disrepair--
+
+[[Show me.|5E]]
+
+[[I'll find it on my own.|5C]]
+
+
+:: MetaData
+<<connect="F">>
+<<level="6">>
+
+
+:: It means what I said.
+<<speaker="F">>
+It means what I said--
+
+[[There are no wndows.|5E]]
+
+
+:: Aim and fire. Throw your knife. Set it ablaze.
+<<speaker="F">>
+Aim and fire--Throw your knife--Set it ablaze.
+
+[[And that will do it?|Certainly.]]
+
+
+:: Corner. Make think already dead. will give self up to you on a plate.
+<<speaker="F">>
+Corner <<pronoun="0",tense>>--make <<pronoun="0",tense>> think <<pronoun="0",tense>> is already dead--<<pronoun="0",tense>> will give <<pronoun="0",tense>>self up to you on a plate--
+
+[[I've still got to catch it then.|5E]]
+
+:: 5G
+<<unload>>
+<<nexttree="5G">>
+<<state="idle">>
+
+
+:: Certainly.
+<<speaker="F">>
+Certainly
+
+[[Then let's go.|5E]]
+
+

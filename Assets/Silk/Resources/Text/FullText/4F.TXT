@@ -1,0 +1,114 @@
+﻿:: Start
+<<noprompt>>
+
+<<action="RUN","1">>
+
+:: 1
+<<noprompt>>
+
+<<action="RUN","2">>
+
+<<action="RUN","3">>
+
+
+:: 5
+<<noprompt>>
+
+<<action="RUN","3B">>
+
+
+:: MetaData
+<<connect="">>
+<<level="4">>
+
+
+:: StoryTitle
+4F
+
+
+:: 2
+<<noprompt>>
+
+<<action="RUN","3A">>
+
+
+:: 3
+<<noprompt>>
+
+<<action="RUN","4">>
+
+<<action="RUN","5">>
+
+<<action="RUN","6">>
+
+
+:: 3B
+<<unload>>
+<<nexttree="3B">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 10
+<<noprompt>>
+
+[[<<action="RUN">>|3E]]
+
+
+:: 6
+<<noprompt>>
+
+[[<<action="RUN">>|7]]
+
+[[<<action="RUN">>|8]]
+
+[[<<action="RUN">>|9]]
+
+[[<<action="RUN">>|10]]
+
+
+:: 4
+<<noprompt>>
+
+[[<<action="RUN">>|3C]]
+
+
+:: 3A
+<<unload>>
+<<nexttree="3A">>
+<<state="idle">>
+
+
+:: 7
+<<noprompt>>
+
+[[<<action="RUN">>|3E]]
+
+
+:: 8
+<<noprompt>>
+
+[[<<action="RUN">>|3E]]
+
+
+:: 9
+<<noprompt>>
+
+[[<<action="RUN">>|3E]]
+
+
+:: 3C
+<<unload>>
+<<nexttree="3C">>
+<<state="idle">>
+
+
+:: 3E
+<<unload>>
+<<nexttree="3E">>
+<<state="idle">>
+
+

@@ -11,6 +11,7 @@ public class SpeakerTag : SilkTagBase {
 		if (args.Count == 1) {
 
 			Value = CharacterManager.instance.GetCharacterNameByID(args[0]) + ": ";
+
 		} else {
 			Value = "YA DOOFED UP";
 		}

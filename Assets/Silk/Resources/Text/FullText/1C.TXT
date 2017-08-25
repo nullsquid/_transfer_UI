@@ -1,0 +1,46 @@
+﻿:: Start
+<<speaker="G">>
+It's a shame we can't see it.  I'm sure they're spectacular.
+
+[[Yeah.|Like those videos of fireworks going off.]]
+
+[[I don't think so.|I was disappointed we didn't get to see what Medusa really did, either.  WE had to run out before it got really interesting.]]
+
+[[Well, what should we do now?|I don't know.  It's awfully quiet.]]
+
+
+
+:: I don't know.  It's awfully quiet.
+<<speaker="G">>
+I don't know.  It's awfully quiet.
+
+<<end="Ending Name">>
+
+
+:: MetaData
+<<connect="G">>
+<<level="1">>
+
+
+:: StoryTitle
+1C
+
+
+:: Like those videos of fireworks going off.
+<<speaker="G">>
+Like those videos of fireworks going off.
+
+<<end="Ending Name">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: I was disappointed we didn't get to see what Medusa really did, either.  WE had to run out before it got really interesting.
+<<speaker="G">>
+I was disappointed we didn't get to see what Medusa really did, either.  We had to run out before it got really interesting.
+
+<<end="Ending Name">>
+
+

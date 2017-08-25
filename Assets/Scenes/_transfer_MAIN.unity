@@ -454,6 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c976064964a5a488a5891ced78c3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useFullText: 1
   rawTweeFiles: []
 --- !u!114 &297057287
 MonoBehaviour:
@@ -698,6 +699,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 989785eb531decc4da35d8554fbd3aa3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &520658172 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1176100798863990, guid: 989785eb531decc4da35d8554fbd3aa3,
+    type: 2}
+  m_PrefabInternal: {fileID: 449760957}
+--- !u!114 &520658175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520658172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21a9ae89e20f48b390150bb418b78fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameBlacklist: []
 --- !u!1001 &552350671
 Prefab:
   m_ObjectHideFlags: 0
@@ -2157,6 +2175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566020868}
   - component: {fileID: 1566020869}
+  - component: {fileID: 1566020870}
   m_Layer: 0
   m_Name: Terminal
   m_TagString: Untagged
@@ -2190,6 +2209,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canRunCommands: 1
+--- !u!114 &1566020870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1566020867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e622733ae8599f49b9cf043e39e8110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1761125390
 GameObject:
   m_ObjectHideFlags: 0

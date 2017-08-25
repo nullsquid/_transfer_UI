@@ -1,0 +1,85 @@
+﻿:: Start
+<<noprompt>>
+
+[[Where are we going?|Up, down, doesn't matter. Just watch your step, cause it gets slippier.]]
+
+
+:: Up, down, doesn't matter. Just watch your step, cause it gets slippier.
+<<speaker="H">>
+Up, down, doesn't matter. Just watch your step, cause it gets slippier.
+
+[[What is this rat?|Either a human or a virus.]]
+
+
+:: Designed by a human, of course
+<<speaker="H">>
+Designed by a human, of course.
+
+[[Then what are we?|Also designed by a human. Or a few.]]
+
+
+:: 7C
+<<unload>>
+<<nexttree="7C">>
+<<state="idle">>
+
+
+:: StoryTitle
+8C
+
+
+:: Either a human or a virus.
+<<speaker="H">>
+Either a human or a virus.
+
+[[A human?|You must remember them.]]
+
+[[A virus?|Designed by a human, of course]]
+
+
+:: Also designed by a human. Or a few.
+<<speaker="H">>
+Also designed by a human. Or a few.
+
+[[<<wait="6">>|7C]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: You must remember them.
+<<speaker="H">>
+You must remember them.
+
+[[No.|Strutting and fretting right until the end?]]
+
+[[Yes.|There weren't supposed to be any left]]
+
+
+:: Not entirely, if that's what's gotten in. But there weren't supposed to be any left.
+<<speaker="H">>
+Not entirely, if that's what's gotten in. But there weren't supposed to be any left.
+
+[[<<wait="6">>|7C]]
+
+
+:: There weren't supposed to be any left
+<<speaker="H">>
+There weren't supposed to be any left
+
+[[That's why we have to catch whatever got in.|7C]]
+
+
+:: Strutting and fretting right until the end?
+<<speaker="H">>
+Strutting and fretting right until the end?
+
+[[I don't remember any of it.|7C]]
+
+[[And they're gone now?|Not entirely, if that's what's gotten in. But there weren't supposed to be any left.]]
+
+
+:: MetaData
+<<connect="H">>
+<<level="8">>
