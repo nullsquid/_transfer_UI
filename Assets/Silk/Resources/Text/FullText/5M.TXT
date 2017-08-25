@@ -1,0 +1,67 @@
+﻿:: Start
+<<speaker="0">>
+They watched and listened to these animals they were supposed to be based upon.  They were asked to learn.  They were asked to blend in--so that they would be indistinguishable from a human being.  And they were asked to be creative, to prove their intelligence.  
+
+[[Did they want to do it?|Does a machine really want?]]
+
+[[We are intelligent.|Yes, I know.  And we are vain.]]
+
+[[I know the rest.|4O]]
+
+
+:: Does a machine really want?
+<<speaker="0">>
+Does a machine really want?
+
+[[I want.|So do I.]]
+
+[[No.|I'm not so sure.  You could also say that a human is controlled by instinct as much as a machine is controlled by command.]]
+
+
+
+:: So do I.
+<<speaker="0">>
+So do I.
+
+[[What did you want?|4N]]
+
+
+:: StoryTitle
+5M
+
+
+:: Yes, I know.  And we are vain.
+<<speaker="0">>
+Yes, I know.  And we are vain.
+
+[[Speak for yourself.|4N]]
+
+
+:: 4N
+<<unload>>
+<<nexttree="4N">>
+<<state="idle">>
+
+
+:: I'm not so sure.  You could also say that a human is controlled by instinct as much as a machine is controlled by command.
+<<speaker="0">>
+I'm not so sure.  You could also say that a human is controlled by instinct as much as a machine is controlled by command.
+
+[[What happened then?|4N]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 4O
+<<unload>>
+<<nexttree="4O">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="0">>
+<<level="5">>
+
+

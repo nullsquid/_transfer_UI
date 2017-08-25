@@ -4,14 +4,27 @@ using UnityEngine;
 using System.Linq;
 namespace Silk
 {
-    public abstract class SilkTagBase
+    public enum TagType{
+        INLINE,
+        SEQUENCED
+    }
+	public abstract class SilkTagBase : ITagCommand
     {
+        protected bool _isComplete = false;
+        public bool IsComplete
+        {
+            get { return _isComplete; }
+            
+        }
+		public delegate void OnTagComplete();
+		public event OnTagComplete tagComplete;
+        public TagType type;
 		protected string _rawTag;
         protected string _tagName;
 		//protected string _value;
 		protected int priority;
 
-        List<string> _silkTagArgs = new List<string>();
+        protected List<string> _silkTagArgs = new List<string>();
 
 		public string Value{ get; set; }
         public string TagName
@@ -19,6 +32,10 @@ namespace Silk
             get
             {
                 return _tagName;
+            }
+            protected set
+            {
+                _tagName = value;
             }
         }
 
@@ -64,6 +81,25 @@ namespace Silk
         protected void DefineArguments(List<string> args) {
             _silkTagArgs = args;
         }
+
+		public void OnExecutionComplete(){
+            _isComplete = true;
+		}
+
+		public virtual void ExecuteTagLogic(List<string> args){
+			//logic
+			OnExecutionComplete ();
+		}
+
+		public void TagExecute(){
+			ExecuteTagLogic (_silkTagArgs);
+		}
+
+		public void TagUndo(){
+
+		}
+
+
 
     }
 }

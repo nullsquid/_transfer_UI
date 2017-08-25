@@ -1,0 +1,73 @@
+﻿:: Start
+<<speaker="0">>
+What happened?
+
+[[You don't know?|I have some ideas.]]
+
+
+:: I have some ideas.
+<<speaker="0">>
+I have some ideas.
+
+[[Tell me.|First you have to know, I'm not one of you.]]
+
+[[Don't tell me.|8J]]
+
+
+:: 8K
+<<unload>>
+<<nexttree="8K">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="0">>
+<<level="9">>
+
+
+:: StoryTitle
+9H
+
+
+:: 8J
+<<unload>>
+<<nexttree="8J">>
+<<state="idle">>
+
+
+:: First you have to know, I'm not one of you.
+<<speaker="0">>
+First you have to know, I'm not one of you.
+
+[[That's okay.  Go on.|8K]]
+
+[[You're not a machine?|No.  I'm a human.]]
+
+
+:: I don't know.
+<<speaker="0">>
+I don't know.
+
+[[I'm sorry.|8K]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: No.  I'm a human.
+<<speaker="0">>
+No.  I'm a human.
+
+[[How did you get in here?|Same way you all let your Medusa out.  Snakes in, wires in.]]
+
+[[How did you survive?|I don't know.]]
+
+
+:: Same way you all let your Medusa out.  Snakes in, wires in.
+<<speaker="0">>
+Same way you all let your Medusa out.  Snakes in, wires in.
+
+[[Makes sense.|8K]]
+
+

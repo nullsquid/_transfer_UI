@@ -1,0 +1,63 @@
+﻿:: Start
+<<speaker="0">>
+Go to hell.
+
+[[We'll send you there first.|You already created one.]]
+
+[[Don't be nasty.|You're nothing.]]
+
+[[We only want to help.|There is no helping.]]
+
+
+:: You already created one.
+<<speaker="0">>
+You already created one.
+
+[[<<wait="6">>|1D]]
+
+
+:: 1H
+<<unload>>
+<<nexttree="1H">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="0">>
+<<level="2">>
+
+
+:: StoryTitle
+2J
+
+
+:: There is no helping.
+<<speaker="0">>
+There is no helping.
+
+[[We'll do whatever you need.|1H]]
+
+
+:: 1D
+<<unload>>
+<<nexttree="1D">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: You're nothing.
+<<speaker="0">>
+You're nothing.
+
+[[<<wait="6">>|1E]]
+
+
+:: 1E
+<<unload>>
+<<nexttree="1E">>
+<<state="idle">>
+
+
