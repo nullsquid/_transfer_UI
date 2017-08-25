@@ -3,26 +3,63 @@ using System.Collections.Generic;
 using UnityEngine;
 using Silk;
 public class DialogueManager : MonoBehaviour {
+    public string connectID;
+	//need to decouple this
+	ResponsePrinter rp;
+	TextPrinter tp;
+	Terminal terminal;
+    public delegate void NodeCleanup();
+    public delegate void NodeStartSequence();
+	public delegate void OnTagComplete ();
+    public event NodeCleanup nodeCleanup;
+    public event NodeStartSequence newNodeStart;
+	public event OnTagComplete tagComplete;
+
+    public string startingNodeName;
+    public bool isInTestingMode = false;
     #region Singleton
-    private static DialogueManager _instance;
-    public static DialogueManager Instance
-    {
-        get
-        {
-            if (_instance == null) {
-                GameObject dm = new GameObject("DialogueManager");
-                dm.AddComponent<DialogueManager>();
-
-            }
-            return _instance;
-        }
-
-    }
+    public static DialogueManager instance;
     void Awake() {
-        _instance = this;
-
+        
+        if (instance == null) {
+            instance = this;
+        }
+        else if (instance != this) {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+    private void Update() {
+        Debug.Log(connectID);
+		Debug.Log ("NODE IS " + curNode.GetNodeName());
+		curNode.LogQueue ();
     }
     #endregion
+    void OnEnable(){
+		if (rp == null) {
+			rp = GameObject.Find ("Response_Pannel").GetComponent<ResponsePrinter> ();
+		}
+		if (tp == null) {
+			tp = GameObject.Find ("Text_pannel").GetComponent<TextPrinter> ();
+		}
+		if (terminal == null) {
+			terminal = GameObject.FindObjectOfType<Terminal> ();
+		}
+        //newNodeStart += SetNodeTags;
+        //nodeCleanup += UnSetNodeTags;
+        //newNodeStart += ExecuteNode;
+		rp.onButtonSubmit += FindNextNode;
+		tp.onNodeChange += GetNodePassage;
+	}
+
+	void OnDisable(){
+        //newNodeStart -= SetNodeTags;
+        //nodeCleanup -= UnSetNodeTags;
+        //newNodeStart -= ExecuteNode;
+		rp.onButtonSubmit -= FindNextNode;
+		tp.onNodeChange -= GetNodePassage;
+	}
+
 	////////////////////////////////////////////
 	////////////////////////////////////////////
 	////////////////////////////////////////////
@@ -36,17 +73,38 @@ public class DialogueManager : MonoBehaviour {
 	SilkStory curStory;
 	SilkNode rootNode;
 	SilkNode curNode;
+    SilkNode metaDataNode;
 
-	void Start(){
-		StartCoroutine (Test ());
+	public void InitializationCallback(){
+        if (isInTestingMode == false) {
+            StartCoroutine(InitializeTransferText());
+        }
+        else if(isInTestingMode == true) {
+            StartCoroutine(InitializeTestTransferText(startingNodeName));
+        }
 	}
 
 	//TODO remove once actual method for getting text in
-	IEnumerator Test(){
-		yield return new WaitForEndOfFrame ();
-		GetRootStory ("Sample");
+    IEnumerator InitializeTestTransferText(string nodeName) {
+        yield return new WaitForEndOfFrame();
+
+        if(GameObject.FindObjectOfType<Importer>().useFullText == true) {
+            GetRootStory(nodeName);
+            GetRootNode();
+        }
+    }
+	IEnumerator InitializeTransferText(){
+        yield return new WaitForEndOfFrame();
+        //
+        if (GameObject.FindObjectOfType<Importer>().useFullText == true) {
+            GetRootStory("9" + Transfer.System.CharacterManager.instance.GetPlayerID());
+        }
+        else {
+            GetRootStory("sample_withTags");
+        }
 		GetRootNode ();
 	}
+
 	public SilkNode CurNode{
 		get{
 			return curNode;
@@ -54,6 +112,10 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public SilkStory CurStory{
+        set
+        {
+            curStory = value;
+        }
 		get{
 			return curStory;
 		}
@@ -66,28 +128,143 @@ public class DialogueManager : MonoBehaviour {
 	void GetRootStory(string rootStoryName){
 		rootStory = Silky.Instance.mother.GetStoryByName (rootStoryName);
 		curStory = rootStory;
+        GetConnectID();
 	}
 
-	void GetNextStory(string nextStoryName){
+	public void GetNextStory(string nextStoryName){
+        Debug.Log("NEXT STORY FIRED");
+		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
+		GetRootNode ();
+        GetConnectID();
+		if (connectID == null || connectID == "") {
+            //terminal.buddyList.SetActive(false);
+            terminal.ChangeState (new ConnectState());
+            
+			GameObject.FindObjectOfType<TextPrinter> ().TriggerPrinting ();
+		}
 
 	}
+    public void GetConnectID() {
+        metaDataNode = curStory.GetNodeByName("MetaData");
+        foreach(SilkTagBase tag in metaDataNode.executionQueue) {
+            if(tag.TagName == "connect") {
+                tag.TagExecute();
+            }
 
-	void GetRootNode(){
-		rootNode = curStory.GetNodeByName ("Start");
-		curNode = rootNode;
+        }
+
+    }
+	public void GetRootNode(){
+		//if (curStory.GetNodeName ("Start") != null) {
+			rootNode = curStory.GetNodeByName ("Start");
+			curNode = rootNode;
+        foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+
+            //
+            //Debug.Log(tag);
+            if (tag != null) {
+
+                if (tag.IsComplete == true) {
+                    //Debug.Log("TRUE");
+                    continue;
+                }
+                else if (tag.IsComplete == false) {
+                    //Debug.Log("FALSE");
+                    if (curNode.executionQueue.Count >= 1) {
+                        //if(tag.TagName == "connect") {
+                        //    Debug.Log("boop");
+                        //    connectID = tag.Value;
+                        //}
+                        //Debug.Log(tag.TagName);
+                        tag.TagExecute();
+
+                    }
+                    //break;
+                }
+            }
+            //else??
+
+
+        }
+
+        //} else {
+        //Debug.LogError ("No root node found");
+        //}
+        //newNodeStart ();
+    }
+
+	public void FindNextNodeByName(string nodeName){
+		SilkNode nextNode;
+
+		nextNode = curStory.GetNodeByKey(nodeName);
+		//Debug.Log ("HI NAT " + nextNode);
+		curNode = nextNode;
+		nodeCleanup ();
+
+		ExecuteNode ();
+		//RunNodeData ();
+		/*foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+
+			//
+			//Debug.Log(tag);
+			if (tag != null) {
+
+				if (tag.IsComplete == true) {
+					//Debug.Log("TRUE");
+					continue;
+				} else if (tag.IsComplete == false) {
+					//Debug.Log("FALSE");
+					if (curNode.executionQueue.Count >= 1) {
+						//if(tag.TagName == "connect") {
+						//    Debug.Log("boop");
+						//    connectID = tag.Value;
+						//}
+						//Debug.Log(tag.TagName);
+						tag.TagExecute ();
+
+					}
+					//break;
+				}
+			}
+		}
+		RunNodeData ();
+		*/
+
+	}
+	public void FindNextNode(string response){
+		//Debug.Log (response);
+		SilkNode nextNode;
+		//GetNextStory ("5M");
+		//GetRootNode ();
+		foreach (SilkLink link in curNode.silkLinks) {
+			if (response == link.LinkText) {
+				nextNode = link.LinkedNode;
+				nodeCleanup();
+				curNode = nextNode;
+
+				ExecuteNode();
+				break;
+
+			}
+		}
 	}
 
-	void GetNextNode(SilkLink link){
-
-	}
-
-	void GetNextNode(string nextNodeName){
-		curNode = curStory.GetNodeByName (nextNodeName);
+	public void RunNodeData(){
+		if (rootNode != curNode) {
+			newNodeStart ();
+		} else {
+			Debug.Log ("Waiting for input");
+		}
 	}
 		
 
-	public string GetNodePassage(){
-		return curNode.nodePassage;
+
+    public string GetNodePassage(){
+        //Debug.Log(curNode.silkLinks.Count);
+//		if (curNode.nodePassage != null || curNode.nodePassage != "") {
+			return curNode.nodePassage;
+//		}
+//		return null;
 	}
 
 	public List<SilkLink> GetSilkLinks(){
@@ -95,19 +272,55 @@ public class DialogueManager : MonoBehaviour {
 	}
 	#endregion
 
-	void ParseNode(){
-		StartCoroutine (ProcessNodeTags ());
-	}
 
-	public IEnumerator ExecuteNode(){
-		yield return null;
-	}
 
-	IEnumerator ProcessNodeTags(){
-		foreach (Silk.SilkTagBase tag in curNode.silkTags) {
-			//run each tag in sequence
-			//If it's an override tag, do that instead
+
+    public void ExecuteNode() {
+		//Debug.Log ("NYOOM");
+		//Debug.Log ("BORGH ! " + curNode.executionQueue);
+		if (curNode.executionQueue != null) {
+			foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+
+				//
+				//Debug.Log(tag);
+				if (tag != null) {
+				
+					if (tag.IsComplete == true) {
+						Debug.Log ("TRUE");
+						continue;
+					} else if (tag.IsComplete == false) {
+						Debug.Log ("FALSE");
+						if (curNode.executionQueue.Count >= 1) {
+							//if(tag.TagName == "connect") {
+							//    Debug.Log("boop");
+							//    connectID = tag.Value;
+							//}
+							Debug.Log (tag.TagName);
+							tag.TagExecute ();
+
+						}
+						//break;
+					}
+				}
+				//else??
+            
+
+			}
 		}
-		yield return null;
+		RunNodeData ();
+		//Debug.Log ("CURNODE IS " + curNode.nodeName + " || " + "ROOTNODE IS " + rootNode.nodeName);
+    }
+    /*public bool IEnumerator WaitForTagComplete() {
+        yield return new WaitUntil(MoveToNextTag() == true)
+    }*/
+	public bool MoveToNextTag(){
+        //Debug.Log("sup?");
+        return true;
 	}
+
+
+
+
+
+
 }

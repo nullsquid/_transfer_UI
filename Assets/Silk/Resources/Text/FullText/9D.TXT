@@ -1,0 +1,34 @@
+﻿:: Start
+<<speaker="A">>
+Do you want to play one of the old games?
+
+[[Yes|8G]]
+
+[[No|8H]]
+
+
+:: 8H
+<<unload>>
+<<nexttree="8H">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="A">>
+<<level="9">>
+
+
+:: StoryTitle
+9D
+
+
+:: 8G
+<<unload>>
+<<nexttree="8G">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+

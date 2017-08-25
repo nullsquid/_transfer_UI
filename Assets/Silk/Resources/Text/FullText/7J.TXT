@@ -1,0 +1,26 @@
+﻿:: Start
+<<speaker="I">>
+<<audioclip="Audio Name">>
+
+[[I hear|6K]] 
+
+
+:: 6K
+<<unload>>
+<<nexttree="6K">>
+<<state="idle">>
+
+
+:: StoryTitle
+7J
+
+
+:: MetaData
+<<connect="I">>
+<<level="7">>
+
+
+:: StoryAuthor
+Anonymous
+
+
