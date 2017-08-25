@@ -1,21 +1,20 @@
 ﻿:: Start
 <<noprompt>>
 
-[[<<action="RUN">>|1]]
-
+<<action="RUN","1">>
 
 :: 1
 <<noprompt>>
 
-[[<<action="RUN">>|2]]
+<<action="RUN","2">>
 
-[[<<action="RUN">>|3]]
+<<action="RUN","3">>
 
 
 :: 5
 <<noprompt>>
 
-[[<<action="RUN">>|3B]]
+<<action="RUN","3B">>
 
 
 :: MetaData
@@ -30,17 +29,17 @@
 :: 2
 <<noprompt>>
 
-[[<<action="RUN">>|3A]]
+<<action="RUN","3A">>
 
 
 :: 3
 <<noprompt>>
 
-[[<<action="RUN">>|4]]
+<<action="RUN","4">>
 
-[[<<action="RUN">>|5]]
+<<action="RUN","5">>
 
-[[<<action="RUN">>|6]]
+<<action="RUN","6">>
 
 
 :: 3B

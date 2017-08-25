@@ -90,7 +90,7 @@ namespace Silk {
                 SilkStory newSilkStory = new SilkStory();
                 TextAsset tweeFile = currentTweeFile;
                 string fileName = currentTweeFile.name;
-                Debug.LogWarning(currentTweeFile.name);
+                //Debug.LogWarning(currentTweeFile.name);
                 //this works for single file
                 //textToParse = testText.text;
 
@@ -301,6 +301,7 @@ namespace Silk {
                         //if (ParseRawTag(rawTag, tagFactory).TagName == "connect") {
                         //    ParseRawTag(rawTag, tagFactory).TagExecute();
                         //}
+
                         promptContainer.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
                         
                         //Debug.Log("IN");
