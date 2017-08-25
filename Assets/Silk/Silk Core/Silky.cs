@@ -90,7 +90,7 @@ namespace Silk {
                 SilkStory newSilkStory = new SilkStory();
                 TextAsset tweeFile = currentTweeFile;
                 string fileName = currentTweeFile.name;
-                Debug.LogWarning(currentTweeFile.name);
+                //Debug.LogWarning(currentTweeFile.name);
                 //this works for single file
                 //textToParse = testText.text;
 

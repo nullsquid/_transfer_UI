@@ -34,6 +34,7 @@ public class TerminalStateMachine {
 
 	public void TerminalStateUpdate(){
 		var runningState = this.curState;
+		Debug.Log ("CURRENT STATE IS " + runningState);
 		if (runningState != null) {
 			curState.TerminalExecuteState ();
 		}

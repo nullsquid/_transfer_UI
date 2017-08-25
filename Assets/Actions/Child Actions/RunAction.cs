@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Silk;
 public class RunAction : ActionBase {
-    DialogueManager dm;
+    //DialogueManager dm;
     SilkNode destination;
     public enum Direction {
         NONE,
@@ -14,10 +14,18 @@ public class RunAction : ActionBase {
     }
 
     public RunAction(string name, List<string> args) {
-        ActionName = name;
+		//Debug.Log ("HMMMMMMMMMMMMM???");
+		ActionName = name;
         Args = args;
-        dm = GameObject.FindObjectOfType<DialogueManager>();
+        //dm = GameObject.FindObjectOfType<DialogueManager>();
         Direction dir;
+
+		//Debug.Log ("ACT ARG >>" + args [0]);
+		//Debug.Log ("ARGH " + args[0]);
+
+		destination = Silky.Instance.mother.GetNodeByName(DialogueManager.instance.CurStory.StoryName, args[0]);
+
+		/*
         switch (args[0]) {
             case "north":
                 dir = Direction.NORTH;
@@ -34,17 +42,23 @@ public class RunAction : ActionBase {
             default:
                 dir = Direction.NONE;
                 break;
+
         }
+
         if(dir != Direction.NONE) {
             destination = Silky.Instance.mother.GetNodeByName(dm.CurStory.StoryName,args[1]);
         }
         else {
             destination = Silky.Instance.mother.GetNodeByName(dm.CurStory.StoryName, args[0]);
         }
+		*/
+
         
     }
 
     public override void ExecuteActionLogic() {
-        dm.FindNextNode(destination.nodeName);
+		Debug.Log (destination.nodeName);
+		//when fired on 4F Start node, hits node '1' and then falls to node '2' where it stops
+		DialogueManager.instance.FindNextNodeByName(destination.nodeName);
     }
 }
