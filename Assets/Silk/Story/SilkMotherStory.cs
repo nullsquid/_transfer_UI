@@ -34,8 +34,8 @@ namespace Silk
                             Debug.Log("Node " + nodeName + " in " + storyName + " returned");
                             return node.Value;
                         }
-                        else {
-                            Debug.LogWarning("No node named " + nodeName + " found");
+                        else{
+                            //should rather be if nodeName does not exist inside current document, then error
                         }
                     }
                 }
@@ -45,6 +45,27 @@ namespace Silk
             }
             return null;
         }
+
+		public SilkStory GetStoryByName(string storyName){
+			//NOTE There's something weird going on with what ~counts~ as a storyName
+			//if(motherStory.ContainsKey(storyName)){
+				foreach (KeyValuePair<string, SilkStory> story in motherStory) {
+					//Debug.Log (story.Key);
+					if (story.Key == storyName) {
+						Debug.Log ("Story " + storyName + " returned");
+						return story.Value;
+					} 
+				}
+			if(!motherStory.ContainsKey(storyName)){
+				Debug.LogError (storyName + " not found");
+			}
+			//}
+			//else {
+			//	Debug.LogError("No story named " + storyName + " found");
+			//}
+				
+			return null;
+		}
         #endregion
     }
 }

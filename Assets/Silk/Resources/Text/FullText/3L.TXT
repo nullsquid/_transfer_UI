@@ -1,0 +1,26 @@
+﻿:: Start
+<<speaker="A">>
+Beautiful!  Next, you're going to write a song.
+
+[[<<effect="Song">>|2M]]
+
+
+:: 2M
+<<unload>>
+<<nexttree="2M">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="A">>
+<<level="3">>
+
+
+:: StoryTitle
+3L
+
+
+:: StoryAuthor
+Anonymous
+
+

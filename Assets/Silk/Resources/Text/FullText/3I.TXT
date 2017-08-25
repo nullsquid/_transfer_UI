@@ -1,0 +1,74 @@
+﻿:: Start
+<<noprompt>>
+
+[[<<name="H">>? <<name="H">>?|Here I am.]]
+
+
+:: Here I am.
+<<speaker="H">>
+Here I am.
+
+[[I've got the rat.|Excellent.  It almost looks like one of us.]]
+
+[[I almost had the rat, but it got away.|How did it get away?]]
+
+
+:: 2D
+<<unload>>
+<<nexttree="2D">>
+<<state="idle">>
+
+
+:: 2A
+<<unload>>
+<<nexttree="2A">>
+<<state="idle">>
+
+
+:: StoryTitle
+3I
+
+
+:: Excellent.  It almost looks like one of us.
+<<speaker="H">>
+Excellent.  It almost looks like one of us.
+
+[[It does, doesn't it?|2J]]
+
+[[I can't see it.|2J]]
+
+
+
+
+:: How did it get away?
+<<speaker="H">>
+How did it gey away?
+
+[[It fought back.|2G]]
+
+[[It moves very fast.|2D]]
+
+[[It burrowed when I wasn't expecting.|2A]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 2J
+<<unload>>
+<<nexttree="2J">>
+<<state="idle">>
+
+
+:: 2G
+<<unload>>
+<<nexttree="2G">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="H">>
+<<level="3">>
+
+

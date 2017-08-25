@@ -1,0 +1,32 @@
+﻿:: Start
+<<noprompt>>
+
+[[<<name="B">>?  <<name="B">>?|I'm here.]]
+
+
+:: I'm here.
+<<speaker="B">>
+I'm here.
+
+[[This is the survivor. We've got to help <<pronoun="0",tense>>.|2H]]
+
+
+:: MetaData
+<<connect="C">>
+<<level="9">>
+
+
+:: StoryTitle
+3H
+
+
+:: 2H
+<<unload>>
+<<nexttree="2H">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+

@@ -1,0 +1,78 @@
+﻿:: Start
+<<speaker="F">>
+It's simple--you just have to input the password--
+
+[[What's the password?|You remember. You must.]]
+
+[[That's all?|And then the bombs will fly, and then they will fall.]]
+
+
+:: You remember. You must.
+<<speaker="F">>
+--you remember--you must--
+
+[[I don't.|It's the name of our creator.]]
+
+
+:: It's the name of our creator.
+<<speaker="F">>
+It's the name of our creator--
+
+[[God.|Hilarious.]]
+
+[[Niang.|1B]]
+
+[[Zimmerman.|1B]]
+
+[[Ansaldi.|1B]]
+
+
+:: 1B
+<<unload>>
+<<nexttree="1B">>
+<<state="idle">>
+
+
+:: StoryTitle
+2B
+
+
+:: And then the bombs will fly, and then they will fall.
+<<speaker="F">>
+And then the bombs will fly--and then they will fall--
+
+[[One password is all it takes?|They never thought we would get as far as we did.]]
+
+[[How soon can we do it?|Right now.]]
+
+
+:: Hilarious.
+<<speaker="F">>
+Hilarious
+
+[[<<wait="6">>|1B]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: Right now.
+<<speaker="F">>
+Right now--
+
+[[<<wait="6">>|1B]]
+
+
+:: They never thought we would get as far as we did.
+<<speaker="F">>
+They never--thought--we would get as far as we did--
+
+[[<<wait="6">>|1B]]
+
+
+:: MetaData
+<<connect="F">>
+<<level="2">>
+
+
