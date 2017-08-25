@@ -5,6 +5,7 @@ namespace Transfer.System {
     public class CharacterManager : MonoBehaviour {
         public static CharacterManager instance;
         private CharacterInitializer charInit;
+        private CharacterBlacklist blacklist;
         void Awake() {
             if (instance == null) {
                 instance = this;
@@ -17,12 +18,13 @@ namespace Transfer.System {
             }
 
             DontDestroyOnLoad(gameObject);
+            blacklist = GameObject.FindObjectOfType<CharacterBlacklist>();
             InitializeCharacters();
         }
 
         void InitializeCharacters() {
+            blacklist.InitializeNameBlacklist();
             charInit.PopulateCharacterDatabase(true);
-            LogCharacters();
 
         }
         void LogCharacters() {
@@ -39,6 +41,24 @@ namespace Transfer.System {
             Debug.Log(CharacterDatabase.GetCharacterID("0") + " " + CharacterDatabase.GetCharacterName("0"));
 
         }
+        public string GetPlayerID() {
+            return CharacterDatabase.GetPlayerID().Trim();
+        }
+		public string GetCharacterNameByID(string id){
+			return CharacterDatabase.GetCharacterName (id);
+		}
+
+		public string GetCharacterPronounByID(string id, string tense){
+			Transfer.Data.Case _case = new Case();
+			if (tense == "subject") {
+				_case = Case.subjective;
+			} else if (tense == "object") {
+				_case = Case.objective;
+			} else if (tense == "possess") {
+				_case = Case.possessive;
+			}
+			return CharacterDatabase.GetPronoun (id, _case);
+		}
     }
 
 }

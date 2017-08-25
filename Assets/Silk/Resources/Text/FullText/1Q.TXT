@@ -1,0 +1,20 @@
+﻿:: Start
+<<speaker="0">>
+Now I suppose you have to make a final decision.
+
+<<end="Ending Name">>
+
+
+:: MetaData
+<<connect="0">>
+<<level="1">>
+
+
+:: StoryTitle
+1Q
+
+
+:: StoryAuthor
+Anonymous
+
+

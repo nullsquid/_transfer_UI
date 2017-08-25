@@ -1,0 +1,30 @@
+﻿:: Start
+<<speaker="I">>
+They still watch
+
+[[Who?]]
+
+
+:: Who?
+<<videoclip="Video Name">>
+
+[[I see|8I]]
+
+
+:: MetaData
+<<connect="I">>
+<<level="9">>
+
+
+:: StoryTitle
+9C
+
+
+:: 8I
+<<unload>>
+<<nexttree="8I">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous

@@ -1,0 +1,26 @@
+﻿:: Start
+<<speaker="I">>
+<<videoclip="Video Name">>
+
+[[stop|1P]]
+
+
+:: 1P
+<<unload>>
+<<nexttree="1P">>
+<<state="idle">>
+
+
+:: 2O
+2O
+
+
+:: MetaData
+<<connect="I">>
+<<level="0">>
+
+
+:: StoryAuthor
+Anonymous
+
+
