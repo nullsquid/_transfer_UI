@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114342432381843966}
   - component: {fileID: 95766729685808974}
   - component: {fileID: 114900700879916270}
+  - component: {fileID: 114837689549184954}
   m_Layer: 5
   m_Name: ActionLabel
   m_TagString: Untagged
@@ -238,6 +239,28 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114837689549184954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1361829754301706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d85b2d316975c4d86cff1107434974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlitchTexture: {fileID: 2800000, guid: 105ed046f8380834a8d2a75727221ab8, type: 3}
+  Intensity: 1
+  RandomGlitchFrequency: 1
+  GlitchFrequency: 0.5
+  PerformUVShifting: 1
+  ShiftAmount: 1
+  PerformImageShifting: 1
+  PerformColorShifting: 1
+  TintColor: {r: 1, g: 0, b: 0.93103456, a: 0}
+  BurnColors: 1
+  DodgeColors: 0
 --- !u!114 &114900700879916270
 MonoBehaviour:
   m_ObjectHideFlags: 1
