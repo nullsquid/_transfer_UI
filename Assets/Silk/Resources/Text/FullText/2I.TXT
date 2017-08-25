@@ -1,0 +1,111 @@
+﻿:: MetaData
+<<connect="H">>
+<<level="2">>
+
+
+:: Start
+<<speaker="H">>
+You can't keep on running forever.
+
+[[Watch me.|Run.2]]
+
+[[<<action="RUN">>|Run.]]
+
+[[<<action="DIG">>|You can't go that way.]]
+
+
+:: You can't go that way.
+<<speaker="H">>
+You can't go that way.
+
+[[<<action="RUN">>|1A]]
+
+[[<<action="RUN">>|1B]]
+
+[[<<action="DIG">>|1C]]
+
+
+:: 1A
+<<unload>>
+<<nexttree="1A">>
+<<state="idle">>
+
+
+:: StoryTitle
+2I
+
+
+:: Run.2
+<<speaker="H">>
+<<action="RUN">>
+
+[[<<action="RUN">>|1D]]
+
+[[<<action="RUN">>|1I]]
+
+[[<<action="RUN">>|1J]]
+
+
+:: 1C
+<<unload>>
+<<nexttree="1C">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: Run.
+<<speaker="H">>
+<<action="RUN">>
+
+[[<<action="RUN">>|1L]]
+
+[[<<action="RUN">>|1F]]
+
+[[<<action="RUN">>|1K]]
+
+
+:: 1B
+<<unload>>
+<<nexttree="1B">>
+<<state="idle">>
+
+
+:: 1K
+<<unload>>
+<<nexttree="1K">>
+<<state="idle">>
+
+
+:: 1D
+<<unload>>
+<<nexttree="1D">>
+<<state="idle">>
+
+
+:: 1J
+<<unload>>
+<<nexttree="1J">>
+<<state="idle">>
+
+
+:: 1I
+<<unload>>
+<<nexttree="1I">>
+<<state="idle">>
+
+
+:: 1F
+<<unload>>
+<<nexttree="1F">>
+<<state="idle">>
+
+
+:: 1L
+<<unload>>
+<<nexttree="1L">>
+<<state="idle">>
+
+

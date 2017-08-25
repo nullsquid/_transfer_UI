@@ -1,0 +1,69 @@
+﻿:: MetaData
+<<connect="F">>
+<<level="1">>
+
+
+:: Start
+<<speaker="F">>
+You are the rat--you will be exterminated--
+
+[[No, I just misremembered.| Behead]]
+
+[[Alright.|Behead 1]]
+
+[[Why not just let me go? I'll leave and never come back.  I'll even show you how got in so you can keep me out forever.|Behead 2]]
+
+[[Why?|We made the decision.]]
+
+
+::  Behead
+<<speaker="F">>
+<<action="BEHEAD">>
+
+<<end="Ending Name">>
+
+
+:: Behead 2
+<<speaker="F">>
+<<action="BEHEAD">>
+
+
+<<end="Ending Name">>
+
+
+
+:: StoryTitle
+1F
+
+
+:: We made the decision.
+<<speaker="F">>
+--we made the decision--
+
+[[That's all it took?|That's all we need. Behead]]
+
+
+:: That's all we need. Behead
+<<speaker="F">>
+
+That's all we need--
+
+<<action="BEHEAD">>
+
+
+
+<<end="Ending Name">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: Behead 1
+<<speaker="F">>
+<<action="BEHEAD">>
+
+
+<<end="Ending Name">>
+
+

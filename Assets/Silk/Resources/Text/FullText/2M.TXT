@@ -1,0 +1,101 @@
+﻿:: Start
+<<speaker="A">>
+Okay okay.  Next and last task: you're gonna make your own computer game!  Isn't that exciting?
+
+[[I don't want to make a game.|1R]]
+
+[[Yes.|Okay, first I need you to pick a number]]
+
+
+:: Okay, first I need you to pick a number
+<<speaker="A">>
+Okay, first I need you to pick a number
+
+[[1|Now I need you to pick another number 1]]
+
+[[42|Now I need you to pick another number 2]]
+
+[[1111|Now I need you to pick another number 3]]
+
+[[3 Million|Now I need you to pick another number 4]]
+
+
+:: Now I need you to pick another number 2
+<<speaker="A">>
+Now I need you to pick another number
+
+
+[[1|1N]]
+
+[[42|1N]]
+
+[[1111|1N]]
+
+[[3 Million|1N]]
+
+
+:: 1N
+<<unload>>
+<<nexttree="1N">>
+<<state="idle">>
+
+
+:: 2M
+2M
+
+
+:: Now I need you to pick another number 3
+<<speaker="A">>
+Now I need you to pick another number
+
+[[1|1N]]
+
+[[42|1N]]
+
+[[1111|1N]]
+
+[[3 Million|1N]]
+
+
+:: Now I need you to pick another number 4
+<<speaker="A">>
+Now I need you to pick another number
+
+
+[[1|1N]]
+
+[[42|1N]]
+
+[[1111|1N]]
+
+[[3 Million|1N]]
+
+
+:: Now I need you to pick another number 1
+<<speaker="A">>
+Now I need you to pick another number
+
+[[1|1N]]
+
+[[42|1N]]
+
+[[1111|1N]]
+
+[[3 Million|1N]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: MetaData
+<<connect="A">>
+<<level="2">>
+
+
+:: 1R
+<<unload>>
+<<nexttree="1R">>
+<<state="idle">>
+
+

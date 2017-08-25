@@ -1,0 +1,49 @@
+﻿:: MetaData
+<<connect="B">>
+<<level="3">>
+
+
+:: Start
+<<speaker="B">>
+Seems once again we've all got to choose sides. So, are you with us, or against us?
+
+[[I don't care.|2A]]
+
+[[About what?|H wants to get rid of the last remaining humans. I want to stop H. Will you help?]]
+
+
+:: H wants to get rid of the last remaining humans. I want to stop H. Will you help?
+<<speaker="B">>
+<<name="H">> wants to get rid of the last remaining humans. I want to stop <<name="H">>. Will you help?
+
+[[Absolutely.|2B]]
+
+[[Absolutely not.|2G]]
+
+
+:: 2G
+<<unload>>
+<<nexttree="2G">>
+<<state="idle">>
+
+
+:: StoryTitle
+3E
+
+
+:: 2A
+<<unload>>
+<<nexttree="2A">>
+<<state="idle">>
+
+
+:: 2B
+<<unload>>
+<<nexttree="2B">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+

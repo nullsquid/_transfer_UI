@@ -24,6 +24,8 @@ public class TextPrinter : MonoBehaviour {
     public Text typewriterText;
     public UnityEvent onLetterPrint;
 
+    public string helpMenu;
+
 	public delegate string GetTextToPrint();
 	public event GetTextToPrint onNodeChange;
 	#region Public Events
@@ -32,6 +34,7 @@ public class TextPrinter : MonoBehaviour {
 
 	public delegate void PrintTriggerAction();
 	public static event PrintTriggerAction onPrintBegin;
+
 	#endregion
 
 	#region Unity Methods
@@ -50,28 +53,38 @@ public class TextPrinter : MonoBehaviour {
     //Event to trigger print?
     //need an interface in Silk to easily get prompt text
 
-    private void Start() {        
-		
-	}
+
     public void TriggerPrinting() {
         onPrintBegin();
 
     }
-	void Update(){
-		if (Input.GetKeyDown (KeyCode.A)) {
-			onPrintBegin ();
-		}
-	}
+
 	#endregion
 	public void InvokeCharacterPrint(){
-		StartCoroutine(IterateThroughCharactersToPrint(onNodeChange(), letterTime, softPauseTimeBase, hardPauseTimeBase));
+		StartCoroutine(IterateThroughCharactersToPrint(onNodeChange(), letterTime, softPauseTimeBase, hardPauseTimeBase, true));
 
 	}
 
-    public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause) {
+    public void InvokeHelpMenu() {
+        StartCoroutine(IterateThroughCharactersToPrint(helpMenu, letterTime, softPauseTimeBase, hardPauseTimeBase, false));
+
+    }
+
+    public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause, bool callback) {
         float normalTime = time;
+
         if (text != null) {
+			string speaker = "";
+			/*for(int j = 0; j < text.Length; j++){
+				if (text [j - 1] == ':') {
+					break;
+				} else {
+					speaker += j;
+				}
+			}*/
+			//typewriterText.text += speaker;
             for (int i = 0; i < text.Length; i++) {
+				
                 if (text[i] == '.' || text[i] == '?' || text[i] == '!') {
                     time += hardPause / Random.Range(1, 1.5f);
                 }
@@ -87,7 +100,9 @@ public class TextPrinter : MonoBehaviour {
                 yield return new WaitForSeconds(time);
 
             }
-            onPrintComplete();
+            if (callback == true) {
+                onPrintComplete();
+            }
         }
     }
 

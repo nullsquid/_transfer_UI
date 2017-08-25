@@ -1,0 +1,92 @@
+﻿:: Start
+<<speaker="G">>
+Now, what does a museum need?
+
+[[Artifacts.|Yes! Exactly! So, how can we find some?]]
+
+[[Refreshments.|4C]]
+
+[[Guides.|We have those.  What else?]]
+
+
+
+:: Yes! Exactly! So, how can we find some?
+<<speaker="G">>
+Yes! Exactly! So, how can we find some?
+
+[[Go explore.|4B]]
+
+[[Find a way out.|4A]]
+
+
+:: 4C
+<<unload>>
+<<nexttree="4C">>
+<<state="idle">>
+
+
+:: 4G
+<<unload>>
+<<nexttree="4G">>
+<<state="idle">>
+
+
+:: StoryTitle
+5B
+
+
+:: I don't get the impression you're taking this seriously.  Why don't you go on ahead?  I'll catch up.
+<<speaker="G">>
+I don't get the impression you're taking this seriously.  Why don't you go on ahead?  I'll catch up.
+
+[[<<wait="6">>|4C]]
+
+
+:: Yes, and how can we find things for those exhibits?
+<<speaker="G">>
+Yes, and how can we find things for those exhibits?
+
+[[Go looking for them.|4B]]
+
+[[Let the others give them to us.|4G]]
+
+
+:: 4B
+<<unload>>
+<<nexttree="4B">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: We have those.  What else?
+<<speaker="G">>
+We have those.  What else?
+
+[[Plaques.|Those are easily made.]]
+
+[[Exhibits.|Yes, and how can we find things for those exhibits?]]
+
+[[Chairs.|I don't get the impression you're taking this seriously.  Why don't you go on ahead?  I'll catch up.]]
+
+
+:: 4A
+<<unload>>
+<<nexttree="4A">>
+<<state="idle">>
+
+
+:: Those are easily made.
+<<speaker="G">>
+Those are easily made.
+
+[[<<wait="6">>|4B]]
+
+
+:: MetaData
+<<connect="G">>
+<<level="5">>
+
+

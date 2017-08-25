@@ -28,7 +28,11 @@ public class PronounTag : SilkTagBase {
             }
     
         }
-		Value = CharacterManager.instance.GetCharacterPronounByID (args [0], args [1]);
-
+        if (args[1] == "tense") {
+            Value = "PRONOUN TENSE ERROR";
+        }
+        else {
+            Value = CharacterManager.instance.GetCharacterPronounByID(args[0], args[1]);
+        }
 	}
 }

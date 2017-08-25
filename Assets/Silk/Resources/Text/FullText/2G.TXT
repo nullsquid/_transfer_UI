@@ -1,0 +1,93 @@
+﻿:: Start
+<<speaker="B">>
+We need to override the command system just before they initiate the firing.  One of us will need to watch what <<name="F">> is doing while the other completes the override.
+
+[[I'll override.|Okay, I'll tell you when.  Do you know the code?]]
+
+[[I'll watch.|Okay, I'll override when you tell me to.]]
+
+
+:: Okay, I'll tell you when.  Do you know the code?
+<<speaker="B">>
+Okay, I'll tell you when.  Do you know the code?
+
+[[Ansaldi.|Good.  Wait.  Now!]]
+
+
+:: Good.  Wait.  Now!
+<<speaker="B">>
+Good.  Wait.  Now!
+
+[[Ansaldi.|1H]]
+
+
+:: MetaData
+<<connect="B">>
+<<level="2">>
+
+
+:: StoryTitle
+2G
+
+
+:: Okay, I'll override when you tell me to.
+<<speaker="B">>
+Okay, I'll override when you tell me to.
+
+[[Wait.|Wait.]]
+
+[[Now.|1C]]
+
+
+:: 1H
+<<unload>>
+<<nexttree="1H">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 1C
+<<unload>>
+<<nexttree="1C">>
+<<state="idle">>
+
+
+:: Wait.
+<<speaker="B">>
+Wait.
+
+[[Wait.|Wait2]]
+
+[[Now.|1C]]
+
+
+:: Wait2
+<<speaker="B">>
+Wait.
+
+[[Wait.|Wait3]]
+
+[[Now.|1C]]
+
+
+:: Wait4
+<<speaker="B">>
+Wait.
+
+[[Wait.|1C]]
+
+[[Now.|1H]]
+
+
+:: Wait3
+<<speaker="B">>
+Wait.
+
+[[Wait.|Wait4]]
+
+[[Now.|1C]]
+
+
