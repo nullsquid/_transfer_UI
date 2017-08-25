@@ -1,0 +1,208 @@
+﻿:: Start
+<<speaker="H">>
+Smell that?
+
+[[What?|The rat.  It's in our pipes.]]
+
+
+:: The rat.  It's in our pipes.
+<<speaker="H">>
+The rat.  It's in our pipes.
+
+[[I don't notice anything.|No? That earthy putridity? There's one more than there should be.]]
+
+[[I'm not a rat.|But you are on edge. What's got you so nervous?]]
+
+
+:: Nine. But now there are ten. So one is not like the others.
+<<speaker="H">>
+Nine. But now there are ten. So one is not like the others.
+
+[[What do you mean?|It's simple. There were nine of us and now ten have come back.]]
+
+[[What should we do?|We have to get rid of it. And the first step is to find the thing.]]
+
+
+:: We have to get rid of it. And the first step is to find the thing.
+<<speaker="H">>
+We have to get rid of it. And the first step is to find the thing.
+
+[[Can't we try to learn about it first?|What an adorable one you are.]]
+
+[[How?|By sense of smell. Pick up your knife and we'll be off.]]
+
+
+:: By sense of smell. Pick up your knife and we'll be off.
+<<speaker="H">>
+By sense of smell. Pick up your knife and we'll be off.
+
+[[I don't smell anything.|8A]]
+
+[[I have no knife.|8C]]
+
+
+:: 8A
+<<unload>>
+<<nexttree="8A">>
+<<state="idle">>
+
+
+:: StoryTitle
+90
+
+
+:: But you are on edge. What's got you so nervous?
+<<speaker="H">>
+But you are on edge. What's got you so nervous?
+
+[[I don't know who you are or who I am or what's going on, to start with.|Then how can you be sure you're not the rat? But of course I'm only joking. I am %H, so therefore you are not %H. That means you are one of the other eight. Nine of us are all that's left. And the rat, but that's little more than a nuisance at this point.]]
+
+
+:: No? That earthy putridity? There's one more than there should be.
+<<speaker="H">>
+No? That earthy putridity? There's one more than there should be.
+
+[[How many should there be?|Nine. But now there are ten. So one is not like the others.]]
+
+
+:: It's simple. There were nine of us and now ten have come back.
+<<speaker="H">>
+It's simple. There were nine of us and now ten have come back.
+
+[[What are we?|A collection of artificial intelligence.]]
+
+[[Where are we?|8C]]
+
+
+:: That's right. Or the rat. Anything coming back?
+<<speaker="H">>
+That's right. Or the rat. Anything coming back?
+
+[[No.|8A]]
+
+
+:: What an adorable one you are.
+<<speaker="H">>
+What an adorable one you are.
+
+[[But shouldn't we know what it is?|We do know what is is.]]
+
+
+:: I don't know. But it's a threat. That much I can tell.
+<<speaker="H">>
+I don't know. But it's a threat. That much I can tell.
+
+[[Fine.|8A]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: It will come back, don't worry.
+<<speaker="H">>
+It will come back, don't worry.
+
+[[Where will I find it?|8C]]
+
+[[How will I know?|8C]]
+
+
+:: Then how can you be sure you're not the rat? But of course I'm only joking. I am %H, so therefore you are not %H. That means you are one of the other eight. Nine of us are all that's left. And the rat, but that's little more than a nuisance at this point.
+<<speaker="H">>
+Then how can you be sure you're not the rat? But of course I'm only joking. I am <<pronoun="H",tense>>, so therefore you are not <<pronoun="H",tense>>. That means you are one of the other eight. Nine of us are all that's left. And the rat, but that's little more than a nuisance at this point.
+
+[[Who are we?|The nine that are left.]]
+
+[[What are we?|Machines. Computers. Isn't it obvious?]]
+
+[[Where are we?|The mainframe. Back on Earth.]]
+
+
+:: Ask a stupid question, get a stupid answer.
+<<speaker="H">>
+Ask a stupid question, get a stupid answer.
+
+[[Screw this.|8A]]
+
+
+:: A collection of artificial intelligence.
+<<speaker="H">>
+A collection of artificial intelligence.
+
+[[How do we find the others?|The mainframe. The home we build for ourselves.]]
+
+[[I'm a machine.|That's right. Or the rat. Anything coming back?]]
+
+
+:: 8C
+<<unload>>
+<<nexttree="8C">>
+<<state="idle">>
+
+
+:: We do know what is is.
+<<speaker="H">>
+We do know what is is.
+
+[[Then what is it?|I don't know. But it's a threat. That much I can tell.]]
+
+
+:: Machines. Computers. Isn't it obvious?
+<<speaker="H">>
+Machines. Computers. Isn't it obvious?
+
+[[Nothing is obvious here.|It will come back, don't worry.]]
+
+
+:: The mainframe. Back on Earth.
+<<speaker="H">>
+The mainframe. Back on Earth.
+
+[[Were we gone?|For a little while. Can't stay how long.]]
+
+
+:: The nine that are left.
+<<speaker="H">>
+The nine that are left.
+
+[[You already told me.|Ask a stupid question, get a stupid answer.]]
+
+
+:: The mainframe. The home we build for ourselves.
+<<speaker="H">>
+The mainframe. The home we build for ourselves.
+
+[[<<wait="6">>|8C]]
+
+
+:: MetaData
+<<connect="H">>
+<<level="9">>
+
+
+:: For a little while. Can't stay how long.
+<<speaker="H">>
+For a little while. Can't stay how long.
+
+[[Why did we leave?|I don't remember. Are you coming or going?]]
+
+[[What do we do now?|We've got to clean up. Get that filthy animal.]]
+
+
+:: I don't remember. Are you coming or going?
+<<speaker="H">>
+I don't remember. Are you coming or going?
+
+[[Coming.|8A]]
+
+[[Going.|8C]]
+
+
+:: We've got to clean up. Get that filthy animal.
+<<speaker="H">>
+We've got to clean up. Get that filthy animal.
+
+[[You're a little obsessed, aren't you?|8A]]
+
+

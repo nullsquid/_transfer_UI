@@ -1,0 +1,19 @@
+﻿:: Start
+<<error="CONNECTION INTERRUPTED
+
+RESTART CONNECTION">>
+
+
+:: MetaData
+<<connect="0">>
+<<level="1">>
+
+
+:: StoryTitle
+1R
+
+
+:: StoryAuthor
+Anonymous
+
+

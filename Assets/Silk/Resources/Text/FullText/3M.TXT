@@ -1,0 +1,84 @@
+﻿:: Start
+<<speaker="E">>
+This here is the attic.  Here's where we used to keep empty, just in case we had something to put in it later.
+
+[[Like what?|A bedroom, perhaps.  A kitchen.  A bathroom.]]
+
+[[What's the next room?|2N]]
+
+
+:: Like I said, this was all just in case.
+<<speaker="E">>
+Like I said, this was all just in case.
+
+[[Just in case of what?|You never know.  We might become more complex yet.]]
+
+
+:: The dirty.
+<<speaker="E">>
+The dirty.
+
+[[Are you dirty?|2N]]
+
+
+:: 2Q
+<<unload>>
+<<nexttree="2Q">>
+<<state="idle">>
+
+
+:: StoryTitle
+3M
+
+
+:: A bedroom, perhaps.  A kitchen.  A bathroom.
+<<speaker="E">>
+A bedroom, perhaps.  A kitchen.  A bathroom.
+
+[[Who needs a bedroom?|The tired.]]
+
+[[Who needs a kitchen?|The hungry.]]
+
+[[Who needs a bathroom?|The dirty.]]
+
+[[What would we do with any of these things?|Like I said, this was all just in case.]]
+
+
+:: You never know.  We might become more complex yet.
+<<speaker="E">>
+You never know.  We might become more complex yet.
+
+[[I will.|2N]]
+
+[[We won't.|2Q]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: The hungry.
+<<speaker="E">>
+The hungry.
+
+[[Are you hungry?|2N]]
+
+
+:: The tired.
+<<speaker="E">>
+The tired.
+
+[[Are you tired?|2N]]
+
+
+:: MetaData
+<<connect="E">>
+<<level="3">>
+
+
+:: 2N
+<<unload>>
+<<nexttree="2N">>
+<<state="idle">>
+
+

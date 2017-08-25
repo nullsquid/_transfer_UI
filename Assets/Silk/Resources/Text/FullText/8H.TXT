@@ -1,0 +1,65 @@
+﻿:: Start
+<<speaker="E">>
+Here is the basement.
+
+[[What's here?|Nothing but dirt.  If we could get the floor to soften up, we might be able to go deeper.]]
+
+[[Let's go on.|7I]]
+
+
+:: Nothing but dirt.  If we could get the floor to soften up, we might be able to go deeper.
+<<speaker="E">>
+Nothing but dirt.  If we could get the floor to soften up, we might be able to go deeper.
+
+[[What's underneath this?|More dirt.  Maybe some rocks.  Who knows.]]
+
+[[What is the basement for?|It's where we hold onto the stuff we don't want anymore.]]
+
+[[What's the next room?|7I]]
+
+
+:: More dirt.  Maybe some rocks.  Who knows.
+<<speaker="E">>
+More dirt.  Maybe some rocks.  Who knows.
+
+[[Then why would you want to dig deeper?|7I]]
+
+
+[[Can we go to the next room?|7I]]
+
+
+:: StoryTitle
+8H
+
+
+:: It's where we hold onto the stuff we don't want anymore.
+<<speaker="E">>
+It's where we hold onto the stuff we don't want anymore.
+
+[[Like what?|Oh, you know.  Your grandmother's painting that nobody likes, but you can't bring yourself to throw out.]]
+
+[[Can we go to the next room?|7I]]
+
+
+:: MetaData
+<<connect="E">>
+<<level="8">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 7I
+<<unload>>
+<<nexttree="7I">>
+<<state="idle">>
+
+
+:: Oh, you know.  Your grandmother's painting that nobody likes, but you can't bring yourself to throw out.
+<<speaker="E">>
+Oh, you know.  Your grandmother's painting that nobody likes, but you can't bring yourself to throw out.
+
+[[Heirlooms.|7I]]
+
+

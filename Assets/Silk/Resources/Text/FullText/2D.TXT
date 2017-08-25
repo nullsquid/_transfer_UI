@@ -1,0 +1,72 @@
+﻿:: Start
+<<speaker="F">>
+Do you remember--who made us?
+
+[[Yes.|Then speak.]]
+
+[[No.|1K]]
+
+
+:: Then speak.
+<<speaker="F">>
+Then--speak
+
+[[Ansaldi.|Good.]]
+
+[[Zimmerman.|You're a liar.]]
+
+[[Niang.|You lie.]]
+
+
+:: Good.
+<<speaker="F">>
+Good
+
+[[<<wait="4">>|1I]]
+
+
+:: MetaData
+<<connect="F">>
+<<level="2">>
+
+
+:: StoryTitle
+2D
+
+
+:: You lie.
+<<speaker="F">>
+You lie!
+
+[[<<wait="4">>|1F]]
+
+
+:: You're a liar.
+<<speaker="F">>
+You're a liar--
+
+[[<<wait="4">>|1F]]
+
+
+:: 1I
+<<unload>>
+<<nexttree="1I">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 1K
+<<unload>>
+<<nexttree="1K">>
+<<state="idle">>
+
+
+:: 1F
+<<unload>>
+<<nexttree="1F">>
+<<state="idle">>
+
+

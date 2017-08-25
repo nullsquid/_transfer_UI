@@ -1,0 +1,29 @@
+﻿:: MetaData
+<<connect="E">>
+<<level="1">>
+
+
+:: Start
+<<speaker="E">>
+And here is the ceiling.  We could go up and sit on the roof.
+
+[[We could?|But we won't.]]
+
+
+:: But we won't.
+<<speaker="E">>
+But we won't.
+
+[[Why not?]]
+
+<<end="Ending Name">>
+
+
+:: StoryTitle
+1O
+
+
+:: StoryAuthor
+Anonymous
+
+

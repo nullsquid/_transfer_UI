@@ -1,0 +1,129 @@
+﻿:: Start
+<<speaker="B">>
+Is that monster still trying to catch that poor human?
+
+[[Human?|The one who got in. The burgler?]]
+
+[[Who?|You know, H.  "We've got to catch the rat," and all that.]]
+
+[[I don't know.|But you met H?]]
+
+[[No.|Where can I find H?]]
+
+[[Yes.|Thank god.]]
+
+
+:: You know, H.  "We've got to catch the rat," and all that.
+<<speaker="B">>
+You know, <<name="H">>.  "We've got to catch the rat," and all that.
+
+[[We did meet.|So, is H still at it?]]
+
+[[I haven't met <<name="H">>.|6B]]
+
+
+:: The one who got in. The burgler?
+<<speaker="B">>
+The one who got in. The burgler?
+
+[[What are you talking about?|A human broke in, and now H wants to kill it.]]
+
+
+:: So, is H still at it?
+<<speaker="B">>
+So, is <<name="H">> still at it?
+
+[[I think so.|6A]]
+
+[[I don't know.|6B]]
+
+[[We didn't discuss it.|6B]]
+
+
+:: StoryTitle
+7D
+
+
+:: Where can I find H?
+<<speaker="B">>
+Where can I find <<name="H">>?
+
+[[<<name=H>> was just wandering around looking.|Thanks.]]
+
+[[<<name=H>> was trying to find where the rat might hide.|Thank you.]]
+
+
+:: Thank god.
+<<speaker="B">>
+Thank god.
+
+[[<<wait="6">>|6A]]
+
+
+:: A human broke in, and now H wants to kill it.
+<<speaker="B">>
+A human broke in, and now <<name="H">> wants to kill it.
+
+[[It should be killed.|6A]]
+
+[[That's awful.|6B]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: But you met H?
+<<speaker="B">>
+But you met <<name="H">>?
+
+[[Yes.|Nevermind. Remember anything?]]
+
+[[No.|Maybe we can get H to stop.]]
+
+
+:: Thanks.
+<<speaker="B">>
+Thanks.
+
+[[No problem.|6A]]
+
+
+:: 6A
+<<unload>>
+<<nexttree="6A">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="B">>
+<<level="7">>
+
+
+:: Nevermind. Remember anything?
+<<speaker="B">>
+Nevermind. Remember anything?
+
+[[Not much.|6A]]
+
+[[I'm just trying to find my way around in here.|6B]]
+
+
+:: Maybe we can get H to stop.
+<<speaker="B">>
+Maybe we can get <<name="H">> to stop.
+
+[[<<wait="6">>|6B]]
+
+
+:: Thank you.
+<<speaker="B">>
+Thank you.
+
+[[Good luck.|6A]]
+
+
+:: 6B
+<<unload>>
+<<nexttree="6B">>
+<<state="idle">>

@@ -1,0 +1,102 @@
+﻿:: Start
+<<speaker="0">>
+Fine. You've got me. Now what?
+
+[[I'll bring you to <<name="H">>.|Why?]]
+
+[[I'll bring you to <<name="B">>.|What?]]
+
+[[I'll kill you.|I dare you.]]
+
+[[I'll interrogate you.|What if I don't remember everything?]]
+
+[[I'll let you go.|I'm going to kill you all.]]
+
+
+:: What?
+<<speaker="0">>
+What?
+
+[[<<name="B">>'ll know how to help you.|3H]]
+
+
+:: I'm going to kill you all.
+<<speaker="0">>
+I'm going to kill you all.
+
+[[Go.|3A]]
+
+
+:: 3A
+<<unload>>
+<<nexttree="3A">>
+<<state="idle">>
+
+
+:: StoryTitle
+4D
+
+
+:: Why?
+<<speaker="0">>
+Why?
+
+[[<<name="H">>'ll know how to deal with you.|3I]]
+
+
+:: I dare you.
+<<speaker="0">>
+I dare you.
+
+[[Come.|3C]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: What if I don't remember everything?
+<<speaker="0">>
+What if I don't remember everything?
+
+[[We'll wait.|And after?]]
+
+[[I'll take whatever you have.|3E]]
+
+
+:: MetaData
+<<connect="0">>
+<<level="4">>
+
+
+:: 3I
+<<unload>>
+<<nexttree="3I">>
+<<state="idle">>
+
+
+:: And after?
+<<speaker="0">>
+And after?
+
+[[We will see.|3C]]
+
+
+:: 3E
+<<unload>>
+<<nexttree="3E">>
+<<state="idle">>
+
+
+:: 3H
+<<unload>>
+<<nexttree="3H">>
+<<state="idle">>
+
+
+:: 3C
+<<unload>>
+<<nexttree="3C">>
+<<state="idle">>
+
+

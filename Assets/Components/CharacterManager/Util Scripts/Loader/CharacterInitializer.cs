@@ -6,7 +6,7 @@ using Transfer.Data;
 namespace Transfer.System {
     public class CharacterInitializer {
 
-
+        private CharacterBlacklist blacklist;
         private string playerID;
         private List<string> characterIDs = new List<string>();
         private List<string> shortCharacterIDs = new List<string>();
@@ -41,6 +41,7 @@ namespace Transfer.System {
 
         string GeneratePlayerID(bool useShortCharacters) {
             if (useShortCharacters) {
+
                 playerID = shortCharacterIDs[Random.Range(0, shortCharacterIDs.Count)];
             }
             else {
@@ -85,6 +86,8 @@ namespace Transfer.System {
             playerID = GeneratePlayerID(useShortCharacters);
             GeneratePlayerCharacter(playerID, GenerateName(), SetRandomCharacterGender());
             GenerateCharacters(SetRandomCharacterGender());
+
+
             /*
 			for(int i = 0; i < characterIDs.Count; i++)
             {
@@ -112,6 +115,7 @@ namespace Transfer.System {
         ////////////////////////////////
 
         string GenerateName() {
+            blacklist = GameObject.FindObjectOfType<CharacterBlacklist>();
             for (int i = 0; i < nameBits.Length; i++) {
                 if (nameBits[i] == "A" || nameBits[i] == "E" || nameBits[i] == "I" || nameBits[i] == "O" || nameBits[i] == "U") {
                     vowels.Add(nameBits[i]);
@@ -120,12 +124,17 @@ namespace Transfer.System {
                     consonants.Add(nameBits[i]);
                 }
             }
+            
             string newName;
-            newName = consonants[Random.Range(0, consonants.Count)] + vowels[Random.Range(0, vowels.Count)] + consonants[Random.Range(0, consonants.Count)] + consonants[Random.Range(0, consonants.Count)];
+            newName = consonants[Random.Range(0, consonants.Count)] + vowels[Random.Range(0, vowels.Count)] + consonants[Random.Range(0, consonants.Count)] + consonants[Random.Range(0, consonants.Count)].ToUpper();
             if (names.Contains(newName)) {
                 Debug.LogError("retry");
                 GenerateName();
 
+            }
+            else if (blacklist.nameBlacklist.Contains(newName)) {
+                Debug.LogError("cannot contain " + newName);
+                GenerateName();
             }
             else {
 
