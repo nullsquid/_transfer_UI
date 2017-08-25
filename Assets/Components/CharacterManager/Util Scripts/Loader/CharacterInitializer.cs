@@ -86,6 +86,8 @@ namespace Transfer.System {
             playerID = GeneratePlayerID(useShortCharacters);
             GeneratePlayerCharacter(playerID, GenerateName(), SetRandomCharacterGender());
             GenerateCharacters(SetRandomCharacterGender());
+
+
             /*
 			for(int i = 0; i < characterIDs.Count; i++)
             {

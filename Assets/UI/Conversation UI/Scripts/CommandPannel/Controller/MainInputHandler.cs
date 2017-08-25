@@ -6,6 +6,7 @@ using Transfer.Input;
 public class MainInputHandler : MonoBehaviour {
 
     Terminal terminal;
+
     //initialize Commands
     #region Private Variables
     private string _rawText;
@@ -24,7 +25,7 @@ public class MainInputHandler : MonoBehaviour {
     #endregion
     //public string RootCommand { get; set; }
 	void Update(){
-		Debug.LogWarning (_rawText.Length);
+		//Debug.LogWarning (_rawText.Length);
 	}
 
     public List<string> argumentList = new List<string>();
@@ -84,18 +85,19 @@ public class MainInputHandler : MonoBehaviour {
     void HandleInput(string _root, string[] _args) {
         //if (terminal.GetState() is IdleState) {
         //if(terminal.canRunCommands == true) { 
-            Debug.Log("boops boops");
-            if (_root == "CONNECT") {
-                ConnectCommand(_args);
-            }
-            else if (_root == "SLEEP") {
-                SleepCommand(_args);
-            }
-
-            else if (_root == "HELP") {
-                HelpCommand(_args);
-            }
-        //}
+            //Debug.Log("boops boops");
+		if (_root == "CONNECT") {
+			ConnectCommand (_args);
+		} else if (_root == "SLEEP") {
+			SleepCommand (_args);
+		} else if (_root == "HELP") {
+			HelpCommand (_args);
+		} else if (_root == "SCAN") {
+			ScanCommand (_args);
+		} else{
+			ActionCommand (_root, _args);
+		}
+        
     }
     #endregion
 
@@ -126,7 +128,7 @@ public class MainInputHandler : MonoBehaviour {
     }
 
     void ScanCommand(string[] _args) {
-
+		Debug.Log ("SCAN");
     }
 
     void SleepCommand(string[] _args) {
@@ -151,6 +153,21 @@ public class MainInputHandler : MonoBehaviour {
         }
 
     }
+
+	IEnumerator WaitForAction(string root, string[] args){
+		ActionCommand (root, args);
+		yield return new WaitForEndOfFrame ();
+	}
+
+	void ActionCommand(string _root, string[] _args){
+		for (int i = 0; i < terminal.GetComponent<ActionController> ().activeActions.Count; i++) {
+			if (terminal.GetComponent<ActionController> ().activeActions [i].ActionName == _root) {
+				//terminal.GetComponent<ActionController> ().activeActions [i].ExecuteActionLogic ();
+				terminal.GetComponent<ActionController>().ExecuteAction(_root);
+				break;
+			}
+		}
+	}
     #endregion
 
 
