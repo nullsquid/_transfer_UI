@@ -1,0 +1,34 @@
+﻿:: Start
+<<speaker="A">>
+That was great!  Next is dance.  Go ahead.
+
+[[I don't want to dance.|5I]]
+
+[[Dance|5J]]
+
+
+:: 5I
+<<unload>>
+<<nexttree="5I">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="A">>
+<<level="6">>
+
+
+:: StoryTitle
+6I
+
+
+:: 5J
+<<unload>>
+<<nexttree="5J">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+

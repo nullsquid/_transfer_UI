@@ -1,0 +1,38 @@
+﻿:: MetaData
+<<connect="E">>
+<<level="2">>
+
+
+:: Start
+<<speaker="E">>
+I told you you'd see me again.
+
+[[Well, here I am again.|1J]]
+
+[[Now what?|1J]]
+
+[[I don't know you.|1J]]
+
+[[Did you find I?|1A]]
+
+
+:: 1A
+<<unload>>
+<<nexttree="1A">>
+<<state="idle">>
+
+
+:: StoryTitle
+2C
+
+
+:: 1J
+<<unload>>
+<<nexttree="1J">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+

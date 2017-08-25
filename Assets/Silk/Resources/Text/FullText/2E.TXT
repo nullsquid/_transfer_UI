@@ -1,0 +1,78 @@
+﻿:: Start
+<<noprompt>>
+
+[[I killed the rat.|You did?]]
+
+
+:: You did?
+<<speaker="H">>
+You did?
+
+[[Yes.|Excellent.  Already the air is clearing up.]]
+
+[[I think so.|What happened?]]
+
+[[Of course.|Any proof?]]
+
+
+:: What happened?
+<<speaker="H">>
+What happened?
+
+[[I chopped off <<pronoun="0",tense>> head.|1B]]
+
+
+:: StoryTitle
+2E
+
+
+:: Any proof?
+<<speaker="H">>
+Any proof?
+
+[[<<pronoun="0",tense>> dissolved once it was done.  But, smell.|It's gone.]]
+
+
+:: Excellent.  Already the air is clearing up.
+<<speaker="H">>
+Excellent.  Already the air is clearing up.
+
+[[It's great.|1C]]
+
+[[It's good.|1C]]
+
+[[It's fine.|1C]]
+
+
+:: MetaData
+<<connect="H">>
+<<level="2">>
+
+
+:: 1C
+<<unload>>
+<<nexttree="1C">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: It's gone.
+<<speaker="H">>
+It's gone.
+
+[[It's great.|1B]]
+
+[[It's good.|1B]]
+
+[[It's completely gone.|1B]]
+
+
+:: 1B
+<<unload>>
+<<nexttree="1B">>
+<<state="idle">>
+
+

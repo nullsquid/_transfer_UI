@@ -1,0 +1,13 @@
+:: Start
+Hello I'm 5M
+[[hi|hello]]
+
+
+:: hello
+hi
+
+:: MetaData
+<<connect="F">>
+
+:: StoryTitle
+5M

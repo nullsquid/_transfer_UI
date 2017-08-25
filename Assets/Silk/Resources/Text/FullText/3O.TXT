@@ -1,0 +1,62 @@
+﻿:: Start
+<<noprompt>>
+
+[[So you must be the infiltraitor.|Yes.  Did it take you so long to realize?]]
+
+
+:: Yes.  Did it take you so long to realize?
+<<speaker="0">>
+Yes.  Did it take you so long to realize?
+
+[[There's some others looking for you.|Who?]]
+
+[[I was looking for you, before.|When?]]
+
+
+:: 2P
+<<unload>>
+<<nexttree="2P">>
+<<state="idle">>
+
+
+:: StoryTitle
+3O
+
+
+:: Who?
+<<speaker="0">>
+Who?
+
+[[Their names have changed now.|2P]]
+
+[[I can't remember.|2P]]
+
+[[Not anymore.|2Q]]
+
+
+:: When?
+<<speaker="0">>
+When?
+
+[[Long time ago.|2P]]
+
+[[The last time we were all here.|2P]]
+
+[[In another life.|2Q]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: 2Q
+<<unload>>
+<<nexttree="2Q">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="0">>
+<<level="3">>
+
+
