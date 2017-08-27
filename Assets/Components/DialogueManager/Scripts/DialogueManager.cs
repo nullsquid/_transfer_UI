@@ -31,6 +31,16 @@ public class DialogueManager : MonoBehaviour {
     }
     private void Update() {
         Debug.Log(connectID);
+		//HACK checks every frame for null connectID and if so, set it to what it should be
+		if (connectID == null) {
+			//Debug.Log ("booooop");
+			//foreach () {
+			//	if(tag
+				GetConnectID ();
+
+			//}
+		}
+		//if(connectID == null && 
 		//curNode.LogQueue ();
     }
     #endregion
@@ -134,13 +144,16 @@ public class DialogueManager : MonoBehaviour {
         Debug.Log("NEXT STORY FIRED");
 		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
 		GetRootNode ();
-        GetConnectID();
+		GetConnectID();
+
 		if (connectID == null || connectID == "") {
-            //terminal.buddyList.SetActive(false);
-            terminal.ChangeState (new ConnectState());
+			//terminal.buddyList.SetActive(false);
+			terminal.ChangeState (new ConnectState ());
             
 			GameObject.FindObjectOfType<TextPrinter> ().TriggerPrinting ();
 		}
+		//else if
+
 
 	}
     public void GetConnectID() {
@@ -175,6 +188,7 @@ public class DialogueManager : MonoBehaviour {
                         //    connectID = tag.Value;
                         //}
                         //Debug.Log(tag.TagName);
+
                         tag.TagExecute();
 
                     }
