@@ -12,6 +12,7 @@ public class Terminal : MonoBehaviour {
 	void Start(){
 		buddyList = GameObject.Find ("BuddyList");
         this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
+        buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
         //Debug.Log(GetState());
 	}
 
@@ -24,6 +25,8 @@ public class Terminal : MonoBehaviour {
         this.newTerminalStateMachine.ChangeTerminalState(toState);
 		if (newTerminalStateMachine.CurState is IdleState) {
 			buddyList.SetActive (true);
+            //buddyList.GetComponent<BuddyListController>().PopulateBuddyList();
+            buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
 		} else {
 			
 			buddyList.SetActive (false);

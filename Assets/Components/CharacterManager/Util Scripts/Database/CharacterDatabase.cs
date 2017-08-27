@@ -12,7 +12,13 @@ namespace Transfer.Data {
 
     public class CharacterDatabase {
         private static Dictionary<string, Character> characterDictionary = new Dictionary<string, Character>();
-
+        public static Dictionary<string, Character> CharacterDictionary
+        {
+            get
+            {
+                return characterDictionary;
+            }
+        }
         public static string GetCharacterID(string ID) {
             if (characterDictionary.ContainsKey(ID)) {
                 return characterDictionary[ID].Identifier;
@@ -128,6 +134,11 @@ namespace Transfer.Data {
 
         public static void AddCharacter(Character newCharacter) {
             characterDictionary.Add(newCharacter.Identifier, newCharacter);
+        }
+
+        public static int GetCharacterCount() {
+            return characterDictionary.Count;
+
         }
 
 
