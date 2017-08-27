@@ -1,7 +1,7 @@
 ﻿:: Start
 <<noprompt>>
 
-<<action="RUN","3B">>
+<<action="RUN","1">>
 
 :: 1
 <<noprompt>>
