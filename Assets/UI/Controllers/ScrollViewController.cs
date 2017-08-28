@@ -6,14 +6,38 @@ using UnityEngine.UI;
 public class ScrollViewController : MonoBehaviour {
 
     public Scrollbar scrollBar;
-	
+	public TextPrinter printer;
+	bool printComplete = false;
+
+	void OnEnable(){
+		//printer.on
+		TextPrinter.onPrintBegin += StartPrinting;
+		printer.onPrintComplete += FinishedPrinting;
+	}
+
+	void OnDisable(){
+		TextPrinter.onPrintBegin -= StartPrinting;
+		printer.onPrintComplete -= FinishedPrinting;
+	}
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.PageDown)) {
-            scrollBar.value -= .1f;
-        }
-        else if (Input.GetKeyDown(KeyCode.PageUp)) {
-            scrollBar.value += .1f;
-        }
+		if (printComplete == true) {
+			if (Input.GetKeyDown (KeyCode.PageDown)) {
+				scrollBar.value -= .1f;
+			} else if (Input.GetKeyDown (KeyCode.PageUp)) {
+				scrollBar.value += .1f;
+			}
+		} else if (printComplete == false) {
+			scrollBar.value = 0;
+		}
+	}
+
+	void FinishedPrinting(){
+		printComplete = true;
+	}
+
+	void StartPrinting(){
+		scrollBar.value = 1;
+		printComplete = false;
 	}
 }
