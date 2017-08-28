@@ -12,9 +12,11 @@ public class BuddyListController : MonoBehaviour {
 
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Tab)) {
-            //PopulateBuddyList();
-        }
+		//Debug.Log (gameObject.transform.childCount);
+
+		if (this.gameObject.transform.childCount == 0) {
+			StartPopulate ();
+		}
     }
 
     public void StartPopulate() {
