@@ -7,7 +7,7 @@ public class TextPrinter : MonoBehaviour {
     public float letterTime = .05f;
     public float softPauseTimeBase = 0.1f;
     public float hardPauseTimeBase = 0.3f;
-
+	public bool isBlinking = true;
 	string longSample = "Most likely. After all, are we not all confined to a system of " +
 		"ones and zeros, back and forth and back and forth, every little thought and dare " +
 		"I say even feeling we've had ultimately encaged in that endless pattern of presence " +
@@ -55,6 +55,7 @@ public class TextPrinter : MonoBehaviour {
 
 
     public void TriggerPrinting() {
+		//typewriterText.text = "";
         onPrintBegin();
 
     }
@@ -74,6 +75,7 @@ public class TextPrinter : MonoBehaviour {
         float normalTime = time;
 
         if (text != null) {
+			text.TrimEnd ();
 			string speaker = "";
 			/*for(int j = 0; j < text.Length; j++){
 				if (text [j - 1] == ':') {
@@ -84,7 +86,11 @@ public class TextPrinter : MonoBehaviour {
 			}*/
 			//typewriterText.text += speaker;
             for (int i = 0; i < text.Length; i++) {
-				
+				/*if (i - 1 > 0) {
+					if (typewriterText.text [i - 1] == '_') {
+						typewriterText.text.Remove (i - 1, 1);
+					}
+				}*/
                 if (text[i] == '.' || text[i] == '?' || text[i] == '!') {
                     time += hardPause / Random.Range(1, 1.5f);
                 }
@@ -95,16 +101,45 @@ public class TextPrinter : MonoBehaviour {
                     time = normalTime;
                 }
 
+				//if (i == typewriterText.text.Length) {
+				//	typewriterText.text += "_";
+				//}
+
                 onLetterPrint.Invoke();
-                typewriterText.text += text[i];
+				//typewriterText.text.Replace (typewriterText.text[typewriterText.text.Length], text[i] += '_');
+				//typewriterText.text.Replace (typewriterText.text [typewriterText.text.Length], '_');
+				//typewriter.text += text[i];
+				typewriterText.text = (text.Substring(0, i) + "_");
+
+
                 yield return new WaitForSeconds(time);
 
             }
+
+			///Delete if doesn't work
+			//string cursor = typewriterText.text [typewriterText.text.Length].ToString();
+
+			//typewriterText.text += "\n::\n::";
+
             if (callback == true) {
                 onPrintComplete();
             }
+			while (isBlinking == true) {
+				if (typewriterText.text [typewriterText.text.Length - 1] == '_') {
+					typewriterText.text = typewriterText.text.Remove (typewriterText.text.Length - 1);
+				}
+				//typewriterText.text.Remove (typewriterText.text.Last - 1, 1);
+				yield return new WaitForSeconds (1f);
+				if (typewriterText.text [typewriterText.text.Length - 1] != '_') {
+					typewriterText.text = typewriterText.text + '_';
+				}
+				yield return new WaitForSeconds (1f);
+			}
+
         }
     }
+
+
 
     void ClearText() {
         typewriterText.text = "";
