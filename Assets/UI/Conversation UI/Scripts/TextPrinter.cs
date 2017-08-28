@@ -55,6 +55,7 @@ public class TextPrinter : MonoBehaviour {
 
 
     public void TriggerPrinting() {
+		//typewriterText.text = "";
         onPrintBegin();
 
     }
@@ -94,12 +95,19 @@ public class TextPrinter : MonoBehaviour {
                 else {
                     time = normalTime;
                 }
+				//if (i == typewriterText.text.Length) {
+				//	typewriterText.text += "_";
+				//}
 
                 onLetterPrint.Invoke();
-                typewriterText.text += text[i];
+				//typewriterText.text.Replace (typewriterText.text[typewriterText.text.Length], text[i] += '_');
+				//typewriterText.text.Replace (typewriterText.text [typewriterText.text.Length], '_');
+
+				typewriterText.text += text [i];
                 yield return new WaitForSeconds(time);
 
             }
+
             if (callback == true) {
                 onPrintComplete();
             }
