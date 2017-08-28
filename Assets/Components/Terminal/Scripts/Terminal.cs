@@ -8,10 +8,13 @@ public class Terminal : MonoBehaviour {
     public bool canRunCommands = true;
     [HideInInspector]
 	public GameObject buddyList;
-
+    public GameObject mainText;
 	void Start(){
 		buddyList = GameObject.Find ("BuddyList");
+        mainText = GameObject.Find("Text_Scroll");
+        
         this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
+        mainText.SetActive(false);
         buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
         //Debug.Log(GetState());
 	}
@@ -31,6 +34,12 @@ public class Terminal : MonoBehaviour {
 			
 			buddyList.SetActive (false);
 		}
+        if(newTerminalStateMachine.CurState is ConnectState) {
+            mainText.SetActive(true);
+        }
+        else {
+            mainText.SetActive(false);
+        }
 
     }
 
