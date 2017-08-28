@@ -76,6 +76,7 @@ public class TextPrinter : MonoBehaviour {
 
         if (text != null) {
 			text.TrimEnd ();
+            text += "\n>>\n>>\n";
 			string speaker = "";
 			/*for(int j = 0; j < text.Length; j++){
 				if (text [j - 1] == ':') {
