@@ -110,7 +110,7 @@ It will come back, don't worry.
 
 :: Then how can you be sure you're not the rat? But of course I'm only joking. I am %H, so therefore you are not %H. That means you are one of the other eight. Nine of us are all that's left. And the rat, but that's little more than a nuisance at this point.
 <<speaker="H">>
-Then how can you be sure you're not the rat? But of course I'm only joking. I am <<pronoun="H",tense>>, so therefore you are not <<pronoun="H",tense>>. That means you are one of the other eight. Nine of us are all that's left. And the rat, but that's little more than a nuisance at this point.
+Then how can you be sure you're not the rat? But of course I'm only joking. I am <<name="H">>, so therefore you are not <<name="H">>. That means you are one of the other eight. Nine of us are all that's left. And the rat, but that's little more than a nuisance at this point.
 
 [[Who are we?|The nine that are left.]]
 

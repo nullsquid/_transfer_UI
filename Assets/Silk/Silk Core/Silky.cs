@@ -594,6 +594,20 @@ namespace Silk {
                     //I might want to reevaluate how I deal with link text that is repeated.
                     //for now this should work
                     for (int j = i + 2; j < inputCopy.Length; j++) {
+                        /*
+                        if(inputCopy[j] == '<' && inputCopy[j+1] == '<') {
+                            string rawTag = "";
+                            for(int k = j; k < inputCopy.Length; k++) {
+                                if(inputCopy[k - 1] == '>' && inputCopy[k - 2] == '>') {
+                                    //do i need other stuff here?
+                                    inputCopy.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
+                                    break;
+                                }
+                                else {
+                                    rawTag += inputCopy[k];
+                                }
+                            }
+                        }*/
                         //make sure that it breaks if there is no |
                         if (inputCopy[j] == '|') {
                             string newLinkValue = "";
@@ -622,10 +636,10 @@ namespace Silk {
                             }
                         }
                         if (inputCopy[j] == ']' && inputCopy[j + 1] == ']') {
-                            //newLinks.Add(newLink, newLink);
+                            
                             inputCopy.Replace(newLink, "");
-                            //break;
-                            //Debug.Log("NEW LINK IS " + newLink);
+                            
+                           
                             if (!newLink.Contains("|")) {
 
                                 newLinks.Add(newLink, newLink);
@@ -634,14 +648,14 @@ namespace Silk {
                             break;
 
                         }
-
+                        
                         else {
 							//TODO add code to replace tags in linktext here probably
                             newLink += inputCopy[j];
 
-
                         }
                     }
+                    
                 }
 
             }

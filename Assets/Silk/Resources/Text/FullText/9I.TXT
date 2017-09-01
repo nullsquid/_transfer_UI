@@ -83,7 +83,7 @@ Anonymous
 <<speaker="F">>
 Called <<pronoun="E",tense>> <<name="E">>--
 
-[[How many of us are there?|Don't know yet.]]
+[[How many of us are there?|Dont know yet.]]
 
 
 :: Can't say, yet.
@@ -111,7 +111,7 @@ I can't say--but it's dark--
 <<level="9">>
 
 
-:: Don't know yet.
+:: Dont know yet.
 <<speaker="F">>
 Don't know yet--
 

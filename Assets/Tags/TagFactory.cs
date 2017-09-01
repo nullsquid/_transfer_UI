@@ -58,6 +58,8 @@ namespace Silk{
             case "action":
                 ActionTag newActionTag = new ActionTag(tagName, args);
                 return newActionTag;
+            //case "wait":
+            //    WaitTag newWaitTag = new WaitTag()
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;
