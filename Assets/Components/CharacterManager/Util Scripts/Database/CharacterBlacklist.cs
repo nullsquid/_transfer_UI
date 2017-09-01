@@ -15,6 +15,7 @@ namespace Transfer.System {
                 "FAGT",
                 "FAGS",
                 "DICK",
+				"TERF",
                 "COCK",
                 "FAGG",
                 "BUTT",

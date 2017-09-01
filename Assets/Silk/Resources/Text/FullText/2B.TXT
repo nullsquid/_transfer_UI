@@ -50,7 +50,7 @@ And then the bombs will fly--and then they will fall--
 <<speaker="F">>
 Hilarious
 
-[[<<wait="6">>|1B]]
+<<wait="6","1B">>
 
 
 :: StoryAuthor
@@ -61,18 +61,16 @@ Anonymous
 <<speaker="F">>
 Right now--
 
-[[<<wait="6">>|1B]]
+<<wait="6","1B">>
 
 
 :: They never thought we would get as far as we did.
 <<speaker="F">>
 They never--thought--we would get as far as we did--
 
-[[<<wait="6">>|1B]]
+<<wait="6","1B">>
 
 
 :: MetaData
 <<connect="F">>
 <<level="2">>
-
-

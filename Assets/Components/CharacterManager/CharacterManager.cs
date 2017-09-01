@@ -6,6 +6,7 @@ namespace Transfer.System {
         public static CharacterManager instance;
         private CharacterInitializer charInit;
         private CharacterBlacklist blacklist;
+
         void Awake() {
             if (instance == null) {
                 instance = this;
