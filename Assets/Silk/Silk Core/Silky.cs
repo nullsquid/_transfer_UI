@@ -342,6 +342,7 @@ namespace Silk {
 					if (entry.Key == entry.Value) {
 						promptContainer.Replace ("]]", String.Empty);
 					}
+
 					promptContainer.Replace(entry.Value + "]]", String.Empty);
 				}
 			}
@@ -609,21 +610,36 @@ namespace Silk {
                             }
                         }*/
                         //make sure that it breaks if there is no |
+						//BUTTS
 						if (inputCopy [j] == '<' && inputCopy [j + 1] == '<') {
 							string rawTag = "";
 							for (int t = j; t < inputCopy.Length; t++) {
 								if (inputCopy [t - 1] == '>' && inputCopy [t - 2] == '>') {
-									//inputCopy.Replace (rawTag, ParseRawTag (rawTag, tagFactory).Value);
-									Debug.Log(rawTag);
-									newLink.Replace (rawTag, ParseRawTag (rawTag, tagFactory).Value);
-
+									newLink += ParseRawTag(rawTag,tagFactory).Value;
+									//was inputcopy
+									//Debug.Log (newLink);
+									//if (rawTag.Length > 0) {
+										//inputCopy.Replace (rawTag, string.Empty);
+										//inputCopy.Remove (j, rawTag.Length);
+									//}
 									break;
 								} else {
 									rawTag += inputCopy [t];
 								}
 							}
+
+							//inputCopy.Replace (rawTag, "");
+							//Debug.LogWarning (newLink);
+							//newLink.Replace (rawTag,string.Empty);
+
+							//Debug.LogWarning (ParseRawTag (rawTag, tagFactory).Value);
+
+							//if (newLink.Contains (rawTag)) {
+							//	newLink.Replace (rawTag, ParseRawTag (rawTag, tagFactory).Value);
+							//}
 							//if (rawTag.Length > 0) {
 							//}
+
 						}
                         if (inputCopy[j] == '|') {
                             string newLinkValue = "";
@@ -652,9 +668,10 @@ namespace Silk {
                             }
                         }
                         if (inputCopy[j] == ']' && inputCopy[j + 1] == ']') {
-                            
-                            inputCopy.Replace(newLink, "");
-                            
+							//DICKS
+							//if (newLink.Length > 0) {
+								inputCopy.Replace (newLink, "");
+							//}
                            
                             if (!newLink.Contains("|")) {
 

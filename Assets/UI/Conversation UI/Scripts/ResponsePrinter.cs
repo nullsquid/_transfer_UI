@@ -49,7 +49,6 @@ public class ResponsePrinter : MonoBehaviour {
 
 	void Update(){
 		//problem in this block
-		Debug.LogWarning ("HELP " +ic);
 		if (ic.InputText.Length > 0) {
 			foreach (Transform child in gameObject.transform) {
 				child.GetComponent<Button> ().interactable = false;
