@@ -609,6 +609,22 @@ namespace Silk {
                             }
                         }*/
                         //make sure that it breaks if there is no |
+						if (inputCopy [j] == '<' && inputCopy [j + 1] == '<') {
+							string rawTag = "";
+							for (int t = j; t < inputCopy.Length; t++) {
+								if (inputCopy [t - 1] == '>' && inputCopy [t - 2] == '>') {
+									//inputCopy.Replace (rawTag, ParseRawTag (rawTag, tagFactory).Value);
+									Debug.Log(rawTag);
+									newLink.Replace (rawTag, ParseRawTag (rawTag, tagFactory).Value);
+
+									break;
+								} else {
+									rawTag += inputCopy [t];
+								}
+							}
+							//if (rawTag.Length > 0) {
+							//}
+						}
                         if (inputCopy[j] == '|') {
                             string newLinkValue = "";
                             for (int k = j + 1; k < inputCopy.Length; k++) {
