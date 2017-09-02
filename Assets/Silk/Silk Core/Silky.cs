@@ -333,17 +333,35 @@ namespace Silk {
 
 
 			foreach (KeyValuePair<string, string> entry in ReturnLinks(tweeNodesToInterpret[c])) {
-				if (tweeNodesToInterpret[c].Contains("[[" + entry.Key) || tweeNodesToInterpret[c].Contains("[[" + entry.Value)) {
-					promptContainer.Replace ("[[" + entry.Key, String.Empty);
-					//////////////////////////////////////////////////////////////
-					//this is to catch instances where the syntax [[link]] is used
-					//in order to remove the trailing "]]"
-					//////////////////////////////////////////////////////////////
-					if (entry.Key == entry.Value) {
-						promptContainer.Replace ("]]", String.Empty);
-					}
-					promptContainer.Replace(entry.Value + "]]", String.Empty);
-				}
+                if (tweeNodesToInterpret[c].Contains("[[" + entry.Key) || tweeNodesToInterpret[c].Contains("[[" + entry.Value)) {
+                    promptContainer.Replace("[[" + entry.Key, String.Empty);
+                    //////////////////////////////////////////////////////////////
+                    //this is to catch instances where the syntax [[link]] is used
+                    //in order to remove the trailing "]]"
+                    //////////////////////////////////////////////////////////////
+                    if (entry.Key == entry.Value) {
+                        promptContainer.Replace("]]", String.Empty);
+                    }
+
+                    promptContainer.Replace(entry.Value + "]]", String.Empty);
+                }
+                else {
+                    for(int l = 0; l < promptContainer.Length; l++) {
+                        if(promptContainer[l] == '[' && promptContainer[l + 1] == '[') {
+                            string taggedLink = "";
+                            for(int t = l; t < promptContainer.Length; t++) {
+                                if(promptContainer[t] == ']' && promptContainer[t + 1] == ']') {
+                                    taggedLink += "]]";
+                                    break;
+                                }
+                                else {
+                                    taggedLink += promptContainer[t];
+                                }
+                            }
+                            promptContainer = promptContainer.Remove(l, taggedLink.Length);
+                        }
+                    }
+                }
 			}
 			promptContainer.Replace (System.Environment.NewLine, String.Empty);
 
@@ -594,33 +612,46 @@ namespace Silk {
                     //I might want to reevaluate how I deal with link text that is repeated.
                     //for now this should work
                     for (int j = i + 2; j < inputCopy.Length; j++) {
-                        /*
-                        if(inputCopy[j] == '<' && inputCopy[j+1] == '<') {
-                            string rawTag = "";
-                            for(int k = j; k < inputCopy.Length; k++) {
-                                if(inputCopy[k - 1] == '>' && inputCopy[k - 2] == '>') {
-                                    //do i need other stuff here?
-                                    inputCopy.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
-                                    break;
-                                }
-                                else {
-                                    rawTag += inputCopy[k];
-                                }
-                            }
-                        }*/
+                        
                         //make sure that it breaks if there is no |
+						//BUTTS
+                        
                         if (inputCopy[j] == '|') {
+                            
                             string newLinkValue = "";
                             for (int k = j + 1; k < inputCopy.Length; k++) {
                                 if (inputCopy[k] == ']' && inputCopy[k + 1] == ']') {
 
+                                    if (newLink.Contains("<<")) {
+
+                                        string rawTag = "";
+                                        for (int l = 0; l < newLink.Length; l++) {
+                                            if (newLink[l] == '<' && newLink[l + 1] == '<') {
+
+                                                for (int t = l; t < newLink.Length; t++) {
+                                                    if (newLink[t] == '>' && newLink[t + 1] == '>') {
+
+                                                        rawTag += ">>";
+
+                                                        newLink = newLink.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
+
+                                                        Debug.LogWarning(newLink);
+                                                        //inputCopy.Remove(t, rawTag.Length);
+
+                                                        break;
+                                                    }
+                                                    else {
+                                                        rawTag += newLink[t];
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                     newLinks.Add(newLink, newLinkValue);
                                     if (newLinkValue.Length > 0) {
                                         inputCopy.Replace(newLinkValue, "");
                                     }
-                                    //Debug.Log("NEW LINK IS " + newLink);
-
-                                    //Debug.Log(inputCopy);
                                     break;
                                 }
                                 else {
@@ -628,7 +659,7 @@ namespace Silk {
                                     if (inputCopy[j] == ']' && inputCopy[j + 1] == ']') {
                                         //TODO test if this works
                                         inputCopy.Replace(newLink, "");
-										//newLink.Replace(
+                                        //newLink.Replace(
                                         newLinks.Add(newLink, newLink);
                                         break;
                                     }
@@ -637,11 +668,12 @@ namespace Silk {
                         }
                         if (inputCopy[j] == ']' && inputCopy[j + 1] == ']') {
                             
-                            inputCopy.Replace(newLink, "");
-                            
+							if (newLink.Length > 0) {
+								inputCopy.Replace (newLink, "");
+							}
                            
                             if (!newLink.Contains("|")) {
-
+                                
                                 newLinks.Add(newLink, newLink);
                                 break;
                             }
@@ -650,9 +682,7 @@ namespace Silk {
                         }
                         
                         else {
-							//TODO add code to replace tags in linktext here probably
                             newLink += inputCopy[j];
-
                         }
                     }
                     

@@ -52,5 +52,3 @@ Good.
 
 :: StoryAuthor
 Anonymous
-
-

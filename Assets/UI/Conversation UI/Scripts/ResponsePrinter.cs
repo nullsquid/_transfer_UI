@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Transfer.Input;
 //TODO Fix Silk integration
 using Silk;
 public class ResponsePrinter : MonoBehaviour {
@@ -18,6 +19,7 @@ public class ResponsePrinter : MonoBehaviour {
     public Sprite midImage;
     public Sprite botImage;
 
+	public MainInputController ic;
 
 	public delegate void CaptureDialogueChoice(string responseText);
 	public event CaptureDialogueChoice onButtonSubmit;
@@ -44,8 +46,10 @@ public class ResponsePrinter : MonoBehaviour {
         }
     }
 
+
 	void Update(){
-		if (GameObject.FindObjectOfType<Transfer.Input.MainInputController> ().InputText.Length > 0) {
+		//problem in this block
+		if (ic.InputText.Length > 0) {
 			foreach (Transform child in gameObject.transform) {
 				child.GetComponent<Button> ().interactable = false;
 			}
@@ -61,7 +65,7 @@ public class ResponsePrinter : MonoBehaviour {
         //SilkNode node = Silky.Instance.mother.GetNodeByName("TRANSUBSTANCE", "Start");
 		SilkNode node = DialogueManager.instance.CurNode;
 		if (node != null) {
-			Debug.LogError (node);
+			//Debug.LogError (node);
 		} else {
 			Debug.LogError ("NO NODE FOUND");
 		}
