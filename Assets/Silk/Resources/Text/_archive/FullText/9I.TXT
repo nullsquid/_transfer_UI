@@ -1,0 +1,134 @@
+﻿:: Start
+<<speaker="F">>
+Is someone there?
+
+[[Yes|Who are you?]]
+
+
+:: Who are you?
+<<speaker="F">>
+Who are you?
+
+[[I don't know.|The only thing I've figured out for sure is that this place is a lot bigger than it seems.]]
+
+[[Who are you?|I guess I'm %F]]
+
+
+:: Endless branches. Each leads to the next and it's very tough to turn around. So be careful which direction you pick.
+<<speaker="F">>
+Endless branches--each leads to the next and it's very tough to turn around--so be careful which direction you pick--
+
+[[Thanks.|We'll keep an eye out for each other and be fine.]]
+
+[[Why tell me?|I've found some others. We need to stick together.]]
+
+
+:: I've found some others. We need to stick together.
+<<speaker="F">>
+I've found some others--we need to stick together--
+
+[[Yes.|8A]]
+
+[[I'd rather go my own way.|8C]]
+
+
+:: 8A
+<<unload>>
+<<nexttree="8A">>
+<<state="idle">>
+
+
+:: StoryTitle
+9I
+
+
+:: I guess I'm %F
+<<speaker="F">>
+I guess I'm <<name="F">>--
+
+[[Have you met anyone else?|Called #Eself %E.]]
+
+[[What does that mean?|Can't say, yet.]]
+
+
+:: The only thing I've figured out for sure is that this place is a lot bigger than it seems.
+<<speaker="F">>
+The only thing I've figured out for sure is that this place is a lot bigger than it seems--
+
+[[Where are we?|I can't say. But it's dark.]]
+
+[[What do you mean?|Endless branches. Each leads to the next and it's very tough to turn around. So be careful which direction you pick.]]
+
+
+:: We'll keep an eye out for each other and be fine.
+<<speaker="F">>
+We'll keep an eye out for each other and be fine--
+
+[[Yes.|8D]]
+
+[[I'd rather go my own way.|8A]]
+
+
+:: 8C
+<<unload>>
+<<nexttree="8C">>
+<<state="idle">>
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: Called #Eself %E.
+<<speaker="F">>
+Called <<pronoun="E",tense>> <<name="E">>--
+
+[[How many of us are there?|Dont know yet.]]
+
+
+:: Can't say, yet.
+<<speaker="F">>
+Can't say--yet--
+
+[[Do you remember anything?|Nothing really. Some flashes.  You?]]
+
+
+:: I can't say. But it's dark.
+<<speaker="F">>
+I can't say--but it's dark--
+
+[[That is true.|8D]]
+
+
+:: 8D
+<<unload>>
+<<nexttree="8D">>
+<<state="idle">>
+
+
+:: MetaData
+<<connect="F">>
+<<level="9">>
+
+
+:: Dont know yet.
+<<speaker="F">>
+Don't know yet--
+
+[[Where is <<name="E">>|They're all wandering, just like you and I.]]
+
+
+:: Nothing really. Some flashes.  You?
+<<speaker="F">>
+Nothing really--some flashes--You?
+
+[[Nothing at all.|8C]]
+
+
+:: They're all wandering, just like you and I.
+<<speaker="F">>
+They're all wandering--just like you and I--
+
+[[Then I'll go find them.|8C]]
+
+
