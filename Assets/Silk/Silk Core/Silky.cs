@@ -595,20 +595,7 @@ namespace Silk {
                     //I might want to reevaluate how I deal with link text that is repeated.
                     //for now this should work
                     for (int j = i + 2; j < inputCopy.Length; j++) {
-                        /*
-                        if(inputCopy[j] == '<' && inputCopy[j+1] == '<') {
-                            string rawTag = "";
-                            for(int k = j; k < inputCopy.Length; k++) {
-                                if(inputCopy[k - 1] == '>' && inputCopy[k - 2] == '>') {
-                                    //do i need other stuff here?
-                                    inputCopy.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
-                                    break;
-                                }
-                                else {
-                                    rawTag += inputCopy[k];
-                                }
-                            }
-                        }*/
+                        
                         //make sure that it breaks if there is no |
 						//BUTTS
 						if (inputCopy [j] == '<' && inputCopy [j + 1] == '<') {
@@ -616,12 +603,7 @@ namespace Silk {
 							for (int t = j; t < inputCopy.Length; t++) {
 								if (inputCopy [t - 1] == '>' && inputCopy [t - 2] == '>') {
 									newLink += ParseRawTag(rawTag,tagFactory).Value;
-									//was inputcopy
-									//Debug.Log (newLink);
-									//if (rawTag.Length > 0) {
-										//inputCopy.Replace (rawTag, string.Empty);
-										//inputCopy.Remove (j, rawTag.Length);
-									//}
+									inputCopy.Replace (rawTag, string.Empty);
 									break;
 								} else {
 									rawTag += inputCopy [t];
@@ -669,9 +651,9 @@ namespace Silk {
                         }
                         if (inputCopy[j] == ']' && inputCopy[j + 1] == ']') {
 							//DICKS
-							//if (newLink.Length > 0) {
+							if (newLink.Length > 0) {
 								inputCopy.Replace (newLink, "");
-							//}
+							}
                            
                             if (!newLink.Contains("|")) {
 
