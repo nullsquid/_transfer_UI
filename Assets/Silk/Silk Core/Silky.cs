@@ -635,7 +635,7 @@ namespace Silk {
 
                                                         newLink = newLink.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
 
-                                                        Debug.LogWarning(newLink);
+                                                        //Debug.LogWarning(newLink);
                                                         //inputCopy.Remove(t, rawTag.Length);
 
                                                         break;
