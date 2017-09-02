@@ -345,7 +345,6 @@ namespace Silk {
 
                     promptContainer.Replace(entry.Value + "]]", String.Empty);
                 }
-                //here's where i need to deal
                 else {
                     for(int l = 0; l < promptContainer.Length; l++) {
                         if(promptContainer[l] == '[' && promptContainer[l + 1] == '[') {
