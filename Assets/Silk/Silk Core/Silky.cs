@@ -599,36 +599,23 @@ namespace Silk {
                         //make sure that it breaks if there is no |
 						//BUTTS
                         
-                        /*
-						if (inputCopy [j] == '<' && inputCopy [j + 1] == '<') {
-							string rawTag = "";
-							for (int t = j; t < inputCopy.Length; t++) {
-								if (inputCopy [t - 1] == '>' && inputCopy [t - 2] == '>') {
-									newLink += ParseRawTag(rawTag,tagFactory).Value;
-									inputCopy.Replace (rawTag, string.Empty);
-									break;
-								} else {
-									rawTag += inputCopy [t];
-								}
-							}
-						}
-                        */
                         if (inputCopy[j] == '|') {
+                            
                             string newLinkValue = "";
                             for (int k = j + 1; k < inputCopy.Length; k++) {
                                 if (inputCopy[k] == ']' && inputCopy[k + 1] == ']') {
 
                                     if (newLink.Contains("<<")) {
-                                        
+
                                         string rawTag = "";
-                                        for(int l = 0; l < newLink.Length; l++) {
-                                            if(newLink[l] == '<' && newLink[l + 1] == '<') {
-                                                
+                                        for (int l = 0; l < newLink.Length; l++) {
+                                            if (newLink[l] == '<' && newLink[l + 1] == '<') {
+
                                                 for (int t = l; t < newLink.Length; t++) {
-                                                    if(newLink[t] == '>' && newLink[t + 1] == '>') {
-                                                        
+                                                    if (newLink[t] == '>' && newLink[t + 1] == '>') {
+
                                                         rawTag += ">>";
-                                                        
+
                                                         newLink = newLink.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
 
                                                         Debug.LogWarning(newLink);
