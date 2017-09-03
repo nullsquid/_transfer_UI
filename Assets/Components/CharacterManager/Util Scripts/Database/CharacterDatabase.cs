@@ -6,7 +6,8 @@ namespace Transfer.Data {
     public enum Case {
         subjective,
         objective,
-        possessive
+        possessive,
+        self
 
     }
 
@@ -90,6 +91,8 @@ namespace Transfer.Data {
 
                         case Case.possessive:
                             return "his";
+                        case Case.self:
+                            return "himself";
                     }
                 }
                 else if (characterDictionary[ID].Gender == Gender.Feminine) {
@@ -100,6 +103,8 @@ namespace Transfer.Data {
                             return "she";
                         case Case.possessive:
                             return "hers";
+                        case Case.self:
+                            return "herself";
                     }
                 }
                 else if (characterDictionary[ID].Gender == Gender.Androgynous) {
@@ -110,6 +115,8 @@ namespace Transfer.Data {
                             return "they";
                         case Case.possessive:
                             return "their";
+                        case Case.self:
+                            return "themself";
                     }
                 }
                 else if (characterDictionary[ID].Gender == Gender.Neutral) {
@@ -120,6 +127,8 @@ namespace Transfer.Data {
                             return "it";
                         case Case.possessive:
                             return "its";
+                        case Case.self:
+                            return "itself";
                     }
                 }
                 else {

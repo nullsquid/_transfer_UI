@@ -12,12 +12,12 @@ public class ScrollViewController : MonoBehaviour {
 	void OnEnable(){
 		//printer.on
 		TextPrinter.onPrintBegin += StartPrinting;
-		printer.onPrintComplete += FinishedPrinting;
+		TextPrinter.onPrintComplete += FinishedPrinting;
 	}
 
 	void OnDisable(){
 		TextPrinter.onPrintBegin -= StartPrinting;
-		printer.onPrintComplete -= FinishedPrinting;
+		TextPrinter.onPrintComplete -= FinishedPrinting;
 	}
 	// Update is called once per frame
 	void Update () {

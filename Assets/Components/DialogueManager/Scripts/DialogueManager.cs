@@ -140,6 +140,18 @@ public class DialogueManager : MonoBehaviour {
         GetConnectID();
 	}
 
+    public void WaitForNextStory(string nextStory, float time) {
+        StartCoroutine(WaitAndGetNextStory(nextStory, time));
+        
+    }
+
+    IEnumerator WaitAndGetNextStory(string nextStoryName, float timeToWait) {
+        yield return new WaitForSeconds(timeToWait);
+        GetNextStory(nextStoryName);
+        //bit ugly but whatever\\
+        terminal.ChangeState(new IdleState());
+    }
+
 	public void GetNextStory(string nextStoryName){
         Debug.Log("NEXT STORY FIRED");
 		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
@@ -177,6 +189,7 @@ public class DialogueManager : MonoBehaviour {
             if (tag != null) {
 
                 if (tag.IsComplete == true) {
+                    TextPrinter.onPrintComplete -= tag.TagExecute;
                     //Debug.Log("TRUE");
                     continue;
                 }
@@ -188,8 +201,12 @@ public class DialogueManager : MonoBehaviour {
                         //    connectID = tag.Value;
                         //}
                         //Debug.Log(tag.TagName);
-
+                        //if (tag.TagName == "wait") {
+                        //    TextPrinter.onPrintComplete += tag.TagExecute;
+                        //}
+                        //else {
                         tag.TagExecute();
+                        //}
 
                     }
                     //break;
@@ -300,6 +317,7 @@ public class DialogueManager : MonoBehaviour {
 				
 					if (tag.IsComplete == true) {
 						Debug.Log ("TRUE");
+                        TextPrinter.onPrintComplete -= tag.TagExecute;
 						continue;
 					} else if (tag.IsComplete == false) {
 						Debug.Log ("FALSE");
@@ -309,8 +327,12 @@ public class DialogueManager : MonoBehaviour {
 							//    connectID = tag.Value;
 							//}
 							Debug.Log (tag.TagName);
-							tag.TagExecute ();
-
+                            if (tag.TagName == "wait") {
+                                TextPrinter.onPrintComplete += tag.TagExecute;
+                            }
+                            else {
+                                tag.TagExecute();
+                            }
 						}
 						//break;
 					}

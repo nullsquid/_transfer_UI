@@ -33,6 +33,9 @@ namespace Silk{
 			case "nexttree":
 				NextTreeTag newTreeTag = new NextTreeTag (tagName, args);
 				return newTreeTag;
+            case "wait":
+                WaitTag newWaitTag = new WaitTag(tagName, args);
+                return newWaitTag;
 			//case "state":
 			//	StateTag newState = new StateTag (tagName, args);
 			//	return newState;

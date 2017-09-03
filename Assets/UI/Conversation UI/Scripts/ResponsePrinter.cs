@@ -22,11 +22,11 @@ public class ResponsePrinter : MonoBehaviour {
 	public delegate void CaptureDialogueChoice(string responseText);
 	public event CaptureDialogueChoice onButtonSubmit;
     private void OnEnable() {
-        printer.onPrintComplete += UpdateResponses;
+        TextPrinter.onPrintComplete += UpdateResponses;
         StartCoroutine(WaitForAwake());
     }
     private void OnDisable() {
-        printer.onPrintComplete -= UpdateResponses;
+        TextPrinter.onPrintComplete -= UpdateResponses;
         if (this.enabled) {
             DialogueManager.instance.nodeCleanup -= ClearResponseUI;
         }
