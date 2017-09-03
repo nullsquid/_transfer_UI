@@ -30,7 +30,7 @@ public class TextPrinter : MonoBehaviour {
 	public event GetTextToPrint onNodeChange;
 	#region Public Events
     public delegate void PrintCompleteAction();
-    public event PrintCompleteAction onPrintComplete;
+    public static event PrintCompleteAction onPrintComplete;
 
 	public delegate void PrintTriggerAction();
 	public static event PrintTriggerAction onPrintBegin;

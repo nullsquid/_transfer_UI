@@ -46,7 +46,7 @@ Well, this is the lobby.  Come on, I'll show you around.  Give you the grand tou
 <<speaker="E">>
 Sorry, that's classified information.
 
-[[<<wait="6">>|8H]]
+<<wait="8H","6">>
 
 
 :: MetaData
