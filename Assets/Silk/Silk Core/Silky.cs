@@ -344,6 +344,23 @@ namespace Silk {
 					}
 					promptContainer.Replace(entry.Value + "]]", String.Empty);
 				}
+				else {
+					for(int l = 0; l < promptContainer.Length; l++) {
+						if(promptContainer[l] == '[' && promptContainer[l + 1] == '[') {
+							string taggedLink = "";
+							for(int t = l; t < promptContainer.Length; t++) {
+								if(promptContainer[t] == ']' && promptContainer[t + 1] == ']') {
+									taggedLink += "]]";
+									break;
+								}
+								else {
+									taggedLink += promptContainer[t];
+								}
+							}
+							promptContainer = promptContainer.Remove(l, taggedLink.Length);
+						}
+					}
+				}
 			}
 			promptContainer.Replace (System.Environment.NewLine, String.Empty);
 
@@ -597,6 +614,33 @@ namespace Silk {
                         //make sure that it breaks if there is no |
                         if (inputCopy[j] == '|') {
                             string newLinkValue = "";
+							//in ReturnLinks once newLink is got
+							if (newLink.Contains("<<")) {
+
+								string rawTag = "";
+								for (int l = 0; l < newLink.Length; l++) {
+									if (newLink[l] == '<' && newLink[l + 1] == '<') {
+
+										for (int t = l; t < newLink.Length; t++) {
+											if (newLink[t] == '>' && newLink[t + 1] == '>') {
+
+												rawTag += ">>";
+
+												newLink = newLink.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
+
+												//Debug.LogWarning(newLink);
+												//inputCopy.Remove(t, rawTag.Length);
+
+												break;
+											}
+											else {
+												rawTag += newLink[t];
+
+											}
+										}
+									}
+								}
+							}
                             for (int k = j + 1; k < inputCopy.Length; k++) {
                                 if (inputCopy[k] == ']' && inputCopy[k + 1] == ']') {
 
