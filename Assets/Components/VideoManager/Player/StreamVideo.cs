@@ -79,15 +79,17 @@ public class StreamVideo : MonoBehaviour {
         audioSource.Play();
 
         Debug.Log("Playing Video");
-        while (videoPlayer.isPlaying) {
-            Debug.LogWarning("Video Time: " + Mathf.FloorToInt((float)videoPlayer.time));
+        /*while (videoPlayer.isPlaying) {
+            //Debug.LogWarning("Video Time: " + Mathf.FloorToInt((float)videoPlayer.time));
             yield return null;
+        }*/
+        if (videoPlayer.isPlaying) {
+            yield return new WaitForSeconds((float)videoToPlay.length);
+            Debug.Log("Done Playing Video");
+            curVideoIsPlaying = false;
+            onVideoComplete();
         }
-
-
-        Debug.Log("Done Playing Video");
-
-        //curVideoIsPlaying = false;
-        //onVideoComplete();
+        
     }
 }
+
