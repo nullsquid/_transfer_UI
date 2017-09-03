@@ -52,6 +52,10 @@ public class Terminal : MonoBehaviour {
 
     }
 
+    public void GetPrevState() {
+        newTerminalStateMachine.ChangeToPreviousState();
+    }
+
 	public ITerminalState GetState() {
 		//return newTerminalStateMachine.CurState.ToString ();
         return newTerminalStateMachine.CurState;

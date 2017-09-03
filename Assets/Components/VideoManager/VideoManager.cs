@@ -44,7 +44,10 @@ public class VideoManager : MonoBehaviour {
 
     public void VideoCleanup() {
         if (videoPannel.GetComponentInChildren<StreamVideo>().curVideoIsPlaying == false) {
-            terminal.ChangeState(new IdleState());
+            terminal.GetPrevState();
+            videoPannel.SetActive(false);
+            terminal.mainText.SetActive(true);
+            GameObject.FindObjectOfType<ResponsePrinter>().UpdateResponses();
             videoPannel.GetComponentInChildren<StreamVideo>().videoToPlay = null;
         }
     }

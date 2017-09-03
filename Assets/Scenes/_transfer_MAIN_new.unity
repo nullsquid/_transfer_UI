@@ -350,6 +350,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1113166545853382, guid: f417d2764d41f1042aa1710ed2648389, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 328877107078318130, guid: f417d2764d41f1042aa1710ed2648389, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f417d2764d41f1042aa1710ed2648389, type: 2}
@@ -1554,7 +1558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5295359, y: 0.20700002}
-  m_AnchoredPosition: {x: -5.085827, y: -4.0496883}
+  m_AnchoredPosition: {x: -5.05, y: -5.53}
   m_SizeDelta: {x: 955.3789, y: 115.63748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094640699
@@ -2317,7 +2321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videos:
   - {fileID: 32900000, guid: 626bfed72cf75400883aa627ce445bef, type: 3}
-  - {fileID: 32900000, guid: 2547b130931c94cd58f3707701ec877d, type: 3}
   videoPannel: {fileID: 1975582201}
   terminal: {fileID: 1566020869}
 --- !u!4 &1761125392
