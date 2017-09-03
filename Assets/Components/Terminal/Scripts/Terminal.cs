@@ -9,12 +9,14 @@ public class Terminal : MonoBehaviour {
     [HideInInspector]
 	public GameObject buddyList;
     public GameObject mainText;
+    public GameObject videoPannel;
 	void Start(){
 		buddyList = GameObject.Find ("BuddyList");
         mainText = GameObject.Find("Text_Scroll");
-        
+        videoPannel = GameObject.Find("Video_Pannel");
         this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
         mainText.SetActive(false);
+        videoPannel.SetActive(false);
         buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
         //Debug.Log(GetState());
 	}
@@ -28,6 +30,7 @@ public class Terminal : MonoBehaviour {
         this.newTerminalStateMachine.ChangeTerminalState(toState);
 		if (newTerminalStateMachine.CurState is IdleState) {
 			buddyList.SetActive (true);
+            videoPannel.SetActive(false);
             //buddyList.GetComponent<BuddyListController>().PopulateBuddyList();
             buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
 		} else {
@@ -39,6 +42,12 @@ public class Terminal : MonoBehaviour {
         }
         else {
             mainText.SetActive(false);
+        }
+        if(newTerminalStateMachine.CurState is VideoState) {
+            videoPannel.SetActive(true);
+        }
+        else {
+            videoPannel.SetActive(false);
         }
 
     }
