@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour {
     }
     private void Update() {
         Debug.Log(connectID);
+		//Debug.Log (curNode.silkLinks.Count);
 		//HACK checks every frame for null connectID and if so, set it to what it should be
 		if (connectID == null) {
 			//Debug.Log ("booooop");

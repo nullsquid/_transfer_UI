@@ -139,7 +139,7 @@ namespace Silk {
                                 }
 
                             }
-
+							//MAYBE??
                             if (linkName.ToString() == nodeName) {
 
                                 SilkLink newSilkLink = new SilkLink(node.Value, linkedNode.Value, link.Key);
