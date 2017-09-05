@@ -4,7 +4,6 @@ Go away, go away, and please don’t slam the door
 
 [[A little man who wasn’t there|He wasn’t there again today]]
 
-
 :: The man was waiting there for me
 <<speaker="C">>
 The man was waiting there for me
@@ -39,6 +38,7 @@ Yesterday upon the stair
 
 [[I wish, I wish he’d go away|5G]]
 
+[[BOOOOP!!!!|5G]]
 
 :: He wasn’t there again today
 <<speaker="C">>
