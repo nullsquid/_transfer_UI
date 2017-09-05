@@ -12,8 +12,7 @@ public class BuddyListController : MonoBehaviour {
 
 
     private void Update() {
-		//Debug.Log (gameObject.transform.childCount);
-
+        
 		if (this.gameObject.transform.childCount == 0) {
 			StartPopulate ();
 		}

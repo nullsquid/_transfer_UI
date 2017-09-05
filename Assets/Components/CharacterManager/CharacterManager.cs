@@ -21,7 +21,7 @@ namespace Transfer.System {
             blacklist = GameObject.FindObjectOfType<CharacterBlacklist>();
             InitializeCharacters();
         }
-
+        
         void InitializeCharacters() {
             blacklist.InitializeNameBlacklist();
             charInit.PopulateCharacterDatabase(true);
