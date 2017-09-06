@@ -119,17 +119,23 @@ namespace Silk {
             //TODO Make this its own method
             foreach (KeyValuePair<string, SilkStory> story in mother.MotherStory) {
                 foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
-
+                    SilkNode cachedNode = node.Value;
                     foreach (KeyValuePair<string, string> link in node.Value.links) {
-						//somewhere in here, fix linkname parsing to allow for structure that's like [[hello|hello]]
-                        StringBuilder linkNameBuilder = new StringBuilder();
-                        string linkName;
+                        string cachedLinkName = link.Value;
 
-                        linkNameBuilder.Append(link.Value);
+						//somewhere in here, fix linkname parsing to allow for structure that's like [[hello|hello]]
+                        StringBuilder linkNameBuilder = new StringBuilder(cachedLinkName);
+                        string linkName;
+                        //it's right here
                         linkName = linkNameBuilder.ToString().TrimStart().TrimEnd();
+                        //Debug.Log(linkName);
+                        //After here, BLOOP doesn't show up
+
                         foreach (KeyValuePair<string, SilkNode> linkedNode in story.Value.Story) {
+                            SilkNode cachedLinkedNode = linkedNode.Value;
                             string nodeName = "";
                             StringBuilder nodeNameBuilder = new StringBuilder();
+                            //Debug.Log(linkName);
                             for (int a = 0; a < filenames.Count; a++) {
                                 if (linkedNode.Value.nodeName.Contains(filenames[a] + "_")) {
 
@@ -138,9 +144,9 @@ namespace Silk {
 
                                 }
                             }
-							//MAYBE??
 							if (linkName.ToString () == nodeName) {
-								SilkLink newSilkLink = new SilkLink (node.Value, linkedNode.Value, link.Key);
+                                
+								SilkLink newSilkLink = new SilkLink (cachedNode, cachedLinkedNode, link.Key);
 								node.Value.silkLinks.Add (newSilkLink);
 
 							}
@@ -158,10 +164,6 @@ namespace Silk {
         private void Start() {
             InitializeSilk();
             GameObject.FindObjectOfType<DialogueManager>().InitializationCallback();
-            //LogNodeQueue();
-            //LogNodeQueue();
-
-			//LogNodePrompt();
             
         }
 
@@ -641,7 +643,7 @@ namespace Silk {
 							}
                             for (int k = j + 1; k < inputCopy.Length; k++) {
                                 if (inputCopy[k] == ']' && inputCopy[k + 1] == ']') {
-
+                                    //Debug.Log(">> " + newLink);
                                     newLinks.Add(newLink, newLinkValue);
                                     if (newLinkValue.Length > 0) {
                                         inputCopy.Replace(newLinkValue, "");
@@ -655,7 +657,7 @@ namespace Silk {
                                     newLinkValue += inputCopy[k];
                                     if (inputCopy[j] == ']' && inputCopy[j + 1] == ']') {
                                         //TODO test if this works
-                                        inputCopy.Replace(newLink, "");
+                                        //inputCopy.Replace(newLink, "");
 										//newLink.Replace(
                                         newLinks.Add(newLink, newLink);
                                         break;
