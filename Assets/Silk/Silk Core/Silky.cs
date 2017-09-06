@@ -132,12 +132,14 @@ namespace Silk {
                             string nodeName = "";
                             StringBuilder nodeNameBuilder = new StringBuilder();
                             for (int a = 0; a < filenames.Count; a++) {
+								Debug.Log (filenames [a]);
                                 if (linkedNode.Value.nodeName.Contains(filenames[a] + "_")) {
 
                                     nodeNameBuilder.Append(linkedNode.Value.nodeName.Remove(0, filenames[a].Length + 1));
                                     nodeName = nodeNameBuilder.ToString().TrimEnd();
 
                                 }
+
 
                             }
 							//MAYBE??

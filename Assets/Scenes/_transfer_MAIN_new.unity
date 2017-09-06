@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c976064964a5a488a5891ced78c3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useFullText: 1
+  useFullText: 0
   rawTweeFiles: []
 --- !u!114 &297057287
 MonoBehaviour:
@@ -792,7 +792,7 @@ Prefab:
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: isInTestingMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
@@ -1842,10 +1842,10 @@ RectTransform:
   m_Father: {fileID: 1061418328}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.031645834, y: 0.18286222}
+  m_AnchorMin: {x: 0.031273093, y: 0.19117095}
   m_AnchorMax: {x: 0.4843125, y: 1}
-  m_AnchoredPosition: {x: -0.99902344, y: -14.501251}
-  m_SizeDelta: {x: 2, y: -36}
+  m_AnchoredPosition: {x: -0.49902344, y: -15.593002}
+  m_SizeDelta: {x: 1, y: -33.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1202786536
 MonoBehaviour:
