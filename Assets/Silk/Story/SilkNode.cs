@@ -15,7 +15,8 @@ namespace Silk
         public string nodeSpeaker = null;
 
         public List<SilkTagBase> executionQueue = new List<SilkTagBase>();
-        public Dictionary<string, string> links = new Dictionary<string, string>();
+        //public Dictionary<string, string> links = new Dictionary<string, string>();
+        public List<TextLink> textLinks = new List<TextLink>();
         public Dictionary<string, string[]> tags = new Dictionary<string, string[]>();
         public List<SilkLink> silkLinks = new List<SilkLink>();
         public List<SilkTagBase> silkTags = new List<SilkTagBase>();
@@ -40,18 +41,18 @@ namespace Silk
             return strippedName.ToString().TrimEnd().TrimStart();
         }
 
-        public void AddLinkName(string linkText, string linkPointer)
+        /*public void AddLinkName(string linkText, string linkPointer)
         {
             links.Add(linkText, linkPointer);
-        }
+        }*/
 
         public string GetLinkNameValue(string linkText)
         {
-            foreach(KeyValuePair<string, string> linkName in links)
+            foreach(TextLink linkName in textLinks)
             {
-                if(linkName.Key == linkText)
+                if(linkName.LinkText == linkText)
                 {
-                    return linkName.Value;
+                    return linkName.LinkedNodeName;
                 }
                 
             }
@@ -63,13 +64,13 @@ namespace Silk
             return silkLinks.ToArray();
         }
 
-        public Dictionary<string, string> Links
+        /*public Dictionary<string, string> Links
         {
             get
             {
                 return links;
             }
-        }
+        }*/
         public IEnumerator WaitAndLogQueue() {
             yield return new WaitForEndOfFrame();
             LogQueue();
