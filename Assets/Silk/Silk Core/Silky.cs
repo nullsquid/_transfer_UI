@@ -121,7 +121,6 @@ namespace Silk {
                 foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
 
                     foreach (KeyValuePair<string, string> link in node.Value.links) {
-						//Debug.Log (link.Key);
 						//somewhere in here, fix linkname parsing to allow for structure that's like [[hello|hello]]
                         StringBuilder linkNameBuilder = new StringBuilder();
                         string linkName;
@@ -132,36 +131,19 @@ namespace Silk {
                             string nodeName = "";
                             StringBuilder nodeNameBuilder = new StringBuilder();
                             for (int a = 0; a < filenames.Count; a++) {
-								Debug.Log (filenames [a]);
                                 if (linkedNode.Value.nodeName.Contains(filenames[a] + "_")) {
 
                                     nodeNameBuilder.Append(linkedNode.Value.nodeName.Remove(0, filenames[a].Length + 1));
                                     nodeName = nodeNameBuilder.ToString().TrimEnd();
 
                                 }
-
-
                             }
 							//MAYBE??
 							if (linkName.ToString () == nodeName) {
-								//TEST LOOPING THROUGH NODES HERE
-								Debug.Log(nodeName);
 								SilkLink newSilkLink = new SilkLink (node.Value, linkedNode.Value, link.Key);
 								node.Value.silkLinks.Add (newSilkLink);
 
-								//Debug.Log("SilkLink " + newSilkLink.LinkText + " " + newSilkLink.LinkedNode.nodeName);
 							}
-
-
-							/*else {
-								foreach (KeyValuePair<string, SilkNode> newNode in story.Value.Story) {
-									if (linkName.ToString () == newNode.Value.nodeName) {
-										SilkLink newSilkLink = new SilkLink (node.Value, newNode.Value, link.Key);
-										node.Value.silkLinks.Add (newSilkLink);
-									}
-								}
-							}*/
-							//needs to check against multiple nodes rather than just stopping
 
                         }
 
