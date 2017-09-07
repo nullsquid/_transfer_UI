@@ -168,15 +168,7 @@ namespace Silk {
         private void Start() {
             InitializeSilk();
             GameObject.FindObjectOfType<DialogueManager>().InitializationCallback();
-            foreach(KeyValuePair<string, SilkStory> story in mother.MotherStory) {
-                foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
-                    foreach(TextLink textLink in node.Value.textLinks) {
-                        if(textLink.LinkedNodeName == null) {
-                            Debug.Log(story.Value.StoryName);
-                        }
-                    }
-                }
-            }
+
             
         }
 
@@ -349,14 +341,14 @@ namespace Silk {
                 //Debug.Log(entry.LinkText);
 				if (tweeNodesToInterpret[c].Contains("[[" + entry.LinkText) || tweeNodesToInterpret[c].Contains("[[" + entry.LinkedNodeName)) {
                     //Debug.Log("PEWPEW " + entry.LinkText);
+                    string strippedLink = "";
                     if (entry.LinkedNodeName != null) {
+                        strippedLink = entry.LinkText.Replace("|" + entry.LinkedNodeName, "");
                         //strippedLink.Append(entry.LinkText.Replace(entry.LinkedNodeName, String.Empty));
                         //Debug.Log(strippedLink);
                     }
-                    if(entry.LinkedNodeName == null) {
-                        //Debug.Log("WEW?? " + curNode.GetStoryName());
-                    }
-                    promptContainer.Replace ("[[" + entry.LinkText, String.Empty);
+
+                    promptContainer.Replace ("[[" + strippedLink, "");
 					//////////////////////////////////////////////////////////////
 					//this is to catch instances where the syntax [[link]] is used
 					//in order to remove the trailing "]]"
