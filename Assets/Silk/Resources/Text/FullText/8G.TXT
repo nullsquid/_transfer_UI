@@ -95,7 +95,7 @@ Now I.
 
 [[I|And lastly, T]]
 
-[[Itieration|And lastly, T]]
+[[Iteration|And lastly, T]]
 
 
 :: And lastly, T
