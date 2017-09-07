@@ -71,6 +71,9 @@ namespace Silk
                 return links;
             }
         }*/
+        public string GetStoryName() {
+            return storyName;
+        }
         public IEnumerator WaitAndLogQueue() {
             yield return new WaitForEndOfFrame();
             LogQueue();

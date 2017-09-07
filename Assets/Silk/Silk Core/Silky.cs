@@ -168,6 +168,15 @@ namespace Silk {
         private void Start() {
             InitializeSilk();
             GameObject.FindObjectOfType<DialogueManager>().InitializationCallback();
+            foreach(KeyValuePair<string, SilkStory> story in mother.MotherStory) {
+                foreach(KeyValuePair<string, SilkNode> node in story.Value.Story) {
+                    foreach(TextLink textLink in node.Value.textLinks) {
+                        if(textLink.LinkedNodeName == null) {
+                            Debug.Log(story.Value.StoryName);
+                        }
+                    }
+                }
+            }
             
         }
 
@@ -343,6 +352,9 @@ namespace Silk {
                     if (entry.LinkedNodeName != null) {
                         //strippedLink.Append(entry.LinkText.Replace(entry.LinkedNodeName, String.Empty));
                         //Debug.Log(strippedLink);
+                    }
+                    if(entry.LinkedNodeName == null) {
+                        //Debug.Log("WEW?? " + curNode.GetStoryName());
                     }
                     promptContainer.Replace ("[[" + entry.LinkText, String.Empty);
 					//////////////////////////////////////////////////////////////

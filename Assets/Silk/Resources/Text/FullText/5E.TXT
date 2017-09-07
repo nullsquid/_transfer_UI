@@ -11,11 +11,11 @@ Alright. Remember anything further?
 
 [[That I was the first.|4F]]
 
-[[Being alone with G]]
+[[Being alone with G|Being alone with G]]
 
-[[Approaching E with an idea]]
+[[Approaching E with an idea|Approaching E with an idea]]
 
-[[Holding a radio.]]
+[[Holding a radio.|Holding a radio]]
 
 :: Approaching E with an idea
 <<nexttree="4F">>
@@ -111,5 +111,3 @@ What's that?
 Out there.  Come on. Go! Run Gave Run Run Cage I got <<pronoun="0",tense>>
 
 [[<<wait="6">>|4D]]
-
-

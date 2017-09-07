@@ -8,6 +8,8 @@ public class TextLink  {
     private string linkedNodeName;
     private string linkText;
 
+
+
     public string CurNodeName
     {
         get
