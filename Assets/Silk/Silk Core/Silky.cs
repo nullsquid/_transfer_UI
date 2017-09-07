@@ -145,8 +145,12 @@ namespace Silk {
                                 }
                             }
 							if (linkName.ToString () == nodeName) {
-                                
-								SilkLink newSilkLink = new SilkLink (cachedNode, cachedLinkedNode, link.LinkText);
+                                //Debug.Log("BOOP! " + link.LinkText);
+                                string strippedLink = "";
+                                if (link.LinkText.Contains(link.LinkedNodeName)) {
+                                    strippedLink = link.LinkText.Replace("|" + link.LinkedNodeName, string.Empty);
+                                }
+								SilkLink newSilkLink = new SilkLink (cachedNode, cachedLinkedNode, strippedLink);
 								node.Value.silkLinks.Add (newSilkLink);
 
 							}
@@ -333,9 +337,14 @@ namespace Silk {
 
 
 			foreach (TextLink entry in ReturnLinks(tweeNodesToInterpret[c])) {
-                Debug.Log(entry.LinkText);
+                //Debug.Log(entry.LinkText);
 				if (tweeNodesToInterpret[c].Contains("[[" + entry.LinkText) || tweeNodesToInterpret[c].Contains("[[" + entry.LinkedNodeName)) {
-					promptContainer.Replace ("[[" + entry.LinkText, String.Empty);
+                    //Debug.Log("PEWPEW " + entry.LinkText);
+                    if (entry.LinkedNodeName != null) {
+                        //strippedLink.Append(entry.LinkText.Replace(entry.LinkedNodeName, String.Empty));
+                        //Debug.Log(strippedLink);
+                    }
+                    promptContainer.Replace ("[[" + entry.LinkText, String.Empty);
 					//////////////////////////////////////////////////////////////
 					//this is to catch instances where the syntax [[link]] is used
 					//in order to remove the trailing "]]"
@@ -645,9 +654,13 @@ namespace Silk {
                             for (int k = j + 1; k < inputCopy.Length; k++) {
                                 if (inputCopy[k] == ']' && inputCopy[k + 1] == ']') {
                                     //Debug.Log(">> " + newLink);
+                                    //Debug.Log("!!!!!!!! " + newLink.LinkText);
                                     if (newLink.LinkText.Contains(newLink.LinkedNodeName)) {
+                                        //Debug.Log("HIIIIIIIIIIIIIIII");
                                         newLink.LinkText = newLink.LinkText.Replace(newLink.LinkedNodeName, string.Empty);
                                     }
+                                    //Debug.Log("HIIIIIIIIIIIIIIII");
+
                                     newLinks.Add(newLink);
                                     if (newLinkValue.Length > 0) {
                                         inputCopy.Replace(newLinkValue, "");
