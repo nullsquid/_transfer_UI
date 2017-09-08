@@ -3,14 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EffectsManager : MonoBehaviour {
+	#region Singleton
+	public static EffectsManager instance;
+	void Awake() {
 
-	// Use this for initialization
-	void Start () {
-		
+		if (instance == null) {
+			instance = this;
+		}
+		else if (instance != this) {
+			Destroy(gameObject);
+		}
+		DontDestroyOnLoad(gameObject);
 	}
-	
-	// Update is called once per frame
-	void Update () {
+	#endregion
+
+	public Camera mainCamera;
+	void Start(){
+		mainCamera = Camera.main;
+	}
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			//ShiftEffect ();
+		}
+	}
+	public void ShiftEffect(){
 		
+		mainCamera.GetComponent<postVHSPro> ().bleedAmount = 15f;
+		//bleed = 15f;
+	}
+
+	IEnumerator ShiftRoutine(){
+		float bleed = mainCamera.GetComponent<postVHSPro> ().bleedAmount;
+		yield return null;
 	}
 }
