@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class DialogueAudioHandler : MonoBehaviour {
 
+	public List<AudioClip> soundEffectRaw = new List<AudioClip> ();
+	public Dictionary<string, AudioClip> soundEffects = new Dictionary<string, AudioClip> ();
 	// Use this for initialization
 	void Start () {
-		
+		for (int i = 0; i < soundEffectRaw.Count; i++) {
+			soundEffects.Add (soundEffectRaw [i].name, soundEffectRaw [i]);
+		}
+	}
+	public void InvokeSoundEffect(string soundName){
+		AudioManager.Instance.PlaySoundAtPoint (soundEffects [soundName], gameObject);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

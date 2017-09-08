@@ -9,10 +9,21 @@ public class SoundEffectTag : SilkTagBase {
 		if (args.Count == 1) {
 			_silkTagArgs = args;
 			Value = "";
-		} else if (args.Count < 1) {
+		} else if (args.Count == 2) {
+			_silkTagArgs = args;
+			Value = "";
+		}else if (args.Count < 1) {
 			Debug.LogError ("TAG REQUIRES A SOUND EFFECT NAME TO BE PASSED");
 		} else {
 			Debug.LogError ("TOO MANY ARGUMENTS FOR SFX TAG");
+		}
+	}
+
+	public override void ExecuteTagLogic(List<string> args){
+		if (args.Count == 1) {
+			//AudioManager.Instance.
+		} else if (args.Count == 2) {
+
 		}
 	}
 	

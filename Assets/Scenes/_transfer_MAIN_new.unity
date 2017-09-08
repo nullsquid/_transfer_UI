@@ -791,22 +791,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
-      propertyPath: isInTestingMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
-        type: 2}
-      propertyPath: startingNodeName
-      value: 8G
-      objectReference: {fileID: 0}
-    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
-        type: 2}
-      propertyPath: connectID
+      propertyPath: onSoundEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 552350672}
+    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: onSoundEffect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InvokeSoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: onSoundEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: onSoundEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &552350672 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+    type: 2}
+  m_PrefabInternal: {fileID: 552350671}
+  m_Script: {fileID: 11500000, guid: f91d605deebeb3147bb49192fa5591b4, type: 3}
 --- !u!21 &583217364
 Material:
   serializedVersion: 6
@@ -1276,7 +1287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 726.99994, y: 87}
+  m_AnchoredPosition: {x: 726.9999, y: 87}
   m_SizeDelta: {x: -1580, y: -288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1037358699

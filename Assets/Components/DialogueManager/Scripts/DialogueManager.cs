@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Silk;
+using UnityEngine.Events;
 public class DialogueManager : MonoBehaviour {
     public string connectID;
 	//need to decouple this
@@ -14,6 +15,8 @@ public class DialogueManager : MonoBehaviour {
     public event NodeCleanup nodeCleanup;
     public event NodeStartSequence newNodeStart;
 	public event OnTagComplete tagComplete;
+
+	public UnityEvent onSoundEffect;
 
     public string startingNodeName;
     public bool isInTestingMode = false;
