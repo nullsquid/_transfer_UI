@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Silk;
 public class SoundEffectTag : SilkTagBase {
+	DialogueAudioHandler audioHandler;
 	public SoundEffectTag(string name, List<string> args){
 		TagName = name;
 		type = TagType.SEQUENCED;
+		audioHandler = GameObject.FindObjectOfType<DialogueAudioHandler> ();
 		if (args.Count == 1) {
 			_silkTagArgs = args;
 			Value = "";
@@ -21,6 +23,7 @@ public class SoundEffectTag : SilkTagBase {
 
 	public override void ExecuteTagLogic(List<string> args){
 		if (args.Count == 1) {
+			audioHandler.InvokeSoundEffect (args [0]);
 			//AudioManager.Instance.
 		} else if (args.Count == 2) {
 
