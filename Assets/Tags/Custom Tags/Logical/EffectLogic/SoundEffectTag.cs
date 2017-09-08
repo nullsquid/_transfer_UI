@@ -11,7 +11,7 @@ public class SoundEffectTag : SilkTagBase {
 		if (args.Count == 1) {
 			_silkTagArgs = args;
 			Value = "";
-		} else if (args.Count == 2) {
+		} else if (args.Count == 2 || args.Count == 3) {
 			_silkTagArgs = args;
 			Value = "";
 		}else if (args.Count < 1) {
@@ -26,7 +26,7 @@ public class SoundEffectTag : SilkTagBase {
 			audioHandler.InvokeSoundEffect (args [0]);
 			//AudioManager.Instance.
 		} else if (args.Count == 2) {
-            int percent = int.Parse(args[1]) / 100;
+            int percent = int.Parse(args[1]);
             int randChance = Random.Range(0, 100);
             if(randChance <= percent) {
                 //do the thing
@@ -36,6 +36,14 @@ public class SoundEffectTag : SilkTagBase {
                 //don't do the thing
             }
 		}
+        else if(args.Count == 3) {
+            int percent = int.Parse(args[1]);
+            int randChance = Random.Range(0, 100);
+            if (randChance <= percent) {
+                //do the thing
+                audioHandler.InvokeSoundEffect(args[0],float.Parse(args[2]));
+            }
+        }
 	}
 	
 }

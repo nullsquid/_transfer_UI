@@ -12,8 +12,8 @@ public class DialogueAudioHandler : MonoBehaviour {
 			soundEffects.Add (soundEffectRaw [i].name, soundEffectRaw [i]);
 		}
 	}
-	public void InvokeSoundEffect(string soundName){
-		AudioManager.Instance.PlaySoundAtPoint (soundEffects [soundName], gameObject);
+	public void InvokeSoundEffect(string soundName, float vol = 1){
+		AudioManager.Instance.PlaySoundAtPoint (soundEffects [soundName], gameObject, 1, vol);
 	}
 	
 

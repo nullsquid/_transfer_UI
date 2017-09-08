@@ -1,7 +1,7 @@
 ﻿:: Start
 <<speaker="D">>
 I didn't get very far, but there's a passage here.
-<<sfx="PRESENCE_1">>
+
 
 [[How big is this place?|I'm not sure yet.  Seems vast.  Do you want to stick together or split up?]]
 
@@ -76,9 +76,10 @@ Anonymous
 
 
 :: I don't hear anything.
+<<sfx="PRESENCE_2","100">>
 <<speaker="D">>
 I don't hear anything.
-<<sfx="PRESENCE_2","50">>
+
 
 [[No, something is there|7D]]
 

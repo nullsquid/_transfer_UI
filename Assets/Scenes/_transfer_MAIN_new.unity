@@ -760,7 +760,7 @@ Prefab:
     - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: soundEffectRaw.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4244494705889454, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -822,8 +822,18 @@ Prefab:
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: startingNodeName
-      value: 8C
+      value: 8B
       objectReference: {fileID: 0}
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: soundEffectRaw.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 37f9f76b999a69d4387c88b4f692c8d1, type: 3}
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: soundEffectRaw.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d3f29547fab66b743bbfb86f498fa39a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
   m_IsPrefabParent: 0

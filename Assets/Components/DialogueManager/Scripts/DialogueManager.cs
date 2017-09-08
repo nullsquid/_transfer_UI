@@ -148,12 +148,19 @@ public class DialogueManager : MonoBehaviour {
         StartCoroutine(WaitAndGetNextStory(nextStory, time));
         
     }
-
+    public void WaitForNextNode(string nextnode, float time) {
+        StartCoroutine(WaitAndGetNextNode(nextnode, time));
+    }
     IEnumerator WaitAndGetNextStory(string nextStoryName, float timeToWait) {
         yield return new WaitForSeconds(timeToWait);
         GetNextStory(nextStoryName);
         //bit ugly but whatever\\
         terminal.ChangeState(new IdleState());
+    }
+    IEnumerator WaitAndGetNextNode(string nextNodeName, float timeToWait) {
+        yield return new WaitForSeconds(timeToWait);
+        FindNextNodeByName(nextNodeName);
+
     }
 
 	public void GetNextStory(string nextStoryName){
@@ -335,10 +342,14 @@ public class DialogueManager : MonoBehaviour {
                                 //StartCoroutine(WaitForConnect(tag));
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
+                            if(tag.TagName == "nodewait") {
+                                TextPrinter.onPrintComplete += tag.TagExecute;
+                            }
                             else if(tag.TagName == "sfx") {
                                 //tag.TagExecute();
-                                Debug.Log("hey hi");
-                                StartCoroutine(WaitForConnect(tag));
+                                //Debug.Log("hey hi");
+                                //StartCoroutine(WaitForConnect(tag));
+                                tag.TagExecute();
                             }
                             else {
                                 //StartCoroutine(WaitForConnect(tag));
