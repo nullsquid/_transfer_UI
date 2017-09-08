@@ -332,9 +332,16 @@ public class DialogueManager : MonoBehaviour {
 							//}
 							Debug.Log (tag.TagName);
                             if (tag.TagName == "wait") {
+                                //StartCoroutine(WaitForConnect(tag));
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
+                            else if(tag.TagName == "sfx") {
+                                //tag.TagExecute();
+                                Debug.Log("hey hi");
+                                StartCoroutine(WaitForConnect(tag));
+                            }
                             else {
+                                //StartCoroutine(WaitForConnect(tag));
                                 tag.TagExecute();
                             }
 						}
@@ -352,6 +359,16 @@ public class DialogueManager : MonoBehaviour {
     /*public bool IEnumerator WaitForTagComplete() {
         yield return new WaitUntil(MoveToNextTag() == true)
     }*/
+
+    IEnumerator WaitForConnect(SilkTagBase tag) {
+        while(true) {
+            if(terminal.GetState() == new ConnectState()) {
+                Debug.Log(terminal.GetState());
+                tag.TagExecute();
+                yield return null;
+            }
+        }
+    }
 	public bool MoveToNextTag(){
         //Debug.Log("sup?");
         return true;

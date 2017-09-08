@@ -757,6 +757,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: soundEffectRaw.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4244494705889454, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -808,6 +813,16 @@ Prefab:
         type: 2}
       propertyPath: onSoundEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: soundEffectRaw.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b0faa9e6eaa0a944ab8ffecc2d7d3e28, type: 3}
+    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: startingNodeName
+      value: 8C
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
@@ -1287,7 +1302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 726.9999, y: 87}
+  m_AnchoredPosition: {x: 726.99976, y: 87}
   m_SizeDelta: {x: -1580, y: -288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1037358699
@@ -1365,7 +1380,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2115034134}
   m_HandleRect: {fileID: 2115034133}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2038,7 +2053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 2e3346e5021a64ae8aed8ce3f3ccdec0, type: 3}
   speakingClips: []
-  speakingClipVolume: 1
+  speakingClipVolume: 0.16
 --- !u!1 &1566020867
 GameObject:
   m_ObjectHideFlags: 0

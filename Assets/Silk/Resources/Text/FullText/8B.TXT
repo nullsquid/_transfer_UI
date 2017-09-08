@@ -1,7 +1,7 @@
 ﻿:: Start
 <<speaker="D">>
 I didn't get very far, but there's a passage here.
-<<sfx="PRESENCE","50">>
+<<sfx="PRESENCE_1">>
 
 [[How big is this place?|I'm not sure yet.  Seems vast.  Do you want to stick together or split up?]]
 
@@ -9,12 +9,6 @@ I didn't get very far, but there's a passage here.
 
 [[Where does it go?|Left.]]
 
-
-:: I'm not sure yet.  Seems vast.  Do you want to stick together or split up?
-<<speaker="D">>
-I'm not sure yet.  Seems vast.  Do you want to stick together or split up?
-
-[[Stick together|7D]]
 
 [[Split up|7E]]
 

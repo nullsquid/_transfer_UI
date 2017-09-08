@@ -26,7 +26,15 @@ public class SoundEffectTag : SilkTagBase {
 			audioHandler.InvokeSoundEffect (args [0]);
 			//AudioManager.Instance.
 		} else if (args.Count == 2) {
-
+            int percent = int.Parse(args[1]) / 100;
+            int randChance = Random.Range(0, 100);
+            if(randChance <= percent) {
+                //do the thing
+                audioHandler.InvokeSoundEffect(args[0]);
+            }
+            else if(randChance > percent) {
+                //don't do the thing
+            }
 		}
 	}
 	
