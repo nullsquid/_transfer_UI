@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueAudioHandler : MonoBehaviour {
-
+	public float volume = 1;
 	public List<AudioClip> soundEffectRaw = new List<AudioClip> ();
 	public Dictionary<string, AudioClip> soundEffects = new Dictionary<string, AudioClip> ();
 	// Use this for initialization
@@ -13,7 +13,7 @@ public class DialogueAudioHandler : MonoBehaviour {
 		}
 	}
 	public void InvokeSoundEffect(string soundName, float vol = 1){
-		AudioManager.Instance.PlaySoundAtPoint (soundEffects [soundName], gameObject, 1, vol);
+		AudioManager.Instance.PlaySoundAtPoint (soundEffects [soundName], gameObject, 1, volume);
 	}
 	
 
