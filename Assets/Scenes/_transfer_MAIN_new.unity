@@ -609,6 +609,34 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 229426100}
+--- !u!1 &252610937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 252610938}
+  m_Layer: 0
+  m_Name: EffectsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &252610938
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 252610937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.7482429, y: -0.5162607, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &297057285
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +785,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: soundEffectRaw.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4244494705889454, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -791,22 +824,53 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
-      propertyPath: isInTestingMode
-      value: 1
+      propertyPath: onSoundEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 552350672}
+    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: onSoundEffect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InvokeSoundEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: onSoundEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: onSoundEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: soundEffectRaw.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b0faa9e6eaa0a944ab8ffecc2d7d3e28, type: 3}
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: startingNodeName
-      value: 8G
+      value: 8B
       objectReference: {fileID: 0}
-    - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
-      propertyPath: connectID
+      propertyPath: soundEffectRaw.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 37f9f76b999a69d4387c88b4f692c8d1, type: 3}
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: soundEffectRaw.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d3f29547fab66b743bbfb86f498fa39a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &552350672 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+    type: 2}
+  m_PrefabInternal: {fileID: 552350671}
+  m_Script: {fileID: 11500000, guid: f91d605deebeb3147bb49192fa5591b4, type: 3}
 --- !u!21 &583217364
 Material:
   serializedVersion: 6
@@ -1105,7 +1169,7 @@ MonoBehaviour:
   bleedOn: 1
   crtMode: 0
   crtLinesMode: 0
-  screenLinesNum: 317
+  screenLinesNum: 0
   bleedAmount: 0
   bleedDebugOn: 0
   bleedCurveY:
@@ -1276,7 +1340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 726.99994, y: 87}
+  m_AnchoredPosition: {x: 726.99963, y: 87}
   m_SizeDelta: {x: -1580, y: -288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1037358699
@@ -2027,7 +2091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 2e3346e5021a64ae8aed8ce3f3ccdec0, type: 3}
   speakingClips: []
-  speakingClipVolume: 1
+  speakingClipVolume: 0.16
 --- !u!1 &1566020867
 GameObject:
   m_ObjectHideFlags: 0

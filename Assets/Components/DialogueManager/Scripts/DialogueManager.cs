@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Silk;
+using UnityEngine.Events;
 public class DialogueManager : MonoBehaviour {
     public string connectID;
 	//need to decouple this
@@ -14,6 +15,8 @@ public class DialogueManager : MonoBehaviour {
     public event NodeCleanup nodeCleanup;
     public event NodeStartSequence newNodeStart;
 	public event OnTagComplete tagComplete;
+
+	public UnityEvent onSoundEffect;
 
     public string startingNodeName;
     public bool isInTestingMode = false;
@@ -145,12 +148,19 @@ public class DialogueManager : MonoBehaviour {
         StartCoroutine(WaitAndGetNextStory(nextStory, time));
         
     }
-
+    public void WaitForNextNode(string nextnode, float time) {
+        StartCoroutine(WaitAndGetNextNode(nextnode, time));
+    }
     IEnumerator WaitAndGetNextStory(string nextStoryName, float timeToWait) {
         yield return new WaitForSeconds(timeToWait);
         GetNextStory(nextStoryName);
         //bit ugly but whatever\\
         terminal.ChangeState(new IdleState());
+    }
+    IEnumerator WaitAndGetNextNode(string nextNodeName, float timeToWait) {
+        yield return new WaitForSeconds(timeToWait);
+        FindNextNodeByName(nextNodeName);
+
     }
 
 	public void GetNextStory(string nextStoryName){
@@ -329,9 +339,20 @@ public class DialogueManager : MonoBehaviour {
 							//}
 							Debug.Log (tag.TagName);
                             if (tag.TagName == "wait") {
+                                //StartCoroutine(WaitForConnect(tag));
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
+                            if(tag.TagName == "nodewait") {
+                                TextPrinter.onPrintComplete += tag.TagExecute;
+                            }
+                            else if(tag.TagName == "sfx") {
+                                //tag.TagExecute();
+                                //Debug.Log("hey hi");
+                                //StartCoroutine(WaitForConnect(tag));
+                                tag.TagExecute();
+                            }
                             else {
+                                //StartCoroutine(WaitForConnect(tag));
                                 tag.TagExecute();
                             }
 						}
@@ -349,6 +370,16 @@ public class DialogueManager : MonoBehaviour {
     /*public bool IEnumerator WaitForTagComplete() {
         yield return new WaitUntil(MoveToNextTag() == true)
     }*/
+
+    IEnumerator WaitForConnect(SilkTagBase tag) {
+        while(true) {
+            if(terminal.GetState() == new ConnectState()) {
+                Debug.Log(terminal.GetState());
+                tag.TagExecute();
+                yield return null;
+            }
+        }
+    }
 	public bool MoveToNextTag(){
         //Debug.Log("sup?");
         return true;

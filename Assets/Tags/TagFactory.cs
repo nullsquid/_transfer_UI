@@ -36,6 +36,9 @@ namespace Silk{
             case "wait":
                 WaitTag newWaitTag = new WaitTag(tagName, args);
                 return newWaitTag;
+            case "nodewait":
+                NodeWait newNodeWaitTag = new NodeWait(tagName, args);
+                return newNodeWaitTag;
 			//case "state":
 			//	StateTag newState = new StateTag (tagName, args);
 			//	return newState;
