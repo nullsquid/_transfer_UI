@@ -1,6 +1,6 @@
 ﻿:: Start
 <<noprompt>>
-
+<<effect="SURGE">>
 [[What happened?|A surge, a blast, who knows what's going on.]]
 
 

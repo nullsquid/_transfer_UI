@@ -42,14 +42,14 @@ It means everything.  Who we are is who we are.
 
 :: Building a museum. 1
 <<speaker="G">>
-Building a musuem.
+Building a museum.
 
 [[<<wait="6">>|6G]]
 
 
 :: Building a museum.
 <<speaker="G">>
-Building a musuem.
+Building a museum.
 
 [[<<wait="6">>|6G]]
 
@@ -81,7 +81,7 @@ Let's get to work, then.
 
 :: Building a museum. 2
 <<speaker="G">>
-Building a musuem.
+Building a museum.
 
 [[<<wait="6">>|6G]]
 
@@ -229,7 +229,7 @@ A museum of course.
 <<speaker="G">>
 Building a musuem.
 
-[[6G]]
+[[6G|6G]]
 
 
 :: 6F
@@ -275,5 +275,3 @@ It means everything.  Who we are is who we are.
 :: MetaData
 <<connect="G">>
 <<level="7">>
-
-

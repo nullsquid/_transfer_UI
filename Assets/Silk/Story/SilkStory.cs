@@ -142,12 +142,12 @@ namespace Silk
             return story[nodeName].nodePassage;
         }
 
-        public string[] GetLinkText(string nodeName)
+        /*public string[] GetLinkText(string nodeName)
         {
             SilkNode curNode = story[nodeName];
-            string[] linkKeys = curNode.links.Keys.ToArray();
+            //string[] linkKeys = curNode.textLinks..ToArray();
             return linkKeys;
-        }
+        }*/
 
         public string GetNodeName(string nodeName)
         {

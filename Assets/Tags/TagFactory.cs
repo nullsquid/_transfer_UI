@@ -36,6 +36,9 @@ namespace Silk{
             case "wait":
                 WaitTag newWaitTag = new WaitTag(tagName, args);
                 return newWaitTag;
+            case "nodewait":
+                NodeWait newNodeWaitTag = new NodeWait(tagName, args);
+                return newNodeWaitTag;
 			//case "state":
 			//	StateTag newState = new StateTag (tagName, args);
 			//	return newState;
@@ -46,6 +49,9 @@ namespace Silk{
 			case "sfx":
 				SoundEffectTag newSFX = new SoundEffectTag (tagName, args);
 				return newSFX;
+			case "effect":
+				EffectTag newEffect = new EffectTag (tagName, args);
+				return newEffect;
 			case "audioclip":
 				AudioClipTag newAudioClip = new AudioClipTag (tagName, args);
 				return newAudioClip;
