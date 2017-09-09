@@ -17,7 +17,10 @@ public class EffectsManager : MonoBehaviour {
 	}
 	#endregion
 
+
 	public Camera mainCamera;
+
+
 	void Start(){
 		mainCamera = Camera.main;
 	}
@@ -27,13 +30,25 @@ public class EffectsManager : MonoBehaviour {
 		}
 	}
 	public void ShiftEffect(){
-		
-		mainCamera.GetComponent<postVHSPro> ().bleedAmount = 15f;
+		StartCoroutine (ShiftRoutine (15f, 2.0f));
+		//mainCamera.GetComponent<postVHSPro> ().bleedAmount = 15f;
 		//bleed = 15f;
 	}
 
-	IEnumerator ShiftRoutine(){
+	IEnumerator ShiftRoutine(float shiftValue, float shiftTime){
 		float bleed = mainCamera.GetComponent<postVHSPro> ().bleedAmount;
-		yield return null;
+		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / shiftTime) {
+			bleed = Mathf.Lerp (bleed, shiftValue, t);
+			mainCamera.GetComponent<postVHSPro> ().bleedAmount = bleed;
+			if (bleed >= 7.5f) {
+				bleed = 0f;
+			}
+			yield return null;
+		}
+		mainCamera.GetComponent<postVHSPro> ().bleedAmount = 0.0f;
+
+
+
+		//yield return null;
 	}
 }
