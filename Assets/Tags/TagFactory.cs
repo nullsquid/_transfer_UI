@@ -49,6 +49,9 @@ namespace Silk{
 			case "sfx":
 				SoundEffectTag newSFX = new SoundEffectTag (tagName, args);
 				return newSFX;
+			case "effect":
+				EffectTag newEffect = new EffectTag (tagName, args);
+				return newEffect;
 			case "audioclip":
 				AudioClipTag newAudioClip = new AudioClipTag (tagName, args);
 				return newAudioClip;

@@ -27,12 +27,14 @@ public class EffectsManager : MonoBehaviour {
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			//ShiftEffect ();
+			//SurgeEffect();
 		}
 	}
 	public void ShiftEffect(){
 		StartCoroutine (ShiftRoutine (15f, 2.0f));
-		//mainCamera.GetComponent<postVHSPro> ().bleedAmount = 15f;
-		//bleed = 15f;
+	}
+	public void SurgeEffect(){
+		StartCoroutine(SurgeRoutine (3.0f));
 	}
 
 	IEnumerator ShiftRoutine(float shiftValue, float shiftTime){
@@ -49,6 +51,13 @@ public class EffectsManager : MonoBehaviour {
 
 
 
-		//yield return null;
 	}
+
+	IEnumerator SurgeRoutine(float time){
+		mainCamera.GetComponent<CameraGlitch> ().enabled = true;
+		yield return new WaitForSeconds (time);
+		mainCamera.GetComponent<CameraGlitch> ().enabled = false;
+	}
+
+
 }
