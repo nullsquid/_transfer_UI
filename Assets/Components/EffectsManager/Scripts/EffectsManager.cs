@@ -4,10 +4,22 @@ using UnityEngine;
 using Transfer.Input;
 using UnityEngine.UI;
 public class EffectsManager : MonoBehaviour {
-	#region Singleton
-	public static EffectsManager instance;
 	public Font shiftFont;
 	public Font mainFont;
+	string shiftTextBase = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
+	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
+	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
+	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
+	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
+	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
+	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
+	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
+	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
+	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
+	                    
+	#region Singleton
+	public static EffectsManager instance;
+
 
 	void Awake() {
 
@@ -46,6 +58,7 @@ public class EffectsManager : MonoBehaviour {
 	}
 
 	IEnumerator ShiftRoutine(float shiftValue, float shiftTime){
+		mainText.text = shiftTextBase;
 		mainText.font = shiftFont;
 		float bleed = mainCamera.GetComponent<postVHSPro> ().bleedAmount;
 		terminal.GetComponentInChildren<MainInputController> ().CanRecordInput = false;

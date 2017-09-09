@@ -102,6 +102,16 @@ public class TextPrinter : MonoBehaviour {
 
 	public void InvokeShiftText(){
 		StartCoroutine(IterateThroughCharactersToPrint(shiftText,0.01f, 0f, 0f, false));
+		//StartCoroutine(IterateThroughShiftCharacters());
+	}
+
+	public IEnumerator IterateThroughShiftCharacters(){
+		string mt = EffectsManager.instance.mainText.text;
+		for (int i = 0; i < mt.Length; i++) {
+			string newShiftText = EffectsManager.instance.mainText.text.Replace (EffectsManager.instance.mainText.text [i], shiftText [i]);
+			EffectsManager.instance.mainText.text = newShiftText;
+			yield return new WaitForSeconds (0.01f);
+		}
 	}
 
     public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause, bool callback) {
