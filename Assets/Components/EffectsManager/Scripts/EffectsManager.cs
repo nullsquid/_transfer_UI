@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Transfer.Input;
+using UnityEngine.UI;
 public class EffectsManager : MonoBehaviour {
 	#region Singleton
 	public static EffectsManager instance;
+	public Font shiftFont;
+	public Font mainFont;
+
 	void Awake() {
 
 		if (instance == null) {
@@ -17,7 +21,7 @@ public class EffectsManager : MonoBehaviour {
 	}
 	#endregion
 
-
+	public Text mainText;
 	public Camera mainCamera;
 	public Terminal terminal;
 	public TextPrinter printer;
@@ -35,13 +39,14 @@ public class EffectsManager : MonoBehaviour {
 		}
 	}
 	public void ShiftEffect(){
-		StartCoroutine (ShiftRoutine (15f, 2.0f));
+		StartCoroutine (ShiftRoutine (15f, 6.0f));
 	}
 	public void SurgeEffect(){
 		StartCoroutine(SurgeRoutine (5.0f));
 	}
 
 	IEnumerator ShiftRoutine(float shiftValue, float shiftTime){
+		mainText.font = shiftFont;
 		float bleed = mainCamera.GetComponent<postVHSPro> ().bleedAmount;
 		terminal.GetComponentInChildren<MainInputController> ().CanRecordInput = false;
 		terminal.ChangeState (new ConnectState ());
@@ -54,6 +59,7 @@ public class EffectsManager : MonoBehaviour {
 			}
 			yield return null;
 		}
+		mainText.font = mainFont;
 		mainCamera.GetComponent<postVHSPro> ().bleedAmount = 0.0f;
 		terminal.ChangeState (new IdleState ());
 		terminal.GetComponentInChildren<MainInputController> ().CanRecordInput = true;
@@ -63,6 +69,7 @@ public class EffectsManager : MonoBehaviour {
 	}
 
 	IEnumerator SurgeRoutine(float time){
+		
 		terminal.ChangeState (new ConnectState ());
 		mainCamera.GetComponent<CameraGlitch> ().enabled = true;
 		printer.InvokeSurgeText ();
@@ -70,6 +77,7 @@ public class EffectsManager : MonoBehaviour {
 		yield return new WaitForSeconds (time);
 		terminal.GetComponentInChildren<MainInputController> ().CanRecordInput = true;
 		mainCamera.GetComponent<CameraGlitch> ().enabled = false;
+
 		terminal.ChangeState (new IdleState ());
 	}
 

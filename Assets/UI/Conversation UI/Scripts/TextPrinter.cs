@@ -30,17 +30,24 @@ public class TextPrinter : MonoBehaviour {
 					   "`ú88\a∞≠\u000f\u001d¯__Ò\u0014Q]È*≤≈\u0005»,\v*Ñ\" \a$‘SäˆëáClE>e*í—ËÜ¯˙O\bk:.ü\u000eàœ\u0018XH\u001egﬁ|ª\u0016‡\u007fµ“ªÕb1˝ï?ú¿\u0018Ìë\u000f<ÂQF+∆5\u001d\u0012kI4}:˘’fk/5A" +
 					   "¡®\aö(‹B≈Yé\u0017\u001e`\u001fØA^´·Õ:“M\u001e{YÆ†∏i‘íc;Ç0¿Ô∆ÍÛ8åsh∑vñâ≤HÌU[ ‡\u001f3Åœ∞´ø\u000et∞ﬁ\u0017&Ì§IMƒôÚŒ\u000600+íN-Û3Z‘Á\u00a0‹{≠\rãØ\u0002i˙Œèk®ﬁ_√e\"£Fûfr\u0014HŸ8\u0015“|Cñ÷\u0005‘\u001a\u0017/\u00141.\u0019AÀ\u0005A»\u001e¯‚≤5\vΩ\u0012Û√ö\u007fïπ#Å$Ä+ú≥\u0014cñ'‹’ø\u0017Id©{hfLàë\b'ß»Ωk÷¡+∑#—·ö≤u‘dˆOCo¡æ+∑é∆„Rø∑ö⁄?‹D°◊.≈∏\u001c\fÒÎ_≥\u001f±˜Ì˘/¬M\fx\u0013‚\u0014R_iKÅopß/\b˛È\a™˙zW‚}ÌáÔ≠JO$H≈\u0003Ñl\u0006";
 
-	public string shiftText = ">>\n" +
-						">>>\n" +
-						">>>>\n" +
-						">>>>>\n" +
-						">>>>>>\n" +
-						">>>>>>>\n" +
-						">>>>>>>>\n" +
-						">>>>>>>>>\n" +
-						">>>>>>>>>>\n" +
-						">>>>>>>>>>>\n" +
-						">>>>>>>>>>>>\n";
+	string shiftText = "ggcGagaTgAggAtgc\n" +
+						"aaaAAaaGAaatAgAtCt\n" +
+						"aaaa\n" +
+						"aagaaaaGAcTTGAaCCTGTGA\n" +
+						"aaaattaa\n" +
+						"aaaaggattaaaa\n" +
+						"atagggtactacaaaccaaaga\n" +
+						"aaaaaatatccaaaaa\n" +
+						"aaaaaggggaattactaaaaaaaa\n" +
+						"aaaaaatttagaccaaaaaa\n" +
+						"AaaaaGTCTactgcgtcgAggcta" +
+						"cggatC" +
+						"catcatcat" +
+						"gaccthaAa" +
+						"GAGAAAAGAGagagggcgggtttgg" +
+						"ccgcggagagcgagctgcggatcaga" +
+						"gcat" +
+						"cat";
 
     public string helpMenu;
 

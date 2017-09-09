@@ -649,7 +649,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec222fc96dce0a049b97af3ff17fb6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shiftFont: {fileID: 12800000, guid: bb5e3d583a7f047a3bef9f24e8fa3e18, type: 3}
+  mainFont: {fileID: 12800000, guid: e1a9b881d2f336d48ac65ad360717c87, type: 3}
+  mainText: {fileID: 1756034862}
   mainCamera: {fileID: 0}
+  terminal: {fileID: 0}
+  printer: {fileID: 0}
 --- !u!1 &297057285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,7 +2360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20, y: 0}
+  m_AnchoredPosition: {x: 20, y: 0.000030517578}
   m_SizeDelta: {x: -40, y: 0}
   m_Pivot: {x: -0.000000017654735, y: 1.0000002}
 --- !u!114 &1756034862
