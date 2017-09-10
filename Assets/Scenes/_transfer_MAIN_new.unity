@@ -854,7 +854,7 @@ Prefab:
     - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: soundEffectRaw.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4244494705889454, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -916,7 +916,7 @@ Prefab:
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: startingNodeName
-      value: 8E
+      value: 9I
       objectReference: {fileID: 0}
     - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
@@ -927,17 +927,27 @@ Prefab:
         type: 2}
       propertyPath: soundEffectRaw.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: d3f29547fab66b743bbfb86f498fa39a, type: 3}
+      objectReference: {fileID: 8300000, guid: fb1108fef805eb94c86cf510fb06c682, type: 3}
     - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: volume
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: isInTestingMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: soundEffectRaw.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3133bc04d12ef1340b9ae79049de7dcf, type: 3}
+    - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
+        type: 2}
+      propertyPath: soundEffectRaw.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: d3f29547fab66b743bbfb86f498fa39a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
   m_IsPrefabParent: 0
@@ -1495,7 +1505,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2115034133}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999998
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

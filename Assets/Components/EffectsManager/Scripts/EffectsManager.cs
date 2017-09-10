@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EffectsManager : MonoBehaviour {
 	public Font shiftFont;
 	public Font mainFont;
+    DialogueAudioHandler audioHandler;
 	string shiftTextBase = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
 	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
 	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
@@ -43,6 +44,7 @@ public class EffectsManager : MonoBehaviour {
 		mainCamera = Camera.main;
 		terminal = GameObject.FindObjectOfType<Terminal> ();
 		printer = GameObject.FindObjectOfType<TextPrinter> ();
+        audioHandler = GameObject.FindObjectOfType<DialogueAudioHandler>();
 	}
 
 	void Update(){
@@ -64,6 +66,7 @@ public class EffectsManager : MonoBehaviour {
 		terminal.GetComponentInChildren<MainInputController> ().CanRecordInput = false;
 		terminal.ChangeState (new ConnectState ());
 		printer.InvokeShiftText ();
+        audioHandler.InvokeSoundEffect("GLITCH_2");
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / shiftTime) {
 			bleed = Mathf.Lerp (bleed, shiftValue, t);
 			mainCamera.GetComponent<postVHSPro> ().bleedAmount = bleed;
@@ -84,6 +87,7 @@ public class EffectsManager : MonoBehaviour {
 	IEnumerator SurgeRoutine(float time){
 		
 		terminal.ChangeState (new ConnectState ());
+        audioHandler.InvokeSoundEffect("GLITCH_1");
 		mainCamera.GetComponent<CameraGlitch> ().enabled = true;
 		printer.InvokeSurgeText ();
 		terminal.GetComponentInChildren<MainInputController> ().CanRecordInput = false;
