@@ -119,33 +119,41 @@ namespace Silk {
             //TODO Make this its own method
             foreach (KeyValuePair<string, SilkStory> story in mother.MotherStory) {
                 foreach (KeyValuePair<string, SilkNode> node in story.Value.Story) {
+                    SilkNode cachedNode = node.Value;
+                    foreach (TextLink link in node.Value.textLinks) {
+                        string cachedLinkName = link.LinkedNodeName;
 
-                    foreach (KeyValuePair<string, string> link in node.Value.links) {
 						//somewhere in here, fix linkname parsing to allow for structure that's like [[hello|hello]]
-                        StringBuilder linkNameBuilder = new StringBuilder();
+                        StringBuilder linkNameBuilder = new StringBuilder(cachedLinkName);
                         string linkName;
-                        linkNameBuilder.Append(link.Value);
+                        //it's right here
                         linkName = linkNameBuilder.ToString().TrimStart().TrimEnd();
+                        //Debug.Log(linkName);
+                        //After here, BLOOP doesn't show up
+
                         foreach (KeyValuePair<string, SilkNode> linkedNode in story.Value.Story) {
+                            SilkNode cachedLinkedNode = linkedNode.Value;
                             string nodeName = "";
                             StringBuilder nodeNameBuilder = new StringBuilder();
+                            //Debug.Log(linkName);
                             for (int a = 0; a < filenames.Count; a++) {
-								
                                 if (linkedNode.Value.nodeName.Contains(filenames[a] + "_")) {
 
                                     nodeNameBuilder.Append(linkedNode.Value.nodeName.Remove(0, filenames[a].Length + 1));
                                     nodeName = nodeNameBuilder.ToString().TrimEnd();
 
                                 }
-
                             }
+							if (linkName.ToString () == nodeName) {
+                                //Debug.Log("BOOP! " + link.LinkText);
+                                string strippedLink = "";
+                                if (link.LinkText.Contains(link.LinkedNodeName)) {
+                                    strippedLink = link.LinkText.Replace("|" + link.LinkedNodeName, string.Empty);
+                                }
+								SilkLink newSilkLink = new SilkLink (cachedNode, cachedLinkedNode, strippedLink);
+								node.Value.silkLinks.Add (newSilkLink);
 
-                            if (linkName.ToString() == nodeName) {
-
-                                SilkLink newSilkLink = new SilkLink(node.Value, linkedNode.Value, link.Key);
-                                node.Value.silkLinks.Add(newSilkLink);
-								//Debug.Log("SilkLink " + newSilkLink.LinkText + " " + newSilkLink.LinkedNode.nodeName);
-                            }
+							}
 
                         }
 
@@ -160,10 +168,7 @@ namespace Silk {
         private void Start() {
             InitializeSilk();
             GameObject.FindObjectOfType<DialogueManager>().InitializationCallback();
-            //LogNodeQueue();
-            //LogNodeQueue();
 
-			//LogNodePrompt();
             
         }
 
@@ -332,17 +337,43 @@ namespace Silk {
             }
 
 
-			foreach (KeyValuePair<string, string> entry in ReturnLinks(tweeNodesToInterpret[c])) {
-				if (tweeNodesToInterpret[c].Contains("[[" + entry.Key) || tweeNodesToInterpret[c].Contains("[[" + entry.Value)) {
-					promptContainer.Replace ("[[" + entry.Key, String.Empty);
+			foreach (TextLink entry in ReturnLinks(tweeNodesToInterpret[c])) {
+                //Debug.Log(entry.LinkText);
+				if (tweeNodesToInterpret[c].Contains("[[" + entry.LinkText) || tweeNodesToInterpret[c].Contains("[[" + entry.LinkedNodeName)) {
+                    //Debug.Log("PEWPEW " + entry.LinkText);
+                    string strippedLink = "";
+                    if (entry.LinkedNodeName != null) {
+                        strippedLink = entry.LinkText.Replace("|" + entry.LinkedNodeName, "");
+                        //strippedLink.Append(entry.LinkText.Replace(entry.LinkedNodeName, String.Empty));
+                        //Debug.Log(strippedLink);
+                    }
+
+                    promptContainer.Replace ("[[" + strippedLink, "");
 					//////////////////////////////////////////////////////////////
 					//this is to catch instances where the syntax [[link]] is used
 					//in order to remove the trailing "]]"
 					//////////////////////////////////////////////////////////////
-					if (entry.Key == entry.Value) {
+					if (entry.LinkText == entry.LinkedNodeName) {
 						promptContainer.Replace ("]]", String.Empty);
 					}
-					promptContainer.Replace(entry.Value + "]]", String.Empty);
+					promptContainer.Replace(entry.LinkedNodeName + "]]", String.Empty);
+				}
+				else {
+					for(int l = 0; l < promptContainer.Length; l++) {
+						if(promptContainer[l] == '[' && promptContainer[l + 1] == '[') {
+							string taggedLink = "";
+							for(int t = l; t < promptContainer.Length; t++) {
+								if(promptContainer[t] == ']' && promptContainer[t + 1] == ']') {
+									taggedLink += "]]";
+									break;
+								}
+								else {
+									taggedLink += promptContainer[t];
+								}
+							}
+							promptContainer = promptContainer.Remove(l, taggedLink.Length);
+						}
+					}
 				}
 			}
 			promptContainer.Replace (System.Environment.NewLine, String.Empty);
@@ -394,7 +425,7 @@ namespace Silk {
             //TODO Add the correct amount of links to the list
             //add link names
             //Debug.Log(ReturnLinks(newTweeData).Count);
-            newNode.links = ReturnLinks(newTweeData);
+            newNode.textLinks = ReturnLinks(newTweeData);
 
             newSilkStory.AddToStory(newNode.nodeName, newNode);
         }
@@ -581,26 +612,60 @@ namespace Silk {
         //TODO clean this code up and remove unused variables
         //TODO replace all of the inputToExtractLinksFrom variables with inputCopy
         //TODO remove the link substring from inputCopy once it's been added to the list
-        Dictionary<string, string> ReturnLinks(string inputToExtractLinksFrom) {
+        List<TextLink> ReturnLinks(string inputToExtractLinksFrom) {
             
             StringBuilder inputCopy = new StringBuilder();
             inputCopy.Append(inputToExtractLinksFrom);
             List<SilkLink> newSilkLinks = new List<SilkLink>();
-            Dictionary<string, string> newLinks = new Dictionary<string, string>();
+            List<TextLink> newLinks = new List<TextLink>();
             for (int i = 0; i < inputCopy.Length; i++) {
                 if (inputCopy[i] == '[' && inputCopy[i + 1] == '[') {
 
-                    string newLink = "";
+                    TextLink newLink = new TextLink();
                     //I might want to reevaluate how I deal with link text that is repeated.
                     //for now this should work
                     for (int j = i + 2; j < inputCopy.Length; j++) {
                         //make sure that it breaks if there is no |
                         if (inputCopy[j] == '|') {
                             string newLinkValue = "";
+							//in ReturnLinks once newLink is got
+							if (newLink.LinkText.Contains("<<")) {
+
+								string rawTag = "";
+								for (int l = 0; l < newLink.LinkText.Length; l++) {
+									if (newLink.LinkText[l] == '<' && newLink.LinkText[l + 1] == '<') {
+
+										for (int t = l; t < newLink.LinkText.Length; t++) {
+											if (newLink.LinkText[t] == '>' && newLink.LinkText[t + 1] == '>') {
+
+												rawTag += ">>";
+
+												newLink.LinkText = newLink.LinkText.Replace(rawTag, ParseRawTag(rawTag, tagFactory).Value);
+
+												//Debug.LogWarning(newLink);
+												//inputCopy.Remove(t, rawTag.Length);
+
+												break;
+											}
+											else {
+												rawTag += newLink.LinkText[t];
+
+											}
+										}
+									}
+								}
+							}
                             for (int k = j + 1; k < inputCopy.Length; k++) {
                                 if (inputCopy[k] == ']' && inputCopy[k + 1] == ']') {
+                                    //Debug.Log(">> " + newLink);
+                                    //Debug.Log("!!!!!!!! " + newLink.LinkText);
+                                    if (newLink.LinkText.Contains(newLink.LinkedNodeName)) {
+                                        //Debug.Log("HIIIIIIIIIIIIIIII");
+                                        newLink.LinkText = newLink.LinkText.Replace(newLink.LinkedNodeName, string.Empty);
+                                    }
+                                    //Debug.Log("HIIIIIIIIIIIIIIII");
 
-                                    newLinks.Add(newLink, newLinkValue);
+                                    newLinks.Add(newLink);
                                     if (newLinkValue.Length > 0) {
                                         inputCopy.Replace(newLinkValue, "");
                                     }
@@ -610,12 +675,15 @@ namespace Silk {
                                     break;
                                 }
                                 else {
-                                    newLinkValue += inputCopy[k];
+                                    newLink.LinkedNodeName += inputCopy[k];
                                     if (inputCopy[j] == ']' && inputCopy[j + 1] == ']') {
+                                        if (newLink.LinkText.Contains(newLink.LinkedNodeName)) {
+                                            //newLink.LinkText = newLink.LinkText.Replace(newLink.LinkedNodeName, string.Empty);
+                                        }
                                         //TODO test if this works
-                                        inputCopy.Replace(newLink, "");
-										//newLink.Replace(
-                                        newLinks.Add(newLink, newLink);
+                                        //inputCopy.Replace(newLink, "");
+                                        //newLink.Replace(
+                                        newLinks.Add(newLink);
                                         break;
                                     }
                                 }
@@ -623,12 +691,12 @@ namespace Silk {
                         }
                         if (inputCopy[j] == ']' && inputCopy[j + 1] == ']') {
                             //newLinks.Add(newLink, newLink);
-                            inputCopy.Replace(newLink, "");
+                            //inputCopy.Replace(newLink, "");
                             //break;
                             //Debug.Log("NEW LINK IS " + newLink);
-                            if (!newLink.Contains("|")) {
-
-                                newLinks.Add(newLink, newLink);
+                            if (!newLink.LinkText.Contains("|")) {
+                                
+                                newLinks.Add(newLink);
                                 break;
                             }
                             break;
@@ -637,7 +705,7 @@ namespace Silk {
 
                         else {
 							//TODO add code to replace tags in linktext here probably
-                            newLink += inputCopy[j];
+                            newLink.LinkText += inputCopy[j];
 
 
                         }
@@ -648,7 +716,7 @@ namespace Silk {
 
             //Debug.Log(newLinks.ContainsValue("2"));
             int linkNum = 0;
-            foreach (KeyValuePair<string, string> link in newLinks) {
+            foreach (TextLink link in newLinks) {
                 linkNum++;
             }
             //Debug.Log(linkNum + " is the number of links");

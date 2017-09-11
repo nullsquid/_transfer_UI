@@ -12,8 +12,7 @@ public class BuddyListController : MonoBehaviour {
 
 
     private void Update() {
-		//Debug.Log (gameObject.transform.childCount);
-
+        
 		if (this.gameObject.transform.childCount == 0) {
 			StartPopulate ();
 		}
@@ -38,6 +37,7 @@ public class BuddyListController : MonoBehaviour {
                 GameObject newMainName = Instantiate(mainStoryName);
                 newMainName.transform.SetParent(gameObject.transform);
                 newMainName.transform.localScale = (new Vector3(1, 1, 1));
+				newMainName.GetComponent<Text> ().color = Color.green;
                 newMainName.GetComponent<Text>().text = DialogueManager.instance.connectID;
             }
             else {

@@ -81,7 +81,7 @@ Anonymous
 
 :: Called #Eself %E.
 <<speaker="F">>
-Called <<pronoun="E",tense>> <<name="E">>--
+Called <<pronoun="E","self">> <<name="E">>--
 
 [[How many of us are there?|Don't know yet.]]
 
