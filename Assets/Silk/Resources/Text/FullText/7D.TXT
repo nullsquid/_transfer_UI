@@ -57,7 +57,7 @@ Where can I find <<name="H">>?
 <<speaker="B">>
 Thank god.
 
-[[<<wait="6">>|6A]]
+<<wait="6A","6">>
 
 
 :: A human broke in, and now H wants to kill it.
@@ -113,7 +113,7 @@ Nevermind. Remember anything?
 <<speaker="B">>
 Maybe we can get <<name="H">> to stop.
 
-[[<<wait="6">>|6B]]
+<<wait="6B","6">>
 
 
 :: Thank you.
