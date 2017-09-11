@@ -916,7 +916,7 @@ Prefab:
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: startingNodeName
-      value: 9I
+      value: 7B
       objectReference: {fileID: 0}
     - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   bleedOn: 1
   crtMode: 0
   crtLinesMode: 0
-  screenLinesNum: 343
+  screenLinesNum: 317
   bleedAmount: 0
   bleedDebugOn: 0
   bleedCurveY:
@@ -1343,9 +1343,9 @@ MonoBehaviour:
   lineNoiseSpeed: 4.2
   scanLinesOn: 0
   scanLineWidth: 6
-  linesFloatOn: 0
-  linesFloatSpeed: -2.51
-  stretchOn: 1
+  linesFloatOn: 1
+  linesFloatSpeed: -3
+  stretchOn: 0
   twitchHOn: 0
   twitchHFreq: 5
   twitchVOn: 0
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   jitterHOn: 1
   jitterHAmount: 0.5
   jitterVOn: 1
-  jitterVAmount: 1
+  jitterVAmount: 9
   jitterVSpeed: 1
   signalTweakOn: 1
   signalAdjustY: -0.04
@@ -1426,7 +1426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 726.99976, y: 87}
+  m_AnchoredPosition: {x: 726.9997, y: 87}
   m_SizeDelta: {x: -1580, y: -288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1037358699
@@ -2544,7 +2544,7 @@ Material:
   m_Name: Hidden/postVHSPro_First
   m_Shader: {fileID: 4800000, guid: e5b137a48bf2c4c668927fd89b6ccbcd, type: 3}
   m_ShaderKeywords: VHS_FISHEYE_ON VHS_JITTER_H_ON VHS_JITTER_V_ON VHS_LINENOISE_ON
-    VHS_STRETCH_ON VHS_YIQNOISE_ON
+    VHS_LINESFLOAT_ON VHS_YIQNOISE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
