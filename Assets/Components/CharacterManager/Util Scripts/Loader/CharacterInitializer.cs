@@ -133,12 +133,12 @@ namespace Transfer.System {
             testName = consonants[Random.Range(0, consonants.Count)] + vowels[Random.Range(0, vowels.Count)] + consonants[Random.Range(0, consonants.Count)] + consonants[Random.Range(0, consonants.Count)].ToUpper();
             if (names.Contains(testName)) {
                 Debug.LogError("retry");
-                GenerateName();
+                return GenerateName();
 
             }
             else if (blacklist.nameBlacklist.Contains(testName)) {
                 Debug.LogError("cannot contain " + testName);
-                GenerateName();
+                return GenerateName();
             }
             else {
                 newName = testName;

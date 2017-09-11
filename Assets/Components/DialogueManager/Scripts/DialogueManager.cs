@@ -339,7 +339,7 @@ public class DialogueManager : MonoBehaviour {
 							//}
 							Debug.Log (tag.TagName);
                             if (tag.TagName == "wait") {
-                                //StartCoroutine(WaitForConnect(tag));
+                                
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
                             if(tag.TagName == "nodewait") {
