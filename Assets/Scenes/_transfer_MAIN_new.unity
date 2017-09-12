@@ -2239,7 +2239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canRunCommands: 1
-  gameHasStarted: 1
+  gameHasStarted: 0
   buddyList: {fileID: 0}
   mainText: {fileID: 0}
   videoPannel: {fileID: 0}
