@@ -1,5 +1,6 @@
 ﻿:: Start
 <<noprompt>>
+<<sfx="GLITCH_1">>
 [[Is someone there?|Error]]
 
 :: Error
