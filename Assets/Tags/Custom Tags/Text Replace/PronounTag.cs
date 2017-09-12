@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Silk;
 using Transfer.System;
+using Transfer.Data;
 public class PronounTag : SilkTagBase {
 
     public PronounTag(string name, List<string> args){
@@ -11,6 +12,9 @@ public class PronounTag : SilkTagBase {
         type = TagType.INLINE;
         TagName = name;
         string _appendedWord;
+        if(args.Count == 2) {
+            Value = CharacterManager.instance.GetCharacterPronounByID(args[0], args[1]);
+        }
         if(args.Count == 3) {
             //mostly for dealing with edge cases
             switch (args[2]) {

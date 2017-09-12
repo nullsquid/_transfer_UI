@@ -33,25 +33,25 @@ Nonesense.  We've got our names, don't we?
 [[But that doesn't mean anything.|  It means everything.  Who we are is who we are.]]
 
 
-::   It means everything.  Who we are is who we are.
+:: It means everything.  Who we are is who we are.
 <<speaker="G">>
 It means everything.  Who we are is who we are.
 
-[[<<wait="6">>|6A]]
+<<wait="6A","12">>
 
 
 :: Building a museum. 1
 <<speaker="G">>
-Building a musuem.
+Building a museum.
 
-[[<<wait="6">>|6G]]
+<<wait="6G","6">>
 
 
 :: Building a museum.
 <<speaker="G">>
-Building a musuem.
+Building a museum.
 
-[[<<wait="6">>|6G]]
+<<wait="6G","6">>
 
 
 :: StoryTitle
@@ -62,14 +62,14 @@ Building a musuem.
 <<speaker="G">>
 Shush.
 
-[[<<wait="6">>|6F]]
+<<wait="6F","6">>
 
 
 :: A museum of course.
 <<speaker="G">>
 A museum of course.
 
-[[<<wait="6">>|6G]]
+<<wait="6G","6">>
 
 
 :: Let's get to work, then. 1
@@ -81,9 +81,9 @@ Let's get to work, then.
 
 :: Building a museum. 2
 <<speaker="G">>
-Building a musuem.
+Building a museum.
 
-[[<<wait="6">>|6G]]
+<<wait="6G","6">>
 
 
 :: Let's get to work, then.
@@ -130,11 +130,11 @@ Let's get to work, then.
 <<state="idle">>
 
 
-::   It means everything.  Who we are is who we are. 1
+:: It means everything.  Who we are is who we are. 1
 <<speaker="G">>
 It means everything.  Who we are is who we are.
 
-[[<<wait="6">>|6A]]
+<<wait="6A","6">>
 
 
 :: Very sentimental. 1
@@ -148,7 +148,7 @@ Very sentimental.  That's exactly what I've been thinking.  We need to build a m
 <<speaker="G">>
 A museum of course.
 
-[[<<wait="6">>|6G]]
+<<wait="6G","6">>
 
 
 :: Nonesense.  We've got our names, don't we? 1
@@ -171,11 +171,11 @@ Lovely.  I was thinking, you know what would be the best use for all these memor
 [[What?|A museum of course. 2]]
 
 
-::   It means everything.  Who we are is who we are. 2
+:: It means everything.  Who we are is who we are. 2
 <<speaker="G">>
 It means everything.  Who we are is who we are.
 
-[[<<wait="6">>|6A]]
+<<wait="6A","6">>
 
 
 :: 6G
@@ -208,7 +208,7 @@ Very sentimental.  That's exactly what I've been thinking.  We need to build a m
 <<speaker="G">>
 A museum of course.
 
-[[<<wait="6">>|6G]]
+<<wait="6G","6">>
 
 
 :: Nonesense.  We've got our names, don't we? 2
@@ -222,14 +222,14 @@ Nonesense.  We've got our names, don't we?
 <<speaker="G">>
 A museum of course.
 
-[[<<wait="6">>|6G]]
+<<wait="6G","6">>
 
 
 :: Building a museum. 3
 <<speaker="G">>
 Building a musuem.
 
-[[6G]]
+<<wait="6G","6">>
 
 
 :: 6F
@@ -259,11 +259,11 @@ Very sentimental.  That's exactly what I've been thinking.  We need to build a m
 [[That's not what I said.|6B]]
 
 
-::   It means everything.  Who we are is who we are. 3
+:: It means everything.  Who we are is who we are. 3
 <<speaker="G">>
 It means everything.  Who we are is who we are.
 
-[[<<wait="6">>|6A]]
+<<wait="6A","6">>
 
 
 :: 6A
@@ -275,5 +275,3 @@ It means everything.  Who we are is who we are.
 :: MetaData
 <<connect="G">>
 <<level="7">>
-
-

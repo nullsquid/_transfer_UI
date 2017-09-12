@@ -56,7 +56,7 @@ You'll be fine by yourself.
 <<speaker="H">>
 Grab it. Trap it. Kill it immediately. Whatever you need to do. Get rid of it.
 
-[[<<wait="6">>|6B]]
+<<wait="6B","9">>
 
 
 :: StoryAuthor
@@ -79,7 +79,7 @@ Anonymous
 <<speaker="H">>
 You'll figure it out. If I need you I'll let you know. Au revoir.
 
-[[<<wait="6">>|6B]]
+<<wait="6B","9">>
 
 
 :: MetaData

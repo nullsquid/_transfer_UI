@@ -41,7 +41,7 @@ Either a human or a virus.
 <<speaker="H">>
 Also designed by a human. Or a few.
 
-[[<<wait="6">>|7C]]
+<<wait="7C","6">>
 
 
 :: StoryAuthor
@@ -61,7 +61,7 @@ You must remember them.
 <<speaker="H">>
 Not entirely, if that's what's gotten in. But there weren't supposed to be any left.
 
-[[<<wait="6">>|7C]]
+<<wait="7C","6">>
 
 
 :: There weren't supposed to be any left

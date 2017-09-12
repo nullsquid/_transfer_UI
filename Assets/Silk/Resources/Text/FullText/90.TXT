@@ -173,7 +173,7 @@ The nine that are left.
 <<speaker="H">>
 The mainframe. The home we build for ourselves.
 
-[[<<wait="6">>|8C]]
+<<wait="8C","6">>
 
 
 :: MetaData

@@ -6,7 +6,9 @@ namespace Transfer.Data {
     public enum Case {
         subjective,
         objective,
-        possessive
+        possessive,
+        self,
+        contpossessive
 
     }
 
@@ -90,6 +92,10 @@ namespace Transfer.Data {
 
                         case Case.possessive:
                             return "his";
+                        case Case.self:
+                            return "himself";
+                        case Case.contpossessive:
+                            return "he's";
                     }
                 }
                 else if (characterDictionary[ID].Gender == Gender.Feminine) {
@@ -99,7 +105,11 @@ namespace Transfer.Data {
                         case Case.subjective:
                             return "she";
                         case Case.possessive:
-                            return "hers";
+                            return "her";
+                        case Case.self:
+                            return "herself";
+                        case Case.contpossessive:
+                            return "she's";
                     }
                 }
                 else if (characterDictionary[ID].Gender == Gender.Androgynous) {
@@ -110,6 +120,10 @@ namespace Transfer.Data {
                             return "they";
                         case Case.possessive:
                             return "their";
+                        case Case.self:
+                            return "themself";
+                        case Case.contpossessive:
+                            return "they've";
                     }
                 }
                 else if (characterDictionary[ID].Gender == Gender.Neutral) {
@@ -120,6 +134,10 @@ namespace Transfer.Data {
                             return "it";
                         case Case.possessive:
                             return "its";
+                        case Case.self:
+                            return "itself";
+                        case Case.contpossessive:
+                            return "it has";
                     }
                 }
                 else {

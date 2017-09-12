@@ -1,6 +1,7 @@
 ﻿:: Start
 <<speaker="D">>
 I didn't get very far, but there's a passage here.
+<<sfx="PRESENCE_1","50">>
 
 [[How big is this place?|I'm not sure yet.  Seems vast.  Do you want to stick together or split up?]]
 
@@ -8,12 +9,6 @@ I didn't get very far, but there's a passage here.
 
 [[Where does it go?|Left.]]
 
-
-:: I'm not sure yet.  Seems vast.  Do you want to stick together or split up?
-<<speaker="D">>
-I'm not sure yet.  Seems vast.  Do you want to stick together or split up?
-
-[[Stick together|7D]]
 
 [[Split up|7E]]
 
@@ -81,8 +76,10 @@ Anonymous
 
 
 :: I don't hear anything.
+<<sfx="PRESENCE_2","100">>
 <<speaker="D">>
 I don't hear anything.
+
 
 [[No, something is there|7D]]
 
@@ -105,8 +102,7 @@ Of course it's right.
 :: Even a network has a control center.
 <<speaker="D">>
 Even a network has a control center.
-
-[[<<wait="6">>|7D]]
+<<wait="7D","6">>
 
 
 :: 7B
@@ -124,12 +120,9 @@ Even a network has a control center.
 :: And then we'll go from there.
 <<speaker="D">>
 And then we'll go from there.
-
-[[<<wait="6">>|7D]]
+<<wait="7D","6">>
 
 
 :: MetaData
 <<connect="D">>
 <<level="8">>
-
-

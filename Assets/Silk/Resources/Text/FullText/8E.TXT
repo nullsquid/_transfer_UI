@@ -1,6 +1,6 @@
 ﻿:: Start
 <<noprompt>>
-
+<<effect="SHIFT">>
 [[What happened?|Not sure.  Some kind of shift while everything realigns.]]
 
 

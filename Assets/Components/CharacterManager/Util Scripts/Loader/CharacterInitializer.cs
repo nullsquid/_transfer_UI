@@ -82,6 +82,8 @@ namespace Transfer.System {
 
 
         public void PopulateCharacterDatabase(bool useShortCharacters) {
+
+            CharacterDatabase.CharacterDictionary.Clear();
             AddCharacterIdentifiers();
             playerID = GeneratePlayerID(useShortCharacters);
             GeneratePlayerCharacter(playerID, GenerateName(), SetRandomCharacterGender());
@@ -114,6 +116,7 @@ namespace Transfer.System {
 
         ////////////////////////////////
 
+        
         string GenerateName() {
             blacklist = GameObject.FindObjectOfType<CharacterBlacklist>();
             for (int i = 0; i < nameBits.Length; i++) {
@@ -126,18 +129,19 @@ namespace Transfer.System {
             }
             
             string newName;
-            newName = consonants[Random.Range(0, consonants.Count)] + vowels[Random.Range(0, vowels.Count)] + consonants[Random.Range(0, consonants.Count)] + consonants[Random.Range(0, consonants.Count)].ToUpper();
-            if (names.Contains(newName)) {
+            string testName;
+            testName = consonants[Random.Range(0, consonants.Count)] + vowels[Random.Range(0, vowels.Count)] + consonants[Random.Range(0, consonants.Count)] + consonants[Random.Range(0, consonants.Count)].ToUpper();
+            if (names.Contains(testName)) {
                 Debug.LogError("retry");
-                GenerateName();
+                return GenerateName();
 
             }
-            else if (blacklist.nameBlacklist.Contains(newName)) {
-                Debug.LogError("cannot contain " + newName);
-                GenerateName();
+            else if (blacklist.nameBlacklist.Contains(testName)) {
+                Debug.LogError("cannot contain " + testName);
+                return GenerateName();
             }
             else {
-
+                newName = testName;
                 names.Add(newName);
                 return newName;
             }

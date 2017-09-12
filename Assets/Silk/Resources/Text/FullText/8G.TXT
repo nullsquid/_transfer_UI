@@ -42,7 +42,6 @@ First, W.
 
 [[Whither|Then E]]
 
-
 :: Then E
 <<speaker="A">>
 Then E.
@@ -96,7 +95,7 @@ Now I.
 
 [[I|And lastly, T]]
 
-[[Itieration|And lastly, T]]
+[[Iteration|And lastly, T]]
 
 
 :: And lastly, T
@@ -115,5 +114,3 @@ And lastly, T.
 :: MetaData
 <<connect="A">>
 <<level="8">>
-
-
