@@ -17,18 +17,15 @@ public class Terminal : MonoBehaviour {
         videoPannel = GameObject.Find("Video_Pannel");
         if (gameHasStarted == true) {
             this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
-            mainText.SetActive(false);
+            //mainText.SetActive(false);
             
-            buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
+            //buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
         }
         else {
             this.newTerminalStateMachine.ChangeTerminalState(new TitleState());
-            mainText.SetActive(true);
-            //buddyList.SetActive(false);
-            //videoPannel.SetActive(false);
-            //TurnOffEverythingONTitle();
+            //mainText.SetActive(true);
         }
-        videoPannel.SetActive(false);
+        //videoPannel.SetActive(false);
         //Debug.Log(GetState());
     }
 
@@ -36,33 +33,28 @@ public class Terminal : MonoBehaviour {
         this.newTerminalStateMachine.TerminalStateUpdate();
         Debug.Log(newTerminalStateMachine.CurState);
     }
-    IEnumerator TurnOffEverythingONTitle() {
-        yield return new WaitForEndOfFrame();
-        buddyList.SetActive(false);
-        videoPannel.SetActive(false);
-        mainText.SetActive(true);
-    }
+
     public void ChangeState(ITerminalState toState) {
         this.newTerminalStateMachine.ChangeTerminalState(toState);
 
 
             if (newTerminalStateMachine.CurState is IdleState) {
-                buddyList.SetActive(true);
-                videoPannel.SetActive(false);
+                //buddyList.SetActive(true);
+                //videoPannel.SetActive(false);
                 //buddyList.GetComponent<BuddyListController>().PopulateBuddyList();
-                buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
+                //buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
             }
             else {
 
-                buddyList.SetActive(false);
+                //buddyList.SetActive(false);
             }
             if (newTerminalStateMachine.CurState is ConnectState) {
-                mainText.SetActive(true);
+                //mainText.SetActive(true);
             }
 
 
             else {
-                mainText.SetActive(false);
+                //mainText.SetActive(false);
             }
             if (newTerminalStateMachine.CurState is VideoState) {
                 videoPannel.SetActive(true);

@@ -917,7 +917,7 @@ Prefab:
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: startingNodeName
-      value: 7L
+      value: 6M
       objectReference: {fileID: 0}
     - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
@@ -2227,6 +2227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canRunCommands: 1
+  gameHasStarted: 1
   buddyList: {fileID: 0}
   mainText: {fileID: 0}
   videoPannel: {fileID: 0}
