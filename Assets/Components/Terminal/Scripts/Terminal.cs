@@ -6,6 +6,7 @@ public class Terminal : MonoBehaviour {
 
 	TerminalStateMachine newTerminalStateMachine = new TerminalStateMachine();
     public bool canRunCommands = true;
+    public bool gameHasStarted = false;
     [HideInInspector]
 	public GameObject buddyList;
     public GameObject mainText;
@@ -14,7 +15,9 @@ public class Terminal : MonoBehaviour {
 		buddyList = GameObject.Find ("BuddyList");
         mainText = GameObject.Find("Text_Scroll");
         videoPannel = GameObject.Find("Video_Pannel");
-        this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
+        if (gameHasStarted == true) {
+            this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
+        }
         mainText.SetActive(false);
         videoPannel.SetActive(false);
         buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();

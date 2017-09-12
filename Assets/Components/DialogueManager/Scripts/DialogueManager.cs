@@ -339,7 +339,9 @@ public class DialogueManager : MonoBehaviour {
 							//}
 							Debug.Log (tag.TagName);
                             if (tag.TagName == "wait") {
-                                
+                                //I might want to make another list in the node
+                                //where i put tags that need to be executed on connect
+                                //and in connect state i run that
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
                             if(tag.TagName == "nodewait") {
