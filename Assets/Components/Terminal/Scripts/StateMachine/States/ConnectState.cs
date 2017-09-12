@@ -15,7 +15,12 @@ public class ConnectState : ITerminalState {
 
 	public void TerminalEnterState(){
 		foreach(SilkTagBase tag in DialogueManager.instance.CurNode.connectQueue){
-			tag.TagExecute ();
+            if (tag.TagName == "wait") {
+                TextPrinter.onPrintComplete += tag.TagExecute;
+            }
+            else {
+                tag.TagExecute();
+            }
 		}
         //terminal.canRunCommands = false;
         //GameObject.FindObjectOfType<Transfer.Input.MainInputController>().CanRecordInput = false;

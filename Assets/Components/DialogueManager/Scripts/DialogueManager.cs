@@ -222,7 +222,8 @@ public class DialogueManager : MonoBehaviour {
 							curNode.connectQueue.Add (tag);
 						} else if (tag.TagName == "wait") {
 							curNode.connectQueue.Add (tag);
-						}
+                            
+                        }
 						else {
 							tag.TagExecute ();
 						}
