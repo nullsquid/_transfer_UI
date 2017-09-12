@@ -17,41 +17,60 @@ public class Terminal : MonoBehaviour {
         videoPannel = GameObject.Find("Video_Pannel");
         if (gameHasStarted == true) {
             this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
+            mainText.SetActive(false);
+            
+            buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
         }
-        mainText.SetActive(false);
+        else {
+            this.newTerminalStateMachine.ChangeTerminalState(new TitleState());
+            mainText.SetActive(true);
+            //buddyList.SetActive(false);
+            //videoPannel.SetActive(false);
+            //TurnOffEverythingONTitle();
+        }
         videoPannel.SetActive(false);
-        buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
         //Debug.Log(GetState());
-	}
+    }
 
     private void Update() {
         this.newTerminalStateMachine.TerminalStateUpdate();
-
+        Debug.Log(newTerminalStateMachine.CurState);
     }
-
+    IEnumerator TurnOffEverythingONTitle() {
+        yield return new WaitForEndOfFrame();
+        buddyList.SetActive(false);
+        videoPannel.SetActive(false);
+        mainText.SetActive(true);
+    }
     public void ChangeState(ITerminalState toState) {
         this.newTerminalStateMachine.ChangeTerminalState(toState);
-		if (newTerminalStateMachine.CurState is IdleState) {
-			buddyList.SetActive (true);
-            videoPannel.SetActive(false);
-            //buddyList.GetComponent<BuddyListController>().PopulateBuddyList();
-            buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
-		} else {
-			
-			buddyList.SetActive (false);
-		}
-        if(newTerminalStateMachine.CurState is ConnectState) {
-            mainText.SetActive(true);
-        }
-        else {
-            mainText.SetActive(false);
-        }
-        if(newTerminalStateMachine.CurState is VideoState) {
-            videoPannel.SetActive(true);
-        }
-        else {
-            videoPannel.SetActive(false);
-        }
+
+
+            if (newTerminalStateMachine.CurState is IdleState) {
+                buddyList.SetActive(true);
+                videoPannel.SetActive(false);
+                //buddyList.GetComponent<BuddyListController>().PopulateBuddyList();
+                buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
+            }
+            else {
+
+                buddyList.SetActive(false);
+            }
+            if (newTerminalStateMachine.CurState is ConnectState) {
+                mainText.SetActive(true);
+            }
+
+
+            else {
+                mainText.SetActive(false);
+            }
+            if (newTerminalStateMachine.CurState is VideoState) {
+                videoPannel.SetActive(true);
+            }
+            else {
+                videoPannel.SetActive(false);
+            }
+        
 
     }
 
