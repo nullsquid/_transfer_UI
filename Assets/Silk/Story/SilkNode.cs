@@ -15,6 +15,7 @@ namespace Silk
         public string nodeSpeaker = null;
 
         public List<SilkTagBase> executionQueue = new List<SilkTagBase>();
+		public List<SilkTagBase> connectQueue = new List<SilkTagBase>();
         //public Dictionary<string, string> links = new Dictionary<string, string>();
         public List<TextLink> textLinks = new List<TextLink>();
         public Dictionary<string, string[]> tags = new Dictionary<string, string[]>();

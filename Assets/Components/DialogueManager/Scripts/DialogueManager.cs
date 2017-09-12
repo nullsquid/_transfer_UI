@@ -216,7 +216,14 @@ public class DialogueManager : MonoBehaviour {
                         //    TextPrinter.onPrintComplete += tag.TagExecute;
                         //}
                         //else {
-                        tag.TagExecute();
+						if (tag.TagName == "sfx") {
+							curNode.connectQueue.Add (tag);
+						} else if (tag.TagName=="error") {
+							curNode.connectQueue.Add (tag);
+						}
+						else {
+							tag.TagExecute ();
+						}
                         //}
 
                     }
@@ -344,7 +351,7 @@ public class DialogueManager : MonoBehaviour {
                                 //and in connect state i run that
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
-                            if(tag.TagName == "nodewait") {
+                            else if(tag.TagName == "nodewait") {
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
                             else if(tag.TagName == "sfx") {
@@ -352,6 +359,7 @@ public class DialogueManager : MonoBehaviour {
                                 //Debug.Log("hey hi");
                                 //StartCoroutine(WaitForConnect(tag));
                                 tag.TagExecute();
+								//curNode.connectQueue.Add(tag);
                             }
                             else {
                                 //StartCoroutine(WaitForConnect(tag));
