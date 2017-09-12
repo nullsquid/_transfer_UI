@@ -229,7 +229,7 @@ A museum of course.
 <<speaker="G">>
 Building a musuem.
 
-[[6G|6G]]
+<<wait="6G","6">>
 
 
 :: 6F

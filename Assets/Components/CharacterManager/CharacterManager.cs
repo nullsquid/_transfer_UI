@@ -58,7 +58,10 @@ namespace Transfer.System {
 				_case = Case.possessive;
 			} else if(tense == "self") {
                 _case = Case.self;
+            } else if (tense == "contpossessive") {
+                _case = Case.contpossessive;
             }
+
 
 			return CharacterDatabase.GetPronoun (id, _case);
 		}

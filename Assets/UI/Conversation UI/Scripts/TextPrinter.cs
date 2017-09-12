@@ -90,6 +90,9 @@ public class TextPrinter : MonoBehaviour {
 		StartCoroutine(IterateThroughCharactersToPrint(onNodeChange(), letterTime, softPauseTimeBase, hardPauseTimeBase, true));
 
 	}
+    public void InvokeErrorText(string errorMessage) {
+        StartCoroutine(IterateThroughCharactersToPrint(errorMessage, 0.01f, 0f, 0f, false));
+    }
 
     public void InvokeHelpMenu() {
         StartCoroutine(IterateThroughCharactersToPrint(helpMenu, letterTime, softPauseTimeBase, hardPauseTimeBase, false));

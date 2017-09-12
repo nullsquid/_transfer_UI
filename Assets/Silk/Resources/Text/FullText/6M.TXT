@@ -2,7 +2,7 @@
 <<speaker="0">>
 But then something changed.  I could feel--like eyes all around me.  I didn't know what it was.  But I wasn't the only one.  Lots of people had the same sensation.  Not like a big city.  Like when you're alone in the woods, and you know something is looking at you.
 
-[[<<wait="n">>|5N]]
+[[<<wait="5">>|5N]]
 
 
 :: 5N
@@ -22,5 +22,3 @@ But then something changed.  I could feel--like eyes all around me.  I didn't kn
 
 :: StoryAuthor
 Anonymous
-
-

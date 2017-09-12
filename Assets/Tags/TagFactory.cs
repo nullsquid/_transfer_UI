@@ -67,6 +67,9 @@ namespace Silk{
             case "action":
                 ActionTag newActionTag = new ActionTag(tagName, args);
                 return newActionTag;
+            case "error":
+                ErrorTag newErrorTag = new ErrorTag(tagName, args);
+                return newErrorTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

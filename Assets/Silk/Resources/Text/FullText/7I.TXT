@@ -18,9 +18,9 @@ Well, it's sealed off now.
 
 :: I don't know.  Animals, I suppose.  B was very careful that the animals be safe.  No matter what, protect them, she said.  I think in her head they were like Medusa.
 <<speaker="E">>
-I don't know.  Animals, I suppose.  <<name="B">> was very careful that the animals be safe.  No matter what, protect them, <<pronoun="B",tense>> said.  I think in <<pronoun="B",tense>> head they were like Medusa.
+I don't know.  Animals, I suppose.  <<name="B">> was very careful that the animals be safe.  No matter what, protect them, <<pronoun="B","subject">> said.  I think in <<pronoun="B","possess">> head they were like Medusa.
 
-[[That's considerate of <<pronoun="A",tense>>.|# always been compassionate.]]
+[[That's considerate of <<pronoun="A","object">>.|# always been compassionate.]]
 
 [[Even if...?|Yes, even then.  They'll be safe.  That was # compromise, with #self, after the vote was taken.]]
 
@@ -29,11 +29,11 @@ I don't know.  Animals, I suppose.  <<name="B">> was very careful that the anima
 
 :: Yes, even then.  They'll be safe.  That was # compromise, with #self, after the vote was taken.
 <<speaker="E">>
-Yes, even then.  They'll be safe.  That was <<pronoun="B",tense>> compromise, with <<pronoun="B",tense>>self, after the vote was taken.
+Yes, even then.  They'll be safe.  That was <<pronoun="B","possess">> compromise, with <<pronoun="B","object">>self, after the vote was taken.
 
 [[Let's go on.|6J]]
 
-[[What happened to <<pronoun="B",tense>>?|6J]]
+[[What happened to <<pronoun="B","object">>?|6J]]
 
 
 :: MetaData
@@ -58,11 +58,11 @@ There's nothing else on the other side.  It's all been wrecked.
 
 :: # always been compassionate.
 <<speaker="E">>
-<<pronoun="B",tense>> always been compassionate.
+<<pronoun="B","contpossessive">> always been compassionate.
 
 [[Let's go on.|6J]]
 
-[[Where is <<pronoun="B",tense>>?|6J]]
+[[Where is <<pronoun="B","subject">>?|6J]]
 
 
 :: StoryAuthor
@@ -82,5 +82,3 @@ You can try to get out, if you want.  After the tour.  But there isn't going to 
 <<unload>>
 <<nexttree="6J">>
 <<state="idle">>
-
-

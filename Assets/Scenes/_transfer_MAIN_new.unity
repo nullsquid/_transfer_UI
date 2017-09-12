@@ -671,6 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shiftFont: {fileID: 12800000, guid: bb5e3d583a7f047a3bef9f24e8fa3e18, type: 3}
   mainFont: {fileID: 12800000, guid: e1a9b881d2f336d48ac65ad360717c87, type: 3}
+  surgeTexture: {fileID: 2800000, guid: f5f4d55ffc2f86c4cbf6003b5fbe0b72, type: 3}
   mainText: {fileID: 1756034862}
   mainCamera: {fileID: 0}
   terminal: {fileID: 0}
@@ -916,7 +917,7 @@ Prefab:
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: startingNodeName
-      value: 7F
+      value: 7L
       objectReference: {fileID: 0}
     - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
@@ -1255,7 +1256,7 @@ MonoBehaviour:
   bleedOn: 1
   crtMode: 0
   crtLinesMode: 0
-  screenLinesNum: 317
+  screenLinesNum: 256
   bleedAmount: 0
   bleedDebugOn: 0
   bleedCurveY:
@@ -1426,7 +1427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 726.9997, y: 87}
+  m_AnchoredPosition: {x: 726.99976, y: 87}
   m_SizeDelta: {x: -1580, y: -288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1037358699
