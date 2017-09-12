@@ -218,7 +218,9 @@ public class DialogueManager : MonoBehaviour {
                         //else {
 						if (tag.TagName == "sfx") {
 							curNode.connectQueue.Add (tag);
-						} else if (tag.TagName=="error") {
+						} else if (tag.TagName == "error") {
+							curNode.connectQueue.Add (tag);
+						} else if (tag.TagName == "wait") {
 							curNode.connectQueue.Add (tag);
 						}
 						else {

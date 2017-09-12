@@ -61,7 +61,7 @@ public class ResponsePrinter : MonoBehaviour {
         //SilkNode node = Silky.Instance.mother.GetNodeByName("TRANSUBSTANCE", "Start");
 		SilkNode node = DialogueManager.instance.CurNode;
 		if (node != null) {
-			Debug.LogError (node);
+			//Debug.LogError (node);
 		} else {
 			Debug.LogError ("NO NODE FOUND");
 		}
