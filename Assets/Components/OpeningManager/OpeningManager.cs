@@ -18,7 +18,7 @@ public class OpeningManager : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 	}
 	string oneiText = ">>\n>>\n>>\nWELCOME TO ONEIRos";
-	string startText = ">>\n>>\n>>\nINPUT 'START' TO TRANSFER\n>>\n>>OR 'CONFIG' TO VIEW OPTIONS";
+	string startText = ">>\n>>\n>>\nINPUT 'START' TO TRANSFER\n>>\nOR 'CONFIG' TO VIEW OPTIONS";
 	void Start(){
 		//here, the terminal seems to be null
 		//terminal.canRunCommands = false;
@@ -55,8 +55,10 @@ public class OpeningManager : MonoBehaviour {
 	}
 
 	IEnumerator NormalOpeningRoutine(){
-		printer.typewriterText.text = "\nHELLO";
-		yield return null;	
+		printer.typewriterText.text = "";
+		printer.typewriterText.text += "\nHELLO";
+		yield return new WaitForSeconds(1.0f);
+		printer.typewriterText.text += "\nHOW ARE YOU??";
 	}
 
 	IEnumerator PrintOpeningCrawl(){
