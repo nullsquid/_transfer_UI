@@ -99,6 +99,11 @@ public class TextPrinter : MonoBehaviour {
 
     }
 
+	//I probably actually will want that callback flag to do something
+	public void InvokeOpeningPrint(string text){
+		StartCoroutine (IterateThroughCharactersToPrint (text, 0.01f, 0, 0, false));
+	}
+
 	public void InvokeSurgeText(){
 		StartCoroutine (IterateThroughCharactersToPrint(surgeText, 0.01f, 0f, 0f, false));
 	}

@@ -31,7 +31,7 @@ public class Terminal : MonoBehaviour {
 
     private void Update() {
         this.newTerminalStateMachine.TerminalStateUpdate();
-        Debug.Log(newTerminalStateMachine.CurState);
+        //Debug.Log(newTerminalStateMachine.CurState);
     }
 
     public void ChangeState(ITerminalState toState) {

@@ -6,6 +6,7 @@ using UnityEngine;
 public class TitleState : ITerminalState {
     Terminal terminal;
     MainInputHandler input;
+	bool openingStarted = false;
     public TitleState() {
         terminal = GameObject.FindObjectOfType<Terminal>();
         input = GameObject.FindObjectOfType<MainInputHandler>();
@@ -18,13 +19,12 @@ public class TitleState : ITerminalState {
     }
 
     public void TerminalExecuteState() {
-        //Debug.Log("hi??");
-        //probably won't want to do parsing here as i already wrote that code
 
-        Debug.Log(terminal.GetComponentInChildren<Transfer.Input.MainInputController>().ReturnText + "<<");
-        if (terminal.GetComponentInChildren<Transfer.Input.MainInputController>().ReturnText.TrimEnd() != null) {
+		if (terminal != null) {
             if (terminal.GetComponentInChildren<Transfer.Input.MainInputController>().ReturnText.TrimEnd() == "START") {
-                Debug.Log("yo?");
+				if (openingStarted == false) {
+					InvokeOpening ();
+				}
             }
         }
     }
@@ -32,6 +32,11 @@ public class TitleState : ITerminalState {
     public void TerminalExitState() {
         
     }
+
+	void InvokeOpening(){
+		OpeningManager.instance.TriggerOpening (DialogueManager.instance.CurStory.StoryName);
+		openingStarted = true;
+	}
 
     
 }
