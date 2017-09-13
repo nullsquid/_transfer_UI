@@ -143,8 +143,8 @@ public class MainInputHandler : MonoBehaviour {
     void HelpCommand(string[] _args) {
         HelpState helpState = null;
         if (_args.Length == 1) {
-            helpState = new HelpState(_args[0]);
-            helpState.TerminalEnterState();
+            //helpState = new HelpState(_args[0]);
+            terminal.ChangeState(new HelpState(_args[0]));
         }
         
         else if (_args.Length == 0) {

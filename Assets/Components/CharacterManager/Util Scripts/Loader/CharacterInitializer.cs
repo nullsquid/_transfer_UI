@@ -131,6 +131,9 @@ namespace Transfer.System {
             string newName;
             string testName;
             testName = consonants[Random.Range(0, consonants.Count)] + vowels[Random.Range(0, vowels.Count)] + consonants[Random.Range(0, consonants.Count)] + consonants[Random.Range(0, consonants.Count)].ToUpper();
+            if (names.Contains("MEMM")) {
+                Debug.Log("It's MEMM!");
+            }
             if (names.Contains(testName)) {
                 Debug.LogError("retry");
                 return GenerateName();
@@ -145,9 +148,7 @@ namespace Transfer.System {
                 names.Add(newName);
                 return newName;
             }
-            if (names.Contains("MEMM")) {
-                Debug.Log("It's MEMM!");
-            }
+            
             return null;
         }
 

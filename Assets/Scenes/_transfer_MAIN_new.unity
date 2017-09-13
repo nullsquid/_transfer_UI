@@ -202,7 +202,7 @@ Prefab:
     - target: {fileID: 224569072203989306, guid: f417d2764d41f1042aa1710ed2648389,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224569072203989306, guid: f417d2764d41f1042aa1710ed2648389,
         type: 2}
@@ -799,6 +799,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openings: []
+--- !u!1 &367567589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 367567590}
+  - component: {fileID: 367567592}
+  - component: {fileID: 367567591}
+  m_Layer: 2
+  m_Name: IdleText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &367567590
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 367567589}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061418328}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -463.99988, y: -172}
+  m_SizeDelta: {x: 843, y: 256}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &367567591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 367567589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e1a9b881d2f336d48ac65ad360717c87, type: 3}
+    m_FontSize: 45
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: ">>WELCOME TO \n>>ONEIRos v0.7.0\n>>\n>>INPUT 'HELP' FOR MORE \n>>OPTIONS"
+--- !u!222 &367567592
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 367567589}
 --- !u!1001 &449760957
 Prefab:
   m_ObjectHideFlags: 0
@@ -1436,7 +1510,7 @@ RectTransform:
   m_Children:
   - {fileID: 1043230017}
   m_Father: {fileID: 1061418328}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1679,6 +1753,7 @@ RectTransform:
   m_Children:
   - {fileID: 229426101}
   - {fileID: 1520803189}
+  - {fileID: 367567590}
   - {fileID: 1116037665}
   - {fileID: 861110633}
   - {fileID: 1975582202}
@@ -1820,7 +1895,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1061418328}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2009,7 +2084,7 @@ RectTransform:
   - {fileID: 1691429229}
   - {fileID: 1037358700}
   m_Father: {fileID: 1061418328}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.031273093, y: 0.19117095}
   m_AnchorMax: {x: 0.4843125, y: 1}
@@ -2221,7 +2296,7 @@ RectTransform:
   m_Children:
   - {fileID: 1094640698}
   m_Father: {fileID: 1061418328}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2244,6 +2319,8 @@ MonoBehaviour:
   buddyList: {fileID: 0}
   mainText: {fileID: 0}
   videoPannel: {fileID: 0}
+  idleText: {fileID: 0}
+  printer: {fileID: 0}
 --- !u!114 &1566020870
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -56,10 +56,29 @@ public class OpeningManager : MonoBehaviour {
 
 	IEnumerator NormalOpeningRoutine(){
 		printer.typewriterText.text = "";
-		printer.typewriterText.text += "\nHELLO";
+		printer.typewriterText.text += "\nNEURAL MASK ESTABLISHED";
 		yield return new WaitForSeconds(1.0f);
-		printer.typewriterText.text += "\nHOW ARE YOU??";
-	}
+		printer.typewriterText.text += "\nSEARCHING FOR OPTIMAL\nCONNECTION";
+        yield return new WaitForSeconds(.5f);
+        for (int i = 0; i < Random.Range(1, 5); i++) {
+            printer.typewriterText.text += "\n>>";
+            yield return new WaitForSeconds(.5f);
+        }
+        printer.typewriterText.text += "\nFOUND SUITABLE HOST";
+        yield return new WaitForSeconds(.1f);
+        printer.typewriterText.text += "\nCONNECTING";
+        for (int i = 0; i < Random.Range(1, 5); i++) {
+            printer.typewriterText.text += "\n>>";
+            yield return new WaitForSeconds(.5f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        printer.typewriterText.text = "";
+        yield return new WaitForSeconds(1.0f);
+        printer.typewriterText.text += "\nCONNECTION COMPLETE\n\nWELCOME\n";
+        yield return new WaitForSeconds(2.0f);
+        terminal.ChangeState(new IdleState());
+
+    }
 
 	IEnumerator PrintOpeningCrawl(){
 		yield return new WaitForSeconds (1.5f);

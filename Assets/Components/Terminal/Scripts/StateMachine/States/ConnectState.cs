@@ -15,8 +15,9 @@ public class ConnectState : ITerminalState {
 
 	public void TerminalEnterState(){
         terminal.buddyList.SetActive(false);
-        terminal.mainText.SetActive(true);
+        terminal.idleText.SetActive(false);
 
+        terminal.mainText.SetActive(true);
         foreach (SilkTagBase tag in DialogueManager.instance.CurNode.connectQueue){
             if (tag.TagName == "wait") {
                 TextPrinter.onPrintComplete += tag.TagExecute;

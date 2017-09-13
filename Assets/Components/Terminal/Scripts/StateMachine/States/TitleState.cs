@@ -16,6 +16,7 @@ public class TitleState : ITerminalState {
         terminal.buddyList.SetActive(false);
         terminal.videoPannel.SetActive(false);
         terminal.mainText.SetActive(true);
+        terminal.idleText.SetActive(false);
     }
 
     public void TerminalExecuteState() {

@@ -11,8 +11,13 @@ public class Terminal : MonoBehaviour {
 	public GameObject buddyList;
     public GameObject mainText;
     public GameObject videoPannel;
-	void Start(){
+    public GameObject idleText;
+
+    public TextPrinter printer;
+    void Start(){
+        printer = GameObject.FindObjectOfType<TextPrinter>();
 		buddyList = GameObject.Find ("BuddyList");
+        idleText = GameObject.Find("IdleText");
         mainText = GameObject.Find("Text_Scroll");
         videoPannel = GameObject.Find("Video_Pannel");
         if (gameHasStarted == true) {
@@ -58,6 +63,7 @@ public class Terminal : MonoBehaviour {
             }
             if (newTerminalStateMachine.CurState is VideoState) {
                 videoPannel.SetActive(true);
+            idleText.SetActive(false);
             }
             else {
                 videoPannel.SetActive(false);

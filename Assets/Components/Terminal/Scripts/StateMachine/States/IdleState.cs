@@ -18,6 +18,7 @@ public class IdleState : ITerminalState {
         terminal.canRunCommands = true;
         GameObject.FindObjectOfType<Transfer.Input.MainInputController>().CanRecordInput = true;
         terminal.buddyList.SetActive(true);
+        terminal.idleText.SetActive(true);
         terminal.mainText.SetActive(false);
         terminal.videoPannel.SetActive(false);
         terminal.buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
@@ -31,6 +32,7 @@ public class IdleState : ITerminalState {
 	}
 
 	public void TerminalExitState(){
+        terminal.idleText.SetActive(false);
         //ummmmmmm
 		//GameObject.FindObjectOfType<BuddyListController>().gameObject.SetActive(false);
 		//buddyList.SetActive(false);
