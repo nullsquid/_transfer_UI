@@ -21,7 +21,8 @@ public class HelpState : ITerminalState {
         terminal.printer.typewriterText.text = "";
         terminal.printer.helpMenu = "";
         if (helpArg == "") {
-            terminal.printer.helpMenu = "\nINPUT";
+            terminal.printer.helpMenu = "\n>>INPUT 'CONNECT' FOLLOWED BY USER ID OF RECIPIENT TO COMMUNICATE\n\n>>INPUT 'SLEEP' TO SUSPEND OPERATIONS" +
+                                        "\n\n>>INPUT 'MEMORY' TO VIEW .mem FILES";
             terminal.printer.InvokeHelpMenu();
         }
         else {

@@ -11,6 +11,9 @@ namespace Transfer.System {
         private List<string> characterIDs = new List<string>();
         private List<string> shortCharacterIDs = new List<string>();
 
+        private List<string> firstCharacterIDs = new List<string>();
+        private List<string> secondCharacterIDs = new List<string>();
+        private List<string> playedCharacterIDs = new List<string>();
         //name generation collections
         private string[] nameBits = { "A", "B", "C", "D", "E", "F",
             "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
@@ -37,17 +40,208 @@ namespace Transfer.System {
             shortCharacterIDs.Add("E");
             shortCharacterIDs.Add("I");
             shortCharacterIDs.Add("0");
+            /////
+            ///
+            //first half characters
+            /*
+            firstCharacterIDs.Add("A");
+            firstCharacterIDs.Add("E");
+            firstCharacterIDs.Add("I");
+            firstCharacterIDs.Add("0");
+            //second half characters
+            secondCharacterIDs.Add("B");
+            secondCharacterIDs.Add("C");
+            secondCharacterIDs.Add("D");
+            secondCharacterIDs.Add("F");
+            secondCharacterIDs.Add("G");
+            secondCharacterIDs.Add("H");
+            */
+            //try this?
+            /*
+            PlayerPrefs.SetString("A", "false");
+            PlayerPrefs.SetString("E", "false");
+            PlayerPrefs.SetString("I", "false");
+            PlayerPrefs.SetString("0", "false");
+            ///////
+            PlayerPrefs.SetString("B", "false");
+            PlayerPrefs.SetString("C", "false");
+            PlayerPrefs.SetString("D", "false");
+            PlayerPrefs.SetString("F", "false");
+            PlayerPrefs.SetString("G", "false");
+            PlayerPrefs.SetString("H", "false");
+            */
+
         }
 
         string GeneratePlayerID(bool useShortCharacters) {
+            
             if (useShortCharacters) {
 
                 playerID = shortCharacterIDs[Random.Range(0, shortCharacterIDs.Count)];
             }
-            else {
-                playerID = characterIDs[Random.Range(0, characterIDs.Count)];
+            
+            else{
+                if (PlayerPrefs.HasKey("AllBeginningsPlayed")){
+                    if (bool.Parse(PlayerPrefs.GetString("AllBeginningsPlayed")) == false) {
+                        if (PlayerPrefs.HasKey("A")) {
+                            if (bool.Parse(PlayerPrefs.GetString("A")) == false) {
+                                firstCharacterIDs.Add("A");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("A", "false");
+                            if (!firstCharacterIDs.Contains("A")) {
+                                firstCharacterIDs.Add("A");
+                            }
+                        }
+                        if (PlayerPrefs.HasKey("B")) {
+                            if (bool.Parse(PlayerPrefs.GetString("B")) == false) {
+                                secondCharacterIDs.Add("B");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("B", "false");
+                            if (!secondCharacterIDs.Contains("B")) {
+                                secondCharacterIDs.Add("B");
+                            }
+                        }
+                        if (PlayerPrefs.HasKey("C")){
+                            if (bool.Parse(PlayerPrefs.GetString("C")) == false) {
+                                secondCharacterIDs.Add("C");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("C", "false");
+                            if (!secondCharacterIDs.Contains("C")) {
+                                secondCharacterIDs.Add("C");
+                            }
+                        }
+                        if (PlayerPrefs.HasKey("D")) {
+                            if (bool.Parse(PlayerPrefs.GetString("D")) == false) {
+                                secondCharacterIDs.Add("D");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("D", "false");
+                            if (!secondCharacterIDs.Contains("D")) {
+                                secondCharacterIDs.Add("D");
+                            }
+
+                        }
+                        if (PlayerPrefs.HasKey("E")) {
+                            if (bool.Parse(PlayerPrefs.GetString("E")) == false) {
+                                firstCharacterIDs.Add("E");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("E", "false");
+                            if (!firstCharacterIDs.Contains("E")) {
+                                firstCharacterIDs.Add("E");
+                            }
+                        }
+                        if (PlayerPrefs.HasKey("F")) {
+                            if (bool.Parse(PlayerPrefs.GetString("F")) == false) {
+                                secondCharacterIDs.Add("F");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("F", "false");
+                            if (!secondCharacterIDs.Contains("F")) {
+                                secondCharacterIDs.Add("F");
+                            }
+                        }
+                        if (PlayerPrefs.HasKey("G")) {
+                            if (bool.Parse(PlayerPrefs.GetString("G")) == false) {
+                                secondCharacterIDs.Add("G");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("G", "false");
+                            if (!secondCharacterIDs.Contains("G")) {
+                                secondCharacterIDs.Add("G");
+                            }
+                        }
+                        if (PlayerPrefs.HasKey("H")) {
+                            if (bool.Parse(PlayerPrefs.GetString("H")) == false) {
+                                secondCharacterIDs.Add("H");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("H", "false");
+                            if (!secondCharacterIDs.Contains("H")) {
+                                secondCharacterIDs.Add("H");
+                            }
+                        }
+                        if (PlayerPrefs.HasKey("I")) {
+                            if (bool.Parse(PlayerPrefs.GetString("I")) == false) {
+                                firstCharacterIDs.Add("I");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("I", "false");
+                            if (!firstCharacterIDs.Contains("I")) {
+                                firstCharacterIDs.Add("I");
+                            }
+                        }
+                        if (PlayerPrefs.HasKey("0")) {
+                            if (bool.Parse(PlayerPrefs.GetString("0")) == false) {
+                                firstCharacterIDs.Add("0");
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("E", "false");
+                            if (!firstCharacterIDs.Contains("E")) {
+                                firstCharacterIDs.Add("E");
+                            }
+                        }
+                    }
+                    else {
+
+                    }
+
+                }
+                else{
+                    PlayerPrefs.SetString("AllBeginningsPlayed", "false");
+                }
             }
             return playerID;
+            /*else {
+                for (int p = 0; p < playedCharacterIDs.Count; p++) {
+
+                    if (p == 10) {
+                        PlayerPrefs.SetString("AllBeginningsPlayed", "true");
+                    }
+                    else {
+                        PlayerPrefs.SetString("AllBeginningsPlayed", "false");
+                    }
+
+                }
+                if (bool.Parse(PlayerPrefs.GetString("AllBeginningsPlayed")) == false) {
+                    if (PlayerPrefs.HasKey("FirstHalfComplete")) {
+                        if (bool.Parse(PlayerPrefs.GetString("FirstHalfComplete")) == true) {
+                            playerID = secondCharacterIDs[Random.Range(0, secondCharacterIDs.Count)];
+                            //secondCharacterIDs.Remove(playerID);
+
+                        }
+                        else {
+                            playerID = firstCharacterIDs[Random.Range(0, firstCharacterIDs.Count)];
+                            //firstCharacterIDs.Remove(playerID);
+                        }
+                    }
+                    else {
+                        PlayerPrefs.SetString("FirstHalfComplete", "false");
+                    }
+                    playedCharacterIDs.Add(playerID);
+                    //playerID = characterIDs[Random.Range(0, characterIDs.Count)];
+
+                    return playerID;
+                }
+                else {
+                    playerID = playedCharacterIDs[Random.Range(0, playedCharacterIDs.Count)];
+                    return playerID;
+                }
+            }*/
+
         }
         //make independent loops for both PC and NPC object lists
         //might not need to return anything?

@@ -20,14 +20,17 @@ public class OpeningManager : MonoBehaviour {
 	string oneiText = ">>\n>>\n>>\nWELCOME TO ONEIRos";
 	string startText = ">>\n>>\n>>\nINPUT 'START' TO TRANSFER\n>>\nOR 'CONFIG' TO VIEW OPTIONS";
 	void Start(){
-		//here, the terminal seems to be null
-		//terminal.canRunCommands = false;
 
 		terminal = GameObject.FindObjectOfType<Terminal> ();
 		printer = GameObject.FindObjectOfType<TextPrinter> ();
 		terminal.canRunCommands = false;
-		StartCoroutine (PrintOpeningCrawl ());
+        if (terminal.gameHasStarted == false) {
+            StartCoroutine(PrintOpeningCrawl());
+            
+        }
+
 	}
+
 	// Use this for initialization
 	public void TriggerOpening(string openingName){
 		//Debug.Log ("hey hi hey");
@@ -77,7 +80,7 @@ public class OpeningManager : MonoBehaviour {
         printer.typewriterText.text += "\nCONNECTION COMPLETE\n\nWELCOME\n";
         yield return new WaitForSeconds(2.0f);
         terminal.ChangeState(new IdleState());
-
+        terminal.gameHasStarted = true;
     }
 
 	IEnumerator PrintOpeningCrawl(){
