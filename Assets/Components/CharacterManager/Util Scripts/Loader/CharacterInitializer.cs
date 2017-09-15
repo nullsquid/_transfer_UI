@@ -83,6 +83,8 @@ namespace Transfer.System {
             else{
                 if (PlayerPrefs.HasKey("AllBeginningsPlayed")){
                     if (bool.Parse(PlayerPrefs.GetString("AllBeginningsPlayed")) == false) {
+						
+						#region Find and Add IDs
                         if (PlayerPrefs.HasKey("A")) {
                             if (bool.Parse(PlayerPrefs.GetString("A")) == false) {
                                 firstCharacterIDs.Add("A");
@@ -189,19 +191,66 @@ namespace Transfer.System {
                             }
                         }
                         else {
-                            PlayerPrefs.SetString("E", "false");
-                            if (!firstCharacterIDs.Contains("E")) {
-                                firstCharacterIDs.Add("E");
+                            PlayerPrefs.SetString("0", "false");
+                            if (!firstCharacterIDs.Contains("0")) {
+                                firstCharacterIDs.Add("0");
                             }
                         }
+						#endregion
+						#region Check for Which Section
+						if(PlayerPrefs.HasKey("FirstSectionComplete")){
+							if(bool.Parse(PlayerPrefs.GetString("FirstSectionComplete")) == false){
+								string testID = firstCharacterIDs[Random.Range(0,firstCharacterIDs.Count)];
+								if(bool.Parse(PlayerPrefs.GetString(testID)) == false){
+									playerID = testID;
+									PlayerPrefs.SetString(testID, "true");
+								}
+								else{
+									if(bool.Parse(PlayerPrefs.GetString("A")) == true &&
+										bool.Parse(PlayerPrefs.GetString("E")) == true &&
+										bool.Parse(PlayerPrefs.GetString("I")) == true &&
+										bool.Parse(PlayerPrefs.GetString("0")) == true){
+										//////////////////condition above////////////////////
+										PlayerPrefs.SetString("FirstSectionComplete","true");
+										return GeneratePlayerID(false);
+										//////////////////////////////
+									}
+									else{
+										return GeneratePlayerID(false);
+									}
+								}
+							}
+							else{
+
+							}
+						}
+						else{
+							PlayerPrefs.SetString("FirstSectionComplete","false");
+							return GeneratePlayerID(false);
+						}
+						if(PlayerPrefs.HasKey("SecondSectionComplete")){
+							if(bool.Parse(PlayerPrefs.GetString("SecondSectionComplete")) == false){
+								
+							}
+							else{
+
+							}
+						}
+						else{
+							PlayerPrefs.SetString("SecondSectionComplete", "false");
+							return GeneratePlayerID(false);
+						}
+						#endregion
+
                     }
                     else {
-
+						playerID = characterIDs [Random.Range (0, characterIDs.Count)];
                     }
 
                 }
                 else{
                     PlayerPrefs.SetString("AllBeginningsPlayed", "false");
+					return GeneratePlayerID (false);
                 }
             }
             return playerID;
