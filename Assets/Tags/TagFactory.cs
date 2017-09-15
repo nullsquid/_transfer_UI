@@ -70,6 +70,9 @@ namespace Silk{
             case "error":
                 ErrorTag newErrorTag = new ErrorTag(tagName, args);
                 return newErrorTag;
+			case "end":
+				EndingTag newEndingTag = new EndingTag (tagName, args);
+				return newEndingTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;
