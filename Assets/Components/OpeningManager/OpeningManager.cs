@@ -30,9 +30,12 @@ public class OpeningManager : MonoBehaviour {
         }
 
 	}
-
-	// Use this for initialization
-	public void TriggerOpening(string openingName){
+    private void Update() {
+        Debug.Log(PlayerPrefs.GetString("AllBeginningsPlayed"));
+        
+    }
+    // Use this for initialization
+    public void TriggerOpening(string openingName){
 		//Debug.Log ("hey hi hey");
 		switch (openingName) {
 			case "9A":

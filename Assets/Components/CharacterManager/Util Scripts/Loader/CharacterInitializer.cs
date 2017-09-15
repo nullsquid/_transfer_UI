@@ -73,8 +73,17 @@ namespace Transfer.System {
 
         }
 
+        void Update() {
+            //remove after testing
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Tab)) {
+                PlayerPrefs.DeleteAll();
+                Debug.LogWarning("All data deleted");
+            }
+        }
+
         string GeneratePlayerID(bool useShortCharacters) {
-            
+            firstCharacterIDs.Clear();
+            secondCharacterIDs.Clear();
             if (useShortCharacters) {
 
                 playerID = shortCharacterIDs[Random.Range(0, shortCharacterIDs.Count)];
@@ -196,6 +205,9 @@ namespace Transfer.System {
                                 firstCharacterIDs.Add("0");
                             }
                         }
+                        //testing
+                        
+                        
 						#endregion
 						#region Check for Which Section
 						if(PlayerPrefs.HasKey("FirstSectionComplete")){
@@ -203,7 +215,8 @@ namespace Transfer.System {
 								string testID = firstCharacterIDs[Random.Range(0,firstCharacterIDs.Count)];
 								if(bool.Parse(PlayerPrefs.GetString(testID)) == false){
 									playerID = testID;
-									PlayerPrefs.SetString(testID, "true");
+                                    //move this to the end of the route
+									PlayerPrefs.SetString(playerID, "true");
 								}
 								else{
 									if(bool.Parse(PlayerPrefs.GetString("A")) == true &&
@@ -331,7 +344,10 @@ namespace Transfer.System {
             playerID = GeneratePlayerID(useShortCharacters);
             GeneratePlayerCharacter(playerID, GenerateName(), SetRandomCharacterGender());
             GenerateCharacters(SetRandomCharacterGender());
-
+            //for testing
+            for (int i = 0; i < firstCharacterIDs.Count; i++) {
+                Debug.Log(firstCharacterIDs[i]);
+            }
 
             /*
 			for(int i = 0; i < characterIDs.Count; i++)
