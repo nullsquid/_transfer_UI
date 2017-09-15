@@ -263,42 +263,7 @@ namespace Transfer.System {
                 }
             }
             return playerID;
-            /*else {
-                for (int p = 0; p < playedCharacterIDs.Count; p++) {
-
-                    if (p == 10) {
-                        PlayerPrefs.SetString("AllBeginningsPlayed", "true");
-                    }
-                    else {
-                        PlayerPrefs.SetString("AllBeginningsPlayed", "false");
-                    }
-
-                }
-                if (bool.Parse(PlayerPrefs.GetString("AllBeginningsPlayed")) == false) {
-                    if (PlayerPrefs.HasKey("FirstHalfComplete")) {
-                        if (bool.Parse(PlayerPrefs.GetString("FirstHalfComplete")) == true) {
-                            playerID = secondCharacterIDs[Random.Range(0, secondCharacterIDs.Count)];
-                            //secondCharacterIDs.Remove(playerID);
-
-                        }
-                        else {
-                            playerID = firstCharacterIDs[Random.Range(0, firstCharacterIDs.Count)];
-                            //firstCharacterIDs.Remove(playerID);
-                        }
-                    }
-                    else {
-                        PlayerPrefs.SetString("FirstHalfComplete", "false");
-                    }
-                    playedCharacterIDs.Add(playerID);
-                    //playerID = characterIDs[Random.Range(0, characterIDs.Count)];
-
-                    return playerID;
-                }
-                else {
-                    playerID = playedCharacterIDs[Random.Range(0, playedCharacterIDs.Count)];
-                    return playerID;
-                }
-            }*/
+            
 
         }
         //make independent loops for both PC and NPC object lists

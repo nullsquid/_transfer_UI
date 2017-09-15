@@ -915,7 +915,7 @@ Prefab:
     - target: {fileID: 114857408564764656, guid: 989785eb531decc4da35d8554fbd3aa3,
         type: 2}
       propertyPath: demoChars
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 989785eb531decc4da35d8554fbd3aa3, type: 2}
@@ -1009,7 +1009,7 @@ Prefab:
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: startingNodeName
-      value: 9A
+      value: 1A
       objectReference: {fileID: 0}
     - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
@@ -2320,7 +2320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canRunCommands: 1
-  gameHasStarted: 0
+  gameHasStarted: 1
   buddyList: {fileID: 0}
   mainText: {fileID: 0}
   videoPannel: {fileID: 0}
