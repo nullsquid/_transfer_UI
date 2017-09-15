@@ -92,8 +92,16 @@ namespace Transfer.System {
             else{
                 if (PlayerPrefs.HasKey("AllBeginningsPlayed")){
                     if (bool.Parse(PlayerPrefs.GetString("AllBeginningsPlayed")) == false) {
-						
-						#region Find and Add IDs
+
+                        //for testing/////////
+                        /*
+                        PlayerPrefs.SetString("A", "true");
+                        PlayerPrefs.SetString("E", "true");
+                        PlayerPrefs.SetString("I", "true");
+                        PlayerPrefs.SetString("0", "true");
+                        */
+                        //////////////////////
+                        #region Find and Add IDs
                         if (PlayerPrefs.HasKey("A")) {
                             if (bool.Parse(PlayerPrefs.GetString("A")) == false) {
                                 firstCharacterIDs.Add("A");
@@ -205,55 +213,43 @@ namespace Transfer.System {
                                 firstCharacterIDs.Add("0");
                             }
                         }
-                        //testing
+                        #endregion
+                        #region Check Section and Generate Player
+                        if (PlayerPrefs.HasKey("FirstSectionComplete") && PlayerPrefs.HasKey("SecondSectionComplete")) {
+                            if(bool.Parse(PlayerPrefs.GetString("FirstSectionComplete")) == false) {
+                                if (firstCharacterIDs.Count > 0) {
+                                    string testID = firstCharacterIDs[Random.Range(0, firstCharacterIDs.Count)];
+                                    playerID = testID;
+                                }
+                                else {
+                                    PlayerPrefs.SetString("FirstSectionComplete", "true");
+                                    return GeneratePlayerID(false);
+                                }
+                            }
+                            else if(bool.Parse(PlayerPrefs.GetString("FirstSectionComplete")) == true && bool.Parse(PlayerPrefs.GetString("SecondSectionComplete")) == false) {
+                                if(secondCharacterIDs.Count > 0) {
+                                    string testID = secondCharacterIDs[Random.Range(0, secondCharacterIDs.Count)];
+                                    playerID = testID;
+                                }
+                                else {
+                                    PlayerPrefs.SetString("SecondSectionComplete", "true");
+                                    return GeneratePlayerID(false);
+                                }
+                            }
+                            else if(bool.Parse(PlayerPrefs.GetString("FirstSectionComplete")) == true && bool.Parse(PlayerPrefs.GetString("SecondSectionComplete")) == false) {
+                                PlayerPrefs.SetString("AllBeginningsPlayed", "true");
+                                return GeneratePlayerID(false);
+                            }
+                        }
+                        else {
+                            PlayerPrefs.SetString("FirstSectionComplete", "false");
+                            PlayerPrefs.SetString("SecondSectionComplete", "false");
+                            return GeneratePlayerID(false);
+                        }
                         
-                        
-						#endregion
-						#region Check for Which Section
-						if(PlayerPrefs.HasKey("FirstSectionComplete")){
-							if(bool.Parse(PlayerPrefs.GetString("FirstSectionComplete")) == false){
-								string testID = firstCharacterIDs[Random.Range(0,firstCharacterIDs.Count)];
-								if(bool.Parse(PlayerPrefs.GetString(testID)) == false){
-									playerID = testID;
-                                    //move this to the end of the route
-									PlayerPrefs.SetString(playerID, "true");
-								}
-								else{
-									if(bool.Parse(PlayerPrefs.GetString("A")) == true &&
-										bool.Parse(PlayerPrefs.GetString("E")) == true &&
-										bool.Parse(PlayerPrefs.GetString("I")) == true &&
-										bool.Parse(PlayerPrefs.GetString("0")) == true){
-										//////////////////condition above////////////////////
-										PlayerPrefs.SetString("FirstSectionComplete","true");
-										return GeneratePlayerID(false);
-										//////////////////////////////
-									}
-									else{
-										return GeneratePlayerID(false);
-									}
-								}
-							}
-							else{
+                        #endregion
 
-							}
-						}
-						else{
-							PlayerPrefs.SetString("FirstSectionComplete","false");
-							return GeneratePlayerID(false);
-						}
-						if(PlayerPrefs.HasKey("SecondSectionComplete")){
-							if(bool.Parse(PlayerPrefs.GetString("SecondSectionComplete")) == false){
-								
-							}
-							else{
 
-							}
-						}
-						else{
-							PlayerPrefs.SetString("SecondSectionComplete", "false");
-							return GeneratePlayerID(false);
-						}
-						#endregion
 
                     }
                     else {

@@ -31,8 +31,8 @@ public class OpeningManager : MonoBehaviour {
 
 	}
     private void Update() {
-        Debug.Log(PlayerPrefs.GetString("AllBeginningsPlayed"));
-        
+        Debug.Log(PlayerPrefs.GetString("FirstSectionComplete"));
+
     }
     // Use this for initialization
     public void TriggerOpening(string openingName){
