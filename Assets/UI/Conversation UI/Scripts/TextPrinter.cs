@@ -121,7 +121,16 @@ public class TextPrinter : MonoBehaviour {
 			yield return new WaitForSeconds (0.01f);
 		}
 	}
+	public void PrintMemFileNames(){
+		Debug.Log("mem file names " + MemoryManager.instance.UnlockedMemories.Count);
 
+		//List<string> memFileNames = new List<string> ();
+		for (int i = 0; i < MemoryManager.instance.UnlockedMemories.Count; i++) {
+			//memFileNames.Add(MemoryManager.instance.UnlockedMemories[i].ID + ".mem");
+			typewriterText.text += MemoryManager.instance.UnlockedMemories[i].level + ".mem\n";
+		}
+
+	}
     public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause, bool callback) {
         float normalTime = time;
 

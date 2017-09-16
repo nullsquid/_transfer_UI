@@ -41,8 +41,19 @@ public class MemoryManager : MonoBehaviour {
 
 	Dictionary<string,MemoryData> allMemoriesForRun = new Dictionary<string, MemoryData> ();
 	List <MemoryData> unlockedMemories = new List<MemoryData>();
+
+	public List<MemoryData> UnlockedMemories{
+		get{
+			return unlockedMemories;
+		}
+	}
     private void Start() {
 		string player = CharacterDatabase.GetPlayerID ();
+		//Debug.Log (allMemoriesForRun.Count);
+
+
+		//UnlockMemory ("8");
+		//UnlockMemory ("7");
 		for (int i = 0; i < 9; i++) {
 			AMemDat.Add (AMemories [i].level, AMemories [i]);
 			BMemDat.Add (BMemories [i].level, BMemories [i]);
@@ -89,12 +100,12 @@ public class MemoryManager : MonoBehaviour {
 		}
 
 
-
     }
 
 	public void UnlockMemory(string level){
+		
 		unlockedMemories.Add (allMemoriesForRun [level]);
-		InvokeUnlockSequence ();
+		//InvokeUnlockSequence ();
 
 	}
 

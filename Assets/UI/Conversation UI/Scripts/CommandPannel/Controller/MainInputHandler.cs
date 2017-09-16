@@ -95,6 +95,8 @@ public class MainInputHandler : MonoBehaviour {
 			HelpCommand (_args);
 		} else if (_root == "SCAN") {
 			ScanCommand (_args);
+		} else if (_root == "MEMORY") {
+			MemoryCommand (_args);
 		} else{
 			ActionCommand (_root, _args);
 		}
@@ -154,6 +156,10 @@ public class MainInputHandler : MonoBehaviour {
         }
 
     }
+	void MemoryCommand(string[] _args){
+		terminal.ChangeState(new MemoryState());
+
+	}
 
 	IEnumerator WaitForAction(string root, string[] args){
 		ActionCommand (root, args);

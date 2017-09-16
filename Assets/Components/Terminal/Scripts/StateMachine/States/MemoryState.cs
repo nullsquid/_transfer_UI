@@ -12,7 +12,8 @@ public class MemoryState : ITerminalState {
 	public void TerminalEnterState(){
 		terminal.videoPannel.SetActive (false);
 		terminal.idleText.SetActive (false);
-
+		terminal.mainText.SetActive (true);
+		terminal.printer.PrintMemFileNames ();
 	}
 
 	public void TerminalExecuteState(){
