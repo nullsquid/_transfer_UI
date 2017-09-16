@@ -26,4 +26,8 @@ public class MemoryManager : MonoBehaviour {
     public List<MemoryData> HMemories = new List<MemoryData>();
     public List<MemoryData> IMemories = new List<MemoryData>();
     public List<MemoryData> ZMemories = new List<MemoryData>();
+
+    private void Start() {
+        
+    }
 }
