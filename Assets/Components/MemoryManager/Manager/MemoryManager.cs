@@ -39,7 +39,10 @@ public class MemoryManager : MonoBehaviour {
 	Dictionary<string,MemoryData> IMemDat = new Dictionary<string, MemoryData>();
 	Dictionary<string,MemoryData> ZMemDat = new Dictionary<string, MemoryData>();
 
+	Dictionary<string,MemoryData> allMemoriesForRun = new Dictionary<string, MemoryData> ();
+	List <MemoryData> unlockedMemories = new List<MemoryData>();
     private void Start() {
+		string player = CharacterDatabase.GetPlayerID ();
 		for (int i = 0; i < 9; i++) {
 			AMemDat.Add (AMemories [i].level, AMemories [i]);
 			BMemDat.Add (BMemories [i].level, BMemories [i]);
@@ -52,51 +55,57 @@ public class MemoryManager : MonoBehaviour {
 			IMemDat.Add (IMemories [i].level, IMemories [i]);
 			ZMemDat.Add (ZMemories [i].level, ZMemories [i]);
 		}
-
-    }
-
-	public void ReturnMemory(string level){
-		string player = CharacterDatabase.GetPlayerID ();
-		Dictionary<string, MemoryData> memData = new Dictionary<string, MemoryData> ();
 		switch (player) {
 		case "A":
-			memData = AMemDat;
+			allMemoriesForRun = AMemDat;
 			break;
 		case "B":
-			memData = BMemDat;
+			allMemoriesForRun = BMemDat;
 			break;
 		case "C":
-			memData = CMemDat;
+			allMemoriesForRun = CMemDat;
 			break;
 		case "D":
-			memData = DMemDat;
+			allMemoriesForRun = DMemDat;
 			break;
 		case "E":
-			memData = EMemDat;
+			allMemoriesForRun = EMemDat;
 			break;
 		case "F":
-			memData = FMemDat;
+			allMemoriesForRun = FMemDat;
 			break;
 		case "G":
-			memData = GMemDat;
+			allMemoriesForRun = GMemDat;
 			break;
 		case "H":
-			memData = HMemDat;
+			allMemoriesForRun = HMemDat;
 			break;
 		case "I":
-			memData = IMemDat;
+			allMemoriesForRun = IMemDat;
 			break;
 		case "0":
-			memData = ZMemDat;
+			allMemoriesForRun = ZMemDat;
 			break;
 		}
 
-		if (memData [level].type == "text") {
-			InvokeTextMemory(memData[level].contents);
-		} else if (memData [level].type == "video") {
-			InvokeVideoMemory(memData[level].contents);
-		} else if (memData [level].type == "audio") {
-			InvokeAudioMemory (memData [level].contents);
+
+
+    }
+
+	public void UnlockMemory(string level){
+		unlockedMemories.Add (allMemoriesForRun [level]);
+		InvokeUnlockSequence ();
+
+	}
+
+	public void ReturnMemory(string level){
+
+		if (allMemoriesForRun [level].type == "text") {
+			InvokeTextMemory(allMemoriesForRun[level].contents);
+		} else if (allMemoriesForRun [level].type == "video") {
+			InvokeVideoMemory(allMemoriesForRun[level].contents);
+		} else if (allMemoriesForRun [level].type == "audio") {
+			InvokeAudioMemory (allMemoriesForRun [level].contents);
 		}
 	}
 
@@ -109,6 +118,9 @@ public class MemoryManager : MonoBehaviour {
 	}
 
 	void InvokeTextMemory(string text){
+
+	}
+	void InvokeUnlockSequence(){
 
 	}
 
