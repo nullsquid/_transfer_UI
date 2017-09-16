@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3637d4024d8cc34b84ce41a63a368f3, type: 3}
+  m_Name: C4
+  m_EditorClassIdentifier: 
+  ID: C
+  level: 4
+  type: text
+  contents: "All of the speeches go right through you.  If it\u2019s broadcast, it\u2019s
+    yours.  The one where the leader of country 56 promises to kill everyone in country
+    57 has the whole collective talking.  The next day the leader of country 60 promises
+    that if everyone in country 57 is dead, then everyone in country 56 will be dead
+    as well."

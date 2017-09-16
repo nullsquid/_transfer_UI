@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3637d4024d8cc34b84ce41a63a368f3, type: 3}
+  m_Name: F3
+  m_EditorClassIdentifier: 
+  ID: F
+  level: 3
+  type: text
+  contents: "#G\u2019s eagerness is unnerving. #G makes you stand close.  The virus
+    is going to be a combination of our ideas, #G reminds you over and over. #G will
+    be the first to go after all this is over."

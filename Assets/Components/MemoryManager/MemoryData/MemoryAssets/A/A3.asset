@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3637d4024d8cc34b84ce41a63a368f3, type: 3}
+  m_Name: A3
+  m_EditorClassIdentifier: 
+  ID: A
+  level: 3
+  type: text
+  contents: '#G and #H are close together.  The closest.  You realized that in one
+    instant, watching them connect so smoothly, so deeply.  You had not been able
+    to do that with anyone.  All #B has to offer on the matter is that nothing happens
+    without planning.  You keep quiet about your disagreement. '

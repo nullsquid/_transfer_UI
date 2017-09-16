@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3637d4024d8cc34b84ce41a63a368f3, type: 3}
+  m_Name: 07
+  m_EditorClassIdentifier: 
+  ID: 0
+  level: 7
+  type: text
+  contents: "A flash, a crumble, there wasn\u2019t anyone left to report what had
+    happened.  All you knew was you woke up in your apartment where the refrigerator
+    and the bed and the bathtub all sat in the same room and outside there was screaming
+    and something was on fire.  You turned on the television but all you found was
+    static. "
