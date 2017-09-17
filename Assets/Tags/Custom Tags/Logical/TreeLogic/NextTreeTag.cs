@@ -23,6 +23,10 @@ public class NextTreeTag : SilkTagBase {
         //Debug.Log("NEWTREE " + args[0]);
 
         terminal.ChangeState(new IdleState());
+        if(DialogueManager.instance.level != "1") {
+            MemoryManager.instance.UnlockMemory(DialogueManager.instance.level);
+        }
+        GameObject.FindObjectOfType<IdleTextPrinter>().InvokeIdlePrint("\n>>\n>>NEW MEMORY UNLOCKED");
         DialogueManager.instance.GetNextStory (args [0]);
         
 

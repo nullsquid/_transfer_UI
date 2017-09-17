@@ -23,7 +23,7 @@ public class TextPrinter : MonoBehaviour {
 
     public Text typewriterText;
     public UnityEvent onLetterPrint;
-
+    public Text idleText;
 	string surgeText = "...#####..." +
 	                   "##########________########" +
 	                   "# 6 ^&*√∂˙ßåç #" +
@@ -132,6 +132,8 @@ public class TextPrinter : MonoBehaviour {
 		}
 
 	}
+ 
+
     public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause, bool callback) {
         float normalTime = time;
 

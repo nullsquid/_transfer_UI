@@ -64,6 +64,9 @@ namespace Silk{
             case "connect":
                 ConnectTag newConnectTag = new ConnectTag(tagName, args);
                 return newConnectTag;
+            case "level":
+                LevelTag newLevelTag = new LevelTag(tagName, args);
+                return newLevelTag;
             case "action":
                 ActionTag newActionTag = new ActionTag(tagName, args);
                 return newActionTag;

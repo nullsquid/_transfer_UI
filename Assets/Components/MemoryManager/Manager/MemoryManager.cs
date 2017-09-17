@@ -96,8 +96,8 @@ public class MemoryManager : MonoBehaviour {
 			break;
 		}
 
-        UnlockMemory("9");
-        UnlockMemory("8");
+        //UnlockMemory("9");
+        //UnlockMemory("8");
 
     }
 
