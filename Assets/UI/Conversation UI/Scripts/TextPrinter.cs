@@ -122,12 +122,13 @@ public class TextPrinter : MonoBehaviour {
 		}
 	}
 	public void PrintMemFileNames(){
-		Debug.Log("mem file names " + MemoryManager.instance.UnlockedMemories.Count);
-
+        typewriterText.text = "";
+        //Debug.Log("mem file names " + MemoryManager.instance.UnlockedMemories.Count);
+        typewriterText.text += ">> INPUT FILE NAME OF MEMORY OR 'EXIT'\n";
 		//List<string> memFileNames = new List<string> ();
-		for (int i = 0; i < MemoryManager.instance.UnlockedMemories.Count; i++) {
+		foreach (KeyValuePair<string,MemoryData> memory in MemoryManager.instance.UnlockedMemories) {
 			//memFileNames.Add(MemoryManager.instance.UnlockedMemories[i].ID + ".mem");
-			typewriterText.text += MemoryManager.instance.UnlockedMemories[i].level + ".mem\n";
+			typewriterText.text += ">>>> " + memory.Key + "\n";
 		}
 
 	}

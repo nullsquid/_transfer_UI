@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Transfer.Data;
 public class MemoryManager : MonoBehaviour {
-
+    Terminal terminal;
     public static MemoryManager instance;
     void Awake() {
 
@@ -40,20 +40,17 @@ public class MemoryManager : MonoBehaviour {
 	Dictionary<string,MemoryData> ZMemDat = new Dictionary<string, MemoryData>();
 
 	Dictionary<string,MemoryData> allMemoriesForRun = new Dictionary<string, MemoryData> ();
-	List <MemoryData> unlockedMemories = new List<MemoryData>();
+	Dictionary <string,MemoryData> unlockedMemories = new Dictionary<string,MemoryData>();
 
-	public List<MemoryData> UnlockedMemories{
+	public Dictionary<string,MemoryData> UnlockedMemories{
 		get{
 			return unlockedMemories;
 		}
 	}
+
     private void Start() {
+        terminal = GameObject.FindObjectOfType<Terminal>();
 		string player = CharacterDatabase.GetPlayerID ();
-		//Debug.Log (allMemoriesForRun.Count);
-
-
-		//UnlockMemory ("8");
-		//UnlockMemory ("7");
 		for (int i = 0; i < 9; i++) {
 			AMemDat.Add (AMemories [i].level, AMemories [i]);
 			BMemDat.Add (BMemories [i].level, BMemories [i]);
@@ -99,18 +96,23 @@ public class MemoryManager : MonoBehaviour {
 			break;
 		}
 
+        UnlockMemory("9");
+        UnlockMemory("8");
 
     }
 
 	public void UnlockMemory(string level){
-		
-		unlockedMemories.Add (allMemoriesForRun [level]);
+        allMemoriesForRun[level].memFileName = GenerateFileName();
+		unlockedMemories.Add (allMemoriesForRun[level].memFileName,allMemoriesForRun [level]);
 		//InvokeUnlockSequence ();
 
 	}
 
-	public void ReturnMemory(string level){
-
+	public void ReturnMemory(string memName){
+        if(unlockedMemories[memName].type == "text") {
+            InvokeTextMemory(unlockedMemories[memName].contents);
+        }
+        /*
 		if (allMemoriesForRun [level].type == "text") {
 			InvokeTextMemory(allMemoriesForRun[level].contents);
 		} else if (allMemoriesForRun [level].type == "video") {
@@ -118,7 +120,23 @@ public class MemoryManager : MonoBehaviour {
 		} else if (allMemoriesForRun [level].type == "audio") {
 			InvokeAudioMemory (allMemoriesForRun [level].contents);
 		}
+        */
 	}
+
+    string GenerateFileName() {
+        int testName = Random.Range(1000,9999);
+        if(testName == 1488) {
+            return GenerateFileName();
+        }
+        else if (UnlockedMemories.ContainsKey(testName.ToString() + ".MEM")){
+            return GenerateFileName();
+        }
+        else {
+            return testName.ToString() + ".MEM";
+        }
+        
+
+    }
 
 	void InvokeAudioMemory(string fileName){
 
@@ -129,7 +147,9 @@ public class MemoryManager : MonoBehaviour {
 	}
 
 	void InvokeTextMemory(string text){
-
+        terminal.memoryPannel.SetActive(true);
+        
+        GameObject.FindObjectOfType<MemoryTextPrinter>().InvokeMemoryPrint(text, 0.05f);
 	}
 	void InvokeUnlockSequence(){
 

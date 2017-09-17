@@ -97,7 +97,19 @@ public class MainInputHandler : MonoBehaviour {
 			ScanCommand (_args);
 		} else if (_root == "MEMORY") {
 			MemoryCommand (_args);
-		} else{
+		}else if (MemoryManager.instance.UnlockedMemories.ContainsKey(_root) && terminal.GetState() is MemoryState) {
+            Debug.Log(_root + " accessed");
+            MemoryManager.instance.ReturnMemory(_root);
+        }
+        else if(_root == "EXIT") {
+            if(terminal.GetState() is MemoryState && terminal.memoryPannel.activeSelf == false) {
+                terminal.ChangeState(new IdleState());
+            }
+            else if(terminal.memoryPannel.activeSelf == true) {
+                terminal.memoryPannel.SetActive(false);
+            }
+        }
+        else {
 			ActionCommand (_root, _args);
 		}
         
