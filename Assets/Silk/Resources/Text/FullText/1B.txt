@@ -1,6 +1,6 @@
 ﻿:: Start
 <<noprompt>>
-
+<<memory>>
 [[Stop!|You imbicile!]]
 
 

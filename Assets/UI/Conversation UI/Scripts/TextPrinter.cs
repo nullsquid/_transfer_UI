@@ -127,8 +127,14 @@ public class TextPrinter : MonoBehaviour {
         typewriterText.text += ">> INPUT FILE NAME OF MEMORY OR 'EXIT'\n";
 		//List<string> memFileNames = new List<string> ();
 		foreach (KeyValuePair<string,MemoryData> memory in MemoryManager.instance.UnlockedMemories) {
-			//memFileNames.Add(MemoryManager.instance.UnlockedMemories[i].ID + ".mem");
-			typewriterText.text += ">>>> " + memory.Key + "\n";
+			Debug.Log ("memory access? " + memory.Value.hasBeenAccessed);
+			if (memory.Value.hasBeenAccessed == false) {
+				//memFileNames.Add(MemoryManager.instance.UnlockedMemories[i].ID + ".mem");
+				typewriterText.text += ">>>> " + memory.Key + "\n";
+			} else if(memory.Value.hasBeenAccessed == true){
+				//Debug.Log ("boops boops");
+				typewriterText.text += ">>>> <color=red>" + memory.Key + "</color>\n";
+			}
 		}
 
 	}

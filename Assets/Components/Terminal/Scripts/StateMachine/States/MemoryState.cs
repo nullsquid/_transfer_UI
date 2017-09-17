@@ -17,7 +17,7 @@ public class MemoryState : ITerminalState {
 	}
 
 	public void TerminalExecuteState(){
-
+		
 	}
 
 	public void TerminalExitState(){

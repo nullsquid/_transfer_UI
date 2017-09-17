@@ -73,6 +73,9 @@ namespace Silk{
             case "error":
                 ErrorTag newErrorTag = new ErrorTag(tagName, args);
                 return newErrorTag;
+			case "memory":
+				MemoryTag newMemoryTag = new MemoryTag (tagName, args);
+				return newMemoryTag;
 			case "end":
 				EndingTag newEndingTag = new EndingTag (tagName, args);
 				return newEndingTag;

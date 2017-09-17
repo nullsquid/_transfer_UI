@@ -1,4 +1,5 @@
 ﻿:: Start
+<<memory>>
 <<speaker="D">>
 You know what I really miss from the old days?
 

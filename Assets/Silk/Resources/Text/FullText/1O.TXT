@@ -1,4 +1,5 @@
 ﻿:: MetaData
+<<memory>>
 <<connect="E">>
 <<level="1">>
 

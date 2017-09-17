@@ -97,18 +97,20 @@ public class MainInputHandler : MonoBehaviour {
 			ScanCommand (_args);
 		} else if (_root == "MEMORY") {
 			MemoryCommand (_args);
-		}else if (MemoryManager.instance.UnlockedMemories.ContainsKey(_root) && terminal.GetState() is MemoryState) {
-            Debug.Log(_root + " accessed");
-            MemoryManager.instance.ReturnMemory(_root);
-        }
-        else if(_root == "EXIT") {
-            if(terminal.GetState() is MemoryState && terminal.memoryPannel.activeSelf == false) {
-                terminal.ChangeState(new IdleState());
-            }
-            else if(terminal.memoryPannel.activeSelf == true) {
-                terminal.memoryPannel.SetActive(false);
-            }
-        }
+		} else if (MemoryManager.instance.UnlockedMemories.ContainsKey (_root) && terminal.GetState () is MemoryState) {
+			MemoryManager.instance.UnlockedMemories [_root].hasBeenAccessed = true;
+			//Debug.Log(_root + " accessed");
+			MemoryManager.instance.ReturnMemory (_root);
+			GameObject.FindObjectOfType<TextPrinter> ().PrintMemFileNames ();
+		} else if (_root == "EXIT") {
+			if (terminal.GetState () is MemoryState && terminal.memoryPannel.activeSelf == false) {
+				terminal.ChangeState (new IdleState ());
+			} else if (terminal.memoryPannel.activeSelf == true) {
+				terminal.memoryPannel.SetActive (false);
+			}
+		} else if (_root == "CLEAR" && terminal.GetState() is IdleState) {
+			
+		}
         else {
 			ActionCommand (_root, _args);
 		}

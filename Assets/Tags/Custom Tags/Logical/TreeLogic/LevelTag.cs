@@ -21,5 +21,6 @@ public class LevelTag : SilkTagBase {
     }
     public override void ExecuteTagLogic(List<string> args) {
         DialogueManager.instance.level = args[0];
+		OnExecutionComplete ();
     }
 }

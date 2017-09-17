@@ -10,4 +10,5 @@ public class MemoryData : ScriptableObject {
 	public string linkedFileName;
 	public string memFileName;
     public string contents;
+	public bool hasBeenAccessed = false;
 }

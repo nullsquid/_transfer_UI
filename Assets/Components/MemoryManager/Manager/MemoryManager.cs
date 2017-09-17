@@ -103,6 +103,7 @@ public class MemoryManager : MonoBehaviour {
 
 	public void UnlockMemory(string level){
         allMemoriesForRun[level].memFileName = GenerateFileName();
+		allMemoriesForRun [level].hasBeenAccessed = false;
 		unlockedMemories.Add (allMemoriesForRun[level].memFileName,allMemoriesForRun [level]);
 		//InvokeUnlockSequence ();
 

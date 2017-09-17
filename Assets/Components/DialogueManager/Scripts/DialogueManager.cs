@@ -162,6 +162,8 @@ public class DialogueManager : MonoBehaviour {
         GetNextStory(nextStoryName);
         //bit ugly but whatever\\
         terminal.ChangeState(new IdleState());
+		GameObject.FindObjectOfType<IdleTextPrinter> ().InvokeIdlePrint ("\n>>\n>>NEW MEMORY UNLOCKED");
+
     }
     IEnumerator WaitAndGetNextNode(string nextNodeName, float timeToWait) {
         yield return new WaitForSeconds(timeToWait);

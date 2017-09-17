@@ -4,6 +4,7 @@
 
 
 :: Start
+<<memory>>
 <<noprompt>>
 
 [[Ansaldi]]

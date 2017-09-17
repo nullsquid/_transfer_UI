@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class IdleTextPrinter : MonoBehaviour {
     public Text idleText;
     public void InvokeIdlePrint(string text) {
-        IterateThroughIdleCharacters(text, 0.02f);
+		Debug.Log ("boops???");
+		StartCoroutine(IterateThroughIdleCharacters(text, 0.02f));
     }
 
     public IEnumerator IterateThroughIdleCharacters(string text, float time) {
