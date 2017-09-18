@@ -9,6 +9,10 @@ public class IdleTextPrinter : MonoBehaviour {
 		StartCoroutine(IterateThroughIdleCharacters(text, 0.02f));
     }
 
+	public void ClearIdleText(){
+		idleText.text = "";
+	}
+
     public IEnumerator IterateThroughIdleCharacters(string text, float time) {
         idleText.text = "";
         for (int i = 0; i < text.Length; i++) {
