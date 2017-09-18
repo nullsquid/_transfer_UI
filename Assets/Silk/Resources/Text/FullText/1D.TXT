@@ -1,5 +1,7 @@
 ﻿:: Start
+<<memory>>
 <<speaker="F">>
+
 <<action="CREATE BOMB">>
 
 [[No!|Detonate]]

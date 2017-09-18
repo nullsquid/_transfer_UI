@@ -4,7 +4,9 @@ using UnityEngine;
 using Silk;
 using UnityEngine.Events;
 public class DialogueManager : MonoBehaviour {
+    public string level;
     public string connectID;
+    
 	//need to decouple this
 	ResponsePrinter rp;
 	TextPrinter tp;
@@ -44,6 +46,9 @@ public class DialogueManager : MonoBehaviour {
 
 			//}
 		}
+        if(level == null) {
+            GetCurLevel();
+        }
 		//if(connectID == null && 
 		//curNode.LogQueue ();
     }
@@ -142,6 +147,7 @@ public class DialogueManager : MonoBehaviour {
 		rootStory = Silky.Instance.mother.GetStoryByName (rootStoryName);
 		curStory = rootStory;
         GetConnectID();
+        GetCurLevel();
 	}
 
     public void WaitForNextStory(string nextStory, float time) {
@@ -156,6 +162,8 @@ public class DialogueManager : MonoBehaviour {
         GetNextStory(nextStoryName);
         //bit ugly but whatever\\
         terminal.ChangeState(new IdleState());
+		GameObject.FindObjectOfType<IdleTextPrinter> ().InvokeIdlePrint ("\n>>\n>>NEW MEMORY UNLOCKED");
+
     }
     IEnumerator WaitAndGetNextNode(string nextNodeName, float timeToWait) {
         yield return new WaitForSeconds(timeToWait);
@@ -168,6 +176,7 @@ public class DialogueManager : MonoBehaviour {
 		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
 		GetRootNode ();
 		GetConnectID();
+        GetCurLevel();
 
 		if (connectID == null || connectID == "") {
 			//terminal.buddyList.SetActive(false);
@@ -188,6 +197,14 @@ public class DialogueManager : MonoBehaviour {
 
         }
 
+    }
+    public void GetCurLevel() {
+        metaDataNode = curStory.GetNodeByName("MetaData");
+        foreach(SilkTagBase tag in metaDataNode.executionQueue) {
+            if(tag.TagName == "level") {
+                tag.TagExecute();
+            }
+        }
     }
 	public void GetRootNode(){
 		//if (curStory.GetNodeName ("Start") != null) {
@@ -216,7 +233,17 @@ public class DialogueManager : MonoBehaviour {
                         //    TextPrinter.onPrintComplete += tag.TagExecute;
                         //}
                         //else {
-                        tag.TagExecute();
+						if (tag.TagName == "sfx") {
+							curNode.connectQueue.Add (tag);
+						} else if (tag.TagName == "error") {
+							curNode.connectQueue.Add (tag);
+						} else if (tag.TagName == "wait") {
+							curNode.connectQueue.Add (tag);
+                            
+                        }
+						else {
+							tag.TagExecute ();
+						}
                         //}
 
                     }
@@ -339,10 +366,12 @@ public class DialogueManager : MonoBehaviour {
 							//}
 							Debug.Log (tag.TagName);
                             if (tag.TagName == "wait") {
-                                //StartCoroutine(WaitForConnect(tag));
+                                //I might want to make another list in the node
+                                //where i put tags that need to be executed on connect
+                                //and in connect state i run that
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
-                            if(tag.TagName == "nodewait") {
+                            else if(tag.TagName == "nodewait") {
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
                             else if(tag.TagName == "sfx") {
@@ -350,6 +379,7 @@ public class DialogueManager : MonoBehaviour {
                                 //Debug.Log("hey hi");
                                 //StartCoroutine(WaitForConnect(tag));
                                 tag.TagExecute();
+								//curNode.connectQueue.Add(tag);
                             }
                             else {
                                 //StartCoroutine(WaitForConnect(tag));

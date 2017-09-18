@@ -1,4 +1,5 @@
 ﻿:: Start
+<<memory>>
 <<speaker="B">>
 I guess it worked. We're still here. So, what do you want to talk about?
 

@@ -1,4 +1,5 @@
 ﻿:: Start
+<<memory>>
 <<speaker="A">>
 End of exam.  Your results will be calculated using the standard system
 

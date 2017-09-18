@@ -1,5 +1,6 @@
 ﻿:: Start
 <<speaker="G">>
+<<memory>>
 It's a shame we can't see it.  I'm sure they're spectacular.
 
 [[Yeah.|Like those videos of fireworks going off.]]

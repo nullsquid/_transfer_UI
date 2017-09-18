@@ -1,7 +1,9 @@
 ﻿:: Start
-<<error="CONNECTION INTERRUPTED
+<<noprompt>>
+[[Is someone there?|Error]]
 
-RESTART CONNECTION">>
+:: Error
+<<error="3">>
 
 
 :: MetaData
@@ -15,5 +17,3 @@ RESTART CONNECTION">>
 
 :: StoryAuthor
 Anonymous
-
-

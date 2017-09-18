@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class HelpState : ITerminalState {
     string helpArg = "";
+    Terminal terminal;
+    TextPrinter tp;
     public HelpState(string arg) {
         helpArg = "";
         helpArg = arg;
+        
+        terminal = GameObject.FindObjectOfType<Terminal>();
     }
-    TextPrinter tp = GameObject.FindObjectOfType<TextPrinter>();
 	public void TerminalEnterState() {
         //for now, clear out this way
-        tp.typewriterText.text = "";
-        tp.helpMenu = "";
+        tp = GameObject.FindObjectOfType<TextPrinter>();
+        //Debug.Log(tp);
+        terminal.mainText.SetActive(true);
+        terminal.idleText.SetActive(false);
+        terminal.printer.typewriterText.text = "";
+        terminal.printer.helpMenu = "";
         if (helpArg == "") {
-            tp.helpMenu = "INPUT";
-            tp.InvokeHelpMenu();
+            terminal.printer.helpMenu = "\n>>INPUT 'CONNECT' FOLLOWED BY USER ID OF RECIPIENT TO COMMUNICATE\n\n>>INPUT 'SLEEP' TO SUSPEND OPERATIONS" +
+                                        "\n\n>>INPUT 'MEMORY' TO VIEW .mem FILES";
+            terminal.printer.InvokeHelpMenu();
         }
         else {
             switch (helpArg) {

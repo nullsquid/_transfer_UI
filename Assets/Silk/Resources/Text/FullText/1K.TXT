@@ -1,4 +1,5 @@
 ﻿:: Start
+<<memory>>
 <<error="YOU ARE NOT SUPPOSED TO BE HERE">>
 
 <<end="Ending Name">>

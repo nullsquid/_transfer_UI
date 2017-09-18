@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class EffectsManager : MonoBehaviour {
 	public Font shiftFont;
 	public Font mainFont;
+
+    public Texture surgeTexture;
+
     DialogueAudioHandler audioHandler;
 	string shiftTextBase = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
 	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
@@ -17,6 +20,8 @@ public class EffectsManager : MonoBehaviour {
 	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
 	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" +
 	                       "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
+    Color baseGlitchColor;
+    Color errorColor = Color.red;
 	                    
 	#region Singleton
 	public static EffectsManager instance;
@@ -45,6 +50,8 @@ public class EffectsManager : MonoBehaviour {
 		terminal = GameObject.FindObjectOfType<Terminal> ();
 		printer = GameObject.FindObjectOfType<TextPrinter> ();
         audioHandler = GameObject.FindObjectOfType<DialogueAudioHandler>();
+
+        baseGlitchColor = mainCamera.GetComponent<CameraGlitch>().TintColor;
 	}
 
 	void Update(){
@@ -58,6 +65,10 @@ public class EffectsManager : MonoBehaviour {
 	public void SurgeEffect(){
 		StartCoroutine(SurgeRoutine (5.0f));
 	}
+
+    public void ErrorEffect() {
+        StartCoroutine(ErrorRoutine(2.0f));
+    }
 
 	IEnumerator ShiftRoutine(float shiftValue, float shiftTime){
 		mainText.text = shiftTextBase;
@@ -88,7 +99,11 @@ public class EffectsManager : MonoBehaviour {
 		
 		terminal.ChangeState (new ConnectState ());
         audioHandler.InvokeSoundEffect("GLITCH_1");
-		mainCamera.GetComponent<CameraGlitch> ().enabled = true;
+        mainCamera.GetComponent<CameraGlitch>().OverlayTexture = surgeTexture;
+        mainCamera.GetComponent<CameraGlitch>().TintColor = baseGlitchColor;
+
+        mainCamera.GetComponent<CameraGlitch> ().enabled = true;
+
 		printer.InvokeSurgeText ();
 		terminal.GetComponentInChildren<MainInputController> ().CanRecordInput = false;
 		yield return new WaitForSeconds (time);
@@ -97,6 +112,16 @@ public class EffectsManager : MonoBehaviour {
 
 		terminal.ChangeState (new IdleState ());
 	}
+
+    IEnumerator ErrorRoutine(float time) {
+        mainCamera.GetComponent<CameraGlitch>().TintColor = errorColor;
+        mainCamera.GetComponent<CameraGlitch>().OverlayTexture = null;
+        mainCamera.GetComponent<CameraGlitch>().enabled = true;
+        yield return new WaitForSeconds(time);
+        mainCamera.GetComponent<CameraGlitch>().enabled = false;
+        mainCamera.GetComponent<CameraGlitch>().TintColor = baseGlitchColor;
+        mainCamera.GetComponent<CameraGlitch>().OverlayTexture = surgeTexture;
+    }
 
 
 }

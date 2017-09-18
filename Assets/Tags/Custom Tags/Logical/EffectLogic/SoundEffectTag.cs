@@ -22,6 +22,7 @@ public class SoundEffectTag : SilkTagBase {
 	}
 
 	public override void ExecuteTagLogic(List<string> args){
+		Debug.Log ("ITS SOUND!!");
 		if (args.Count == 1) {
 			audioHandler.InvokeSoundEffect (args [0]);
 			//AudioManager.Instance.

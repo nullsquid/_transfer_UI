@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3637d4024d8cc34b84ce41a63a368f3, type: 3}
+  m_Name: F6
+  m_EditorClassIdentifier: 
+  ID: F
+  level: 6
+  type: text
+  contents: "#H and #B are both mindless. #C has a messiah complex. #D is just a moron.
+    #E has taken the concept of masturbation to new heights. #G is sentimental like
+    a stupid child who doesn\u2019t realize the puppy is dead. #I has some good ideas."

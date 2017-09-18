@@ -37,7 +37,7 @@ I doubt you would confuse me--
 
 :: I believe went that way. But why trouble yourself with one rat when you could stomp out a while nest?
 <<speaker="F">>
-I believe <<pronoun="0",tense>> went that way--but why trouble yourself with one rat--when you could stomp out a while nest?
+I believe <<pronoun="0","subject">> went that way--but why trouble yourself with one rat--when you could stomp out a while nest?
 
 [[Just show me where to go.|You won't catch it like that.]]
 
@@ -112,7 +112,7 @@ To kill a rat, you need to think like a rat--what's it's greatest weakness?--its
 
 [[That's nonsense.|5C]]
 
-[[<<pronoun="0", tense>> will be afraid.|5G]]
+[[<<pronoun="0", "subject">> will be afraid.|5G]]
 
 [[How do I use that?|Corner. Make think already dead. will give self up to you on a plate.]]
 
@@ -153,7 +153,7 @@ Aim and fire--Throw your knife--Set it ablaze.
 
 :: Corner. Make think already dead. will give self up to you on a plate.
 <<speaker="F">>
-Corner <<pronoun="0",tense>>--make <<pronoun="0",tense>> think <<pronoun="0",tense>> is already dead--<<pronoun="0",tense>> will give <<pronoun="0",tense>>self up to you on a plate--
+Corner <<pronoun="0","object">>--make <<pronoun="0","object">> think <<pronoun="0","subject">> is already dead--<<pronoun="0","subject">> will give <<pronoun="0","object">>self up to you on a plate--
 
 [[I've still got to catch it then.|5E]]
 
@@ -168,5 +168,3 @@ Corner <<pronoun="0",tense>>--make <<pronoun="0",tense>> think <<pronoun="0",ten
 Certainly
 
 [[Then let's go.|5E]]
-
-

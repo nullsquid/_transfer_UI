@@ -1,4 +1,5 @@
 ﻿:: Start
+<<memory>>
 <<speaker="A">>
 Great job, great job!  Now it's time to calculate your score.
 

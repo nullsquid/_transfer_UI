@@ -22,9 +22,9 @@ public class ScrollViewController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (printComplete == true) {
-			if (Input.GetKeyDown (KeyCode.PageDown)) {
+			if (Input.GetKeyDown (KeyCode.RightBracket)) {
 				scrollBar.value -= .1f;
-			} else if (Input.GetKeyDown (KeyCode.PageUp)) {
+			} else if (Input.GetKeyDown (KeyCode.LeftBracket)) {
 				scrollBar.value += .1f;
 			}
 		} else if (printComplete == false) {
