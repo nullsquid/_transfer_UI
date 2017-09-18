@@ -1,17 +1,17 @@
 ﻿:: Start
 <<speaker="E">>
-Here we have the control room.  <<name="G">> used to spend # time here.
+Here we have the control room.  <<name="G">> used to spend <<pronoun="G","possess">> time here.
 
-[[I remember <<pronoun="G",tense>>|A complex character.]]
+[[I remember <<pronoun="G","object">>|A complex character.]]
 
-[[I don't remember <<pronoun="G",tense>>|A compleicated character.]]
+[[I don't remember <<pronoun="G","object">>|A compleicated character.]]
 
 
 :: A complex character.
 <<speaker="E">>
 A complex character.
 
-[[<<wait="6">>|5K]]
+<<wait="5K","6">>
 
 
 :: 5K
@@ -28,7 +28,7 @@ A complex character.
 <<speaker="E">>
 A complicated character.
 
-[[<<wait="6">>|5K]]
+<<wait="5K","6">>
 
 
 :: MetaData
@@ -38,5 +38,3 @@ A complicated character.
 
 :: StoryAuthor
 Anonymous
-
-

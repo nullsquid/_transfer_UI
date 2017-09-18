@@ -93,7 +93,7 @@ Anonymous
 
 :: You won't be able to kill.
 <<speaker="B">>
-You won't be able to kill <<pronoun="0",tense>>.
+You won't be able to kill <<pronoun="0","object">>.
 
 [[Of course I will.|5E]]
 
