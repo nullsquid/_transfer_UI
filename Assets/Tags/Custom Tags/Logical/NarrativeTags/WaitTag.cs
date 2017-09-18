@@ -15,7 +15,11 @@ public class WaitTag : SilkTagBase {
     }
 
     public override void ExecuteTagLogic(List<string> args) {
+		if (DialogueManager.instance.level != "1") {
+			MemoryManager.instance.UnlockMemory (DialogueManager.instance.level);
+		}
         DialogueManager.instance.WaitForNextStory(args[0], float.Parse(args[1]));
+
         OnExecutionComplete();
     }
 

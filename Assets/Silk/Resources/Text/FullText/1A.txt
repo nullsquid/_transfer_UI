@@ -1,5 +1,6 @@
 ﻿:: Start
 <<speaker="C">>
+<<memory>>
 Well, here we are again.
 
 [[Where?|Our dear old home]]

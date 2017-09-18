@@ -46,7 +46,7 @@ Why not?
 <<speaker="D">>
 In the center, of course.
 
-[[<<wait="6">>|5D]]
+<<wait="5D","6">>
 
 
 :: StoryAuthor
@@ -80,18 +80,16 @@ Well, wouldn't it make sense? To put everyone's memories right there?
 <<speaker="D">>
 Don't listen to what everyone says.
 
-[[<<wait="6">>|5A]]
+<<wait="5A","6">>
 
 
 :: Interesting idea.
 <<speaker="D">>
 Interesting idea.
 
-[[<<wait="6">>|5D]]
+<<wait="5D","6">>
 
 
 :: MetaData
 <<connect="D">>
 <<level="6">>
-
-

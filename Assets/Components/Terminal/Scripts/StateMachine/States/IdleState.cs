@@ -22,6 +22,8 @@ public class IdleState : ITerminalState {
         terminal.mainText.SetActive(false);
         terminal.videoPannel.SetActive(false);
         terminal.buddyList.GetComponentInChildren<BuddyListController>().StartPopulate();
+		terminal.memoryPannel.SetActive (false);
+		GameObject.FindObjectOfType<IdleTextPrinter> ().ClearIdleText ();
         //GameObject.Find ("BuddyList").GetComponent<Image>().
         //buddyList.SetActive(true);
     }

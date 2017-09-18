@@ -1,4 +1,5 @@
 ﻿:: Start
+<<memory>>
 <<speaker="E">>
 We've got no more eyes.  No more ears.  But there's one thing everyone forgot to mention.  You have another choice.  You can turn off.
 

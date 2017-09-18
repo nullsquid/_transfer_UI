@@ -23,7 +23,7 @@ public class TextPrinter : MonoBehaviour {
 
     public Text typewriterText;
     public UnityEvent onLetterPrint;
-
+    public Text idleText;
 	string surgeText = "...#####..." +
 	                   "##########________########" +
 	                   "# 6 ^&*√∂˙ßåç #" +
@@ -121,6 +121,24 @@ public class TextPrinter : MonoBehaviour {
 			yield return new WaitForSeconds (0.01f);
 		}
 	}
+	public void PrintMemFileNames(){
+        typewriterText.text = "";
+        //Debug.Log("mem file names " + MemoryManager.instance.UnlockedMemories.Count);
+        typewriterText.text += ">> INPUT FILE NAME OF MEMORY OR 'EXIT'\n";
+		//List<string> memFileNames = new List<string> ();
+		foreach (KeyValuePair<string,MemoryData> memory in MemoryManager.instance.UnlockedMemories) {
+			Debug.Log ("memory access? " + memory.Value.hasBeenAccessed);
+			if (memory.Value.hasBeenAccessed == false) {
+				//memFileNames.Add(MemoryManager.instance.UnlockedMemories[i].ID + ".mem");
+				typewriterText.text += ">>>> " + memory.Key + "\n";
+			} else if(memory.Value.hasBeenAccessed == true){
+				//Debug.Log ("boops boops");
+				typewriterText.text += ">>>> <color=red>" + memory.Key + "</color>\n";
+			}
+		}
+
+	}
+ 
 
     public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause, bool callback) {
         float normalTime = time;
