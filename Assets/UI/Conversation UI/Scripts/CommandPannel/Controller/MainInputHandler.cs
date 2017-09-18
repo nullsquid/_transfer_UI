@@ -107,6 +107,8 @@ public class MainInputHandler : MonoBehaviour {
 				terminal.ChangeState (new IdleState ());
 			} else if (terminal.memoryPannel.activeSelf == true) {
 				terminal.memoryPannel.SetActive (false);
+			} else if (terminal.GetState () is IdleState) {
+				Application.Quit ();
 			}
 		} else if (_root == "CLEAR" && terminal.GetState() is IdleState) {
 			
