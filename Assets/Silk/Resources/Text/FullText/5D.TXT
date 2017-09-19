@@ -33,7 +33,7 @@ Why do you want to?
 <<speaker="E">>
 I don't know.  I'm looking for it myself.
 
-[[<<wait="6">>|4G]]
+<<wait="4G","6">>
 
 
 :: 4I
@@ -67,5 +67,3 @@ Anonymous
 <<unload>>
 <<nexttree="4A">>
 <<state="idle">>
-
-

@@ -39,7 +39,7 @@ Yes! Exactly! So, how can we find some?
 <<speaker="G">>
 I don't get the impression you're taking this seriously.  Why don't you go on ahead?  I'll catch up.
 
-[[<<wait="6">>|4C]]
+<<wait="4C","6">>
 
 
 :: Yes, and how can we find things for those exhibits?
@@ -82,11 +82,9 @@ We have those.  What else?
 <<speaker="G">>
 Those are easily made.
 
-[[<<wait="6">>|4B]]
+<<wait="4B","6">>
 
 
 :: MetaData
 <<connect="G">>
 <<level="5">>
-
-

@@ -35,7 +35,7 @@ I doubt you would confuse me--
 6B
 
 
-:: I believe went that way. But why trouble yourself with one rat when you could stomp out a while nest?
+:: I believe went that way. But why trouble yourself with one rat when you could stomp out a whole nest?
 <<speaker="F">>
 I believe <<pronoun="0","subject">> went that way--but why trouble yourself with one rat--when you could stomp out a while nest?
 
