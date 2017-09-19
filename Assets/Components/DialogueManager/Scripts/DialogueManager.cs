@@ -163,6 +163,12 @@ public class DialogueManager : MonoBehaviour {
         //bit ugly but whatever\\
         terminal.ChangeState(new IdleState());
 		GameObject.FindObjectOfType<IdleTextPrinter> ().InvokeIdlePrint ("\n>>\n>>NEW MEMORY UNLOCKED");
+		if (connectID == null || connectID == "") {
+			//terminal.buddyList.SetActive(false);
+			terminal.ChangeState (new ConnectState ());
+
+			GameObject.FindObjectOfType<TextPrinter> ().TriggerPrinting ();
+		}
 
     }
     IEnumerator WaitAndGetNextNode(string nextNodeName, float timeToWait) {
@@ -170,7 +176,7 @@ public class DialogueManager : MonoBehaviour {
         FindNextNodeByName(nextNodeName);
 
     }
-
+	//butts
 	public void GetNextStory(string nextStoryName){
         Debug.Log("NEXT STORY FIRED");
 		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);

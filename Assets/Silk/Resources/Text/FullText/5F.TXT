@@ -56,7 +56,7 @@ Anonymous
 
 :: I don't believe I have.  Have you tried to just cage it?
 <<speaker="E">>
-I don't believe I have.  Have you tried to just cage <<pronoun="A",tense>>?
+I don't believe I have.  Have you tried to just cage <<pronoun="A","object">>?
 
 [[No.|It's quite simple.  Just say whatever you want to do.]]
 
@@ -70,7 +70,7 @@ I don't believe I have.  Have you tried to just cage <<pronoun="A",tense>>?
 <<speaker="E">>
 It's quite simple.  Just say whatever you want to do.
 
-[[<<wait="6">>|4F]]
+<<wait="4F","6">>
 
 
 :: 4A
