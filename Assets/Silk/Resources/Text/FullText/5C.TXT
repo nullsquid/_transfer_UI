@@ -13,7 +13,7 @@ Heard you were looking for a light.  I think I've got one.  But I won't show it 
 <<speaker="E">>
 I'll show you.  Say "touch."
 
-[[<<action="TOUCH">>|Good.]]
+<<action="TOUCH","Good.">>
 
 [[I'd rather not continue.|4C]]
 
@@ -40,13 +40,13 @@ It was the one great advantage they humans had over us.  They could join each ot
 <<speaker="E">>
 Good.
 
-[[<<action="TOUCH">>|It was the one great advantage they humans had over us.  They could join each other, temporarily.  I feel very lonely.  Does that make sense?]]
+<<action="TOUCH","It was the one great advantage they humans had over us.  They could join each other, temporarily.  I feel very lonely.  Does that make sense?">>
 
 [[I'd like to stop now.|4G]]
 
 
 :: StoryTitle
-5A
+5C
 
 
 :: Have sex with me.  It's simple.
@@ -137,14 +137,14 @@ Penetrate
 <<speaker="E">>
 The same way as you do anything else.
 
-[[<<action="TOUCH">>|Yes, just like that.  Do you want to continue?]]
+<<action="TOUCH","Yes, just like that.  Do you want to continue?">>
 
 
 :: Touch
 <<speaker="E">>
 Touch
 
-[[<<action="TOUCH">>|Excellent.  It's counter-intuitive at first, rather abstract--but you'll find it's a valuable skill.  Do you feel ready to do on?]]
+<<action="TOUCH","Excellent.  It's counter-intuitive at first, rather abstract--but you'll find it's a valuable skill.  Do you feel ready to do on?">>
 
 [[I'd like to stop now.|4G]]
 
@@ -153,7 +153,7 @@ Touch
 <<speaker="E">>
 Then go ahead.
 
-[[<<action="PENETRATE">>|4G]]
+<<action="PENETRATE","4G">>
 
 
 :: MetaData

@@ -6,6 +6,7 @@ namespace Transfer.System {
         public static CharacterManager instance;
         private CharacterInitializer charInit;
         private CharacterBlacklist blacklist;
+        public bool demoChars;
         void Awake() {
             if (instance == null) {
                 instance = this;
@@ -24,7 +25,7 @@ namespace Transfer.System {
         
         void InitializeCharacters() {
             blacklist.InitializeNameBlacklist();
-            charInit.PopulateCharacterDatabase(true);
+            charInit.PopulateCharacterDatabase(demoChars);
 
         }
         void LogCharacters() {

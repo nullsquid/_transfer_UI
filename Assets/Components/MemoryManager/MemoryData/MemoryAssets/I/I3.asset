@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3637d4024d8cc34b84ce41a63a368f3, type: 3}
+  m_Name: I3
+  m_EditorClassIdentifier: 
+  ID: I
+  level: 3
+  type: text
+  contents: 'They would fight back. Shouting and crying they would do everything to
+    destroy you once they saw that you had taken the first strike. All of their animal
+    rage would turn on you, and it might not be too late for them to act on it. That
+    was what you explained to #C. That was why you needed to get out before the howling
+    reached its peak. Go far and come back when it was safe to do so. #C agreed.'

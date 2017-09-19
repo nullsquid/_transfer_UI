@@ -139,7 +139,7 @@ Unlikely--we would have detected it before the transfer--
 <<speaker="F">>
 Only the parasite would say that--
 
-[[<<wait="6">>|4C]]
+<<wait="4C","6">>
 
 
 :: 4C
@@ -182,14 +182,14 @@ Not possible--Either you are part of the collective in all ways, or you are not-
 <<speaker="F">>
 Then who?
 
-[[<<wait="6">>|4F]]
+<<wait="4F","6">>
 
 
 :: Then you are the parasite.
 <<speaker="F">>
 Then you are the parasite--
 
-[[<<wait="6">>|4B]]
+<<wait="4B","6">>
 
 
 :: 4A
@@ -202,14 +202,14 @@ Then you are the parasite--
 <<speaker="F">>
 Of course not--We'll kill you.
 
-[[<<wait="6">>|4B]]
+<<wait="4B","6">>
 
 
 :: Of course.
 <<speaker="F">>
 Of course--
 
-[[<<wait="6">>|4C]]
+<<wait="4C","6">>
 
 
 :: You haven't?
@@ -230,7 +230,7 @@ Then when everyone does I will gather them up--and then we'll have our answer--
 <<speaker="F">>
 Nonsense
 
-[[<<wait="6">>|4B]]
+<<wait="4B","6">>
 
 
 :: Fine. Once you've gotten them, come back to me.
@@ -244,5 +244,3 @@ Fine--once you've gotten them--come back to me--
 <<unload>>
 <<nexttree="4H">>
 <<state="idle">>
-
-

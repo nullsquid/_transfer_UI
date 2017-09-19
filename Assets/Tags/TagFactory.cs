@@ -64,12 +64,21 @@ namespace Silk{
             case "connect":
                 ConnectTag newConnectTag = new ConnectTag(tagName, args);
                 return newConnectTag;
+            case "level":
+                LevelTag newLevelTag = new LevelTag(tagName, args);
+                return newLevelTag;
             case "action":
                 ActionTag newActionTag = new ActionTag(tagName, args);
                 return newActionTag;
             case "error":
                 ErrorTag newErrorTag = new ErrorTag(tagName, args);
                 return newErrorTag;
+			case "memory":
+				MemoryTag newMemoryTag = new MemoryTag (tagName, args);
+				return newMemoryTag;
+			case "end":
+				EndingTag newEndingTag = new EndingTag (tagName, args);
+				return newEndingTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

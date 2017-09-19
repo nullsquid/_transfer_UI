@@ -14,14 +14,14 @@
 <<speaker="G">>
 I think there's something here!
 
-[[<<wait="6">>|3D]]
+<<wait="3D","6">>
 
 
 :: Quiet!  I think there's something here!
 <<speaker="G">>
 Quiet!  I think there's something here!
 
-[[<<wait="6">>|3D]]
+<<wait="3D","6">>
 
 
 :: 3D
@@ -36,7 +36,7 @@ Quiet!  I think there's something here!
 <<speaker="G">>
 Shhh!  I think there's something here!
 
-[[<<wait="6">>|3D]]
+<<wait="3D","6">>
 
 
 :: MetaData
@@ -48,10 +48,8 @@ Shhh!  I think there's something here!
 <<speaker="G">>
 Hush!  I think there's something here!
 
-[[<<wait="6">>|3D]]
+<<wait="3D","6">>
 
 
 :: StoryAuthor
 Anonymous
-
-

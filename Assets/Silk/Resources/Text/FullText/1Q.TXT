@@ -1,4 +1,5 @@
 ﻿:: Start
+<<memory>>
 <<speaker="0">>
 Now I suppose you have to make a final decision.
 
