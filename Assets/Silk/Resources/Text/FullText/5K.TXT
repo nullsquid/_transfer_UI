@@ -1,8 +1,8 @@
 ﻿:: Start
 <<speaker="E">>
-Here are they eyes.  Have a look.  Whichever channel you want.
+Here are the eyes.  Have a look.  Whichever channel you want.
 
-[[<<wait="60">>|4L]]
+<<wait="4L","60">>
 
 
 :: 4L
@@ -22,5 +22,3 @@ Here are they eyes.  Have a look.  Whichever channel you want.
 
 :: StoryAuthor
 Anonymous
-
-
