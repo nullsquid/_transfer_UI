@@ -36,6 +36,13 @@ public class ActionTag : SilkTagBase {
 				controller.discoveredActions.Add (actName, newRunAction);
 			}
             break;
+		case "TOUCH":
+			TouchAction newTouchAction = new TouchAction (actName, actArgs);
+			controller.activeActions.Add (newTouchAction);
+			if (!controller.discoveredActions.ContainsKey (actName)) {
+				controller.discoveredActions.Add (actName, newTouchAction);
+			}
+			break;
         }
         
 

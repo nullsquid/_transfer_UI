@@ -114,6 +114,7 @@ public class MainInputHandler : MonoBehaviour {
 			
 		}
         else {
+			Debug.Log (_root);
 			ActionCommand (_root, _args);
 		}
         
