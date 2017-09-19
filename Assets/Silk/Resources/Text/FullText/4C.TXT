@@ -22,7 +22,7 @@ What was it you wanted to do?
 <<speaker="F">>
 Now there's an idea--If you want to keep anything else from getting in--you have to seal the dog door--
 
-[[<<wait="6">>|3J]]
+<<wait="3J","6">>
 
 
 :: 3A
@@ -67,7 +67,7 @@ Anonymous
 <<speaker="F">>
 That's a--disgusting--thought
 
-[[<<wait="6">>|3E]]
+<<wait="3E","6">>
 
 
 :: 3E
