@@ -2,13 +2,13 @@
 <<speaker="E">>
 Hello, there.  Have you seen <<name="I">>?
 
-[[No.|4C]]
+[[No |4C]]
 
 [[No.  Do you know where I can find a light?|I'd guess you've got to find your way to the center.  Have you re-learned how to monologue?]]
 
 [[No.  Have you seen the rat?|I don't believe I have.  Have you tried to just cage it?]]
 
-[[Yes.|Where'd # go?]]
+[[Yes.|Where'd go?]]
 
 
 :: I'd guess you've got to find your way to the center.  Have you re-learned how to monologue?
@@ -31,7 +31,7 @@ It's quite simple.  Just say whatever it is you want to go.  Go head.  Try it.
 5F
 
 
-:: Where'd # go?
+:: Where'd go?
 <<speaker="D">>
 Where'd <<name="I">> go?
 
@@ -77,5 +77,3 @@ It's quite simple.  Just say whatever you want to do.
 <<unload>>
 <<nexttree="4A">>
 <<state="idle">>
-
-
