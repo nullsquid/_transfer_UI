@@ -25,7 +25,7 @@ Make one. Did you meet <<name="E">>?
 
 :: Did # tell you about the monologues?
 <<speaker="D">>
-Did <<pronoun="E",tense>> tell you about the monologues?
+Did <<pronoun="E","subject">> tell you about the monologues?
 
 [[Yes.|So make one.]]
 
@@ -78,5 +78,3 @@ So make one.
 <<unload>>
 <<nexttree="3A">>
 <<state="idle">>
-
-

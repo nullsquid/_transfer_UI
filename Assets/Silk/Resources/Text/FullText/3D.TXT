@@ -51,7 +51,7 @@ Oh, but it must be something.
 <<speaker="G">>
 Right here?  This screen?  It'll be good for the museum, if nothing else.  An artifact.
 
-[[<<wait="6">>|2D]]
+<<wait="2D","6">>
 
 
 :: StoryAuthor
@@ -68,5 +68,3 @@ Anonymous
 <<unload>>
 <<nexttree="2D">>
 <<state="idle">>
-
-

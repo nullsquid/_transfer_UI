@@ -1,8 +1,5 @@
-﻿:: Start
-<<noprompt>>
-[[Is someone there?|Error]]
 
-:: Error
+:: Start
 <<error="3">>
 
 

@@ -1,7 +1,5 @@
 ﻿:: Start
-<<error="CONNECTION INTERRUPTED
-
-RESTART CONNECTION">>
+<<error="3">>
 
 
 :: StoryTitle
@@ -15,5 +13,3 @@ RESTART CONNECTION">>
 
 :: StoryAuthor
 Anonymous
-
-
