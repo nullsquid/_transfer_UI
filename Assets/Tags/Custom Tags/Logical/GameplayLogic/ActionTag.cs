@@ -92,6 +92,13 @@ public class ActionTag : SilkTagBase {
 				controller.discoveredActions.Add (actName, newPistolAction);
 			}
 			break;
+		case "OPEN":
+			OpenAction newOpenAction = new OpenAction (actName, actArgs);
+			controller.activeActions.Add (newOpenAction);
+			if (!controller.discoveredActions.ContainsKey (actName)) {
+				controller.discoveredActions.Add (actName, newOpenAction);
+			}
+			break;
         }
         
 

@@ -42,7 +42,7 @@ Excellent.  It almost looks like one of us.
 
 :: How did it get away?
 <<speaker="H">>
-How did it gey away?
+How did it get away?
 
 [[It fought back.|2G]]
 
@@ -70,5 +70,3 @@ Anonymous
 :: MetaData
 <<connect="H">>
 <<level="3">>
-
-

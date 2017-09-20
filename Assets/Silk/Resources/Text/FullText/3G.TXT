@@ -1,12 +1,11 @@
 ﻿:: Start
 <<noprompt>>
 
-[[<<action="OPEN">>|Open]]
+<<action="OPEN","Open">>
 
 
 :: Open
 <<speaker="D">>
-<<action="OPEN">>
 
 [[It's not working.|So you want to just give up?]]
 
@@ -43,5 +42,3 @@ VERBS
 :: MetaData
 <<connect="D">>
 <<level="3">>
-
-

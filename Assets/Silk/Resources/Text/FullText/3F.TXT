@@ -1,6 +1,6 @@
 ﻿:: Start
 <<speaker="H">>
-All we've got to do is find the old weapons. 
+All we've got to do is find the old weapons.
 
 [[What kind of weapons?|You've got to remember the bombs?]]
 
@@ -69,13 +69,11 @@ You've got to remember the bombs?
 <<speaker="H">>
 Yes, exactly.
 
-[[<<wait="6">>|2B]]
+<<wait="2B","6">>
 
 
 :: That was one sort.  There were dozens of kinds.
 <<speaker="H">>
 That was one sort.  There were dozens of kinds.
 
-[[<<wait="6">>|2B]]
-
-
+<<wait="2B","6">>
