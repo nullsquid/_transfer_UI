@@ -1,16 +1,15 @@
 ﻿:: Start
 <<speaker="0">>
-<<action="RUN">>
 
-[[<<action="RUN">>|2D]]
+<<action="RUN","2D">>
 
-[[<<action="RUN">>|2E]]
+<<action="RUN","2E">>
 
-[[<<action="RUN">>|2F]]
+<<action="RUN","2F">>
 
-[[<<action="RUN">>|2H]]
+<<action="RUN","2H">>
 
-[[<<action="RUN">>|2A]]
+<<action="RUN","2A">>
 
 
 :: 2D

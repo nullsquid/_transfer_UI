@@ -64,7 +64,7 @@ That's what I said, isn't it? Don't worry, it will all come back.
 <<speaker="C">>
 It's better than running around in the black like a bunch of idiots.
 
-[[<<wait="6">>|2A]]
+<<wait="2A","6">>
 
 
 :: A monster or a revelation.
@@ -119,7 +119,7 @@ That's the plan.
 <<speaker="C">>
 Boredom. A bludgeon to the head. Whatever.
 
-[[<<wait="6">>|2F]]
+<<wait="2F","6">>
 
 
 :: StoryAuthor
@@ -219,7 +219,7 @@ Up. A satellite or some such thing. Backup storage.
 <<speaker="C">>
 Such as? Actually, never mind. I'm tired of this dialogue.
 
-[[<<wait="6">>|2A]]
+<<wait="2A","6">>
 
 
 :: 2A
@@ -290,5 +290,3 @@ My apologies.  It's a tragedy for me too, always trapped here with myself.
 <<unload>>
 <<nexttree="2F">>
 <<state="idle">>
-
-
