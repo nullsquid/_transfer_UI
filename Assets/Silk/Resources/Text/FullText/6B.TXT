@@ -112,7 +112,7 @@ To kill a rat, you need to think like a rat--what's it's greatest weakness?--its
 
 [[That's nonsense.|5C]]
 
-[[<<pronoun="0", "subject">> will be afraid.|5G]]
+[[<<pronoun="0","subject">> will be afraid.|5G]]
 
 [[How do I use that?|Corner. Make think already dead. will give self up to you on a plate.]]
 

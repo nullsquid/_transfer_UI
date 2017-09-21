@@ -30,6 +30,7 @@ public class IdleState : ITerminalState {
 
 	public void TerminalExecuteState(){
         //just hang out
+        Debug.Log("IN IDLE STATE");
 
 	}
 

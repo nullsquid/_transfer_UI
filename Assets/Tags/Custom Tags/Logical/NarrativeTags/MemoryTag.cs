@@ -14,7 +14,7 @@ public class MemoryTag : SilkTagBase {
 	}
 
 	public override void ExecuteTagLogic(List<string> args){
-		MemoryManager.instance.UnlockMemory (DialogueManager.instance.level);
+		MemoryManager.instance.UnlockMemory ("1");
 		//GameObject.FindObjectOfType<IdleTextPrinter> ().InvokeIdlePrint ("\n>>\n>>NEW MEMORY UNLOCKED");
 		OnExecutionComplete ();
 	}
