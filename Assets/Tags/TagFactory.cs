@@ -73,6 +73,9 @@ namespace Silk{
             case "error":
                 ErrorTag newErrorTag = new ErrorTag(tagName, args);
                 return newErrorTag;
+            case "sysoverride":
+                SysOverrideTag newOverrideTag = new SysOverrideTag(tagName, args);
+                return newOverrideTag;
 			case "memory":
 				MemoryTag newMemoryTag = new MemoryTag (tagName, args);
 				return newMemoryTag;

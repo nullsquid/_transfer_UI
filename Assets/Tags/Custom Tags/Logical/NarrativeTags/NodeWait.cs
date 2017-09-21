@@ -14,7 +14,7 @@ public class NodeWait : SilkTagBase {
     }
 
     public override void ExecuteTagLogic(List<string> args) {
-        DialogueManager.instance.WaitForNextNode(args[0], float.Parse(args[1]));
+        //DialogueManager.instance.WaitForNextNode(args[0], float.Parse(args[1]));
         OnExecutionComplete();
     }
 
