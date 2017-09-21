@@ -32,9 +32,9 @@ Good.  Wait.  Now!
 
 :: Okay, I'll override when you tell me to.
 <<speaker="B">>
-Okay, I'll override when you tell me to.
+Okay, I'll override when you tell me to
 
-[[Wait.|Wait.]]
+[[Wait |Wait.]]
 
 [[Now.|1C]]
 
@@ -89,5 +89,3 @@ Wait.
 [[Wait.|Wait4]]
 
 [[Now.|1C]]
-
-
