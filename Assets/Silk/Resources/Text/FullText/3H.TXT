@@ -8,7 +8,7 @@
 <<speaker="B">>
 I'm here.
 
-[[This is the survivor. We've got to help <<pronoun="0",tense>>.|2H]]
+[[This is the survivor. We've got to help <<pronoun="0","object">>.|2H]]
 
 
 :: MetaData
@@ -28,5 +28,3 @@ I'm here.
 
 :: StoryAuthor
 Anonymous
-
-

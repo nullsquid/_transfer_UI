@@ -154,9 +154,6 @@ public class DialogueManager : MonoBehaviour {
         StartCoroutine(WaitAndGetNextStory(nextStory, time));
         
     }
-    public void WaitForNextNode(string nextnode, float time) {
-        StartCoroutine(WaitAndGetNextNode(nextnode, time));
-    }
     IEnumerator WaitAndGetNextStory(string nextStoryName, float timeToWait) {
         yield return new WaitForSeconds(timeToWait);
         GetNextStory(nextStoryName);
@@ -171,11 +168,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 
     }
-    IEnumerator WaitAndGetNextNode(string nextNodeName, float timeToWait) {
-        yield return new WaitForSeconds(timeToWait);
-        FindNextNodeByName(nextNodeName);
 
-    }
 	//butts
 	public void GetNextStory(string nextStoryName){
         Debug.Log("NEXT STORY FIRED");
@@ -246,6 +239,9 @@ public class DialogueManager : MonoBehaviour {
 						} else if (tag.TagName == "wait") {
 							curNode.connectQueue.Add (tag);
                             
+                        }
+                        if(tag.TagName == "prob") {
+                            CurNode.connectQueue.Add(tag);
                         }
 						else {
 							tag.TagExecute ();
@@ -351,57 +347,58 @@ public class DialogueManager : MonoBehaviour {
 
 
     public void ExecuteNode() {
-		//Debug.Log ("NYOOM");
-		//Debug.Log ("BORGH ! " + curNode.executionQueue);
-		if (curNode.executionQueue != null) {
-			foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
+        //Debug.Log ("NYOOM");
+        //Debug.Log ("BORGH ! " + curNode.executionQueue);
+        if (curNode.executionQueue != null) {
+            foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 
-				//
-				//Debug.Log(tag);
-				if (tag != null) {
-				
-					if (tag.IsComplete == true) {
-						Debug.Log ("TRUE");
+                //
+                //Debug.Log(tag);
+                if (tag != null) {
+
+                    if (tag.IsComplete == true) {
+                        Debug.Log("TRUE");
                         TextPrinter.onPrintComplete -= tag.TagExecute;
-						continue;
-					} else if (tag.IsComplete == false) {
-						Debug.Log ("FALSE");
-						if (curNode.executionQueue.Count >= 1) {
-							//if(tag.TagName == "connect") {
-							//    Debug.Log("boop");
-							//    connectID = tag.Value;
-							//}
-							Debug.Log (tag.TagName);
+                        continue;
+                    }
+                    else if (tag.IsComplete == false) {
+                        Debug.Log("FALSE");
+                        if (curNode.executionQueue.Count >= 1) {
+                            //if(tag.TagName == "connect") {
+                            //    Debug.Log("boop");
+                            //    connectID = tag.Value;
+                            //}
+                            Debug.Log(tag.TagName);
                             if (tag.TagName == "wait") {
                                 //I might want to make another list in the node
                                 //where i put tags that need to be executed on connect
                                 //and in connect state i run that
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
-                            else if(tag.TagName == "nodewait") {
+                            else if (tag.TagName == "nodewait") {
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
-                            else if(tag.TagName == "sfx") {
+                            else if (tag.TagName == "sfx") {
                                 //tag.TagExecute();
                                 //Debug.Log("hey hi");
                                 //StartCoroutine(WaitForConnect(tag));
                                 tag.TagExecute();
-								//curNode.connectQueue.Add(tag);
+                                //curNode.connectQueue.Add(tag);
                             }
                             else {
                                 //StartCoroutine(WaitForConnect(tag));
                                 tag.TagExecute();
                             }
-						}
-						//break;
-					}
-				}
-				//else??
-            
+                        }
+                        //break;
+                    }
+                }
+                //else??
 
-			}
-		}
-		RunNodeData ();
+
+            }
+        }
+        RunNodeData();
 		//Debug.Log ("CURNODE IS " + curNode.nodeName + " || " + "ROOTNODE IS " + rootNode.nodeName);
     }
     /*public bool IEnumerator WaitForTagComplete() {
@@ -421,6 +418,23 @@ public class DialogueManager : MonoBehaviour {
         //Debug.Log("sup?");
         return true;
 	}
+
+    public void WaitForNextNode(float time, string nodeName) {
+        Debug.Log(nodeName);
+        StartCoroutine(WaitAndFindNextNode(time, nodeName));
+    }
+
+    IEnumerator WaitAndFindNextNode(float timeToWait, string nodeName) {
+        SilkNode nextNode;
+        yield return new WaitForSeconds(timeToWait);
+
+        nextNode = curStory.GetNodeByName(nodeName);
+
+        curNode = nextNode;
+        nodeCleanup();
+        ExecuteNode();
+        //RunNodeData();
+    }
 
 
 

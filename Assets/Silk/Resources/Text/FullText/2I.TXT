@@ -7,22 +7,20 @@
 <<speaker="H">>
 You can't keep on running forever.
 
-[[Watch me.|Run.2]]
+[[Watch me.|Run2]]
 
-[[<<action="RUN">>|Run.]]
+<<action="RUN","Run">>
 
-[[<<action="DIG">>|You can't go that way.]]
+<<action="DIG","You can't go that way.">>
 
 
 :: You can't go that way.
 <<speaker="H">>
 You can't go that way.
 
-[[<<action="RUN">>|1A]]
-
-[[<<action="RUN">>|1B]]
-
-[[<<action="DIG">>|1C]]
+<<action="RUN","1A">>
+<<action="RUN","1B">>
+<<action="RUN","1C">>
 
 
 :: 1A
@@ -35,15 +33,13 @@ You can't go that way.
 2I
 
 
-:: Run.2
+:: Run2
 <<speaker="H">>
-<<action="RUN">>
 
-[[<<action="RUN">>|1D]]
+<<action="RUN","1D">>
+<<action="RUN","1I">>
+<<action="RUN","1J">>
 
-[[<<action="RUN">>|1I]]
-
-[[<<action="RUN">>|1J]]
 
 
 :: 1C
@@ -56,15 +52,12 @@ You can't go that way.
 Anonymous
 
 
-:: Run.
+:: Run
 <<speaker="H">>
-<<action="RUN">>
 
-[[<<action="RUN">>|1L]]
-
-[[<<action="RUN">>|1F]]
-
-[[<<action="RUN">>|1K]]
+<<action="RUN","1L">>
+<<action="RUN","1F">>
+<<action="RUN","1K">>
 
 
 :: 1B
@@ -107,5 +100,3 @@ Anonymous
 <<unload>>
 <<nexttree="1L">>
 <<state="idle">>
-
-

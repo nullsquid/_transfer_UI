@@ -36,25 +36,25 @@
 :: NO PROMPT B
 <<noprompt>>
 
-[[<<action="PUNCH">>|NO PROMPT 2]]
+<<action="PUNCH","NO PROMPT 2">>
 
-[[<<action="KICK">>|NO PROMPT 2]]
+<<action="KICK","NO PROMPT 2">>
 
-[[<<action="THROW">>|NO PROMPT 2]]
+<<action="THROW","NO PROMPT 2">>
 
-[[<<action="RUN">>|NO PROMPT 2]]
+<<action="RUN","NO PROMPT 2">>
 
 
 :: NO PROMPT A
 <<noprompt>>
 
-[[<<action="KNIFE">>|NO PROMPT 3]]
+<<action="KNIFE","NO PROMPT 3">>
 
-[[<<action="SWORD">>|NO PROMPT 3]]
+<<action="SWORD","NO PROMPT 3">>
 
-[[<<action="AX">>|NO PROMPT 3]]
+<<action="AX","NO PROMPT 3">>
 
-[[<<action="PISTOL">>|NO PROMPT 3]]
+<<action="PISTOL","NO PROMPT 3">>
 
 
 :: NO PROMPT 3
@@ -67,5 +67,3 @@
 <<unload>>
 <<nexttree="3C">>
 <<state="idle">>
-
-

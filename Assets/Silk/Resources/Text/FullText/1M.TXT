@@ -3,23 +3,23 @@
 <<speaker="A">>
 End of exam.  Your results will be calculated using the standard system
 
-<<prob="n", "a", "b">>
+<<prob="9","50","you fail","you pass">>
 
-[[0-5|you fail]]
-
-[[6-10|you pass]] 
 
 
 :: you fail
 <<speaker="A">>
 You have failed.  Try again?
 
-[[Yes.]]
+[[Yes.|YesEnd]]
 
-[[No.]]
+[[No.|NoEnd]]
 
+:: YesEnd
 <<end="Ending Name">>
 
+:: NoEnd
+<<end="Ending Name">>
 
 :: StoryTitle
 1M
@@ -29,9 +29,9 @@ You have failed.  Try again?
 <<speaker="A">>
 You have passed.  Try again?
 
-[[Yes.]]
+[[Yes.|YesEnd]]
 
-[[No.]]
+[[No.|NoEnd]]
 
 <<end="Ending Name">>
 
@@ -39,4 +39,6 @@ You have passed.  Try again?
 :: StoryAuthor
 Anonymous
 
-
+:: MetaData
+<<connect="A">>
+<<level="1">>

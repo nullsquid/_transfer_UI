@@ -66,7 +66,7 @@ I knew it.  You got my message?  We had an agreement.
 <<speaker="E">>
 Go on.
 
-[[<<action="PENETRATE">>|1K]]
+<<action="PENETRATE","1K">>
 
 
 :: Penetrate

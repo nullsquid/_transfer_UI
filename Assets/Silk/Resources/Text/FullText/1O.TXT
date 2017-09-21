@@ -1,10 +1,11 @@
 ﻿:: MetaData
-<<memory>>
+
 <<connect="E">>
 <<level="1">>
 
 
 :: Start
+<<memory>>
 <<speaker="E">>
 And here is the ceiling.  We could go up and sit on the roof.
 
@@ -15,8 +16,9 @@ And here is the ceiling.  We could go up and sit on the roof.
 <<speaker="E">>
 But we won't.
 
-[[Why not?]]
+[[Why not?|End]]
 
+:: End
 <<end="Ending Name">>
 
 
@@ -26,5 +28,3 @@ But we won't.
 
 :: StoryAuthor
 Anonymous
-
-

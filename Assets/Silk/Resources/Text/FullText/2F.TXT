@@ -37,7 +37,7 @@ We've got to dig, I suppose.
 <<speaker="D">>
 So we can see it.  Isn't that worth something?
 
-[[<<wait="6">>|1L]]
+<<wait="1L","6">>
 
 
 :: 1J
@@ -54,7 +54,7 @@ Anonymous
 <<speaker="D">>
 What's that, then?
 
-[[<<wait="6">>|1K]]
+<<wait="1K","6">>
 
 
 :: 1L
@@ -67,5 +67,3 @@ What's that, then?
 <<unload>>
 <<nexttree="1K">>
 <<state="idle">>
-
-

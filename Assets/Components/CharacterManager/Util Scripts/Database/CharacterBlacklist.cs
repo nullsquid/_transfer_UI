@@ -11,6 +11,8 @@ namespace Transfer.System {
                 "PORN",
                 "PUSY",
                 "NIGR",
+				"NUGR",
+				"NIGA",
                 "TITS",
                 "FAGT",
 				"COPS",

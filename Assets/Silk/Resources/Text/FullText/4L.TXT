@@ -2,7 +2,7 @@
 <<speaker="E">>
 And here are the ears.  Go ahead.  Have a listen.
 
-[[<<wait="60">>|3M]]
+<<wait="3M","60">>
 
 
 :: 3M
@@ -22,5 +22,3 @@ And here are the ears.  Go ahead.  Have a listen.
 
 :: StoryAuthor
 Anonymous
-
-

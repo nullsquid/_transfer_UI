@@ -19,7 +19,7 @@ You did?
 <<speaker="H">>
 What happened?
 
-[[I chopped off <<pronoun="0",tense>> head.|1B]]
+[[I chopped off <<pronoun="0","possess">> head.|1B]]
 
 
 :: StoryTitle
@@ -30,7 +30,7 @@ What happened?
 <<speaker="H">>
 Any proof?
 
-[[<<pronoun="0",tense>> dissolved once it was done.  But, smell.|It's gone.]]
+[[<<pronoun="0","subject">> dissolved once it was done.  But, smell.|It's gone.]]
 
 
 :: Excellent.  Already the air is clearing up.
@@ -74,5 +74,3 @@ It's gone.
 <<unload>>
 <<nexttree="1B">>
 <<state="idle">>
-
-

@@ -54,8 +54,8 @@ Anonymous
 :: We took a vote and decided to kill them all.  It was a 4/5 decision.  Majority rule.  But we didn't finish the job.  We've got to do what we set out to do.
 <<speaker="F">>
 We took a vote and decided to kill them all--it was a five against four decision--Majority rule--but we didn't finish the job--we've got to do what we set out to do--
+<<wait="3B","6">>
 
-[[<<wait="6">>|3B]]
 
 
 :: MetaData
@@ -67,5 +67,3 @@ We took a vote and decided to kill them all--it was a five against four decision
 <<unload>>
 <<nexttree="3F">>
 <<state="idle">>
-
-
