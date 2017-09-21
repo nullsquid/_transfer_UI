@@ -1,8 +1,6 @@
 ﻿:: Start
 <<memory>>
-<<error="CONNECTION INTERRUPTED
-
-RESTART CONNECTION">>
+<<error="3">>
 
 
 :: MetaData
@@ -16,5 +14,3 @@ RESTART CONNECTION">>
 
 :: StoryAuthor
 Anonymous
-
-

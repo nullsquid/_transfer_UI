@@ -82,6 +82,9 @@ namespace Silk{
 			case "end":
 				EndingTag newEndingTag = new EndingTag (tagName, args);
 				return newEndingTag;
+            case "prob":
+                ProbTag newProbTag = new ProbTag(tagName, args);
+                return newProbTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

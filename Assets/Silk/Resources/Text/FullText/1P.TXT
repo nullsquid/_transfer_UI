@@ -2,7 +2,9 @@
 <<memory>>
 <<speaker="I">>
 <<audioclip="Audio Name">>
+<<nodewait="End","9">>
 
+:: End
 <<end="Ending Name">>
 
 
@@ -17,5 +19,3 @@
 
 :: StoryAuthor
 Anonymous
-
-

@@ -240,6 +240,9 @@ public class DialogueManager : MonoBehaviour {
 							curNode.connectQueue.Add (tag);
                             
                         }
+                        if(tag.TagName == "prob") {
+                            CurNode.connectQueue.Add(tag);
+                        }
 						else {
 							tag.TagExecute ();
 						}

@@ -1,6 +1,6 @@
 ﻿:: Start
 <<speaker="0">>
-So what if I am 0?  What will you do?
+So what if I am <<name="0">>?  What will you do?
 
 [[We've done this before|1K]]
 
@@ -46,5 +46,3 @@ Anonymous
 :: MetaData
 <<connect="0">>
 <<level="2">>
-
-

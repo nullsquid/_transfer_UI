@@ -1,14 +1,15 @@
 ﻿:: MetaData
-<<memory>>
+
 <<connect="F">>
 <<level="1">>
 
 
 :: Start
+<<memory>>
 <<speaker="F">>
 You are the rat--you will be exterminated--
 
-[[No, I just misremembered.| Behead]]
+[[No, I just misremembered.|Behead]]
 
 [[Alright.|Behead 1]]
 
@@ -17,7 +18,7 @@ You are the rat--you will be exterminated--
 [[Why?|We made the decision.]]
 
 
-::  Behead
+:: Behead
 <<speaker="F">>
 <<action="BEHEAD">>
 
@@ -66,5 +67,3 @@ Anonymous
 
 
 <<end="Ending Name">>
-
-
