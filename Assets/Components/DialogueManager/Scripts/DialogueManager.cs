@@ -357,6 +357,7 @@ public class DialogueManager : MonoBehaviour {
 
 
     public void ExecuteNode() {
+        
         //Debug.Log ("NYOOM");
         //Debug.Log ("BORGH ! " + curNode.executionQueue);
         if (curNode.executionQueue != null) {
@@ -386,6 +387,7 @@ public class DialogueManager : MonoBehaviour {
 
                                 //need to remove this once  it's over
                                 TextPrinter.onPrintComplete += tag.TagExecute;
+
                             }
                             else if (tag.TagName == "nodewait") {
                                 TextPrinter.onPrintComplete += tag.TagExecute;

@@ -25,7 +25,8 @@ public class WaitTag : SilkTagBase {
 
     public override void OnExecutionComplete() {
         base.OnExecutionComplete();
-        //GameObject.FindObjectOfType<TextPrinter>() -=
+
+        TextPrinter.onPrintComplete -= this.TagExecute;
     }
 
 
