@@ -23,6 +23,11 @@ public class WaitTag : SilkTagBase {
         OnExecutionComplete();
     }
 
+    public override void OnExecutionComplete() {
+        base.OnExecutionComplete();
+        //GameObject.FindObjectOfType<TextPrinter>() -=
+    }
+
 
 
 }

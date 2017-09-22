@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class IdleState : ITerminalState {
 
 	public GameObject buddyList;
@@ -15,6 +16,7 @@ public class IdleState : ITerminalState {
 	public void TerminalEnterState(){
         //exit previous state
 		//buddyList = GameObject.Find ("BuddyList");
+        
         terminal.canRunCommands = true;
         GameObject.FindObjectOfType<Transfer.Input.MainInputController>().CanRecordInput = true;
         terminal.buddyList.SetActive(true);
@@ -26,6 +28,7 @@ public class IdleState : ITerminalState {
 		GameObject.FindObjectOfType<IdleTextPrinter> ().ClearIdleText ();
         //GameObject.Find ("BuddyList").GetComponent<Image>().
         //buddyList.SetActive(true);
+
     }
 
 	public void TerminalExecuteState(){

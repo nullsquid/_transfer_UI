@@ -68,6 +68,7 @@ public class DialogueManager : MonoBehaviour {
         //newNodeStart += ExecuteNode;
 		rp.onButtonSubmit += FindNextNode;
 		tp.onNodeChange += GetNodePassage;
+        //nodeCleanup += ClearConnectQueue;
 	}
 
 	void OnDisable(){
@@ -76,6 +77,7 @@ public class DialogueManager : MonoBehaviour {
         //newNodeStart -= ExecuteNode;
 		rp.onButtonSubmit -= FindNextNode;
 		tp.onNodeChange -= GetNodePassage;
+        //nodeCleanup -= ClearConnectQueue;
 	}
 
 	////////////////////////////////////////////
@@ -149,7 +151,11 @@ public class DialogueManager : MonoBehaviour {
         GetConnectID();
         GetCurLevel();
 	}
+    void ClearConnectQueue() {
+        curNode.executionQueue.Clear();
+        curNode.connectQueue.Clear();
 
+    }
     public void WaitForNextStory(string nextStory, float time) {
         StartCoroutine(WaitAndGetNextStory(nextStory, time));
         
@@ -172,8 +178,9 @@ public class DialogueManager : MonoBehaviour {
 	//butts
 	public void GetNextStory(string nextStoryName){
         Debug.Log("NEXT STORY FIRED");
-		curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
-		GetRootNode ();
+        //ClearConnectQueue();
+        curStory = Silky.Instance.mother.GetStoryByName (nextStoryName);
+        GetRootNode ();
 		GetConnectID();
         GetCurLevel();
 
@@ -206,9 +213,11 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 	public void GetRootNode(){
+        //ClearConnectQueue();
 		//if (curStory.GetNodeName ("Start") != null) {
 			rootNode = curStory.GetNodeByName ("Start");
 			curNode = rootNode;
+        //ClearConnectQueue();
         foreach (Silk.SilkTagBase tag in curNode.executionQueue) {
 
             //
@@ -270,6 +279,7 @@ public class DialogueManager : MonoBehaviour {
         //Debug.Log ("HI NAT " + nextNode);
         
         curNode = nextNode;
+        //ClearConnectQueue();
         nodeCleanup();
 
         ExecuteNode ();

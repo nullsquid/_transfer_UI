@@ -82,7 +82,7 @@ namespace Silk
             _silkTagArgs = args;
         }
 
-		public void OnExecutionComplete(){
+		public virtual void OnExecutionComplete(){
             _isComplete = true;
 		}
 
