@@ -13,7 +13,7 @@ Go to hell.
 <<speaker="0">>
 You already created one.
 
-[[<<wait="6">>|1D]]
+<<wait="1D","6">>
 
 
 :: 1H
@@ -52,7 +52,7 @@ Anonymous
 <<speaker="0">>
 You're nothing.
 
-[[<<wait="6">>|1E]]
+<<wait="1E","6">>
 
 
 :: 1E

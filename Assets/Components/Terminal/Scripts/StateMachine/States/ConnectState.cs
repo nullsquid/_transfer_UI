@@ -19,6 +19,7 @@ public class ConnectState : ITerminalState {
 
         terminal.mainText.SetActive(true);
         foreach (SilkTagBase tag in DialogueManager.instance.CurNode.connectQueue){
+            //titties!!!
             if (tag.TagName == "wait") {
                 TextPrinter.onPrintComplete += tag.TagExecute;
             }
@@ -36,9 +37,11 @@ public class ConnectState : ITerminalState {
 	}
 
 	public void TerminalExitState(){
+        //Debug.Log("BOOP " + curNode.executionQueue[0]);
         Debug.Log("EXITED CONNECTED STATE");
         terminal.buddyList.SetActive(true);
         terminal.mainText.SetActive(false);
+        
         //Save current node
         //exit state
     }

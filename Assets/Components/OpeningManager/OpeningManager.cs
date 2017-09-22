@@ -31,7 +31,7 @@ public class OpeningManager : MonoBehaviour {
 
 	}
     private void Update() {
-        Debug.Log(PlayerPrefs.GetString("FirstSectionComplete"));
+        //Debug.Log(PlayerPrefs.GetString("FirstSectionComplete"));
 
     }
     // Use this for initialization

@@ -59,6 +59,7 @@ public class ErrorTag : SilkTagBase {
         GameObject.FindObjectOfType<TextPrinter>().InvokeErrorText(errorMessage);
         //placeholder
         EffectsManager.instance.ErrorEffect();
+        MemoryManager.instance.UnlockMemory(DialogueManager.instance.level);
         DialogueManager.instance.WaitForNextStory(nextTreeName, float.Parse(args[0]));
     }
 

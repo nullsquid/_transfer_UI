@@ -73,12 +73,21 @@ namespace Silk{
             case "error":
                 ErrorTag newErrorTag = new ErrorTag(tagName, args);
                 return newErrorTag;
+            case "sysoverride":
+                SysOverrideTag newOverrideTag = new SysOverrideTag(tagName, args);
+                return newOverrideTag;
 			case "memory":
 				MemoryTag newMemoryTag = new MemoryTag (tagName, args);
 				return newMemoryTag;
 			case "end":
 				EndingTag newEndingTag = new EndingTag (tagName, args);
 				return newEndingTag;
+            case "prob":
+                ProbTag newProbTag = new ProbTag(tagName, args);
+                return newProbTag;
+			case "behere":
+				NotSupposedToBeHereTag newBeHereTag = new NotSupposedToBeHereTag (tagName, args);
+				return newBeHereTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

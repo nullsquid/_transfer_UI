@@ -22,7 +22,7 @@ Then--speak
 <<speaker="F">>
 Good
 
-[[<<wait="4">>|1I]]
+<<wait="1I","4">>
 
 
 :: MetaData
@@ -38,14 +38,14 @@ Good
 <<speaker="F">>
 You lie!
 
-[[<<wait="4">>|1F]]
+<<wait="1F","4">>
 
 
 :: You're a liar.
 <<speaker="F">>
 You're a liar--
 
-[[<<wait="4">>|1F]]
+<<wait="1F","4">>
 
 
 :: 1I
@@ -68,5 +68,3 @@ Anonymous
 <<unload>>
 <<nexttree="1F">>
 <<state="idle">>
-
-

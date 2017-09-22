@@ -108,7 +108,7 @@ How?
 
 :: You think I'm afraid of them? Fire
 <<speaker="F">>
-You think I'm afraid--of them? 
+You think I'm afraid--of them?
 
 <<action="FIRE">>
 
@@ -155,5 +155,3 @@ Of course us--
 <<action="FIRE">>
 
 <<end="Ending Name">>
-
-

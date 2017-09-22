@@ -9,7 +9,7 @@
 <<speaker="H">>
 Yes?
 
-[[The rat's gone.|Excellent.  Well done.]]
+[[The rat's gone|Excellent.  Well done.]]
 
 
 :: Are there any more?
@@ -39,11 +39,12 @@ Why would we want to?
 <<speaker="H">>
 Excellent.  Well done.
 
-[[That thing couldn't have harmed us.|<<end="Ending Name">>]]
+[[That thing couldn't have harmed us.|End]]
 
 [[We're safe now.|Are there any more?]]
 
-
+:: End
+<<end="Ending Name">>
 :: Good.
 <<speaker="H">>
 Good.
@@ -53,5 +54,3 @@ Good.
 
 :: StoryAuthor
 Anonymous
-
-

@@ -46,7 +46,7 @@ public class ScrollViewController : MonoBehaviour {
 		printComplete = true;
 	}
     void ResetScroll() {
-        Debug.Log("boop");
+        //Debug.Log("boop");
         //if(mainText.rectTransform.position.y != startPosY) {
         mainText.rectTransform.SetHeight(startPosY);
         //mainText.rectTransform.position = new Vector3(startPosX, -0.00012f,0f);

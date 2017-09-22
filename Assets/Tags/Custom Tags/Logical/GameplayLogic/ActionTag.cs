@@ -99,6 +99,20 @@ public class ActionTag : SilkTagBase {
 				controller.discoveredActions.Add (actName, newOpenAction);
 			}
 			break;
+        case "DIG":
+            DigAction newDigAction = new DigAction(actName, actArgs);
+            controller.activeActions.Add(newDigAction);
+            if (!controller.discoveredActions.ContainsKey(actName)) {
+                controller.discoveredActions.Add(actName, newDigAction);
+            }
+            break;
+        case "PENETRATE":
+            PenetrateAction newPenAction = new PenetrateAction(actName, actArgs);
+            controller.activeActions.Add(newPenAction);
+            if (!controller.discoveredActions.ContainsKey(actName)) {
+                controller.discoveredActions.Add(actName, newPenAction);
+            }
+            break;
         }
         
 

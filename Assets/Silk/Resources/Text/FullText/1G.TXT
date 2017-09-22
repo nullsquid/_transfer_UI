@@ -7,8 +7,9 @@
 <<memory>>
 <<noprompt>>
 
-[[Ansaldi]]
+[[Ansaldi |End]]
 
+:: End
 <<end="Ending Name">>
 
 
@@ -18,5 +19,3 @@
 
 :: StoryAuthor
 Anonymous
-
-

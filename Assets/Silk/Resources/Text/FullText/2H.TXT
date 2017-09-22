@@ -9,7 +9,7 @@ Input the code--that's all you need to do--
 
 :: Fine.  Ansaldi.  That's strange.  It says system override.
 <<speaker="F">>
-Fine--Ansaldi--that's strange--tt says system override--
+Fine--Ansaldi--that's strange--It says system override--
 
 [[What do you mean?|System override already in progress.]]
 
@@ -33,23 +33,24 @@ Fine--Ansaldi--that's strange--tt says system override--
 <<speaker="F">>
 System override--already in progress--
 
-[[<<wait="3">>|1H]]
+<<wait="1H","3">>
 
 
 :: Yes, that's all.  The code is Ansaldi.
 <<speaker="F">>
 Yes, that's all--the code is Ansaldi--
 
-[[I remember.|What did you do?!]]
+[[I remember.|ERROR]]
 
 
 :: StoryAuthor
 Anonymous
 
 
-:: What did you do?!
-<<error="SYSTEM OVERRIDE NOTICE">>
+:: ERROR
+<<sysoverride="1.5","What did you do?!">>
 
+:: What did you do?!
 <<speaker="F">>
 What did you do?!
 
@@ -60,5 +61,3 @@ What did you do?!
 <<unload>>
 <<nexttree="1I">>
 <<state="idle">>
-
-

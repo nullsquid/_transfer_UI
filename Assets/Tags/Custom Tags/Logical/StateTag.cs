@@ -16,7 +16,7 @@ public class StateTag : SilkTagBase {
         Debug.Log("State change");
         switch (args[0]) {
             case "idle":
-                terminal.ChangeState(new IdleState());
+                //terminal.ChangeState(new IdleState());
                 break;
         }
         //GameObject.FindObjectOfType<Terminal>().ChangeState()

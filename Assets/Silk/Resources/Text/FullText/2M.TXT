@@ -11,13 +11,15 @@ Okay okay.  Next and last task: you're gonna make your own computer game!  Isn't
 <<speaker="A">>
 Okay, first I need you to pick a number
 
-[[1|Now I need you to pick another number 1]]
+[[1|Now I need you to pick another number one]]
 
 [[42|Now I need you to pick another number 2]]
 
 [[1111|Now I need you to pick another number 3]]
 
 [[3 Million|Now I need you to pick another number 4]]
+
+
 
 
 :: Now I need you to pick another number 2
@@ -71,7 +73,7 @@ Now I need you to pick another number
 [[3 Million|1N]]
 
 
-:: Now I need you to pick another number 1
+:: Now I need you to pick another number one
 <<speaker="A">>
 Now I need you to pick another number
 
@@ -97,5 +99,3 @@ Anonymous
 <<unload>>
 <<nexttree="1R">>
 <<state="idle">>
-
-

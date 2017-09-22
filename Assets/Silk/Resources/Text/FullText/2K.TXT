@@ -66,14 +66,14 @@ I knew it.  You got my message?  We had an agreement.
 <<speaker="E">>
 Go on.
 
-[[<<action="PENETRATE">>|1K]]
+<<action="PENETRATE","1K">>
 
 
 :: Penetrate
 <<speaker="E">>
 <<action="PENETRATE">>
 
-[[<<wait="6">>|1K]]
+<<wait="1K","6">>
 
 
 :: Well, then, do you want to, or should I?
@@ -107,5 +107,3 @@ Good.  Then you're going to hold up your end?
 You're not getting away from me like that.
 
 [[<<action="EXIT">>|1K]]
-
-

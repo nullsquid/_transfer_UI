@@ -2,7 +2,7 @@
 <<speaker="A">>
 Beautiful!  Next, you're going to write a song.
 
-[[<<effect="Song">>|2M]]
+<<effect="Song","2M">>
 
 
 :: 2M
@@ -22,5 +22,3 @@ Beautiful!  Next, you're going to write a song.
 
 :: StoryAuthor
 Anonymous
-
-
