@@ -383,6 +383,8 @@ public class DialogueManager : MonoBehaviour {
                                 //I might want to make another list in the node
                                 //where i put tags that need to be executed on connect
                                 //and in connect state i run that
+
+                                //need to remove this once  it's over
                                 TextPrinter.onPrintComplete += tag.TagExecute;
                             }
                             else if (tag.TagName == "nodewait") {
