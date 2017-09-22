@@ -245,7 +245,9 @@ public class DialogueManager : MonoBehaviour {
 							curNode.connectQueue.Add (tag);
 						} else if (tag.TagName == "error") {
 							curNode.connectQueue.Add (tag);
-						} else if (tag.TagName == "wait") {
+						} else if (tag.TagName == "behere") {
+							curNode.connectQueue.Add (tag);
+						}else if (tag.TagName == "wait") {
 							curNode.connectQueue.Add (tag);
                             
                         }

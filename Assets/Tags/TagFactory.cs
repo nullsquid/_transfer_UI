@@ -85,6 +85,9 @@ namespace Silk{
             case "prob":
                 ProbTag newProbTag = new ProbTag(tagName, args);
                 return newProbTag;
+			case "behere":
+				NotSupposedToBeHereTag newBeHereTag = new NotSupposedToBeHereTag (tagName, args);
+				return newBeHereTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

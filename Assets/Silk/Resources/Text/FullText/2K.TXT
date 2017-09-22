@@ -73,7 +73,7 @@ Go on.
 <<speaker="E">>
 <<action="PENETRATE">>
 
-[[<<wait="6">>|1K]]
+<<wait="1K","6">>
 
 
 :: Well, then, do you want to, or should I?
@@ -107,5 +107,3 @@ Good.  Then you're going to hold up your end?
 You're not getting away from me like that.
 
 [[<<action="EXIT">>|1K]]
-
-

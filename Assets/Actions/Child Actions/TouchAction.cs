@@ -12,7 +12,7 @@ public class TouchAction : ActionBase {
 	}
 
 	public override void ExecuteActionLogic() {
-		Debug.Log (destination.nodeName);
+		//Debug.Log (destination.nodeName);
 		//when fired on 4F Start node, hits node '1' and then falls to node '2' where it stops
 		DialogueManager.instance.FindNextNodeByName(destination.nodeName);
 	}

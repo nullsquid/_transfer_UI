@@ -22,10 +22,10 @@ I'll show you.  Say "touch."
 <<speaker="E">>
 You'll run into me again.
 
-[[<<wait="6">>|4C]]
+<<wait="4C","6">>
 
 
-:: It was the one great advantage they humans had over us.  They could join each other, temporarily.  I feel very lonely.  Does that make sense?
+:: Lonely
 <<speaker="E">>
 It was the one great advantage they humans had over us.  They could join each other, temporarily.  I feel very lonely.  Does that make sense?
 
@@ -40,7 +40,7 @@ It was the one great advantage they humans had over us.  They could join each ot
 <<speaker="E">>
 Good.
 
-<<action="TOUCH","It was the one great advantage they humans had over us.  They could join each other, temporarily.  I feel very lonely.  Does that make sense?">>
+<<action="TOUCH","Lonely">>
 
 [[I'd like to stop now.|4G]]
 
@@ -96,7 +96,7 @@ Have sex with me.
 
 
 
-:: Yes, just like that.  Do you want to continue?
+:: Yes
 <<speaker="E">>
 Yes, just like that.  Do you want to continue?
 
@@ -105,7 +105,7 @@ Yes, just like that.  Do you want to continue?
 [[No.|4C]]
 
 
-:: Excellent.  It's counter-intuitive at first, rather abstract--but you'll find it's a valuable skill.  Do you feel ready to do on?
+:: Excellent.
 <<speaker="E">>
 Excellent.  It's counter-intuitive at first, rather abstract--but you'll find it's a valuable skill.  Do you feel ready to do on?
 
@@ -118,7 +118,7 @@ Excellent.  It's counter-intuitive at first, rather abstract--but you'll find it
 <<speaker="E">>
 Penetrate
 
-[[<<wait="12">>|4G]]
+<<wait="4G","12">>
 
 
 :: 4C
@@ -137,14 +137,14 @@ Penetrate
 <<speaker="E">>
 The same way as you do anything else.
 
-<<action="TOUCH","Yes, just like that.  Do you want to continue?">>
+<<action="TOUCH","Yes">>
 
 
 :: Touch
 <<speaker="E">>
 Touch
 
-<<action="TOUCH","Excellent.  It's counter-intuitive at first, rather abstract--but you'll find it's a valuable skill.  Do you feel ready to do on?">>
+<<action="TOUCH","Excellent.">>
 
 [[I'd like to stop now.|4G]]
 
