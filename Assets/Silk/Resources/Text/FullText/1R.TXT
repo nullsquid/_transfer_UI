@@ -1,7 +1,9 @@
 ﻿:: Start
 <<memory>>
-<<error="3">>
+<<enderror="4","End">>
 
+:: End
+<<end="Ending Name">>
 
 :: MetaData
 <<connect="0">>

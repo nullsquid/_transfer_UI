@@ -88,6 +88,9 @@ namespace Silk{
 			case "behere":
 				NotSupposedToBeHereTag newBeHereTag = new NotSupposedToBeHereTag (tagName, args);
 				return newBeHereTag;
+			case "enderror":
+				EndErrorTag newEndErrorTag = new EndErrorTag (tagName, args);
+				return newEndErrorTag;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

@@ -247,10 +247,12 @@ public class DialogueManager : MonoBehaviour {
 							curNode.connectQueue.Add (tag);
 						} else if (tag.TagName == "behere") {
 							curNode.connectQueue.Add (tag);
-						}else if (tag.TagName == "wait") {
+						} else if (tag.TagName == "wait") {
 							curNode.connectQueue.Add (tag);
                             
-                        }
+						} else if (tag.TagName == "enderror") {
+							curNode.connectQueue.Add (tag);
+						}
                         if(tag.TagName == "prob") {
                             CurNode.connectQueue.Add(tag);
                         }
