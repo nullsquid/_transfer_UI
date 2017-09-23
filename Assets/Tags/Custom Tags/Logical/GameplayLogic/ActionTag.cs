@@ -113,6 +113,21 @@ public class ActionTag : SilkTagBase {
                 controller.discoveredActions.Add(actName, newPenAction);
             }
             break;
+		case "FIRE":
+			FireAction newFireAction = new FireAction (actName, actArgs);
+			controller.activeActions.Add (newFireAction);
+			if (!controller.discoveredActions.ContainsKey (actName)) {
+				controller.discoveredActions.Add (actName, newFireAction);
+			}
+			break;
+		case "BEHEAD":
+			BeheadAction newBeheadAction = new BeheadAction (actName, actArgs);
+			controller.activeActions.Add (newBeheadAction);
+			if (!controller.discoveredActions.ContainsKey (actName)) {
+				controller.discoveredActions.Add (actName, newBeheadAction);
+			}
+			break;
+
         }
         
 

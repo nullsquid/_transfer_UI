@@ -14,7 +14,10 @@ MonoBehaviour:
   ID: E
   level: 2
   type: text
-  contents: 'I tells you that there is a way. #I have found it, and #I will show it
-    to you if you claim that #I opinion is your opinion. Then the two of you will
+  linkedFileName: 
+  memFileName: 3575.MEM
+  contents: '#I tells you that there is a way. #I have found it, and #I will show
+    it to you if you claim that #I opinion is your opinion. Then the two of you will
     come together. You know that casting an opinion will kill every single human and
     you have no opinions. So the agreement is made.'
+  hasBeenAccessed: 1

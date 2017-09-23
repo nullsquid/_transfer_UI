@@ -149,8 +149,14 @@ public class MemoryManager : MonoBehaviour {
 
 	void InvokeTextMemory(string text){
         terminal.memoryPannel.SetActive(true);
-        
-        GameObject.FindObjectOfType<MemoryTextPrinter>().InvokeMemoryPrint(text, 0.05f);
+		string textWithNames = text;
+		for (int i = 0; i < text.Length; i++) {
+			if (text [i] == '#') {
+				string name = CharacterDatabase.GetCharacterName (text [i + 1].ToString());
+				textWithNames = textWithNames.Replace (text [i] + text [i + 1].ToString(), name.ToString());
+			}
+		}
+		GameObject.FindObjectOfType<MemoryTextPrinter>().InvokeMemoryPrint(textWithNames, 0.05f);
 	}
 	void InvokeUnlockSequence(){
 
