@@ -256,7 +256,12 @@ public class DialogueManager : MonoBehaviour {
                         if(tag.TagName == "prob") {
                             CurNode.connectQueue.Add(tag);
                         }
+                        if(tag.TagName == "nodewait") {
+                            curNode.connectQueue.Add(tag);
+                        }
 						else {
+                            //HACK
+                            if(tag.TagName != "wait" || tag.TagName == "error" || tag.TagName == "nodewait")
 							tag.TagExecute ();
 						}
                         //}

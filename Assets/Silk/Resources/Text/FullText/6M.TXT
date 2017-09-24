@@ -1,8 +1,9 @@
 ﻿:: Start
 <<speaker="0">>
+<<wait="5N","6">>
 But then something changed.  I could feel--like eyes all around me.  I didn't know what it was.  But I wasn't the only one.  Lots of people had the same sensation.  Not like a big city.  Like when you're alone in the woods, and you know something is looking at you.
 
-<<wait="5N","12">>
+
 
 
 :: 5N
