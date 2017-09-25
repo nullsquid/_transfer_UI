@@ -18,4 +18,9 @@ public class NodeWait : SilkTagBase {
         OnExecutionComplete();
     }
 
+    public override void OnExecutionComplete() {
+        base.OnExecutionComplete();
+        TextPrinter.onPrintComplete -= this.TagExecute;
+    }
+
 }

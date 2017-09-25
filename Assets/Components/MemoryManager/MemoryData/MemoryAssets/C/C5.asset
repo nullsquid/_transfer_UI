@@ -14,6 +14,9 @@ MonoBehaviour:
   ID: C
   level: 5
   type: text
-  contents: '#G and I were discussing destruction and you pointed out that neither
+  linkedFileName: 
+  memFileName: 
+  contents: '#G and #I were discussing destruction and you pointed out that neither
     of them are responsible enough to be able to even take care of themselves. That
     quieted them for a moment.'
+  hasBeenAccessed: 0

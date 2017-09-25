@@ -20,7 +20,7 @@ public class ConnectState : ITerminalState {
         terminal.mainText.SetActive(true);
         foreach (SilkTagBase tag in DialogueManager.instance.CurNode.connectQueue){
             //titties!!!
-            if (tag.TagName == "wait") {
+            if (tag.TagName == "wait"||tag.TagName == "nodewait") {
                 TextPrinter.onPrintComplete += tag.TagExecute;
             }
             else {

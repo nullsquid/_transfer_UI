@@ -1,8 +1,37 @@
 ﻿:: Start
-<<auto>>
-<<endauto>>
+<<speaker="H">>
+You seen the rat?
+<<nodewait="F1","2">>
 
-<<wait="6","5E">>
+:: F1
+<<speaker="F">>
+Allow me to introduce myself--I am <<name="F">>
+<<nodewait="H2","2">>
+
+:: H2
+<<speaker="H">>
+That's nice. did you see the rat go past here?
+<<nodewait="F2","2">>
+
+:: F2
+<<speaker="F">>
+I believe he went that way--but why trouble yourself with one rat when you could stomp out a whole nest?
+<<nodewait="H3","2">>
+
+:: H3
+<<speaker="H">>
+A nest?
+<<nodewait="F3","2">>
+
+:: F3
+<<speaker="F">>
+It's empty at the moment, of course--but the thing about rats is, they may be dumb and vicious, but they have good memories--they can leave a nest for years and come back to it--the only way to make sure you get rid of them is to destroy every nest you find--
+<<nodewait="H4","2">>
+
+:: H4
+<<speaker="H">>
+An infiltrator from the outside, broken in.  It's a threat. It's going to crap and chew. Break things and spread disease. Just tell me where it went.
+<<nodewait="5E","2">>
 
 
 :: 5E
