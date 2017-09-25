@@ -252,7 +252,9 @@ public class DialogueManager : MonoBehaviour {
                             
 						} else if (tag.TagName == "enderror") {
 							curNode.connectQueue.Add (tag);
-						}
+						} if(tag.TagName == "audioclip") {
+                            curNode.connectQueue.Add(tag);
+                        }
                         if(tag.TagName == "prob") {
                             CurNode.connectQueue.Add(tag);
                         }
@@ -261,7 +263,7 @@ public class DialogueManager : MonoBehaviour {
                         }
 						else {
                             //HACK
-                            if(tag.TagName != "wait" || tag.TagName == "error" || tag.TagName == "nodewait")
+                            if(tag.TagName != "wait" || tag.TagName != "error" || tag.TagName != "nodewait" || tag.TagName != "audioclip")
 							tag.TagExecute ();
 						}
                         //}

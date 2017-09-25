@@ -16,7 +16,7 @@ public class ConnectState : ITerminalState {
 	public void TerminalEnterState(){
         terminal.buddyList.SetActive(false);
         terminal.idleText.SetActive(false);
-
+        terminal.responsePannel.SetActive(true);
         terminal.mainText.SetActive(true);
         foreach (SilkTagBase tag in DialogueManager.instance.CurNode.connectQueue){
             //titties!!!

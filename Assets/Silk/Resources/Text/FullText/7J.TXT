@@ -1,8 +1,11 @@
 ﻿:: Start
 <<speaker="I">>
-<<audioclip="Audio Name">>
+<<nodewait="LOG","1">>
 
-[[I hear|6K]] 
+:: LOG
+<<audioclip="SESTINA">>
+
+[[I hear|6K]]
 
 
 :: 6K
@@ -22,5 +25,3 @@
 
 :: StoryAuthor
 Anonymous
-
-

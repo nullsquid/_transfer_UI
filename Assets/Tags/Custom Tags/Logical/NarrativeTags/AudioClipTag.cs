@@ -4,10 +4,12 @@ using UnityEngine;
 using Silk;
 
 public class AudioClipTag : SilkTagBase {
+    DialogueAudioHandler audioHandler;
 	public AudioClipTag(string name, List<string> args){
 		TagName = name;
 		type = TagType.SEQUENCED;
-		if (args.Count == 1) {
+        audioHandler = GameObject.FindObjectOfType<DialogueAudioHandler>();
+        if (args.Count == 1) {
 			_silkTagArgs = args;
 			Value = "";
 		} else if (args.Count < 1) {
@@ -16,4 +18,8 @@ public class AudioClipTag : SilkTagBase {
 			Debug.LogError ("TOO MANY ARGUMENTS FOR AUDIOCLIP TAG");
 		}
 	}
+    public override void ExecuteTagLogic(List<string> args) {
+        audioHandler.InvokeAudioLog(args[0]);
+        OnExecutionComplete();
+    }
 }

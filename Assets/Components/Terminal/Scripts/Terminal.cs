@@ -13,7 +13,7 @@ public class Terminal : MonoBehaviour {
     public GameObject videoPannel;
     public GameObject idleText;
 	public GameObject memoryPannel;
-
+    public GameObject responsePannel;
     public TextPrinter printer;
     void Start(){
         printer = GameObject.FindObjectOfType<TextPrinter>();
@@ -22,6 +22,7 @@ public class Terminal : MonoBehaviour {
         mainText = GameObject.Find("Text_Scroll");
         videoPannel = GameObject.Find("Video_Pannel");
 		memoryPannel = GameObject.Find ("MemoryPannel");
+        responsePannel = GameObject.Find("Response_Pannel");
         if (gameHasStarted == true) {
             this.newTerminalStateMachine.ChangeTerminalState(new IdleState());
             //mainText.SetActive(false);
