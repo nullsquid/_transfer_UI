@@ -31,4 +31,8 @@ public class ProbTag : SilkTagBase {
         }
         OnExecutionComplete();
     }
+
+	public override void OnExecutionComplete(){
+		TextPrinter.onPrintComplete -= this.TagExecute;
+	}
 }

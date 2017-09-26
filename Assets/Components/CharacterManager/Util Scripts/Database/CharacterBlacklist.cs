@@ -14,6 +14,7 @@ namespace Transfer.System {
 				"NUGR",
 				"NIGA",
                 "TITS",
+				"GISM",
                 "FAGT",
 				"COPS",
                 "FAGS",

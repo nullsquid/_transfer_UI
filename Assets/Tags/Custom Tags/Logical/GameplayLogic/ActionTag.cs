@@ -127,7 +127,13 @@ public class ActionTag : SilkTagBase {
 				controller.discoveredActions.Add (actName, newBeheadAction);
 			}
 			break;
-
+		case "TURN OFF":
+			OffAction newOffAction = new OffAction (actName, actArgs);
+			controller.activeActions.Add (newOffAction);
+			if (!controller.discoveredActions.ContainsKey (actName)) {
+				controller.discoveredActions.Add (actName, newOffAction);
+			}
+			break;
         }
         
 

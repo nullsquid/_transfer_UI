@@ -2,7 +2,7 @@
 <<speaker="E">>
 And here are the ears.  Go ahead.  Have a listen.
 
-<<wait="3M","60">>
+<<nodewait="3M","60">>
 
 
 :: 3M

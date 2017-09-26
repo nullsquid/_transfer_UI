@@ -1,6 +1,6 @@
 ﻿:: Start
 <<speaker="I">>
-<<audioclip="Audio Name">>
+<<audioclip="GLITCH_1">>
 
 [[Come again?|3N]]
 

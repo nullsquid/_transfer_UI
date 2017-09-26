@@ -91,6 +91,9 @@ namespace Silk{
 			case "enderror":
 				EndErrorTag newEndErrorTag = new EndErrorTag (tagName, args);
 				return newEndErrorTag;
+			case "slowerror":
+				SlowErrorTag newSlowError = new SlowErrorTag (tagName, args);
+				return newSlowError;
 			default:
 				DummyTag newDummy = new DummyTag (tagName, args);
 				return newDummy;

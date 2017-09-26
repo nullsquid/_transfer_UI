@@ -1,8 +1,8 @@
 ﻿:: Start
 <<memory>>
 <<speaker="I">>
-<<audioclip="Audio Name">>
-<<nodewait="End","9">>
+<<audioclip="GLITCH_1">>
+[[Okay|End]]
 
 :: End
 <<end="Ending Name">>

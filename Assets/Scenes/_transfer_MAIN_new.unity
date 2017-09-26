@@ -1332,7 +1332,7 @@ Prefab:
     - target: {fileID: 114010389974020396, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
       propertyPath: startingNodeName
-      value: 7J
+      value: 2O
       objectReference: {fileID: 0}
     - target: {fileID: 114416720381552824, guid: 029b2af799ba21e47a7b913847fd213f,
         type: 2}
@@ -1368,7 +1368,7 @@ Prefab:
         type: 2}
       propertyPath: soundEffectRaw.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: 545e985d72dab9d459c8e77352a3512a, type: 3}
+      objectReference: {fileID: 8300000, guid: f78cc63555a946147bde1e93f23d93a1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 029b2af799ba21e47a7b913847fd213f, type: 2}
   m_IsPrefabParent: 0
@@ -2179,7 +2179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 726.99976, y: 87}
+  m_AnchoredPosition: {x: 726.9997, y: 87}
   m_SizeDelta: {x: -1580, y: -288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &879300857
@@ -2346,7 +2346,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2115034134}
   m_HandleRect: {fileID: 2115034133}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

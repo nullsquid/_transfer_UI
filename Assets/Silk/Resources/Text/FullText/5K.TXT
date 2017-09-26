@@ -2,7 +2,7 @@
 <<speaker="E">>
 Here are the eyes.  Have a look.  Whichever channel you want.
 
-<<wait="4L","60">>
+<<nodewait="4L","60">>
 
 
 :: 4L

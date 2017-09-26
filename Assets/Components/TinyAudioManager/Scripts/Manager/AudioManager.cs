@@ -32,10 +32,28 @@ public class AudioManager : MonoBehaviour {
     //for audio logs
     public void PlayAudioClipAtPoint(AudioClip clip, GameObject objectToPlayOn) {
 
-        StartCoroutine(PlayClipAtPoint(clip, objectToPlayOn));
-    }
+        //StartCoroutine(PlayClipAtPoint(clip, objectToPlayOn));
+		GameObject go = new GameObject("AudioSource");
+		float randomPitch = Random.Range(-0.1f, 0.2f);
+		go.AddComponent<AudioSource>();
+		AudioSource newAudioSource = go.GetComponent<AudioSource>();
+		newAudioSource.name = clip.name + '_' + objectToPlayOn.name;
+		newAudioSource.transform.position = objectToPlayOn.transform.position;
+		newAudioSource.gameObject.transform.parent = objectToPlayOn.gameObject.transform;
 
-    IEnumerator PlayClipAtPoint(AudioClip clip, GameObject objectToPlayOn) {
+		newAudioSource.clip = clip;
+		newAudioSource.Play();
+		Invoke ("AudioClipCompleteCleanup", newAudioSource.clip.length);
+		Destroy (newAudioSource.gameObject, newAudioSource.clip.length);
+    }
+	//BUHHHHH
+	void AudioClipCompleteCleanup(){
+		//terminal.responsePannel.SetActive(true);
+		GameObject.FindObjectOfType<Terminal>().responsePannel.SetActive(true);
+		GameObject.FindObjectOfType<ResponsePrinter>().UpdateResponses();
+	}
+
+    /*IEnumerator PlayClipAtPoint(AudioClip clip, GameObject objectToPlayOn) {
         GameObject go = new GameObject("AudioSource");
         float randomPitch = Random.Range(-0.1f, 0.2f);
         go.AddComponent<AudioSource>();
@@ -52,7 +70,7 @@ public class AudioManager : MonoBehaviour {
         audioClipComplete();
         Destroy(newAudioSource.gameObject);
         
-    }
+    }*/
 
     public void PlaySoundAtPoint(AudioClip clip, GameObject objectToPlayOn) {
         AudioSource.PlayClipAtPoint(clip, objectToPlayOn.transform.position);

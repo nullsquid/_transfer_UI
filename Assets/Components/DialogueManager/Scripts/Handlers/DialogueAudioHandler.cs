@@ -16,11 +16,11 @@ public class DialogueAudioHandler : MonoBehaviour {
 	}
 
     private void OnEnable() {
-        AudioManager.Instance.audioClipComplete += AudioCleanup;
+        //AudioManager.Instance.audioClipComplete += AudioCleanup;
     }
 
     private void OnDisable() {
-        AudioManager.Instance.audioClipComplete -= AudioCleanup;
+        //AudioManager.Instance.audioClipComplete -= AudioCleanup;
     }
 
     public void InvokeSoundEffect(string soundName, float vol = 1){
@@ -36,7 +36,7 @@ public class DialogueAudioHandler : MonoBehaviour {
 	
     public void AudioCleanup() {
         //terminal.GetPrevState();
-        
+		Debug.Log("cleanup");
         terminal.responsePannel.SetActive(true);
         GameObject.FindObjectOfType<ResponsePrinter>().UpdateResponses();
 

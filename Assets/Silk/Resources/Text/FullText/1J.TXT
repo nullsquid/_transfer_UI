@@ -1,13 +1,19 @@
-﻿:: Start
+﻿:: MAIN
 <<memory>>
 <<speaker="E">>
 We've got no more eyes.  No more ears.  But there's one thing everyone forgot to mention.  You have another choice.  You can turn off.
 
-[[<<action="TURN OFF">>]]
+<<action="TURN OFF","Off">>
 
-[[No, I'll stay.]]
+[[No, I'll stay | No]]
 
-<<error="Error Message">>
+:: Start
+<<slowerror="Error Message","3","MAIN">>
+
+:: No
+<<end="Ending Name">>
+
+:: Off
 
 
 :: MetaData
@@ -21,5 +27,3 @@ We've got no more eyes.  No more ears.  But there's one thing everyone forgot to
 
 :: StoryAuthor
 Anonymous
-
-

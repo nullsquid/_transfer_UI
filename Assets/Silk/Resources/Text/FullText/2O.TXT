@@ -1,6 +1,9 @@
 ﻿:: Start
 <<speaker="I">>
-<<videoclip="Video Name">>
+<<nodewait="VIDEO","1">>
+
+:: VIDEO
+<<videoclip="TEST">>
 
 [[stop|1P]]
 
@@ -11,7 +14,7 @@
 <<state="idle">>
 
 
-:: 2O
+:: StoryTitle
 2O
 
 
@@ -22,5 +25,3 @@
 
 :: StoryAuthor
 Anonymous
-
-
