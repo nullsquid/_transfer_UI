@@ -45,7 +45,7 @@ public class ActionController : MonoBehaviour {
 
     private void Update() {
 		foreach (ActionBase action in activeActions) {
-			Debug.Log ("ACTIONS " +action.ActionName + " " + action.Args[0]);
+			//Debug.Log ("ACTIONS " +action.ActionName + " " + action.Args[0]);
 
 		}
         //Debug.Log(activeActions.Count);
