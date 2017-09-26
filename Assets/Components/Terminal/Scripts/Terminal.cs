@@ -14,6 +14,7 @@ public class Terminal : MonoBehaviour {
     public GameObject idleText;
 	public GameObject memoryPannel;
     public GameObject responsePannel;
+    public Transfer.Input.MainInputController inputController;
     public TextPrinter printer;
     void Start(){
         printer = GameObject.FindObjectOfType<TextPrinter>();

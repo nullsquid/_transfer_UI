@@ -1,5 +1,8 @@
 ﻿:: Start
 <<speaker="I">>
+<<nodewait="AUDIO",".5">>
+
+:: AUDIO
 <<audioclip="GLITCH_1">>
 
 [[Come again?|3N]]
