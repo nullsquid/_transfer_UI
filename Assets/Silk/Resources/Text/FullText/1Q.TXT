@@ -2,6 +2,9 @@
 <<memory>>
 <<speaker="0">>
 Now I suppose you have to make a final decision.
+<<nodewait="END","3">>
+
+:: End
 
 <<end="Ending Name">>
 

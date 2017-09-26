@@ -10,7 +10,7 @@ public class VideoManager : MonoBehaviour {
     public GameObject videoPannel;
     public Terminal terminal;
 
-    private Dictionary<string, VideoClip> videoWithNames = new Dictionary<string,VideoClip>();
+    public Dictionary<string, VideoClip> videoWithNames = new Dictionary<string,VideoClip>();
 
     private void OnEnable() {
         if (videoPannel != null) {
@@ -36,9 +36,21 @@ public class VideoManager : MonoBehaviour {
             terminal.ChangeState(new VideoState());
             videoPannel.GetComponentInChildren<StreamVideo>().videoToPlay = videoWithNames[videoName];
             videoPannel.GetComponentInChildren<StreamVideo>().StartVideo();
+            //Invoke("VideoCleanup", (float)videoWithNames[videoName].length);
+
         }
         else {
-            Debug.LogWarning("VIDEO WITH NAME " + videoName + " NOT FOUND");
+        }
+    }
+    public void PlayVideoMemory(string videoName) {
+        if (videoWithNames.ContainsKey(videoName)) {
+            terminal.ChangeState(new VideoState());
+            videoPannel.GetComponentInChildren<StreamVideo>().videoToPlay = videoWithNames[videoName];
+            videoPannel.GetComponentInChildren<StreamVideo>().StartVideoMemory();
+            //Invoke("VideoCleanup", (float)videoWithNames[videoName].length);
+
+        }
+        else {
         }
     }
 

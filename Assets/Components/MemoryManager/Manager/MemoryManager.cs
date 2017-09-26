@@ -4,6 +4,7 @@ using UnityEngine;
 using Transfer.Data;
 public class MemoryManager : MonoBehaviour {
     Terminal terminal;
+    VideoManager vManager;
     public static MemoryManager instance;
     void Awake() {
 
@@ -49,6 +50,7 @@ public class MemoryManager : MonoBehaviour {
 	}
 
     private void Start() {
+        vManager = GameObject.FindObjectOfType<VideoManager>();
         terminal = GameObject.FindObjectOfType<Terminal>();
 		string player = CharacterDatabase.GetPlayerID ();
 		for (int i = 0; i < 9; i++) {
@@ -113,6 +115,12 @@ public class MemoryManager : MonoBehaviour {
         if(unlockedMemories[memName].type == "text") {
             InvokeTextMemory(unlockedMemories[memName].contents);
         }
+        else if(unlockedMemories[memName].type == "audio") {
+            InvokeAudioMemory(unlockedMemories[memName].contents);
+        }
+        else if(unlockedMemories[memName].type == "video") {
+            InvokeVideoMemory(unlockedMemories[memName].contents);
+        }
         /*
 		if (allMemoriesForRun [level].type == "text") {
 			InvokeTextMemory(allMemoriesForRun[level].contents);
@@ -138,14 +146,29 @@ public class MemoryManager : MonoBehaviour {
         
 
     }
-
+    void InvokeExitPrint() {
+        terminal.memoryPannel.SetActive(true);
+        GameObject.FindObjectOfType<MemoryTextPrinter>().InvokeMemoryPrint("", 0.1f);
+        if(terminal.videoPannel.activeSelf == true) {
+            terminal.videoPannel.SetActive(false);
+        }
+        terminal.mainText.SetActive(true);
+        terminal.canRunCommands = true;
+    }
 	void InvokeAudioMemory(string fileName){
-
+        GameObject.FindObjectOfType<DialogueAudioHandler>().InvokeAudioMemory(fileName);
+        terminal.canRunCommands = false;
+        Invoke("InvokeExitPrint", GameObject.FindObjectOfType<DialogueAudioHandler>().soundEffects[fileName].length);
 	}
 
 	void InvokeVideoMemory(string fileName){
-
-	}
+        Debug.Log("henlo CAT");
+        vManager.PlayVideoMemory(fileName);
+        terminal.videoPannel.SetActive(true);
+        terminal.mainText.SetActive(false);
+        terminal.canRunCommands = false;
+        Invoke("InvokeExitPrint", (float)vManager.videoWithNames[fileName].length);
+    }
 
 	void InvokeTextMemory(string text){
         terminal.memoryPannel.SetActive(true);
