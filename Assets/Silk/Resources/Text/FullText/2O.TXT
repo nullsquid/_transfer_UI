@@ -9,9 +9,8 @@
 
 
 :: 1P
-<<unload>>
 <<nexttree="1P">>
-<<state="idle">>
+
 
 
 :: StoryTitle
@@ -20,7 +19,7 @@
 
 :: MetaData
 <<connect="I">>
-<<level="0">>
+<<level="2">>
 
 
 :: StoryAuthor

@@ -95,7 +95,7 @@ public class TextPrinter : MonoBehaviour {
     }
 
     public void InvokeHelpMenu() {
-        StartCoroutine(IterateThroughCharactersToPrint(helpMenu, letterTime, softPauseTimeBase, hardPauseTimeBase, false));
+        StartCoroutine(IterateThroughCharactersToPrint(helpMenu, letterTime, softPauseTimeBase, hardPauseTimeBase, false, true));
 
     }
 
@@ -140,7 +140,7 @@ public class TextPrinter : MonoBehaviour {
 	}
  
 
-    public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause, bool callback) {
+    public IEnumerator IterateThroughCharactersToPrint(string text, float time, float softPause, float hardPause, bool callback, bool isHelpMenu = false) {
         float normalTime = time;
 
         if (text != null) {
@@ -184,6 +184,9 @@ public class TextPrinter : MonoBehaviour {
 
                 yield return new WaitForSeconds(time);
 
+            }
+            if(isHelpMenu == true) {
+                GameObject.FindObjectOfType<Terminal>().canRunCommands = true;
             }
 
 			///Delete if doesn't work

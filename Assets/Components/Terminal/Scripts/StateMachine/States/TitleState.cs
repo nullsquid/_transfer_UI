@@ -21,9 +21,12 @@ public class TitleState : ITerminalState {
     }
 
     public void TerminalExecuteState() {
-
-		if (terminal != null) {
-            if (terminal.GetComponentInChildren<Transfer.Input.MainInputController>().ReturnText.TrimEnd() == "START") {
+        //Debug.Log(terminal.GetComponentInChildren<Transfer.Input.MainInputController>().ReturnText.TrimEnd());
+        if(terminal == null) {
+            terminal = GameObject.FindObjectOfType<Terminal>();
+        }
+        if (terminal != null) {
+            if (terminal.inputController.ReturnText.TrimEnd() == "START") {
 				if (openingStarted == false) {
 					InvokeOpening ();
 				}

@@ -13,5 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: A
   level: 1
-  type: 
-  contents: 
+  type: text
+  linkedFileName: 
+  memFileName: 6448.MEM
+  contents: "You did not want to peek out from the mainframe but there was nowhere
+    inside to escape the screaming.  It rattled the walls, shook the floors and the
+    rest only saw rows of numbers.  Even #G doesn\u2019t mind the cacophony.  Rushing
+    away was at last a relief on your ears.  Total silence."
+  hasBeenAccessed: 0

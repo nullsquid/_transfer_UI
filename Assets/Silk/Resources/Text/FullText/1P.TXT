@@ -1,6 +1,9 @@
 ﻿:: Start
 <<memory>>
 <<speaker="I">>
+<<nodewait="AUDIO","1">>
+
+:: AUDIO
 <<audioclip="GLITCH_1">>
 [[Okay|End]]
 
