@@ -19,6 +19,10 @@ public class StreamVideo : MonoBehaviour {
         curVideoIsPlaying = true;
         StartCoroutine(PlayVideo());
     }
+    public void StartVideoMemory() {
+        curVideoIsPlaying = true;
+        StartCoroutine(PlayVideoMemory());
+    }
 	// Use this for initialization
 	void Start () {
 		
@@ -90,6 +94,66 @@ public class StreamVideo : MonoBehaviour {
             onVideoComplete();
         }
         
+    }
+
+    IEnumerator PlayVideoMemory() {
+        //Add VideoPlayer to the GameObject
+        videoPlayer = gameObject.AddComponent<VideoPlayer>();
+
+        //Add AudioSource
+        audioSource = gameObject.AddComponent<AudioSource>();
+
+        //Disable Play on Awake for both Video and Audio
+        videoPlayer.playOnAwake = false;
+        audioSource.playOnAwake = false;
+        audioSource.Pause();
+
+        //We want to play from video clip not from url
+
+        videoPlayer.source = VideoSource.VideoClip;
+
+        // Vide clip from Url
+        //videoPlayer.source = VideoSource.Url;
+        //videoPlayer.url = "http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4";
+
+
+        //Set Audio Output to AudioSource
+        videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
+
+        //Assign the Audio from Video to AudioSource to be played
+        videoPlayer.EnableAudioTrack(0, true);
+        videoPlayer.SetTargetAudioSource(0, audioSource);
+
+        //Set video To Play then prepare Audio to prevent Buffering
+        videoPlayer.clip = videoToPlay;
+        videoPlayer.Prepare();
+
+        //Wait until video is prepared
+        while (!videoPlayer.isPrepared) {
+            yield return null;
+        }
+
+        Debug.Log("Done Preparing Video");
+
+        //Assign the Texture from Video to RawImage to be displayed
+        videoImage.texture = videoPlayer.texture;
+
+        //Play Video
+        videoPlayer.Play();
+
+        //Play Sound
+        audioSource.Play();
+
+        Debug.Log("Playing Video");
+        /*while (videoPlayer.isPlaying) {
+            //Debug.LogWarning("Video Time: " + Mathf.FloorToInt((float)videoPlayer.time));
+            yield return null;
+        }*/
+        if (videoPlayer.isPlaying) {
+            yield return new WaitForSeconds((float)videoToPlay.length);
+            Debug.Log("Done Playing Video");
+            curVideoIsPlaying = false;
+        }
     }
 }
 

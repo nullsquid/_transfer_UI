@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class DialogueAudioHandler : MonoBehaviour {
 	public float volume = 1;
 	public List<AudioClip> soundEffectRaw = new List<AudioClip> ();
@@ -15,13 +15,6 @@ public class DialogueAudioHandler : MonoBehaviour {
 		}
 	}
 
-    private void OnEnable() {
-        //AudioManager.Instance.audioClipComplete += AudioCleanup;
-    }
-
-    private void OnDisable() {
-        //AudioManager.Instance.audioClipComplete -= AudioCleanup;
-    }
 
     public void InvokeSoundEffect(string soundName, float vol = 1){
 		AudioManager.Instance.PlaySoundAtPoint (soundEffects [soundName], gameObject, 1, volume);
@@ -32,6 +25,12 @@ public class DialogueAudioHandler : MonoBehaviour {
         terminal.responsePannel.SetActive(false);
         AudioManager.Instance.PlayAudioClipAtPoint(soundEffects[soundName], gameObject);
         
+    }
+
+    public void InvokeAudioMemory(string soundName) {
+        terminal.memoryPannel.SetActive(true);
+        terminal.memoryPannel.GetComponentInChildren<Text>().text = ">>PLAYING";
+        AudioManager.Instance.PlayAudioMemoryAtPoint(soundEffects[soundName], gameObject);
     }
 	
     public void AudioCleanup() {
