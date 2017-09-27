@@ -1,16 +1,28 @@
 ﻿:: Start
 <<memory>>
 <<speaker="F">>
+Create Bomb
+<<nodewait="CREATEACT","1.5">>
 
-<<action="CREATE BOMB">>
+:: CREATEACT
+<<npcaction="CREATE BOMB","CREATECHOICES","1.5">>
 
+:: CREATECHOICES
 [[No!|Detonate]]
 
 
 :: Detonate
 <<speaker="F">>
-<<action="DETONATE">>
+Detonate
+<<nodewait="DETONATEACT","1">>
 
+:: DETONATEACT
+<<npcaction="DETONATE","EFFECT","1.5">>
+
+:: EFFECT
+<<slowerror="","1","END">>
+
+:: END
 <<end="Ending Name">>
 
 
@@ -25,5 +37,3 @@
 
 :: StoryAuthor
 Anonymous
-
-

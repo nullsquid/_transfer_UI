@@ -10,6 +10,7 @@ public class Terminal : MonoBehaviour {
     [HideInInspector]
 	public GameObject buddyList;
     public GameObject mainText;
+    public GameObject npcActionPanel;
     public GameObject videoPannel;
     public GameObject idleText;
 	public GameObject memoryPannel;
@@ -17,6 +18,7 @@ public class Terminal : MonoBehaviour {
     public Transfer.Input.MainInputController inputController;
     public TextPrinter printer;
     void Start(){
+        npcActionPanel.SetActive(false);
         printer = GameObject.FindObjectOfType<TextPrinter>();
 		buddyList = GameObject.Find ("BuddyList");
         idleText = GameObject.Find("IdleText");

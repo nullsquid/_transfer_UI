@@ -70,6 +70,9 @@ namespace Silk{
             case "action":
                 ActionTag newActionTag = new ActionTag(tagName, args);
                 return newActionTag;
+            case "npcaction":
+                NPCActionTag newNPCActionTag = new NPCActionTag(tagName, args);
+                return newNPCActionTag;
             case "error":
                 ErrorTag newErrorTag = new ErrorTag(tagName, args);
                 return newErrorTag;

@@ -57,8 +57,13 @@ I knew it.  You got my message?  We had an agreement.
 
 :: Penetrate.
 <<speaker="E">>
-<<action="PENETRATE">>
+Penetrate
+<<nodewait="PENACT","1">>
 
+:: PENACT
+<<npcaction="PENETRATE","PENTEXT","1.5">>
+
+:: PENTEXT
 [[That's it?|1H]]
 
 
@@ -71,9 +76,12 @@ Go on.
 
 :: Penetrate
 <<speaker="E">>
-<<action="PENETRATE">>
+Penetrate
+<<nodewait="PENACT2","1">>
 
-<<wait="1K","6">>
+:: PENACT2
+<<npcaction="PENETRATE","1K","6">>
+
 
 
 :: Well, then, do you want to, or should I?
@@ -106,4 +114,4 @@ Good.  Then you're going to hold up your end?
 <<speaker="E">>
 You're not getting away from me like that.
 
-[[<<action="EXIT">>|1K]]
+<<action="EXIT","1K">>

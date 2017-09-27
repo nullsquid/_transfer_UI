@@ -1,5 +1,4 @@
 ﻿:: MAIN
-<<memory>>
 <<speaker="E">>
 We've got no more eyes.  No more ears.  But there's one thing everyone forgot to mention.  You have another choice.  You can turn off.
 
@@ -8,6 +7,7 @@ We've got no more eyes.  No more ears.  But there's one thing everyone forgot to
 [[No, I'll stay | No]]
 
 :: Start
+<<memory>>
 <<slowerror="Error Message","3","MAIN">>
 
 :: No

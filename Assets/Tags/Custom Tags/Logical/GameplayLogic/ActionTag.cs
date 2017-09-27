@@ -134,6 +134,14 @@ public class ActionTag : SilkTagBase {
 				controller.discoveredActions.Add (actName, newOffAction);
 			}
 			break;
+        case "EXIT":
+            ExitAction newExitAction = new ExitAction(actName, actArgs);
+            controller.activeActions.Add(newExitAction);
+            if (!controller.discoveredActions.ContainsKey(actName)) {
+                controller.discoveredActions.Add(actName, newExitAction);
+            }
+            break;
+
         }
         
 

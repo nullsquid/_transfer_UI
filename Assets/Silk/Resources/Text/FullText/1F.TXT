@@ -11,17 +11,22 @@ You are the rat--you will be exterminated--
 
 [[No, I just misremembered.|Behead]]
 
-[[Alright.|Behead 1]]
+[[Alright.|Behead]]
 
-[[Why not just let me go? I'll leave and never come back.  I'll even show you how got in so you can keep me out forever.|Behead 2]]
+[[Why not just let me go? I'll leave and never come back.  I'll even show you how got in so you can keep me out forever.|Behead]]
 
 [[Why?|We made the decision.]]
 
 
 :: Behead
 <<speaker="F">>
-<<action="BEHEAD">>
+Behead.
+<<nodewait="ACTION","1">>
 
+:: ACTION
+<<npcaction="BEHEAD","END","1.5">>
+
+:: END
 <<end="Ending Name">>
 
 
@@ -50,7 +55,7 @@ You are the rat--you will be exterminated--
 
 That's all we need--
 
-<<action="BEHEAD">>
+<<nodewait="Behead","1">>
 
 
 

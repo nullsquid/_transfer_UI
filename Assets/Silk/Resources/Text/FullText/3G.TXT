@@ -1,10 +1,14 @@
 ﻿:: Start
 <<noprompt>>
+<<speaker="D">>
+Open
+<<nodewait="OPENACT","1">>
 
-<<action="OPEN","Open">>
+:: OPENACT
+<<npcaction="OPEN","OPEN","1.5">>
 
 
-:: Open
+:: OPEN
 <<speaker="D">>
 
 [[It's not working.|So you want to just give up?]]
