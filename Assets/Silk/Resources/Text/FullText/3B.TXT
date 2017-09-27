@@ -1,6 +1,12 @@
 ﻿:: Start
 <<speaker="H">>
+Run
+<<nodewait="RUNACT","1">>
 
+:: RUNACT
+<<npcaction="RUN","RUNCHOICE","1">>
+
+:: RUNCHOICE
 <<action="RUN","2D">>
 
 <<action="RUN","2E">>

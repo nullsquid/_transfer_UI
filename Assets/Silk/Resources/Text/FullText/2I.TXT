@@ -35,7 +35,13 @@ You can't go that way.
 
 :: Run2
 <<speaker="H">>
+Run
+<<nodewait="ACTRUN","1">>
 
+:: ACTRUN
+<<npcaction="RUN","RUNCHOICE","1">>
+
+:: RUNCHOICE
 <<action="RUN","1D">>
 <<action="RUN","1I">>
 <<action="RUN","1J">>
@@ -54,7 +60,13 @@ Anonymous
 
 :: Run
 <<speaker="H">>
+Run
+<<nodewait="RUNACT2","1">>
 
+:: RUNACT2
+<<npcaction="RUN","RUNCHOICE2","1">>
+
+:: RUNCHOICE2
 <<action="RUN","1L">>
 <<action="RUN","1F">>
 <<action="RUN","1K">>

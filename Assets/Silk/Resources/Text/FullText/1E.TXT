@@ -1,7 +1,11 @@
 ﻿:: Start
 <<memory>>
-<<action="BEHEAD">>
+<<nodewait="ACT","1">>
 
+:: ACT
+<<action="BEHEAD","BEHEADCHOICE">>
+
+:: BEHEADCHOICE
 [[<<name="H">>?|Yes?]]
 
 

@@ -33,10 +33,13 @@ One got in--
 
 :: We don't need them anymore. Fire
 <<speaker="F">>
-We don't need them--anymore--
+We don't need them--anymore--Fire
+<<nodewait="FIREACT","1.5">>
 
-<<action="FIRE">>
+:: FIREACT
+<<npcaction="FIRE","END","1.5">>
 
+:: END
 <<end="Ending Name">>
 
 
@@ -51,10 +54,8 @@ We don't need them--anymore--
 
 :: Leave me alone. I'm busy. Fire
 <<speaker="F">>
-Leave me alone--I'm busy--
-<<action="FIRE">>
-
-<<end="Ending Name">>
+Leave me alone--I'm busy--Fire
+<<nodewait="FIREACT","1.5">>
 
 
 :: I'm going to kill them.
@@ -75,11 +76,9 @@ They can always come back--unless we finish this--
 
 :: They'll break in. They're relentless. Fire
 <<speaker="F">>
-They'll break in--They're relentless--
+They'll break in--They're relentless--Fire
 
-<<action="FIRE">>
-
-<<end="Ending Name">>
+<<nodewait="FIREACT","1.5">>
 
 
 :: StoryAuthor
@@ -108,11 +107,9 @@ How?
 
 :: You think I'm afraid of them? Fire
 <<speaker="F">>
-You think I'm afraid--of them?
+You think I'm afraid--of them? Fire
 
-<<action="FIRE">>
-
-<<end="Ending Name">>
+<<nodewait="FIREACT","1.5">>
 
 
 :: Of course I can.  From the monolithic towers to the smallest scrap of rubber tire that gets picked up by a breeze.  All of it.
@@ -124,34 +121,26 @@ Of course I can--from the monolithic towers--to the smallest scrap of rubber tir
 
 :: Fire
 <<speaker="F">>
-
-<<action="FIRE">>
-
-<<end="Ending Name">>
+Fire
+<<nodewait="FIREACT","1.5">>
 
 
 :: We will need no such thing.  Fire
 <<speaker="F">>
-We will need no such thing--
+We will need no such thing--Fire
 
-<<action="FIRE">>
-
-<<end="Ending Name">>
+<<nodewait="FIREACT","1.5">>
 
 
 :: They disgust me. Fire
 <<speaker="F">>
-They disgust me--
+They disgust me--Fire
 
-<<action="FIRE">>
-
-<<end="Ending Name">>
+<<nodewait="FIREACT","1.5">>
 
 
 :: Of course us. Fire
 <<speaker="F">>
-Of course us--
+Of course us--Fire
 
-<<action="FIRE">>
-
-<<end="Ending Name">>
+<<nodewait="FIREACT","1.5">>
