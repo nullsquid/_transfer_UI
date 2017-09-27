@@ -11,16 +11,15 @@ You can't keep on running forever.
 
 <<action="RUN","Run">>
 
-<<action="DIG","You can't go that way.">>
+<<action="DIG","Go">>
 
-
-:: You can't go that way.
+:: Go
 <<speaker="H">>
 You can't go that way.
 
-<<action="RUN","1A">>
-<<action="RUN","1B">>
-<<action="RUN","1C">>
+<<action="RUN UP","1A">>
+<<action="RUN DOWN","1B">>
+<<action="RUN STRAIGHT","1C">>
 
 
 :: 1A

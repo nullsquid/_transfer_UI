@@ -191,10 +191,12 @@ public class MainInputHandler : MonoBehaviour {
 				terminal.GetComponent<ActionController>().ExecuteAction(_root);
 				break;
 			}
-            else if(terminal.GetComponent<ActionController>().activeActions[i].ActionName == _root + " " + _args[0]){
-                terminal.GetComponent<ActionController>().ExecuteAction(_root + " " + _args[0]);
-                break;
-            }
+			if(_args.Length > 0){ 
+				if(terminal.GetComponent<ActionController>().activeActions[i].ActionName == _root + " " + _args[0]){
+	                terminal.GetComponent<ActionController>().ExecuteAction(_root + " " + _args[0]);
+	                break;
+	            }
+			}
 		}
 	}
     #endregion
