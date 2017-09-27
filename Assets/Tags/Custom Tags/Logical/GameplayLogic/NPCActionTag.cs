@@ -19,6 +19,8 @@ public class NPCActionTag : SilkTagBase {
 		string actName = args [0];
 		//SilkNode destination = args [1];
 		float timeToWait = float.Parse (args [2]);
-
+        GameObject.FindObjectOfType<NPCActionController>().InvokeNPCAction(actName, timeToWait);
+        DialogueManager.instance.WaitForNextNode(timeToWait, args[1]);
+        OnExecutionComplete();
 	}
 }
