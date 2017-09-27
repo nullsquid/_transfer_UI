@@ -62,6 +62,7 @@ public class MainInputHandler : MonoBehaviour {
     void ParseInput(string textToParse) {
         string[] _rawCommands = _rawText.Split(' ');
 
+        
         _rootCommand = _rawCommands[0];
         ParseInputArgs(_rawCommands);
 
@@ -190,6 +191,10 @@ public class MainInputHandler : MonoBehaviour {
 				terminal.GetComponent<ActionController>().ExecuteAction(_root);
 				break;
 			}
+            else if(terminal.GetComponent<ActionController>().activeActions[i].ActionName == _root + " " + _args[0]){
+                terminal.GetComponent<ActionController>().ExecuteAction(_root + " " + _args[0]);
+                break;
+            }
 		}
 	}
     #endregion

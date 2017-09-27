@@ -42,9 +42,9 @@ Run
 <<npcaction="RUN","RUNCHOICE","1">>
 
 :: RUNCHOICE
-<<action="RUN","1D">>
-<<action="RUN","1I">>
-<<action="RUN","1J">>
+<<action="RUN DOWN","1D">>
+<<action="RUN STRAIGHT","1I">>
+<<action="RUN UP","1J">>
 
 
 
@@ -67,9 +67,9 @@ Run
 <<npcaction="RUN","RUNCHOICE2","1">>
 
 :: RUNCHOICE2
-<<action="RUN","1L">>
-<<action="RUN","1F">>
-<<action="RUN","1K">>
+<<action="RUN UP","1L">>
+<<action="RUN STRAIGHT","1F">>
+<<action="RUN DOWN","1K">>
 
 
 :: 1B

@@ -2,7 +2,7 @@
 <<speaker="E">>
 We've got no more eyes.  No more ears.  But there's one thing everyone forgot to mention.  You have another choice.  You can turn off.
 
-<<action="TURN OFF","Off">>
+<<action="TURNOFF","Off">>
 
 [[No, I'll stay | No]]
 
@@ -14,7 +14,7 @@ We've got no more eyes.  No more ears.  But there's one thing everyone forgot to
 <<end="Ending Name">>
 
 :: Off
-
+null
 
 :: MetaData
 <<connect="E">>

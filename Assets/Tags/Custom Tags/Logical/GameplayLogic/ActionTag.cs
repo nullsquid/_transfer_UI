@@ -36,7 +36,28 @@ public class ActionTag : SilkTagBase {
 				controller.discoveredActions.Add (actName, newRunAction);
 			}
             break;
-		case "TOUCH":
+        case "RUN UP":
+            RunUpAction newUpAction = new RunUpAction(actName, actArgs);
+            controller.activeActions.Add(newUpAction);
+            if (!controller.discoveredActions.ContainsKey(actName)) {
+                controller.discoveredActions.Add(actName, newUpAction);
+            }
+            break;
+            case "RUN DOWN":
+                RunDownAction newDownAction = new RunDownAction(actName, actArgs);
+                controller.activeActions.Add(newDownAction);
+                if (!controller.discoveredActions.ContainsKey(actName)) {
+                    controller.discoveredActions.Add(actName, newDownAction);
+                }
+            break;
+            case "RUN STRAIGHT":
+                RunStraightAction newStraightAction = new RunStraightAction(actName, actArgs);
+                controller.activeActions.Add(newStraightAction);
+                if (!controller.discoveredActions.ContainsKey(actName)) {
+                    controller.discoveredActions.Add(actName, newStraightAction);
+                }
+                break;
+            case "TOUCH":
 			TouchAction newTouchAction = new TouchAction (actName, actArgs);
 			controller.activeActions.Add (newTouchAction);
 			if (!controller.discoveredActions.ContainsKey (actName)) {
@@ -127,7 +148,7 @@ public class ActionTag : SilkTagBase {
 				controller.discoveredActions.Add (actName, newBeheadAction);
 			}
 			break;
-		case "TURN OFF":
+		case "TURNOFF":
 			OffAction newOffAction = new OffAction (actName, actArgs);
 			controller.activeActions.Add (newOffAction);
 			if (!controller.discoveredActions.ContainsKey (actName)) {
