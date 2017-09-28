@@ -103,7 +103,7 @@ public class MainInputHandler : MonoBehaviour {
 			//Debug.Log(_root + " accessed");
 			MemoryManager.instance.ReturnMemory (_root);
 			GameObject.FindObjectOfType<TextPrinter> ().PrintMemFileNames ();
-		} else if (_root == "EXIT" && terminal.GetState() is IdleState) {
+		} else if ((_root == "EXIT" && terminal.GetState() is IdleState) || (_root == "EXIT" && terminal.GetState() is MemoryState) ) {
 			if (terminal.GetState () is MemoryState && terminal.memoryPannel.activeSelf == false) {
 				terminal.ChangeState (new IdleState ());
 			} else if (terminal.memoryPannel.activeSelf == true) {
