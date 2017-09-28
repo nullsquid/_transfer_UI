@@ -1,14 +1,16 @@
 ﻿:: Start
 <<noprompt>>
+<<nodewait="ACT","1">>
 
+:: ACT
 <<action="RUN","1">>
 
 :: 1
 <<noprompt>>
 
-<<action="RUN","2">>
+<<action="RUN UP","2">>
 
-<<action="RUN","3">>
+<<action="RUN DOWN","3">>
 
 
 :: 5
@@ -35,11 +37,11 @@
 :: 3
 <<noprompt>>
 
-<<action="RUN","4">>
+<<action="RUN UP","4">>
 
-<<action="RUN","5">>
+<<action="RUN STRAIGHT","5">>
 
-<<action="RUN","6">>
+<<action="RUN DOWN","6">>
 
 
 :: 3B
@@ -55,25 +57,25 @@ Anonymous
 :: 10
 <<noprompt>>
 
-[[<<action="RUN">>|3E]]
+<<action="RUN","3E">>
 
 
 :: 6
 <<noprompt>>
 
-[[<<action="RUN">>|7]]
+<<action="RUN UP","7">>
 
-[[<<action="RUN">>|8]]
+<<action="RUN LEFT","8">>
 
-[[<<action="RUN">>|9]]
+<<action="RUN RIGHT","9">>
 
-[[<<action="RUN">>|10]]
+<<action="RUN DOWN","10">>
 
 
 :: 4
 <<noprompt>>
 
-[[<<action="RUN">>|3C]]
+<<action="RUN","3C">>
 
 
 :: 3A
@@ -85,19 +87,19 @@ Anonymous
 :: 7
 <<noprompt>>
 
-[[<<action="RUN">>|3E]]
+<<action="RUN","3E">>
 
 
 :: 8
 <<noprompt>>
 
-[[<<action="RUN">>|3E]]
+<<action="RUN","3E">>
 
 
 :: 9
 <<noprompt>>
 
-[[<<action="RUN">>|3E]]
+<<action="RUN","3E">>
 
 
 :: 3C
