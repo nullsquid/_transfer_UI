@@ -43,6 +43,20 @@ public class ActionTag : SilkTagBase {
                 controller.discoveredActions.Add(actName, newUpAction);
             }
             break;
+		case "RUN LEFT":
+			RunLeftAction newLeftAction = new RunLeftAction(actName, actArgs);
+			controller.activeActions.Add(newLeftAction);
+			if (!controller.discoveredActions.ContainsKey(actName)) {
+				controller.discoveredActions.Add(actName, newLeftAction);
+			}
+			break;
+		case "RUN RIGHT":
+			RunRightAction newRightAction = new RunRightAction(actName, actArgs);
+			controller.activeActions.Add(newRightAction);
+			if (!controller.discoveredActions.ContainsKey(actName)) {
+				controller.discoveredActions.Add(actName, newRightAction);
+			}
+			break;
             case "RUN DOWN":
                 RunDownAction newDownAction = new RunDownAction(actName, actArgs);
                 controller.activeActions.Add(newDownAction);
